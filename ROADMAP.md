@@ -1,6 +1,6 @@
 # 🔮 Mystical Path Tools - Development Roadmap
 
-**Last Updated:** February 27, 2026
+**Last Updated:** February 25, 2026 (v2 Sprint 1)
 
 ---
 
@@ -308,6 +308,28 @@
 
 ---
 
+### [done] 14. Candle Magic Guide `html/candle-magic.html`
+**Launched:** February 25, 2026 (v2 Sprint 1)
+**Features:**
+- 15 candle colors with full magical correspondences (element, planet, chakra, intentions, dressing, timing)
+- 12 spell templates with step-by-step instructions and affirmations
+- Dual-tab layout: Color Reference | Spell Templates
+- Dual filters per tab (element + intention for colors; intent + moon phase for spells)
+- Search across names, intentions, and affirmations
+- Expandable detail cards with color swatches
+- PDF export for spell templates
+- Fire safety disclaimer throughout
+- Keyboard navigation and full ARIA labels
+
+**Metrics:**
+- 227 lines HTML
+- 742 lines JavaScript (15 color objects × 10 fields, 12 spell objects × 9 fields)
+- 736 lines CSS (all 6 themes)
+- 1,705 lines total
+- Reuses: filter-utils.js, expandable-card.css, keyboard-nav.js, print.css, pdf-utils.js, nav-menu
+
+---
+
 ### [done] 13. Altar Setup Guide `html/altar-setup.html`
 **Launched:** February 25, 2026  
 **Features:**
@@ -348,9 +370,9 @@
 
 ## 🎯 CURRENT SPRINT
 
-**Status:** ✅ NO ACTIVE SPRINT
+**Status:** ✅ Candle Magic Guide Sprint — COMPLETE
 
-All 13 tools complete! Ready for v1.0 launch! 🎉
+**Result:** Candle Magic Guide shipped (1,705 lines). Tech debt (card rendering consolidation) skipped after code review — duplication was superficial. See `SPRINT.md` for full notes.
 
 ---
 
@@ -624,7 +646,7 @@ All high-priority MVP tools complete! 🎉
 
 ### Medium Tools (1-2 weeks each)
 - [ ] **Sacred Geometry Generator** — Canvas drawing of Flower of Life, Metatron's Cube, etc.
-- [ ] **Candle Magic Guide** — Color correspondences, burn times, safety, spell templates
+- [done] **Candle Magic Guide** — Completed sprint. 15 colors, 12 spell templates, dual-tab layout.
 
 ### Complex Tools (4+ weeks each)
 - [ ] **Astrology Birth Chart** — Full natal chart calculation and interpretation
@@ -643,7 +665,7 @@ All high-priority MVP tools complete! 🎉
 
 ### Medium Priority (Code Quality)
 - [done] **Extract canvas initialization** - Created `js/canvas-utils.js` (219 lines) with 4 functions, refactored Sigil/Rune - Complete
-- [ ] **Consolidate card rendering** - `createCard()` pattern exists in 4 tools (~3 hours)
+- [skip] **Consolidate card rendering** - Assessed at sprint start: cards are domain-specific, duplication is superficial, `expandable-card.css` already handles shared behavior. Not worth abstracting.
 - [ ] **Add JSDoc comments** - Document all public functions (~4 hours)
 
 ### Low Priority (Nice to Have)
@@ -756,9 +778,9 @@ All high-priority MVP tools complete! 🎉
 ## 📊 PROJECT METRICS
 
 **Files:**
-- 13 HTML tool pages (sigil, moon, rune, sabbat, crystal, herbal, meditation, spell-builder, numerology, affirmation, pendulum, witchy-weather, altar-setup)
-- 13 tool-specific JavaScript files + 6 shared utilities (filter-utils, keyboard-nav, canvas-utils, theme-manager, nav-menu, pdf-utils)
-- 13 tool-specific CSS files + 5 shared stylesheets (shared-theme, expandable-card, print, homepage-styles, nav-menu)
+- 14 HTML tool pages (sigil, moon, rune, sabbat, crystal, herbal, meditation, spell-builder, numerology, affirmation, pendulum, witchy-weather, altar-setup, candle-magic)
+- 14 tool-specific JavaScript files + 6 shared utilities (filter-utils, keyboard-nav, canvas-utils, theme-manager, nav-menu, pdf-utils)
+- 14 tool-specific CSS files + 5 shared stylesheets (shared-theme, expandable-card, print, homepage-styles, nav-menu)
 - 1 homepage
 
 **Architecture:**

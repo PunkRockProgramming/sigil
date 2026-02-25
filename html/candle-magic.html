@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candle Magic Guide | Mystical Path Tools</title>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/candle-magic-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+
+        <header>
+            <h1>🔥 Candle Magic Guide</h1>
+            <p class="subtitle">Color Correspondences & Spell Templates</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Fire Safety Disclaimer -->
+        <section class="safety-disclaimer" role="alert" aria-labelledby="safety-heading">
+            <h2 id="safety-heading">🔥 Fire Safety</h2>
+            <p>
+                Never leave burning candles unattended. Keep away from flammable materials, children, and pets.
+                Burn on heat-resistant surfaces. Trim wicks to ¼ inch before each use. Never burn candles in drafts.
+                Extinguish if the flame grows too large or flickers excessively.
+            </p>
+        </section>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-nav" role="tablist" aria-label="Candle magic sections">
+            <button id="tab-colors" class="tab-btn active" role="tab" aria-selected="true"
+                    aria-controls="colors-section" data-tab="colors">
+                🕯️ Color Reference
+            </button>
+            <button id="tab-spells" class="tab-btn" role="tab" aria-selected="false"
+                    aria-controls="spells-section" data-tab="spells">
+                ✨ Spell Templates
+            </button>
+        </nav>
+
+        <!-- ===== COLOR REFERENCE SECTION ===== -->
+        <section id="colors-section" class="tab-section" role="tabpanel" aria-labelledby="tab-colors">
+
+            <div class="section-intro">
+                <p>Each candle color carries unique magical correspondences — planetary energy, elemental affinity,
+                chakra resonance, and spiritual intention. Choose your color with purpose, then dress and charge your
+                candle before working. White can substitute for any color in a pinch.</p>
+            </div>
+
+            <!-- Color Filters -->
+            <div class="filter-section" role="search" aria-label="Search and filter candle colors">
+                <div class="search-container">
+                    <input type="text" id="color-search" placeholder="🔍 Search colors..."
+                           aria-label="Search candle colors by name or intention" />
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="element-filter">Element:</label>
+                        <select id="element-filter" aria-label="Filter by element">
+                            <option value="all">All Elements</option>
+                            <option value="Fire">Fire</option>
+                            <option value="Water">Water</option>
+                            <option value="Air">Air</option>
+                            <option value="Earth">Earth</option>
+                            <option value="Spirit">Spirit</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="intention-filter">Intention:</label>
+                        <select id="intention-filter" aria-label="Filter by intention">
+                            <option value="all">All Intentions</option>
+                            <option value="Love">Love</option>
+                            <option value="Protection">Protection</option>
+                            <option value="Abundance">Abundance</option>
+                            <option value="Success">Success</option>
+                            <option value="Healing">Healing</option>
+                            <option value="Peace">Peace</option>
+                            <option value="Clarity">Clarity</option>
+                            <option value="Intuition">Intuition</option>
+                            <option value="Power">Power</option>
+                            <option value="Banishing">Banishing</option>
+                            <option value="Grounding">Grounding</option>
+                            <option value="Spiritual Growth">Spiritual Growth</option>
+                        </select>
+                    </div>
+                    <button id="clear-color-filters" class="clear-btn" aria-label="Clear color filters">Clear</button>
+                </div>
+                <div class="results-count" role="status" aria-live="polite">
+                    Showing <span id="color-count">0</span> colors
+                </div>
+            </div>
+
+            <!-- Color Grid -->
+            <div id="colors-grid" class="cards-grid" role="region" aria-live="polite" aria-label="Candle color results">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ===== SPELL TEMPLATES SECTION ===== -->
+        <section id="spells-section" class="tab-section hidden" role="tabpanel" aria-labelledby="tab-spells">
+
+            <div class="section-intro">
+                <p>These spell templates are starting points — adapt them to your path, materials, and needs.
+                Magic is most potent when infused with your own energy and intention. Timing with moon phases
+                and planetary days amplifies results, but any time you cast with genuine focus is the right time.</p>
+            </div>
+
+            <!-- Spell Filters -->
+            <div class="filter-section" role="search" aria-label="Search and filter spell templates">
+                <div class="search-container">
+                    <input type="text" id="spell-search" placeholder="🔍 Search spells..."
+                           aria-label="Search spell templates by name or intent" />
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="intent-filter">Intent:</label>
+                        <select id="intent-filter" aria-label="Filter spells by intent">
+                            <option value="all">All Intents</option>
+                            <option value="Love">Love</option>
+                            <option value="Protection">Protection</option>
+                            <option value="Abundance">Abundance</option>
+                            <option value="Success">Success</option>
+                            <option value="Healing">Healing</option>
+                            <option value="Peace">Peace</option>
+                            <option value="Clarity">Clarity</option>
+                            <option value="Banishing">Banishing</option>
+                            <option value="Self-Love">Self-Love</option>
+                            <option value="Divination">Divination</option>
+                            <option value="Home">Home</option>
+                            <option value="Manifestation">Manifestation</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="moon-filter">Moon Phase:</label>
+                        <select id="moon-filter" aria-label="Filter spells by moon phase">
+                            <option value="all">All Phases</option>
+                            <option value="New Moon">New Moon</option>
+                            <option value="Waxing Moon">Waxing Moon</option>
+                            <option value="Full Moon">Full Moon</option>
+                            <option value="Waning Moon">Waning Moon</option>
+                        </select>
+                    </div>
+                    <button id="clear-spell-filters" class="clear-btn" aria-label="Clear spell filters">Clear</button>
+                    <button class="pdf-download-btn" onclick="downloadToolAsPDF('Candle Magic Guide', 'spells')"
+                            aria-label="Download spell templates as PDF">📄 PDF</button>
+                </div>
+                <div class="results-count" role="status" aria-live="polite">
+                    Showing <span id="spell-count">0</span> spells
+                </div>
+            </div>
+
+            <!-- Spell Grid -->
+            <div id="spells-grid" class="cards-grid" role="region" aria-live="polite" aria-label="Spell template results">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Candle Basics Reference -->
+        <section class="basics-section" role="region" aria-labelledby="basics-heading">
+            <h2 id="basics-heading">🕯️ Candle Magic Basics</h2>
+            <div class="basics-grid">
+                <div class="basics-card">
+                    <h3>🫙 Dressing a Candle</h3>
+                    <p>Anoint with oil by rubbing from center outward (to release) or center inward (to attract).
+                    Herbs can be rolled into the oil. Always state your intention aloud as you dress the candle.</p>
+                </div>
+                <div class="basics-card">
+                    <h3>🌙 Timing Your Work</h3>
+                    <p>Waxing Moon for drawing things to you. Full Moon for maximum power.
+                    Waning Moon for releasing and banishing. New Moon for new beginnings and planting seeds.</p>
+                </div>
+                <div class="basics-card">
+                    <h3>🔥 Burning Methods</h3>
+                    <p>Let candles burn completely when possible. If interrupted, snuff — never blow out a spell candle.
+                    Chime candles (4") burn fully in 1-2 hours and are ideal for spellwork.</p>
+                </div>
+                <div class="basics-card">
+                    <h3>✨ Charging Your Candle</h3>
+                    <p>Hold the candle in both hands, close your eyes, and breathe your intention into it.
+                    Visualize your goal as already achieved. The candle holds this charged energy throughout the working.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>🔥 Fire is the element of transformation. Work with intention, respect, and care. 🔥</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/keyboard-nav.js"></script>
+    <script src="../js/pdf-utils.js"></script>
+    <script src="../js/candle-magic-script.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

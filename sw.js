@@ -1,7 +1,7 @@
 // Mystical Path Tools - Service Worker
 // Enables offline functionality and fast loading
 
-const CACHE_NAME = 'mystical-path-v1.1';
+const CACHE_NAME = 'mystical-path-v1.2';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache on install
@@ -38,7 +38,8 @@ const PRECACHE_ASSETS = [
   '/html/pendulum-tool.html',
   '/html/witchy-weather.html',
   '/html/altar-setup.html',
-  
+  '/html/candle-magic.html',
+
   // Tool-specific CSS
   '/css/sigil-styles.css',
   '/css/moon-styles.css',
@@ -53,7 +54,8 @@ const PRECACHE_ASSETS = [
   '/css/pendulum-styles.css',
   '/css/weather-styles.css',
   '/css/altar-styles.css',
-  
+  '/css/candle-magic-styles.css',
+
   // Tool-specific JavaScript
   '/js/sigil-script.js',
   '/js/moon-script.js',
@@ -68,7 +70,8 @@ const PRECACHE_ASSETS = [
   '/js/pendulum-script.js',
   '/js/weather-script.js',
   '/js/altar-script.js',
-  
+  '/js/candle-magic-script.js',
+
   // Manifest
   '/manifest.json'
 ];
