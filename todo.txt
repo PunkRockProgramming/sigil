@@ -3,11 +3,24 @@
 See ROADMAP.md for active development tracking.
 This file contains all ideas for future expansion.
 
-## ✅ COMPLETED
----------------
+🎉 v1.0.0 SHIPPED (February 27, 2026) — All 13 tools complete!
+   See ROADMAP.md "Completed Tools" section for full metrics.
+
+## ✅ COMPLETED (v1.0)
+----------------------
 ✓ Sigil Generator (14 algorithms, canvas, rune simplification)
 ✓ Lunar Tracker (33 rituals, moon phases, calendar)
 ✓ Rune Caster (24 Elder Futhark, 4 spreads, bind runes)
+✓ Sabbat Calendar (8 sabbats, hemisphere support, countdown)
+✓ Crystal Properties Database (25 crystals, collection tracker)
+✓ Herbal Correspondences Guide (22 herbs, safety system)
+✓ Meditation Timer (Web Audio, SVG progress ring)
+✓ Spell Builder & Grimoire (full spell creation + localStorage)
+✓ Numerology Calculator (Life Path, Soul Urge, Destiny, Personality)
+✓ Affirmation Generator (80 affirmations, 8 categories, favorites)
+✓ Pendulum Decision Tool (canvas physics animation, history)
+✓ Witchy Weather (OpenWeatherMap API, 8 weather types)
+✓ Altar Setup Guide (compass diagram, 16 tools, 8 layouts)
 
 ## Divination Tools
 ------------------
@@ -19,13 +32,8 @@ This file contains all ideas for future expansion.
   - Journal entries to track readings over time
   REUSE: Rune spread layouts, expandable cards, random drawing
 
-☐ Pendulum Decision Tool
-  - Interactive pendulum visualization
-  - Yes/No questions
-  - Multiple choice options
-  - Chart templates (percentage, elements, chakras)
-  - Question history log
-  REUSE: Canvas drawing from sigil, theme system
+✓ Pendulum Decision Tool — SHIPPED (Feb 26, 2026)
+  Canvas physics animation, 4 answers, question history
 
 ☐ Scrying Mirror / Crystal Ball
   - Meditation timer with ambient sounds
@@ -37,7 +45,7 @@ This file contains all ideas for future expansion.
 
 ## Reference & Learning Tools [DATA-DRIVEN FAMILY]
 --------------------------------------------------
-☐ Crystal Properties Database [PRIORITY 1 - See ROADMAP.md]
+✓ Crystal Properties Database — SHIPPED (Feb 25, 2026)
   - Searchable crystal library (100+ stones)
   - Filter by intention (love, protection, abundance, etc.)
   - Chakra correspondences
@@ -46,7 +54,7 @@ This file contains all ideas for future expansion.
   - Shopping list / collection tracker
   REUSE: Moon ritual card pattern, filtering, large data arrays
 
-☐ Herbal Correspondences Guide [PRIORITY 5 - See ROADMAP.md]
+✓ Herbal Correspondences Guide — SHIPPED (Feb 25, 2026)
   - Magical herb database
   - Search by intention or property
   - Safety warnings & contraindications
@@ -89,7 +97,7 @@ This file contains all ideas for future expansion.
   REUSE: Moon calculation patterns, date/time handling
   CHALLENGE: Geolocation or manual lat/long, sunrise/sunset calc
 
-☐ Sabbat Calendar & Wheel of the Year [PRIORITY 3 - See ROADMAP.md]
+✓ Sabbat Calendar & Wheel of the Year — SHIPPED (Feb 25, 2026)
   - 8 Sabbat dates (hemisphere-aware)
   - Correspondences for each sabbat
   - Ritual suggestions
@@ -108,7 +116,7 @@ This file contains all ideas for future expansion.
 
 ## Practical Magick Tools [INTERACTIVE BUILDING FAMILY]
 -------------------------------------------------------
-☐ Spell Builder & Grimoire
+✓ Spell Builder & Grimoire — SHIPPED (Feb 26, 2026)
   - Template-based spell creator
   - Ingredient/tool suggestions based on intention
   - Timing recommendations (moon phase, day, hour)
@@ -118,7 +126,7 @@ This file contains all ideas for future expansion.
   REUSE: LocalStorage for saving, ingredient databases, timing from moon/planetary
   FEATURE: Builds on ALL existing correspondences
 
-☐ Altar Design Assistant
+✓ Altar Setup Guide — SHIPPED (Feb 25, 2026)
   - Seasonal altar ideas
   - Element placement guide
   - Tool placement (athame, wand, chalice, pentacle)
@@ -134,7 +142,7 @@ This file contains all ideas for future expansion.
   - Visualization scripts
   REUSE: Step-by-step instructions like rituals, checklist UI
 
-☐ Meditation & Grounding Library
+✓ Meditation Timer — SHIPPED (Feb 26, 2026) — see Meditation Timer in completed tools
   - Guided meditations (audio or text)
   - Chakra balancing exercises
   - Grounding techniques
@@ -176,7 +184,7 @@ This file contains all ideas for future expansion.
   REUSE: Canvas API from sigil, download functionality
   NEW: Image upload/manipulation
 
-☐ Affirmation & Mantra Generator
+✓ Affirmation Generator — SHIPPED (Feb 26, 2026)
   - Customizable by intention
   - Daily affirmation delivery
   - Voice recording for self-affirmations
@@ -226,8 +234,8 @@ This file contains all ideas for future expansion.
 ☐ Spellwork Timer with Ritual Music (Timer + audio)
 ☐ Moon Water Reminder Notifications (Date calc + browser notifications)
 ☐ Retrograde Survival Guide (Simple reference with dates)
-☐ Witchy Weather (Weather API + correspondences)
-☐ Numerology Calculator (Math algorithms + interpretations)
+✓ Witchy Weather (Weather API + correspondences) — SHIPPED (Feb 26, 2026)
+✓ Numerology Calculator (Math algorithms + interpretations) — SHIPPED (Feb 26, 2026)
 ☐ Sacred Geometry Generator (Canvas drawing algorithms)
 ☐ Altar Supply Inventory Tracker (LocalStorage CRUD)
 ☐ Spell Ingredients Shopping List (LocalStorage list management)
@@ -241,11 +249,11 @@ NOTE: These are lighter-weight experiments that could be built quickly
 See ROADMAP.md for detailed technical debt tracking.
 
 ### Cross-Tool Improvements
-☐ Accessibility audit (ARIA labels, keyboard nav, screen readers)
-☐ Print-friendly versions (@media print CSS)
-☐ PDF export functionality (library integration or print-to-PDF)
+✓ Accessibility audit (ARIA labels, keyboard nav, screen readers) — ALL 13 tools
+✓ Print-friendly versions (@media print CSS) — css/print.css
+✓ PDF export functionality — js/pdf-utils.js + 6 tool integrations
 ☐ Share via link (encode state in URL parameters)
-☐ PWA capability (manifest.json, service worker, offline mode)
+✓ PWA capability (manifest.json, service worker, offline mode) — shipped v1.0
 ☐ Performance optimization (Lighthouse audit)
 
 ### Sigil Generator Specific

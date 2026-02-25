@@ -1,6 +1,6 @@
 # 🔮 Mystical Path Tools - Development Roadmap
 
-**Last Updated:** February 26, 2026
+**Last Updated:** February 27, 2026
 
 ---
 
@@ -379,8 +379,6 @@ All 13 tools complete! Ready for v1.0 launch! 🎉
 
 ### ✅ Infrastructure Sprint - COMPLETE (Feb 27, 2026)
 
-### ✅ Infrastructure Sprint - COMPLETE (Feb 27, 2026)
-
 **Sprint Goal:** Progressive Web App + PDF Export for all tools
 
 **Completed:**
@@ -580,8 +578,8 @@ All 13 tools complete! Ready for v1.0 launch! 🎉
 
 ---
 
-**Generated:** 2/25/2026  
-**Last Updated:** February 25, 2026
+**Generated:** 2/25/2026
+**Last Updated:** February 27, 2026
 
 ---
 
@@ -680,11 +678,11 @@ All high-priority MVP tools complete! 🎉
 ## 🔧 TECHNICAL DEBT & IMPROVEMENTS (Tool-Specific)
 
 ### All Tools
-- [ ] Accessibility audit (ARIA labels, keyboard nav, screen reader testing)
-- [ ] Print-friendly CSS (`@media print`)
-- [ ] PDF export functionality
+- [done] Accessibility audit — ARIA labels + keyboard nav across all 13 tools
+- [done] Print-friendly CSS — `css/print.css` (354 lines)
+- [done] PDF export functionality — `js/pdf-utils.js` + 6 tool integrations
 - [ ] Share via URL (encode state in query params)
-- [ ] PWA manifest for offline capability
+- [done] PWA manifest for offline capability — `manifest.json`, `sw.js`, `offline.html`
 - [ ] Performance audit (lighthouse scores)
 
 ### Sigil Generator
@@ -758,9 +756,9 @@ All high-priority MVP tools complete! 🎉
 ## 📊 PROJECT METRICS
 
 **Files:**
-- 11 HTML tool pages (sigil, moon, rune, sabbat, crystal, herbal, meditation, spell-builder, numerology, affirmation, pendulum)
-- 11 tool-specific JavaScript files + 4 shared utilities (filter-utils, keyboard-nav, canvas-utils, theme-manager)
-- 11 tool-specific CSS files + 4 shared stylesheets (shared-theme, expandable-card, print, homepage-styles)
+- 13 HTML tool pages (sigil, moon, rune, sabbat, crystal, herbal, meditation, spell-builder, numerology, affirmation, pendulum, witchy-weather, altar-setup)
+- 13 tool-specific JavaScript files + 6 shared utilities (filter-utils, keyboard-nav, canvas-utils, theme-manager, nav-menu, pdf-utils)
+- 13 tool-specific CSS files + 5 shared stylesheets (shared-theme, expandable-card, print, homepage-styles, nav-menu)
 - 1 homepage
 
 **Architecture:**
@@ -798,7 +796,6 @@ All high-priority MVP tools complete! 🎉
 
 **Potential Infrastructure Upgrades:**
 - User accounts & cloud sync (Firebase/Supabase)
-- PWA with service worker
 - Backend API for community features
 - Mobile native apps (React Native/Flutter)
 
