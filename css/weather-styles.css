@@ -1,0 +1,675 @@
+/* WEATHER TOOL STYLES */
+
+/* Tool-Specific Theme Variables */
+:root {
+    --primary: #22c55e;
+    --secondary: #16a34a;
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #4ade80;
+    --background: #0a1f0d;
+    --card-bg: rgba(34, 197, 94, 0.1);
+    --border: rgba(34, 197, 94, 0.3);
+    --shadow: rgba(34, 197, 94, 0.3);
+    --element-fire: #f97316;
+    --element-water: #3b82f6;
+    --element-air: #fbbf24;
+    --element-earth: #84cc16;
+}
+
+[data-theme="shadow-work"] {
+    --primary: #4a5568;
+    --secondary: #2d3748;
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #718096;
+    --background: #0d1117;
+    --card-bg: rgba(74, 85, 104, 0.1);
+    --border: rgba(74, 85, 104, 0.3);
+    --shadow: rgba(74, 85, 104, 0.3);
+    --element-fire: #dc2626;
+    --element-water: #1e40af;
+    --element-air: #64748b;
+    --element-earth: #374151;
+}
+
+[data-theme="chaos-magick"] {
+    --primary: #8b5cf6;
+    --secondary: #6366f1;
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #a78bfa;
+    --background: #0f0d29;
+    --card-bg: rgba(139, 92, 246, 0.1);
+    --border: rgba(139, 92, 246, 0.3);
+    --shadow: rgba(139, 92, 246, 0.3);
+    --element-fire: #f97316;
+    --element-water: #06b6d4;
+    --element-air: #fbbf24;
+    --element-earth: #84cc16;
+}
+
+[data-theme="golden-dawn"] {
+    --primary: #fbbf24;
+    --secondary: #f59e0b;
+    --text: #1e293b;
+    --text-secondary: #475569;
+    --accent: #fcd34d;
+    --background: #fef3c7;
+    --card-bg: rgba(251, 191, 36, 0.15);
+    --border: rgba(251, 191, 36, 0.4);
+    --shadow: rgba(251, 191, 36, 0.2);
+    --element-fire: #dc2626;
+    --element-water: #2563eb;
+    --element-air: #fbbf24;
+    --element-earth: #16a34a;
+}
+
+[data-theme="blood-moon"] {
+    --primary: #dc2626;
+    --secondary: #b91c1c;
+    --text: #fef2f2;
+    --text-secondary: #fecaca;
+    --accent: #f87171;
+    --background: #1a0505;
+    --card-bg: rgba(220, 38, 38, 0.1);
+    --border: rgba(220, 38, 38, 0.3);
+    --shadow: rgba(220, 38, 38, 0.3);
+    --element-fire: #dc2626;
+    --element-water: #7c2d12;
+    --element-air: #881337;
+    --element-earth: #713f12;
+}
+
+[data-theme="lunar-tides"] {
+    --primary: #06b6d4;
+    --secondary: #0891b2;
+    --text: #e0f2fe;
+    --text-secondary: #bae6fd;
+    --accent: #22d3ee;
+    --background: #0c1821;
+    --card-bg: rgba(6, 182, 212, 0.1);
+    --border: rgba(6, 182, 212, 0.3);
+    --shadow: rgba(6, 182, 212, 0.3);
+    --element-fire: #ea580c;
+    --element-water: #0284c7;
+    --element-air: #06b6d4;
+    --element-earth: #059669;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    text-shadow: 0 0 20px var(--shadow);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+select {
+    margin-top: 1.5rem;
+}
+
+/* Weather Section */
+.weather-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.weather-section h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Location Controls */
+.location-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.search-wrapper {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#city-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+#city-input::placeholder {
+    color: var(--text-secondary);
+}
+
+#search-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--background);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#search-btn:hover {
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--shadow);
+    transform: translateY(-2px);
+}
+
+.geolocation-btn,
+.demo-btn {
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.geolocation-btn:hover,
+.demo-btn:hover {
+    background: var(--card-bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--shadow);
+}
+
+/* API Key Section */
+.api-key-section {
+    margin-top: 1.5rem;
+}
+
+.api-key-section details {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.api-key-section summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.api-key-section summary:hover {
+    color: var(--primary);
+}
+
+.api-key-section p {
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+}
+
+.api-key-section ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.api-key-section a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.api-input-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+#api-key-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+#save-key-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--secondary);
+    color: var(--text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#save-key-btn:hover {
+    background: var(--primary);
+    box-shadow: 0 0 15px var(--shadow);
+}
+
+/* Weather Display */
+.weather-display {
+    margin-bottom: 2rem;
+}
+
+.weather-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+.weather-icon {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    animation: popIn 0.5s ease;
+}
+
+.weather-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.weather-desc {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.weather-temp {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.weather-feels {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.weather-details {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.weather-details span {
+    color: var(--text-secondary);
+}
+
+/* Element Badge */
+.element-badge {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: shimmer 2s infinite;
+}
+
+.fire-element,
+.air-fire-element {
+    background: linear-gradient(135deg, var(--element-fire), #fb923c);
+    color: #fff;
+}
+
+.water-element,
+.water-air-element {
+    background: linear-gradient(135deg, var(--element-water), #60a5fa);
+    color: #fff;
+}
+
+.air-element {
+    background: linear-gradient(135deg, var(--element-air), #fde047);
+    color: #000;
+}
+
+.earth-element,
+.earth-water-element {
+    background: linear-gradient(135deg, var(--element-earth), #a3e635);
+    color: #000;
+}
+
+.all-elements-element {
+    background: linear-gradient(135deg, var(--element-fire), var(--element-water), var(--element-air), var(--element-earth));
+    color: #fff;
+}
+
+/* Correspondences Section */
+.correspondences-section {
+    margin-bottom: 2rem;
+}
+
+.correspondences-section h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.correspondence-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.correspondence-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.correspondence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.corr-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.corr-item strong {
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.deity-list,
+.correspondence-list,
+.affirmation {
+    margin-top: 1.5rem;
+}
+
+.deity-list strong,
+.correspondence-list strong,
+.affirmation strong {
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.deity-list p {
+    color: var(--text-secondary);
+}
+
+.correspondence-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.correspondence-list li {
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.correspondence-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.affirmation p {
+    font-size: 1.1rem;
+    color: var(--text);
+    font-style: italic;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+/* Ritual Section */
+.ritual-section {
+    margin-bottom: 2rem;
+}
+
+.ritual-section h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.ritual-list {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.ritual-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.ritual-item:last-child {
+    border-bottom: none;
+}
+
+.ritual-bullet {
+    color: var(--primary);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.ritual-item span:last-child {
+    color: var(--text-secondary);
+    flex: 1;
+}
+
+/* Moon Integration Section */
+.moon-integration {
+    margin-bottom: 2rem;
+}
+
+.moon-integration h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.moon-combo-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+.combo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.combo-plus {
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.moon-combo-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.combo-suggestion {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.combo-hint {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Tips Section */
+.tips-section {
+    margin-bottom: 2rem;
+}
+
+.tips-section h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px var(--shadow);
+    border-color: var(--primary);
+}
+
+.tip-card h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.tip-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .location-controls {
+        flex-direction: column;
+    }
+    
+    .search-wrapper {
+        min-width: 100%;
+    }
+    
+    .weather-icon {
+        font-size: 4rem;
+    }
+    
+    .weather-temp {
+        font-size: 2rem;
+    }
+    
+    .correspondence-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .weather-section,
+    .weather-card,
+    .correspondence-card,
+    .ritual-list,
+    .moon-combo-card {
+        padding: 1.5rem;
+    }
+}

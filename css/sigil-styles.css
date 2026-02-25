@@ -1,0 +1,559 @@
+/* ========================================
+   SIGIL GENERATOR - SPECIFIC STYLES
+   Requires: shared-theme.css
+   ======================================== */
+
+/* Input Section */
+.input-section {
+    background: var(--input-section-bg);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.instructions {
+    color: var(--subtle);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Output Section */
+.output-section {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.process-steps {
+    margin-bottom: 40px;
+}
+
+.step {
+    background: var(--step-bg);
+    border-left: 4px solid var(--secondary);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.step h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.result-box {
+    background: var(--result-box-bg);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--result-box-border);
+}
+
+.hint {
+    color: var(--subtle);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.final-step {
+    border-left-color: var(--primary);
+    background: var(--final-step-bg);
+}
+
+/* Letter Grid Display */
+.letter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, var(--letter-grid-bg-inner), var(--letter-grid-bg-outer));
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid var(--letter-grid-border);
+    box-shadow: inset 0 0 30px var(--letter-grid-shadow);
+}
+
+.letter-item {
+    width: 70px;
+    height: 80px;
+    background: linear-gradient(135deg, 
+        var(--letter-1) 0%, 
+        var(--letter-2) 25%, 
+        var(--letter-3) 50%, 
+        var(--letter-4) 75%, 
+        var(--letter-5) 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'MedievalSharp', 'Cinzel', 'Papyrus', serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 
+        0 4px 15px var(--letter-glow),
+        inset 0 -2px 8px rgba(0, 0, 0, 0.3),
+        inset 0 2px 8px rgba(255, 255, 255, 0.2);
+    animation: popIn 0.3s ease-out forwards, shimmer 3s ease-in-out infinite;
+    opacity: 0;
+    position: relative;
+}
+
+.letter-item::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 30%;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    filter: blur(4px);
+}
+
+.letter-item::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+    width: 25%;
+    height: 15%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    filter: blur(3px);
+}
+
+/* Canvas Section */
+.canvas-section {
+    background: var(--canvas-section-bg);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.canvas-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.canvas-controls button {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+}
+
+#auto-generate {
+    background: linear-gradient(135deg, var(--auto-generate-start), var(--auto-generate-end));
+    font-weight: 700;
+}
+
+#auto-generate:hover {
+    background: linear-gradient(135deg, var(--auto-generate-hover-start), var(--auto-generate-hover-end));
+}
+
+#simplify-rune {
+    background: linear-gradient(135deg, var(--secondary), var(--dark));
+    font-weight: 600;
+    border: 1px solid var(--accent);
+}
+
+#simplify-rune:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow: 0 0 20px var(--simplify-hover-shadow);
+}
+
+#generation-style {
+    padding: 10px 15px;
+    background: var(--input-bg);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#generation-style:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.canvas-hint {
+    color: var(--subtle);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-style: italic;
+}
+
+#color-picker {
+    width: 60px;
+    height: 40px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+}
+
+#brush-size {
+    width: 150px;
+}
+
+#brush-size-label {
+    color: var(--subtle);
+    min-width: 40px;
+}
+
+#sigil-canvas {
+    background: #ffffff;
+    border-radius: 10px;
+    cursor: crosshair;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Activation Section */
+.activation-section {
+    background: var(--activation-section-bg);
+    border: 2px solid var(--secondary);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.activation-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.method {
+    background: var(--method-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--method-border);
+}
+
+.method h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.method p {
+    color: var(--subtle);
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    color: var(--subtle);
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .letter-item {
+        width: 60px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+    
+    #sigil-canvas {
+        width: 100%;
+    }
+    
+    .canvas-controls {
+        gap: 10px;
+    }
+}
+
+
+.result-box {
+    background: var(--result-box-bg);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--result-box-border);
+}
+
+.hint {
+    color: var(--subtle);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.final-step {
+    border-left-color: var(--primary);
+    background: var(--final-step-bg);
+}
+
+.letter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, var(--letter-grid-bg-inner), var(--letter-grid-bg-outer));
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 2px solid var(--letter-grid-border);
+    box-shadow: inset 0 0 30px var(--letter-grid-shadow);
+}
+
+.letter-item {
+    width: 70px;
+    height: 80px;
+    background: linear-gradient(135deg, 
+        var(--letter-1) 0%, 
+        var(--letter-2) 25%, 
+        var(--letter-3) 50%, 
+        var(--letter-4) 75%, 
+        var(--letter-5) 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'MedievalSharp', 'Cinzel', 'Papyrus', serif;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 
+        0 4px 15px var(--letter-glow),
+        inset 0 -2px 8px rgba(0, 0, 0, 0.3),
+        inset 0 2px 8px rgba(255, 255, 255, 0.2);
+    animation: popIn 0.3s ease-out forwards, shimmer 3s ease-in-out infinite;
+    opacity: 0;
+    position: relative;
+}
+
+.letter-item::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 30%;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    filter: blur(4px);
+}
+
+.letter-item::after {
+    content: '';
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+    width: 25%;
+    height: 15%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    filter: blur(3px);
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.canvas-section {
+    background: var(--canvas-section-bg);
+    border: 2px solid var(--primary);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.canvas-section h3 {
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.canvas-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.canvas-controls button {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+}
+
+#auto-generate {
+    background: linear-gradient(135deg, var(--auto-generate-start), var(--auto-generate-end));
+    font-weight: 700;
+}
+
+#auto-generate:hover {
+    background: linear-gradient(135deg, var(--auto-generate-hover-start), var(--auto-generate-hover-end));
+}
+
+#simplify-rune {
+    background: linear-gradient(135deg, var(--secondary), var(--dark));
+    font-weight: 600;
+    border: 1px solid var(--accent);
+}
+
+#simplify-rune:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow: 0 0 20px var(--simplify-hover-shadow);
+}
+
+#generation-style {
+    padding: 10px 15px;
+    background: var(--input-bg);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#generation-style:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.canvas-hint {
+    color: var(--subtle);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-style: italic;
+}
+
+#color-picker {
+    width: 60px;
+    height: 40px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+}
+
+#brush-size {
+    width: 150px;
+}
+
+#brush-size-label {
+    color: var(--subtle);
+    min-width: 40px;
+}
+
+#sigil-canvas {
+    background: #ffffff;
+    border-radius: 10px;
+    cursor: crosshair;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.activation-section {
+    background: var(--activation-section-bg);
+    border: 2px solid var(--secondary);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.activation-section h3 {
+    color: var(--accent);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.activation-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.method {
+    background: var(--method-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--method-border);
+}
+
+.method h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.method p {
+    color: var(--subtle);
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    color: var(--subtle);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .letter-item {
+        width: 60px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+    
+    #sigil-canvas {
+        width: 100%;
+    }
+    
+    .canvas-controls {
+        gap: 10px;
+    }
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rune Caster - Elder Futhark Divination | Mystical Path Tools</title>    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+        <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/rune-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+        
+        <header>
+            <h1>ᚱ Elder Futhark Rune Caster</h1>
+            <p class="subtitle">Ancient Norse Wisdom Through the Elder Futhark</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Spread Selection -->
+        <section class="spread-selection" role="region" aria-labelledby="cast-heading">
+            <h2 id="cast-heading">Cast the Runes</h2>
+            <p class="intro-text">
+                The Elder Futhark consists of 24 ancient runes used by Norse and Germanic peoples for divination, 
+                magic, and communication. Each rune carries deep symbolic meaning and can guide you through 
+                life's questions. Select your spread and cast the runes to receive their wisdom.
+            </p>
+            
+            <div class="spread-controls">
+                <div class="control-group">
+                    <label for="spread-selector">Choose Your Spread:</label>
+                    <select id="spread-selector" aria-label="Choose rune spread type">
+                        <option value="daily-draw">Daily Rune (1 rune)</option>
+                        <option value="three-rune">Past-Present-Future (3 runes)</option>
+                        <option value="five-cross" selected>Five Rune Cross (5 runes)</option>
+                        <option value="runic-cross">Runic Cross (6 runes)</option>
+                    </select>
+                </div>
+                
+                <button id="cast-button" class="cast-btn">Cast the Runes ᛟ</button>
+            </div>
+            
+            <div class="spread-info" id="spread-info">
+                <h3>Five Rune Cross</h3>
+                <p>Deep insight into challenges and outcomes. This spread reveals your current position, 
+                the obstacles you face, the foundation from your past, the path ahead, and the ultimate outcome.</p>
+            </div>
+        </section>
+
+        <!-- Rune Display (hidden initially) -->
+        <section id="rune-display" class="rune-display-section" style="display: none;" role="region" aria-live="polite" aria-labelledby="reading-heading">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 id="reading-heading" style="margin: 0;">Your Reading</h2>
+                <button class="pdf-download-btn" onclick="downloadToolAsPDF('Rune Caster', 'reading')" aria-label="Download rune reading as PDF">📄 Download PDF</button>
+            </div>
+            <div id="rune-grid" class="rune-grid" role="list"></div>
+            
+            <div class="reading-actions">
+                <button id="cast-button-2" class="secondary-btn">Cast Again</button>
+            </div>
+        </section>
+
+        <!-- Bind Rune Creator -->
+        <section class="bind-rune-section" role="region" aria-labelledby="bind-heading">
+            <h2 id="bind-heading">Bind Rune Creator</h2>
+            <p class="section-description">
+                Create a bind rune by combining 2-5 runes into a single powerful symbol. 
+                Select the runes whose energies you wish to merge, then combine them on the canvas below.
+            </p>
+            
+            <div class="bind-rune-container">
+                <div class="rune-selector-grid">
+                    <h3>Select Runes to Bind</h3>
+                    <div class="rune-checkboxes">
+                        <!-- Freya's Aett -->
+                        <div class="aett-group">
+                            <h4>Freya's Aett</h4>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Fehu">
+                                <span class="checkbox-rune">ᚠ Fehu</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Uruz">
+                                <span class="checkbox-rune">ᚢ Uruz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Thurisaz">
+                                <span class="checkbox-rune">ᚦ Thurisaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Ansuz">
+                                <span class="checkbox-rune">ᚨ Ansuz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Raidho">
+                                <span class="checkbox-rune">ᚱ Raidho</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Kenaz">
+                                <span class="checkbox-rune">ᚲ Kenaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Gebo">
+                                <span class="checkbox-rune">ᚷ Gebo</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Wunjo">
+                                <span class="checkbox-rune">ᚹ Wunjo</span>
+                            </label>
+                        </div>
+                        
+                        <!-- Heimdall's Aett -->
+                        <div class="aett-group">
+                            <h4>Heimdall's Aett</h4>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Hagalaz">
+                                <span class="checkbox-rune">ᚺ Hagalaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Nauthiz">
+                                <span class="checkbox-rune">ᚾ Nauthiz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Isa">
+                                <span class="checkbox-rune">ᛁ Isa</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Jera">
+                                <span class="checkbox-rune">ᛃ Jera</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Eihwaz">
+                                <span class="checkbox-rune">ᛇ Eihwaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Perthro">
+                                <span class="checkbox-rune">ᛈ Perthro</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Algiz">
+                                <span class="checkbox-rune">ᛉ Algiz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Sowilo">
+                                <span class="checkbox-rune">ᛊ Sowilo</span>
+                            </label>
+                        </div>
+                        
+                        <!-- Tyr's Aett -->
+                        <div class="aett-group">
+                            <h4>Tyr's Aett</h4>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Tiwaz">
+                                <span class="checkbox-rune">ᛏ Tiwaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Berkano">
+                                <span class="checkbox-rune">ᛒ Berkano</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Ehwaz">
+                                <span class="checkbox-rune">ᛖ Ehwaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Mannaz">
+                                <span class="checkbox-rune">ᛗ Mannaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Laguz">
+                                <span class="checkbox-rune">ᛚ Laguz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Ingwaz">
+                                <span class="checkbox-rune">ᛝ Ingwaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Dagaz">
+                                <span class="checkbox-rune">ᛞ Dagaz</span>
+                            </label>
+                            <label class="rune-checkbox-label">
+                                <input type="checkbox" class="bind-rune-checkbox" value="Othala">
+                                <span class="checkbox-rune">ᛟ Othala</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="canvas-area">
+                    <h3>Your Bind Rune</h3>
+                    <canvas id="bind-canvas" width="600" height="600" aria-label="Canvas for creating bind rune"></canvas>
+                    <div class="bind-controls">
+                        <button id="combine-button" class="primary-btn" aria-label="Combine selected runes into bind rune">Combine Runes</button>
+                        <button id="clear-bind" class="secondary-btn" aria-label="Clear bind rune canvas">Clear Canvas</button>
+                        <button id="download-bind" class="secondary-btn" aria-label="Download bind rune as PNG">Download PNG</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rune Reference Guide -->
+        <section class="rune-reference" role="region" aria-labelledby="reference-heading">
+            <h2 id="reference-heading">Elder Futhark Reference</h2>
+            <p class="section-description">
+                Quick reference for all 24 runes of the Elder Futhark, organized by their traditional aetts (families).
+            </p>
+            
+            <div class="reference-grid">
+                <div class="ref-aett" role="list" aria-label="Freya's Aett runes">
+                    <h3>Freya's Aett</h3>
+                    <p class="aett-description">Themes of creation, abundance, and new beginnings</p>
+                    <div class="ref-runes">
+                        <span class="ref-rune">ᚠ Fehu</span>
+                        <span class="ref-rune">ᚢ Uruz</span>
+                        <span class="ref-rune">ᚦ Thurisaz</span>
+                        <span class="ref-rune">ᚨ Ansuz</span>
+                        <span class="ref-rune">ᚱ Raidho</span>
+                        <span class="ref-rune">ᚲ Kenaz</span>
+                        <span class="ref-rune">ᚷ Gebo</span>
+                        <span class="ref-rune">ᚹ Wunjo</span>
+                    </div>
+                </div>
+                
+                <div class="ref-aett" role="list" aria-label="Heimdall's Aett runes">
+                    <h3>Heimdall's Aett</h3>
+                    <p class="aett-description">Themes of challenge, transformation, and growth through adversity</p>
+                    <div class="ref-runes">
+                        <span class="ref-rune">ᚺ Hagalaz</span>
+                        <span class="ref-rune">ᚾ Nauthiz</span>
+                        <span class="ref-rune">ᛁ Isa</span>
+                        <span class="ref-rune">ᛃ Jera</span>
+                        <span class="ref-rune">ᛇ Eihwaz</span>
+                        <span class="ref-rune">ᛈ Perthro</span>
+                        <span class="ref-rune">ᛉ Algiz</span>
+                        <span class="ref-rune">ᛊ Sowilo</span>
+                    </div>
+                </div>
+                
+                <div class="ref-aett" role="list" aria-label="Tyr's Aett runes">
+                    <h3>Tyr's Aett</h3>
+                    <p class="aett-description">Themes of spiritual development, self-mastery, and completion</p>
+                    <div class="ref-runes">
+                        <span class="ref-rune">ᛏ Tiwaz</span>
+                        <span class="ref-rune">ᛒ Berkano</span>
+                        <span class="ref-rune">ᛖ Ehwaz</span>
+                        <span class="ref-rune">ᛗ Mannaz</span>
+                        <span class="ref-rune">ᛚ Laguz</span>
+                        <span class="ref-rune">ᛝ Ingwaz</span>
+                        <span class="ref-rune">ᛞ Dagaz</span>
+                        <span class="ref-rune">ᛟ Othala</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p class="footer-text">
+                The Elder Futhark runes are an ancient alphabet used by Germanic peoples. 
+                This tool is for divination and spiritual exploration. Trust your intuition when interpreting the runes.
+            </p>
+            <p class="wisdom">
+                <em>"The runes will find you when you need them most."</em>
+            </p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/canvas-utils.js"></script>
+    <script src="../js/pdf-utils.js"></script>
+    <script src="../js/rune-script.js"></script>
+    
+    <script>
+        // Spread info updater
+        const spreadSelector = document.getElementById('spread-selector');
+        const spreadInfo = document.getElementById('spread-info');
+        const castButton2 = document.getElementById('cast-button-2');
+        
+        const spreadDescriptions = {
+            'daily-draw': {
+                name: 'Daily Rune',
+                description: 'A single rune for daily guidance and reflection. Perfect for morning meditation or quick insight into the day ahead.'
+            },
+            'three-rune': {
+                name: 'Past-Present-Future',
+                description: 'Classic three rune spread showing the flow of time. Understand how past influences shape your present and future.'
+            },
+            'five-cross': {
+                name: 'Five Rune Cross',
+                description: 'Deep insight into challenges and outcomes. This spread reveals your current position, the obstacles you face, the foundation from your past, the path ahead, and the ultimate outcome.'
+            },
+            'runic-cross': {
+                name: 'Runic Cross (6 Runes)',
+                description: 'Comprehensive reading with spiritual and material aspects. Examines your situation from multiple dimensions including higher purpose and earthly concerns.'
+            }
+        };
+        
+        spreadSelector.addEventListener('change', () => {
+            const selected = spreadDescriptions[spreadSelector.value];
+            spreadInfo.innerHTML = `
+                <h3>${selected.name}</h3>
+                <p>${selected.description}</p>
+            `;
+        });
+        
+        // Second cast button
+        if (castButton2) {
+            castButton2.addEventListener('click', () => {
+                const spreadKey = spreadSelector.value;
+                const spread = SPREADS[spreadKey];
+                currentCast = castRunes(spread.positions);
+                displaySpread(spreadKey, currentCast);
+            });
+        }
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

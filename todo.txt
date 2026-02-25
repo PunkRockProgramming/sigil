@@ -1,0 +1,325 @@
+✨ MYSTICAL PATH TOOLS - COMPREHENSIVE IDEAS ✨
+================================================
+See ROADMAP.md for active development tracking.
+This file contains all ideas for future expansion.
+
+## ✅ COMPLETED
+---------------
+✓ Sigil Generator (14 algorithms, canvas, rune simplification)
+✓ Lunar Tracker (33 rituals, moon phases, calendar)
+✓ Rune Caster (24 Elder Futhark, 4 spreads, bind runes)
+
+## Divination Tools
+------------------
+☐ Tarot Spread Generator [PRIORITY - See ROADMAP.md]
+  - Daily 1-card draw
+  - Celtic Cross, Past-Present-Future, etc.
+  - Card meanings database (Major & Minor Arcana)
+  - Reversals
+  - Journal entries to track readings over time
+  REUSE: Rune spread layouts, expandable cards, random drawing
+
+☐ Pendulum Decision Tool
+  - Interactive pendulum visualization
+  - Yes/No questions
+  - Multiple choice options
+  - Chart templates (percentage, elements, chakras)
+  - Question history log
+  REUSE: Canvas drawing from sigil, theme system
+
+☐ Scrying Mirror / Crystal Ball
+  - Meditation timer with ambient sounds
+  - Guided scrying meditation
+  - Vision journal
+  - Symbolism interpretation guide
+  REUSE: Timer patterns, localStorage for journal
+
+
+## Reference & Learning Tools [DATA-DRIVEN FAMILY]
+--------------------------------------------------
+☐ Crystal Properties Database [PRIORITY 1 - See ROADMAP.md]
+  - Searchable crystal library (100+ stones)
+  - Filter by intention (love, protection, abundance, etc.)
+  - Chakra correspondences
+  - Cleansing & charging methods
+  - Crystal grid templates
+  - Shopping list / collection tracker
+  REUSE: Moon ritual card pattern, filtering, large data arrays
+
+☐ Herbal Correspondences Guide [PRIORITY 5 - See ROADMAP.md]
+  - Magical herb database
+  - Search by intention or property
+  - Safety warnings & contraindications
+  - Growing tips
+  - Recipes: teas, oils, incense, sachets
+  - Substitution suggestions
+  REUSE: Crystal database patterns, search/filter, safety warnings prominent
+
+☐ Color & Candle Magick Reference
+  - Color meanings for spellwork
+  - Candle spell templates
+  - Dressing & anointing guide
+  - Burn time calculator
+  - Safety tips
+  REUSE: Reference card layout, correspondences structure
+
+☐ Deity & Spirit Guide Compendium
+  - Database of deities from various pantheons
+  - Offerings & correspondences
+  - Invocations & prayers
+  - Cultural context & respect guidelines
+  REUSE: Database patterns, searchable cards, cultural sensitivity
+
+
+## Astrology & Timing [CALCULATION-HEAVY FAMILY]
+------------------------------------------------
+☐ Birth Chart Calculator
+  - Full natal chart generation
+  - Planet placements & houses
+  - Aspects visualization
+  - Interpretations for each placement
+  - Transit tracking
+  COMPLEX: Requires astronomical algorithms or API
+
+☐ Planetary Hours Calculator [PRIORITY 4 - See ROADMAP.md]
+  - Current planetary hour display
+  - Daily/weekly planetary hour table
+  - Magickal correspondences for each planet/hour
+  - Spell timing recommendations
+  REUSE: Moon calculation patterns, date/time handling
+  CHALLENGE: Geolocation or manual lat/long, sunrise/sunset calc
+
+☐ Sabbat Calendar & Wheel of the Year [PRIORITY 3 - See ROADMAP.md]
+  - 8 Sabbat dates (hemisphere-aware)
+  - Correspondences for each sabbat
+  - Ritual suggestions
+  - Recipes & crafts
+  - Altar decoration ideas
+  - Countdown to next sabbat
+  REUSE: Moon calendar grid, ritual suggestions, date calculations
+
+☐ Mercury Retrograde Tracker
+  - Current status & upcoming dates
+  - Do's and don'ts
+  - Shadow period info
+  - Other planetary retrogrades
+  REUSE: Calendar display, date calculations
+
+
+## Practical Magick Tools [INTERACTIVE BUILDING FAMILY]
+-------------------------------------------------------
+☐ Spell Builder & Grimoire
+  - Template-based spell creator
+  - Ingredient/tool suggestions based on intention
+  - Timing recommendations (moon phase, day, hour)
+  - Save custom spells to digital grimoire
+  - Share spells (export/import)
+  - Tag & search your spells
+  REUSE: LocalStorage for saving, ingredient databases, timing from moon/planetary
+  FEATURE: Builds on ALL existing correspondences
+
+☐ Altar Design Assistant
+  - Seasonal altar ideas
+  - Element placement guide
+  - Tool placement (athame, wand, chalice, pentacle)
+  - Photo inspiration gallery
+  - Checklist for altar setup
+  REUSE: Reference layouts, seasonal from sabbat calendar
+
+☐ Energy Cleansing Guide
+  - Different cleansing methods (smoke, sound, salt, etc.)
+  - Room-by-room checklist
+  - Frequency recommendations
+  - Protection ward creation
+  - Visualization scripts
+  REUSE: Step-by-step instructions like rituals, checklist UI
+
+☐ Meditation & Grounding Library
+  - Guided meditations (audio or text)
+  - Chakra balancing exercises
+  - Grounding techniques
+  - Shielding visualizations
+  - Breathwork exercises
+  - Timer with customizable bells/chimes
+  REUSE: Timer patterns, expandable text content
+  NEW: Audio playback (if audio files)
+
+
+## Dream & Shadow Work [JOURNALING FAMILY]
+-----------------------------------------
+☐ Dream Journal & Interpreter
+  - Nightly dream logging
+  - Common symbol dictionary
+  - Pattern recognition (recurring symbols/themes)
+  - Lucid dreaming techniques
+  - Moon phase correlation
+  REUSE: LocalStorage for journal, moon phase integration, search/filter
+  FEATURE: Data visualization for patterns
+
+☐ Shadow Work Prompts
+  - Categorized prompts (anger, fear, shame, etc.)
+  - Journaling interface
+  - Integration exercises
+  - Progress tracking
+  - Safety resources & grounding techniques
+  REUSE: LocalStorage, prompt randomization, categories like ritual filters
+
+
+## Manifestation & Intention [CREATIVE/TRACKING FAMILY]
+-------------------------------------------------------
+☐ Vision Board Creator (Digital)
+  - Upload images or use image library
+  - Text overlays
+  - Templates for different goals
+  - Share or print
+  - Affirmation generator
+  REUSE: Canvas API from sigil, download functionality
+  NEW: Image upload/manipulation
+
+☐ Affirmation & Mantra Generator
+  - Customizable by intention
+  - Daily affirmation delivery
+  - Voice recording for self-affirmations
+  - Background music/binaural beats
+  REUSE: Intention categories, random selection patterns
+  NEW: Audio recording/playback
+
+☐ Gratitude Journal
+  - Daily gratitude prompts
+  - Reflection on manifestations
+  - Streak tracking
+  - Monthly review
+  REUSE: LocalStorage, date tracking, streak calculation
+
+☐ New Moon Intention Planner
+  - Lunar cycle tracking
+  - Goal setting aligned with moon phases
+  - Ritual planning
+  - Progress check-ins at each phase
+  REUSE: Moon phase calculations, calendar integration, ritual suggestions
+
+
+## Community & Sharing [REQUIRES BACKEND]
+-----------------------------------------
+☐ Spell Review & Rating System
+  - Users share spell results
+  - Rate effectiveness
+  - Modifications & tips
+  - Respectful community guidelines
+  REQUIRES: Backend database, user authentication
+  COMPLEX: Moderation, storage, privacy
+
+☐ Witchy Resource Library
+  - Curated links to books, podcasts, shops
+  - Beginner guides
+  - Ethics & cultural appropriation education
+  - Regional covens & meetups
+  REUSE: Searchable/filterable database patterns
+
+
+## Advanced/Fun Ideas [QUICK WINS & EXPERIMENTS]
+------------------------------------------------
+☐ Tarot Card of the Day Widget (Simple version of full tarot tool)
+☐ Magical Name Generator (Randomization + letter patterns)
+☐ Familiar/Spirit Animal Quiz (Interactive quiz with results)
+☐ Witch Aesthetic Quiz (Path finder - personality quiz)
+☐ Spellwork Timer with Ritual Music (Timer + audio)
+☐ Moon Water Reminder Notifications (Date calc + browser notifications)
+☐ Retrograde Survival Guide (Simple reference with dates)
+☐ Witchy Weather (Weather API + correspondences)
+☐ Numerology Calculator (Math algorithms + interpretations)
+☐ Sacred Geometry Generator (Canvas drawing algorithms)
+☐ Altar Supply Inventory Tracker (LocalStorage CRUD)
+☐ Spell Ingredients Shopping List (LocalStorage list management)
+
+NOTE: These are lighter-weight experiments that could be built quickly
+      to test new patterns or provide simple utility features.
+
+
+## Technical Enhancements for Existing Tools
+--------------------------------------------
+See ROADMAP.md for detailed technical debt tracking.
+
+### Cross-Tool Improvements
+☐ Accessibility audit (ARIA labels, keyboard nav, screen readers)
+☐ Print-friendly versions (@media print CSS)
+☐ PDF export functionality (library integration or print-to-PDF)
+☐ Share via link (encode state in URL parameters)
+☐ PWA capability (manifest.json, service worker, offline mode)
+☐ Performance optimization (Lighthouse audit)
+
+### Sigil Generator Specific
+☐ LocalStorage: Save history of created sigils
+☐ SVG export option (in addition to PNG)
+☐ Tutorial overlay for first-time users
+☐ Gallery: Example sigils for inspiration
+
+### Lunar Tracker Specific
+☐ Lunar eclipse tracking & notifications
+☐ Persist filter selections across sessions
+☐ Ritual journal: Personal notes on rituals tried
+☐ Export calendar to .ics format
+☐ Void of Course moon calculations
+
+### Rune Caster Specific
+☐ Reading journal: Save casts with notes & dates
+☐ Export reading as formatted image/PDF
+☐ Improved bind rune algorithm (better visual overlays)
+☐ Additional traditional spreads (9-rune, 7-rune)
+☐ Daily rune notification option
+
+
+## 📋 ACTIVE PRIORITIES
+======================
+See ROADMAP.md for current sprint and next 5 tools in priority order:
+
+1. Crystal Properties Database (Medium complexity, high value)
+2. Tarot Spread Generator (High complexity, popular demand)
+3. Sabbat Calendar (Low complexity, quick win)
+4. Planetary Hours Calculator (Medium complexity, timing tool)
+5. Herbal Correspondences Guide (Medium complexity, pairs with crystals)
+
+
+## 🎯 SELECTION CRITERIA FOR NEXT TOOL
+======================================
+When choosing what to build next, consider:
+
+**High Priority Factors:**
+- Reuses existing patterns successfully
+- Provides high user value (reference or daily use)
+- Complements existing tools
+- Manageable data collection effort
+- No external dependencies required
+
+**Medium Priority:**
+- Introduces one new technical pattern
+- Moderate complexity calculations
+- Requires research/data gathering
+- Could use optional API
+
+**Lower Priority (Save for Later):**
+- Requires backend/database
+- Needs multiple new technologies
+- Complex astronomical calculations
+- Community features requiring moderation
+
+
+## 💡 PATTERN LIBRARY (What We Can Reuse)
+=========================================
+✓ Card layouts with glassmorphism (.tool-card, .ritual-card, .rune-card)
+✓ Expandable details (click to reveal more info)
+✓ Filtering systems (dual dropdowns, live updates)
+✓ Grid layouts with CSS Grid (responsive, template-areas)
+✓ Canvas API (600x600px, drawing, download PNG)
+✓ Theme system (6 themes, localStorage persistence)
+✓ Data-driven content (large inline arrays of objects)
+✓ Random selection without replacement
+✓ Date/time calculations (lunar, calendar)
+✓ Search functionality (filter arrays by text input)
+✓ Spread/layout patterns (positioning elements on grid)
+✓ Correspondences structure (element, deity, planet, chakra, etc.)
+
+
+✨ Remember: Build tools that empower practice, not replace intuition ✨
+🎨 Quality over quantity - each tool should be complete and polished
+🔮 Honor the traditions while making them accessible to modern practitioners

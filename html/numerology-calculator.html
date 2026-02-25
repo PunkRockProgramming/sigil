@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerology Calculator - Mystical Path Tools</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/numerology-styles.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Tools</a>
+
+    <div class="theme-selector">
+        <label for="mystical-path">Theme:</label>
+        <select id="mystical-path">
+            <option value="chaos-magick">Chaos Magick</option>
+            <option value="shadow-work">Shadow Work</option>
+            <option value="golden-dawn">Golden Dawn</option>
+            <option value="green-witchcraft">Green Witchcraft</option>
+            <option value="blood-moon">Blood Moon</option>
+            <option value="lunar-tides">Lunar Tides</option>
+        </select>
+    </div>
+
+    <header>
+        <h1>🔢 Numerology Calculator</h1>
+        <p class="tagline">Discover the sacred numbers that shape your life path</p>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro-section" role="region" aria-labelledby="intro-heading">
+        <h2 id="intro-heading" class="sr-only">About Numerology</h2>
+        <p>Numerology is the ancient practice of interpreting the mystical significance of numbers. By calculating key numbers from your name and birth date, you can gain insight into your life purpose, inner desires, and natural talents.</p>
+    </section>
+
+    <!-- Calculator Input -->
+    <section class="calculator-section" role="region" aria-labelledby="calculator-heading">
+        <h2 id="calculator-heading">Calculate Your Numbers</h2>
+        
+        <div class="input-group">
+            <label for="full-name">Full Name (as it appears on your birth certificate)</label>
+            <input 
+                type="text" 
+                id="full-name" 
+                placeholder="e.g., John Michael Smith"
+                aria-label="Enter your full birth name for numerology calculation"
+            >
+        </div>
+
+        <div class="input-group">
+            <label for="birth-date">Birth Date</label>
+            <input 
+                type="date" 
+                id="birth-date"
+                aria-label="Enter your birth date for Life Path number calculation"
+            >
+        </div>
+
+        <button id="calculate-btn" class="primary-btn" aria-label="Calculate your numerology numbers">
+            Calculate My Numbers
+        </button>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" role="region" aria-live="polite" aria-labelledby="results-heading">
+        <h2 id="results-heading" class="sr-only">Your Numerology Results</h2>
+        <div id="results-grid" class="results-grid" role="list">
+            <!-- Results populated by JS -->
+        </div>
+    </section>
+
+    <!-- About Numerology -->
+    <section class="about-section" role="region" aria-labelledby="about-heading">
+        <h2 id="about-heading">Understanding Your Numbers</h2>
+        
+        <div class="number-explanation">
+            <h3>🌟 Life Path Number</h3>
+            <p>Calculated from your birth date, this is your most important number. It reveals your life's purpose, natural talents, and the lessons you're here to learn.</p>
+        </div>
+
+        <div class="number-explanation">
+            <h3>💜 Soul Urge Number</h3>
+            <p>Derived from the vowels in your name, this number represents your inner desires, motivations, and what truly drives you at a soul level.</p>
+        </div>
+
+        <div class="number-explanation">
+            <h3>✨ Destiny Number</h3>
+            <p>Calculated from all letters in your full name, this number reveals your life's mission, the path you're meant to walk, and your ultimate potential.</p>
+        </div>
+
+        <div class="number-explanation">
+            <h3>🎭 Personality Number</h3>
+            <p>From the consonants in your name, this number shows how others perceive you and the face you present to the world.</p>
+        </div>
+
+        <div class="master-numbers">
+            <h3>Master Numbers</h3>
+            <p>The numbers 11, 22, and 33 are considered "Master Numbers" in numerology. If you calculate one of these, do NOT reduce it to a single digit. Master Numbers carry intensified energy and higher spiritual significance.</p>
+        </div>
+    </section>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/numerology-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

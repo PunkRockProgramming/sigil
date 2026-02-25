@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Timer | Mystical Path Tools</title>    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+        <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/meditation-timer-styles.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+        
+        <header>
+            <h1>🧘 Meditation Timer</h1>
+            <p class="subtitle">Find Peace in the Present Moment</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides" selected>Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Main Timer Section -->
+        <section class="timer-section" role="region" aria-labelledby="timer-heading">
+            <h2 class="sr-only" id="timer-heading">Meditation Timer</h2>
+            <div class="timer-display" id="timerDisplay" role="status" aria-live="polite" aria-label="Meditation timer display">
+                <div class="time-remaining" id="timeRemaining">0:00</div>
+                <div class="session-label" id="sessionLabel">Select Duration</div>
+            </div>
+
+            <!-- Progress Ring -->
+            <svg class="progress-ring" width="300" height="300">
+                <circle class="progress-ring-background" cx="150" cy="150" r="135" />
+                <circle class="progress-ring-circle" cx="150" cy="150" r="135" id="progressCircle" />
+            </svg>
+
+            <!-- Control Buttons -->
+            <div class="controls">
+                <button class="control-btn" id="startBtn" aria-label="Start meditation timer">Start</button>
+                <button class="control-btn secondary" id="pauseBtn" disabled aria-label="Pause meditation timer">Pause</button>
+                <button class="control-btn danger" id="resetBtn" disabled aria-label="Reset meditation timer">Reset</button>
+            </div>
+        </section>
+
+        <!-- Preset Durations -->
+        <section class="presets-section" role="region" aria-labelledby="presets-heading">
+            <h2 id="presets-heading">⏱️ Quick Start</h2>
+            <div class="presets-grid" id="presetsGrid" role="list">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Custom Duration -->
+        <section class="custom-section" role="region" aria-labelledby="custom-heading">
+            <h2 id="custom-heading">⚙️ Custom Duration</h2>
+            <div class="custom-controls">
+                <div class="input-group">
+                    <label for="customMinutes">Minutes</label>
+                    <input type="number" id="customMinutes" min="1" max="180" value="15" aria-label="Set custom duration in minutes" />
+                </div>
+                <button class="control-btn" id="setCustomBtn">Set Custom Timer</button>
+            </div>
+        </section>
+
+        <!-- Settings -->
+        <section class="settings-section" role="region" aria-labelledby="settings-heading">
+            <h2 id="settings-heading">🔔 Settings</h2>
+            
+            <div class="settings-grid">
+                <div class="setting-card">
+                    <h3>Interval Bells</h3>
+                    <p>Play a gentle sound at regular intervals</p>
+                    <select id="intervalBells" aria-label="Choose interval bell frequency">
+                        <option value="0">Off</option>
+                        <option value="5">Every 5 minutes</option>
+                        <option value="10">Every 10 minutes</option>
+                        <option value="15">Every 15 minutes</option>
+                    </select>
+                </div>
+
+                <div class="setting-card">
+                    <h3>Bell Sound</h3>
+                    <p>Choose your preferred sound</p>
+                    <select id="bellSound" aria-label="Choose bell sound type">
+                        <option value="singing-bowl">Singing Bowl</option>
+                        <option value="bell">Temple Bell</option>
+                        <option value="chime">Wind Chime</option>
+                        <option value="silence">Silence</option>
+                    </select>
+                </div>
+
+                <div class="setting-card">
+                    <h3>Auto-Start</h3>
+                    <p>Start timer immediately when preset selected</p>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="autoStart" aria-label="Enable auto-start when selecting preset">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meditation Tips -->
+        <section class="tips-section" role="region" aria-labelledby="tips-heading">
+            <h2 id="tips-heading">💫 Meditation Tips</h2>
+            <div class="tips-grid" role="list">
+                <div class="tip-card" role="listitem">
+                    <span class="tip-emoji">🪷</span>
+                    <h3>Find Your Space</h3>
+                    <p>Choose a quiet, comfortable place where you won't be disturbed. Light a candle or incense to create a sacred atmosphere.</p>
+                </div>
+                <div class="tip-card" role="listitem">
+                    <span class="tip-emoji">🌬️</span>
+                    <h3>Focus on Breath</h3>
+                    <p>Notice the natural rhythm of your breathing. Count breaths if it helps maintain focus: inhale (1), exhale (2), up to 10, then repeat.</p>
+                </div>
+                <div class="tip-card" role="listitem">
+                    <span class="tip-emoji">🧠</span>
+                    <h3>Observe Thoughts</h3>
+                    <p>When thoughts arise, acknowledge them without judgment and gently return focus to your breath. This is the practice.</p>
+                </div>
+                <div class="tip-card" role="listitem">
+                    <span class="tip-emoji">🌟</span>
+                    <h3>Be Consistent</h3>
+                    <p>Start small (5-10 minutes daily) and build gradually. Consistency matters more than duration.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/meditation-timer-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

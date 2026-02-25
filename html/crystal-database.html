@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Properties Database | Mystical Path Tools</title>    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+        <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/crystal-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+        
+        <header>
+            <h1>💎 Crystal Properties Database</h1>
+            <p class="subtitle">Discover the Healing & Magical Properties of Crystals</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="intro-section" role="region" aria-label="Introduction">
+            <p class="intro-text">
+                Crystals and gemstones have been treasured for millennia for their beauty, energy, and 
+                healing properties. Each stone carries unique vibrations that can support intention-setting, 
+                meditation, energy work, and spiritual practice. Explore our database of crystals to find 
+                the perfect stones for your needs.
+            </p>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="filter-section" role="search" aria-label="Search and filter crystals">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="🔍 Search crystals by name..." aria-label="Search crystals by name" />
+            </div>
+            
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="intention-filter">Filter by Intention:</label>
+                    <select id="intention-filter" aria-label="Filter crystals by intention">
+                        <option value="all">All Intentions</option>
+                        <option value="Love">Love & Relationships</option>
+                        <option value="Protection">Protection</option>
+                        <option value="Abundance">Abundance & Prosperity</option>
+                        <option value="Healing">Healing</option>
+                        <option value="Grounding">Grounding & Stability</option>
+                        <option value="Intuition">Intuition & Psychic Ability</option>
+                        <option value="Creativity">Creativity</option>
+                        <option value="Courage">Courage & Strength</option>
+                        <option value="Peace">Peace & Calm</option>
+                        <option value="Purification">Purification & Cleansing</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="chakra-filter">Filter by Chakra:</label>
+                    <select id="chakra-filter" aria-label="Filter crystals by chakra">
+                        <option value="all">All Chakras</option>
+                        <option value="Root">Root Chakra</option>
+                        <option value="Sacral">Sacral Chakra</option>
+                        <option value="Solar Plexus">Solar Plexus Chakra</option>
+                        <option value="Heart">Heart Chakra</option>
+                        <option value="Throat">Throat Chakra</option>
+                        <option value="Third Eye">Third Eye Chakra</option>
+                        <option value="Crown">Crown Chakra</option>
+                    </select>
+                </div>
+                
+                <button id="clear-filters-btn" class="clear-btn" aria-label="Clear all filters">Clear Filters</button>
+            </div>
+            
+            <div class="results-count" role="status" aria-live="polite">
+                Showing <span id="crystal-count">0</span> crystals
+            </div>
+        </section>
+
+        <!-- Crystal Grid -->
+        <section class="crystal-grid-section" role="region" aria-labelledby="crystal-grid-heading">
+            <h2 id="crystal-grid-heading" class="sr-only">Crystal Database</h2>
+            <div id="crystal-grid" class="crystal-grid" role="region" aria-live="polite" aria-label="Filtered crystal results">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- My Collection Section -->
+        <section class="collection-section" role="region" aria-labelledby="collection-heading">
+            <h2 id="collection-heading">💫 My Crystal Collection</h2>
+            <p class="collection-intro">
+                Save crystals to your personal collection to track what you own and create wish lists. 
+                Your collection is stored locally in your browser.
+            </p>
+            <div class="collection-tabs" role="tablist" aria-label="Collection tabs">
+                <button id="owned-tab" class="tab-btn active" role="tab" aria-selected="true" aria-controls="owned-collection">Owned Crystals</button>
+                <button id="wishlist-tab" class="tab-btn" role="tab" aria-selected="false" aria-controls="wishlist-collection">Wish List</button>
+                <button class="pdf-download-btn" onclick="downloadToolAsPDF('Crystal Database', 'collection')" aria-label="Download crystal collection as PDF" style="margin-left: auto;">
+                    📄 Download PDF
+                </button>
+            </div>
+            <div id="owned-collection" class="collection-grid" role="tabpanel" aria-labelledby="owned-tab">
+                <p class="empty-message">No crystals in your collection yet. Click the ♥ on any crystal card to add it!</p>
+            </div>
+            <div id="wishlist-collection" class="collection-grid" role="tabpanel" aria-labelledby="wishlist-tab" style="display: none;">
+                <p class="empty-message">No crystals in your wish list yet. Click the ⭐ on any crystal card to add it!</p>
+</div>
+        </section>
+
+        <footer>
+            <p>✨ Every crystal is a teacher. Listen to what they have to share. ✨</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/keyboard-nav.js"></script>
+    <script src="../js/pdf-utils.js"></script>
+    <script src="../js/crystal-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

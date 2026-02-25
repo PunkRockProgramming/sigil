@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell Builder & Grimoire | Mystical Path Tools</title>    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+        <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/spell-builder-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+        
+        <header>
+            <h1>📖 Spell Builder & Grimoire</h1>
+            <p class="subtitle">Craft personalized spells and build your magical grimoire</p>
+            
+            <select id="mystical-path" class="theme-selector">
+                <option value="chaos-magick">Chaos Magick</option>
+                <option value="shadow-work">Shadow Work</option>
+                <option value="golden-dawn">Golden Dawn</option>
+                <option value="green-witchcraft">Green Witchcraft</option>
+                <option value="blood-moon">Blood Moon</option>
+                <option value="lunar-tides">Lunar Tides</option>
+            </select>
+        </header>
+
+        <!-- View Toggle -->
+        <div class="view-toggle" role="tablist" aria-label="Spell Builder views">
+            <button id="create-view-btn" class="view-btn active" role="tab" aria-selected="true" aria-controls="create-section">✨ Create Spell</button>
+            <button id="grimoire-view-btn" class="view-btn" role="tab" aria-selected="false" aria-controls="grimoire-section">📖 My Grimoire</button>
+        </div>
+
+        <!-- CREATE SPELL SECTION -->
+        <section id="create-section" class="active-view" role="tabpanel" aria-labelledby="create-view-btn">
+            <h2>Create New Spell</h2>
+            <p class="section-description">Combine correspondences from your knowledge to craft a personalized spell</p>
+
+            <form id="spell-form" class="spell-form">
+                <!-- Basic Info -->
+                <div class="form-section" role="region" aria-labelledby="details-heading">
+                    <h3 id="details-heading">Spell Details</h3>
+                    
+                    <div class="form-group">
+                        <label for="spell-name">Spell Name *</label>
+                        <input type="text" id="spell-name" placeholder="e.g., Moonlight Protection Ritual" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spell-intent">Primary Intent *</label>
+                        <select id="spell-intent" required aria-label="Choose spell primary intent">
+                            <option value="">Select an intent...</option>
+                            <option value="love">Love & Relationships</option>
+                            <option value="protection">Protection & Banishing</option>
+                            <option value="prosperity">Prosperity & Abundance</option>
+                            <option value="healing">Healing & Wellness</option>
+                            <option value="wisdom">Wisdom & Clarity</option>
+                            <option value="creativity">Creativity & Inspiration</option>
+                            <option value="peace">Peace & Calm</option>
+                            <option value="power">Personal Power</option>
+                            <option value="divination">Divination & Dreams</option>
+                            <option value="cleansing">Cleansing & Purification</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Timing -->
+                <div class="form-section" role="region" aria-labelledby="timing-heading">
+                    <h3 id="timing-heading">Optimal Timing</h3>
+                    
+                    <div class="form-group">
+                        <label for="spell-moon-phase">Moon Phase</label>
+                        <select id="spell-moon-phase" aria-label="Choose optimal moon phase">
+                            <option value="">Any phase</option>
+                            <option value="new">New Moon (New Beginnings)</option>
+                            <option value="waxing-crescent">Waxing Crescent (Growth)</option>
+                            <option value="first-quarter">First Quarter (Action)</option>
+                            <option value="waxing-gibbous">Waxing Gibbous (Refinement)</option>
+                            <option value="full">Full Moon (Peak Power)</option>
+                            <option value="waning-gibbous">Waning Gibbous (Gratitude)</option>
+                            <option value="last-quarter">Last Quarter (Release)</option>
+                            <option value="waning-crescent">Waning Crescent (Rest)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spell-sabbat">Sabbat (Optional)</label>
+                        <select id="spell-sabbat" aria-label="Choose optimal sabbat">
+                            <option value="">No specific sabbat</option>
+                            <option value="samhain">Samhain (Oct 31)</option>
+                            <option value="yule">Yule (Dec 21)</option>
+                            <option value="imbolc">Imbolc (Feb 1)</option>
+                            <option value="ostara">Ostara (Mar 20)</option>
+                            <option value="beltane">Beltane (May 1)</option>
+                            <option value="litha">Litha (Jun 21)</option>
+                            <option value="lughnasadh">Lughnasadh (Aug 1)</option>
+                            <option value="mabon">Mabon (Sep 21)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Ingredients -->
+                <div class="form-section" role="region" aria-labelledby="ingredients-heading">
+                    <h3 id="ingredients-heading">Ingredients & Tools</h3>
+                    
+                    <div class="form-group">
+                        <label>Herbs</label>
+                        <div id="herb-selection" class="ingredient-checkboxes" role="group" aria-label="Select herbs for spell">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Crystals</label>
+                        <div id="crystal-selection" class="ingredient-checkboxes" role="group" aria-label="Select crystals for spell">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spell-candle-color">Candle Color (Optional)</label>
+                        <select id="spell-candle-color" aria-label="Choose candle color">
+                            <option value="">No candle</option>
+                            <option value="white">⚪ White (Purity, All-Purpose)</option>
+                            <option value="black">⚫ Black (Protection, Banishing)</option>
+                            <option value="red">🔴 Red (Passion, Courage, Strength)</option>
+                            <option value="pink">🌸 Pink (Love, Friendship, Compassion)</option>
+                            <option value="orange">🟠 Orange (Success, Energy, Creativity)</option>
+                            <option value="yellow">🟡 Yellow (Clarity, Communication, Joy)</option>
+                            <option value="green">🟢 Green (Prosperity, Growth, Healing)</option>
+                            <option value="blue">🔵 Blue (Peace, Wisdom, Truth)</option>
+                            <option value="purple">🟣 Purple (Spirituality, Power, Intuition)</option>
+                            <option value="brown">🟤 Brown (Grounding, Stability, Animals)</option>
+                            <option value="silver">⚪ Silver (Moon, Intuition, Dreams)</option>
+                            <option value="gold">🟡 Gold (Sun, Success, Prosperity)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spell-other-tools">Other Tools/Ingredients</label>
+                        <input type="text" id="spell-other-tools" placeholder="e.g., Salt, incense, athame...">
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+                <div class="form-section" role="region" aria-labelledby="instructions-heading">
+                    <h3 id="instructions-heading">Ritual Instructions</h3>
+                    
+                    <div class="form-group">
+                        <label for="spell-instructions">Step-by-Step Instructions *</label>
+                        <textarea id="spell-instructions" rows="8" placeholder="1. Cast your circle...
+2. Light the candle and say...
+3. Place the herbs and crystals...
+4. Meditate on your intention...
+5. Close the circle..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="spell-notes">Personal Notes</label>
+                        <textarea id="spell-notes" rows="4" placeholder="Notes on your practice, modifications, or personal observations..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">💾 Save to Grimoire</button>
+                    <button type="button" id="clear-form-btn" class="btn-secondary">🗑️ Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- GRIMOIRE SECTION -->
+        <section id="grimoire-section" role="tabpanel" aria-labelledby="grimoire-view-btn">
+            <h2>My Grimoire</h2>
+            <p class="section-description">Your personal collection of spells and rituals</p>
+
+            <!-- Filters & Search -->
+            <div class="filter-controls" role="search" aria-label="Filter and search spells">
+                <input type="text" id="spell-search" placeholder="🔍 Search spells..." aria-label="Search spells by name or ingredients">
+                
+                <select id="filter-intent" class="filter-dropdown" aria-label="Filter by spell intent">
+                    <option value="all">All Intents</option>
+                    <option value="love">Love</option>
+                    <option value="protection">Protection</option>
+                    <option value="prosperity">Prosperity</option>
+                    <option value="healing">Healing</option>
+                    <option value="wisdom">Wisdom</option>
+                    <option value="creativity">Creativity</option>
+                    <option value="peace">Peace</option>
+                    <option value="power">Power</option>
+                    <option value="divination">Divination</option>
+                    <option value="cleansing">Cleansing</option>
+                </select>
+
+                <select id="filter-moon-phase" class="filter-dropdown" aria-label="Filter by moon phase">
+                    <option value="all">All Moon Phases</option>
+                    <option value="new">New Moon</option>
+                    <option value="waxing-crescent">Waxing Crescent</option>
+                    <option value="first-quarter">First Quarter</option>
+                    <option value="waxing-gibbous">Waxing Gibbous</option>
+                    <option value="full">Full Moon</option>
+                    <option value="waning-gibbous">Waning Gibbous</option>
+                    <option value="last-quarter">Last Quarter</option>
+                    <option value="waning-crescent">Waning Crescent</option>
+                </select>
+
+                <button id="clear-filters-btn" class="btn-clear" aria-label="Clear all filters">Clear Filters</button>                <button class="pdf-download-btn" onclick="downloadToolAsPDF('Spell Builder', 'grimoire')" aria-label="Download grimoire as PDF">📄 Download PDF</button>            </div>
+
+            <div class="result-info">
+                <span id="spell-count" role="status" aria-live="polite">0 spells</span>
+                <div class="grimoire-actions">
+                    <button id="export-grimoire-btn" class="btn-secondary">💾 Export Grimoire</button>
+                    <button id="import-grimoire-btn" class="btn-secondary">📂 Import Grimoire</button>
+                    <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Spell Cards -->
+            <div id="spell-grid" class="spell-grid" role="list" aria-live="polite" aria-label="Spell cards">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state">
+                <p>📖 Your grimoire is empty</p>
+                <p>Create your first spell using the "Create Spell" tab above!</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>✨ Your grimoire is stored locally in your browser. Export regularly to save backups. ✨</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/keyboard-nav.js"></script>
+    <script src="../js/pdf-utils.js"></script>
+    <script src="../js/spell-builder-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+/* ========================================
+   NUMEROLOGY CALCULATOR STYLES
+   ======================================== */
+
+/* Theme-Specific Variables */
+:root {
+    --primary: #8b5cf6;
+    --secondary: #6366f1;
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #a78bfa;
+    --background: #0f0d29;
+    --card-bg: rgba(139, 92, 246, 0.1);
+    --card-border: rgba(139, 92, 246, 0.3);
+    --shadow: rgba(139, 92, 246, 0.3);
+    --input-bg: rgba(139, 92, 246, 0.05);
+    --input-border: rgba(139, 92, 246, 0.4);
+    --badge-bg: rgba(139, 92, 246, 0.2);
+    --number-glow: rgba(139, 92, 246, 0.4);
+}
+
+[data-theme="shadow-work"] {
+    --primary: #4a5568;
+    --secondary: #2d3748;
+    --text: #e2e8f0;
+    --text-secondary: #a0aec0;
+    --accent: #718096;
+    --background: #1a1a2e;
+    --card-bg: rgba(74, 85, 104, 0.15);
+    --card-border: rgba(74, 85, 104, 0.3);
+    --shadow: rgba(0, 0, 0, 0.4);
+    --input-bg: rgba(74, 85, 104, 0.1);
+    --input-border: rgba(74, 85, 104, 0.4);
+    --badge-bg: rgba(74, 85, 104, 0.25);
+    --number-glow: rgba(113, 128, 150, 0.3);
+}
+
+[data-theme="golden-dawn"] {
+    --primary: #d4af37;
+    --secondary: #c9a028;
+    --text: #2d2414;
+    --text-secondary: #5a4a2a;
+    --accent: #e6c347;
+    --background: #fef6e4;
+    --card-bg: rgba(212, 175, 55, 0.08);
+    --card-border: rgba(212, 175, 55, 0.3);
+    --shadow: rgba(212, 175, 55, 0.2);
+    --input-bg: rgba(212, 175, 55, 0.05);
+    --input-border: rgba(212, 175, 55, 0.4);
+    --badge-bg: rgba(212, 175, 55, 0.15);
+    --number-glow: rgba(212, 175, 55, 0.4);
+}
+
+[data-theme="green-witchcraft"] {
+    --primary: #22c55e;
+    --secondary: #16a34a;
+    --text: #f0fdf4;
+    --text-secondary: #bbf7d0;
+    --accent: #4ade80;
+    --background: #052e16;
+    --card-bg: rgba(34, 197, 94, 0.1);
+    --card-border: rgba(34, 197, 94, 0.3);
+    --shadow: rgba(34, 197, 94, 0.3);
+    --input-bg: rgba(34, 197, 94, 0.05);
+    --input-border: rgba(34, 197, 94, 0.4);
+    --badge-bg: rgba(34, 197, 94, 0.2);
+    --number-glow: rgba(34, 197, 94, 0.4);
+}
+
+[data-theme="blood-moon"] {
+    --primary: #dc2626;
+    --secondary: #991b1b;
+    --text: #fef2f2;
+    --text-secondary: #fca5a5;
+    --accent: #ef4444;
+    --background: #450a0a;
+    --card-bg: rgba(220, 38, 38, 0.15);
+    --card-border: rgba(220, 38, 38, 0.4);
+    --shadow: rgba(220, 38, 38, 0.3);
+    --input-bg: rgba(220, 38, 38, 0.08);
+    --input-border: rgba(220, 38, 38, 0.5);
+    --badge-bg: rgba(220, 38, 38, 0.25);
+    --number-glow: rgba(220, 38, 38, 0.5);
+}
+
+[data-theme="lunar-tides"] {
+    --primary: #3b82f6;
+    --secondary: #2563eb;
+    --text: #eff6ff;
+    --text-secondary: #bfdbfe;
+    --accent: #60a5fa;
+    --background: #0c1e3d;
+    --card-bg: rgba(59, 130, 246, 0.1);
+    --card-border: rgba(59, 130, 246, 0.3);
+    --shadow: rgba(59, 130, 246, 0.3);
+    --input-bg: rgba(59, 130, 246, 0.05);
+    --input-border: rgba(59, 130, 246, 0.4);
+    --badge-bg: rgba(59, 130, 246, 0.2);
+    --number-glow: rgba(59, 130, 246, 0.4);
+}
+
+/* ========================================
+   BASE LAYOUT
+   ======================================== */
+
+body {
+    font-family: 'Cinzel', serif;
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    text-shadow: 0 0 20px var(--shadow);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+section {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px var(--shadow);
+}
+
+section h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.intro-section p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   CALCULATOR INPUT
+   ======================================== */
+
+.calculator-section {
+    max-width: 600px;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.875rem;
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--number-glow);
+}
+
+.input-group input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+/* ========================================
+   RESULTS SECTION
+   ======================================== */
+
+.results-section {
+    max-width: 1200px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.result-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px var(--shadow);
+    border-color: var(--primary);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon {
+    font-size: 2rem;
+}
+
+.card-header h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin: 0;
+}
+
+.number-display {
+    text-align: center;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.number-value {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-shadow: 0 0 30px var(--number-glow);
+    line-height: 1;
+}
+
+.number-emoji {
+    font-size: 3rem;
+}
+
+.number-name {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.keyword-badge {
+    background: var(--badge-bg);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+.number-details {
+    border-top: 1px solid var(--card-border);
+    padding-top: 1rem;
+}
+
+.number-details p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.number-details strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.number-details p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   ABOUT SECTION
+   ======================================== */
+
+.about-section {
+    max-width: 800px;
+}
+
+.number-explanation {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.number-explanation h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.number-explanation p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.master-numbers {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--card-bg), rgba(255, 255, 255, 0.03));
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+}
+
+.master-numbers h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.master-numbers p {
+    color: var(--text);
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .number-value {
+        font-size: 3rem;
+    }
+
+    .number-emoji {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .number-value {
+        font-size: 2.5rem;
+    }
+
+    .number-emoji {
+        font-size: 2rem;
+    }
+
+    .card-header h3 {
+        font-size: 1rem;
+    }
+
+    .number-name {
+        font-size: 1.1rem;
+    }
+
+    .keyword-badge {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+    }
+}
+
+/* ========================================
+   SCREEN READER ONLY
+   ======================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

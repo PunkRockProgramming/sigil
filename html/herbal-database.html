@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Correspondences Guide | Mystical Path Tools</title>    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+        <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/herbal-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+        
+        <header>
+            <h1>🌿 Herbal Correspondences Guide</h1>
+            <p class="subtitle">Magical & Medicinal Properties of Sacred Plants</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft" selected>Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- SAFETY DISCLAIMER -->
+        <section class="safety-disclaimer" role="alert" aria-labelledby="safety-heading">
+            <h2 id="safety-heading">⚠️ Important Safety Information</h2>
+            <p><strong>Medical Disclaimer:</strong> This guide is for educational and spiritual purposes only. It is NOT a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider before using any herb internally, especially if pregnant, nursing, taking medications, or have medical conditions.</p>
+            <p><strong>Toxicity Warning:</strong> Some herbs listed are TOXIC and should NEVER be ingested. Herbs marked with 🔴 are potentially dangerous and require extreme caution. When in doubt, external use only.</p>
+            <p><strong>Identification:</strong> Always be 100% certain of plant identification before use. Many edible plants have toxic look-alikes. When foraging, use multiple reliable sources.</p>
+        </section>
+
+        <!-- INTRO SECTION -->
+        <section class="intro-section" role="region" aria-label="Introduction">
+            <p>Herbs have been used for millennia in magical practice, healing, and spiritual work. This database combines traditional folk magic, planetary correspondences, and practical growing information. Use this knowledge wisely and always prioritize safety.</p>
+        </section>
+
+        <!-- FILTER SECTION -->
+        <section class="filter-section" role="search" aria-labelledby="filter-heading">
+            <h2 id="filter-heading">Find Your Herb</h2>
+            <div class="filter-controls">
+                <input type="text" id="search-input" placeholder="Search herbs by name..." aria-label="Search herbs by name">
+                
+                <select id="intention-filter" aria-label="Filter by magical intention">
+                    <option value="all">All Intentions</option>
+                    <option value="Protection">Protection</option>
+                    <option value="Love">Love</option>
+                    <option value="Healing">Healing</option>
+                    <option value="Prosperity">Prosperity</option>
+                    <option value="Purification">Purification</option>
+                    <option value="Divination">Divination</option>
+                    <option value="Sleep">Sleep & Dreams</option>
+                    <option value="Banishing">Banishing</option>
+                    <option value="Courage">Courage</option>
+                    <option value="Peace">Peace</option>
+                </select>
+                
+                <select id="element-filter" aria-label="Filter by element">
+                    <option value="all">All Elements</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Water">Water</option>
+                    <option value="Earth">Earth</option>
+                    <option value="Air">Air</option>
+                </select>
+                
+                <button id="clear-filters-btn" class="clear-btn" aria-label="Clear all filters">Clear Filters</button>
+            </div>
+            <div class="results-info" role="status" aria-live="polite">
+                Showing <strong id="herb-count">0</strong> herbs
+            </div>
+        </section>
+
+        <!-- HERB GRID -->
+        <section class="herb-grid-section" role="region" aria-labelledby="herb-grid-heading">
+            <h2 id="herb-grid-heading" class="sr-only">Herb Database</h2>
+            <div id="herb-grid" class="herb-grid" role="region" aria-live="polite" aria-label="Filtered herb results"></div>
+        </section>
+
+        <!-- MY APOTHECARY -->
+        <section class="apothecary-section" role="region" aria-labelledby="apothecary-heading">
+            <h2 id="apothecary-heading">🏺 My Apothecary</h2>
+            <p class="section-description">Track herbs in your collection and create a wish list for your magical garden.</p>
+            <div class="apothecary-tabs" role="tablist" aria-label="Apothecary tabs">
+                <button id="owned-tab" class="tab-btn active" role="tab" aria-selected="true" aria-controls="owned-collection">My Herbs</button>
+                <button id="wishlist-tab" class="tab-btn" role="tab" aria-selected="false" aria-controls="wishlist-collection">Wish List</button>
+                <button class="pdf-download-btn" onclick="downloadToolAsPDF('Herbal Database', 'apothecary')" aria-label="Download herbal collection as PDF" style="margin-left: auto;">📄 Download PDF</button>
+            </div>
+            <div id="owned-collection" class="apothecary-grid" role="tabpanel" aria-labelledby="owned-tab">
+                <p class="empty-message">No herbs in your apothecary yet. Click the ♥ on any herb card to add it!</p>
+            </div>
+            <div id="wishlist-collection" class="apothecary-grid" role="tabpanel" aria-labelledby="wishlist-tab" style="display: none;">
+                <p class="empty-message">No herbs in your wish list yet. Click the ⭐ on any herb card to add it!</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>🌿 "In every walk with nature, one receives far more than they seek." — John Muir 🌿</p>
+            <p class="footer-credit">Always respect the earth and harvest sustainably.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/keyboard-nav.js"></script>
+    <script src="../js/pdf-utils.js"></script>
+    <script src="../js/herbal-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

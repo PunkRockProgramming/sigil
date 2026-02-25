@@ -1,0 +1,776 @@
+/* ==========================================
+   SPELL BUILDER & GRIMOIRE - Styles
+   ========================================== */
+
+/* ==========================================
+   THEME VARIABLES (6 Themes)
+   ========================================== */
+
+:root {
+    --primary: #8b5cf6;
+    --secondary: #6366f1;
+    --text: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #a78bfa;
+    --background: #0f0d29;
+    --card-bg: rgba(139, 92, 246, 0.1);
+    --card-border: rgba(139, 92, 246, 0.3);
+    --border: rgba(139, 92, 246, 0.2);
+    --shadow: rgba(139, 92, 246, 0.3);
+    --input-bg: rgba(15, 13, 41, 0.5);
+    --input-border: rgba(139, 92, 246, 0.4);
+    --btn-primary-bg: linear-gradient(135deg, #8b5cf6, #6366f1);
+    --btn-primary-hover: linear-gradient(135deg, #a78bfa, #818cf8);
+    --btn-secondary-bg: rgba(139, 92, 246, 0.2);
+    --btn-secondary-hover: rgba(139, 92, 246, 0.3);
+    --success-bg: rgba(34, 197, 94, 0.2);
+    --success-border: rgba(34, 197, 94, 0.5);
+}
+
+[data-theme="shadow-work"] {
+    --primary: #4a5568;
+    --secondary: #2d3748;
+    --text: #e2e8f0;
+    --text-secondary: #a0aec0;
+    --accent: #718096;
+    --background: #1a1a2e;
+    --card-bg: rgba(74, 85, 104, 0.1);
+    --card-border: rgba(74, 85, 104, 0.3);
+    --border: rgba(74, 85, 104, 0.2);
+    --shadow: rgba(0, 0, 0, 0.5);
+    --input-bg: rgba(26, 26, 46, 0.5);
+    --input-border: rgba(74, 85, 104, 0.4);
+    --btn-primary-bg: linear-gradient(135deg, #4a5568, #2d3748);
+    --btn-primary-hover: linear-gradient(135deg, #718096, #4a5568);
+    --btn-secondary-bg: rgba(74, 85, 104, 0.2);
+    --btn-secondary-hover: rgba(74, 85, 104, 0.3);
+    --success-bg: rgba(74, 85, 104, 0.2);
+    --success-border: rgba(74, 85, 104, 0.5);
+}
+
+[data-theme="golden-dawn"] {
+    --primary: #fbbf24;
+    --secondary: #f59e0b;
+    --text: #1e1b4b;
+    --text-secondary: #4c1d95;
+    --accent: #fcd34d;
+    --background: #fef3c7;
+    --card-bg: rgba(251, 191, 36, 0.1);
+    --card-border: rgba(251, 191, 36, 0.3);
+    --border: rgba(251, 191, 36, 0.2);
+    --shadow: rgba(245, 158, 11, 0.3);
+    --input-bg: rgba(255, 255, 255, 0.6);
+    --input-border: rgba(251, 191, 36, 0.4);
+    --btn-primary-bg: linear-gradient(135deg, #fbbf24, #f59e0b);
+    --btn-primary-hover: linear-gradient(135deg, #fcd34d, #fbbf24);
+    --btn-secondary-bg: rgba(251, 191, 36, 0.2);
+    --btn-secondary-hover: rgba(251, 191, 36, 0.3);
+    --success-bg: rgba(34, 197, 94, 0.2);
+    --success-border: rgba(34, 197, 94, 0.5);
+}
+
+[data-theme="green-witchcraft"] {
+    --primary: #10b981;
+    --secondary: #059669;
+    --text: #ecfdf5;
+    --text-secondary: #a7f3d0;
+    --accent: #34d399;
+    --background: #064e3b;
+    --card-bg: rgba(16, 185, 129, 0.1);
+    --card-border: rgba(16, 185, 129, 0.3);
+    --border: rgba(16, 185, 129, 0.2);
+    --shadow: rgba(16, 185, 129, 0.3);
+    --input-bg: rgba(6, 78, 59, 0.5);
+    --input-border: rgba(16, 185, 129, 0.4);
+    --btn-primary-bg: linear-gradient(135deg, #10b981, #059669);
+    --btn-primary-hover: linear-gradient(135deg, #34d399, #10b981);
+    --btn-secondary-bg: rgba(16, 185, 129, 0.2);
+    --btn-secondary-hover: rgba(16, 185, 129, 0.3);
+    --success-bg: rgba(52, 211, 153, 0.2);
+    --success-border: rgba(52, 211, 153, 0.5);
+}
+
+[data-theme="blood-moon"] {
+    --primary: #dc2626;
+    --secondary: #991b1b;
+    --text: #fef2f2;
+    --text-secondary: #fecaca;
+    --accent: #ef4444;
+    --background: #450a0a;
+    --card-bg: rgba(220, 38, 38, 0.1);
+    --card-border: rgba(220, 38, 38, 0.3);
+    --border: rgba(220, 38, 38, 0.2);
+    --shadow: rgba(220, 38, 38, 0.3);
+    --input-bg: rgba(69, 10, 10, 0.5);
+    --input-border: rgba(220, 38, 38, 0.4);
+    --btn-primary-bg: linear-gradient(135deg, #dc2626, #991b1b);
+    --btn-primary-hover: linear-gradient(135deg, #ef4444, #dc2626);
+    --btn-secondary-bg: rgba(220, 38, 38, 0.2);
+    --btn-secondary-hover: rgba(220, 38, 38, 0.3);
+    --success-bg: rgba(220, 38, 38, 0.2);
+    --success-border: rgba(220, 38, 38, 0.5);
+}
+
+[data-theme="lunar-tides"] {
+    --primary: #0ea5e9;
+    --secondary: #0284c7;
+    --text: #e0f2fe;
+    --text-secondary: #bae6fd;
+    --accent: #38bdf8;
+    --background: #082f49;
+    --card-bg: rgba(14, 165, 233, 0.1);
+    --card-border: rgba(14, 165, 233, 0.3);
+    --border: rgba(14, 165, 233, 0.2);
+    --shadow: rgba(14, 165, 233, 0.3);
+    --input-bg: rgba(8, 47, 73, 0.5);
+    --input-border: rgba(14, 165, 233, 0.4);
+    --btn-primary-bg: linear-gradient(135deg, #0ea5e9, #0284c7);
+    --btn-primary-hover: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    --btn-secondary-bg: rgba(14, 165, 233, 0.2);
+    --btn-secondary-hover: rgba(14, 165, 233, 0.3);
+    --success-bg: rgba(56, 189, 248, 0.2);
+    --success-border: rgba(56, 189, 248, 0.5);
+}
+
+/* ==========================================
+   BASE STYLES
+   ========================================== */
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Cinzel', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+    text-shadow: 0 0 20px var(--shadow);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin: 0 0 1.5rem 0;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 1rem 0 0.5rem 0;
+}
+
+h4 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin: 0.8rem 0 0.4rem 0;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* ==========================================
+   VIEW TOGGLE
+   ========================================== */
+
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.view-btn {
+    background: var(--btn-secondary-bg);
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.view-btn:hover {
+    background: var(--btn-secondary-hover);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.view-btn.active {
+    background: var(--btn-primary-bg);
+    border-color: var(--primary);
+    box-shadow: 0 0 20px var(--shadow);
+}
+
+/* ==========================================
+   SECTION DISPLAY
+   ========================================== */
+
+#create-section,
+#grimoire-section {
+    display: none;
+}
+
+#create-section.active-view,
+#grimoire-section.active-view {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   SPELL FORM
+   ========================================== */
+
+.spell-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-section {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+label {
+    display: block;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    padding: 0.8rem;
+    color: var(--text);
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--shadow);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Ingredient Checkboxes */
+.ingredient-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+}
+
+.ingredient-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.ingredient-checkbox:hover {
+    background: var(--card-bg);
+}
+
+.ingredient-checkbox input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.ingredient-checkbox span {
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-clear {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: var(--btn-primary-bg);
+    color: white;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.btn-primary:hover {
+    background: var(--btn-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+.btn-secondary {
+    background: var(--btn-secondary-bg);
+    color: var(--text);
+    border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--btn-secondary-hover);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   GRIMOIRE SECTION
+   ========================================== */
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#spell-search {
+    flex: 1;
+    min-width: 250px;
+}
+
+.filter-dropdown {
+    min-width: 180px;
+}
+
+.btn-clear {
+    background: var(--btn-secondary-bg);
+    color: var(--text);
+    border: 2px solid var(--border);
+    padding: 0.8rem 1.5rem;
+}
+
+.btn-clear:hover {
+    background: var(--btn-secondary-hover);
+    border-color: var(--primary);
+}
+
+.result-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#spell-count {
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.grimoire-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+/* ==========================================
+   SPELL GRID & CARDS
+   ========================================== */
+
+.spell-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.spell-card {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.spell-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px var(--shadow);
+    border-color: var(--primary);
+}
+
+.spell-card-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.spell-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.spell-intent {
+    background: var(--accent);
+    color: var(--background);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.spell-moon {
+    font-size: 1.5rem;
+}
+
+.spell-info {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.spell-info p {
+    margin: 0.3rem 0;
+}
+
+.spell-never-cast {
+    font-style: italic;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Spell Details (expandable) */
+.spell-details {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border);
+}
+
+.spell-card.expanded .spell-details {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.spell-section {
+    margin-bottom: 1.2rem;
+}
+
+.spell-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.spell-section h4 {
+    margin-top: 0;
+}
+
+.spell-instructions {
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+/* Spell Actions */
+.spell-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-cast,
+.btn-edit,
+.btn-delete {
+    flex: 1;
+    min-width: 100px;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+    font-family: 'Cinzel', serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-cast {
+    background: var(--btn-primary-bg);
+    color: white;
+}
+
+.btn-cast:hover {
+    background: var(--btn-primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-edit {
+    background: var(--btn-secondary-bg);
+    color: var(--text);
+    border: 2px solid var(--border);
+}
+
+.btn-edit:hover {
+    background: var(--btn-secondary-hover);
+    border-color: var(--accent);
+}
+
+.btn-delete {
+    background: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+    border: 2px solid rgba(220, 38, 38, 0.4);
+}
+
+.btn-delete:hover {
+    background: rgba(220, 38, 38, 0.3);
+    border-color: #ef4444;
+    color: #fee2e2;
+}
+
+/* ==========================================
+   EMPTY STATE
+   ========================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-secondary);
+    display: none;
+}
+
+.empty-state p:first-child {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.empty-state p:last-child {
+    font-size: 1.2rem;
+    margin: 1rem 0 0 0;
+}
+
+/* ==========================================
+   SUCCESS MESSAGE
+   ========================================== */
+
+.success-message {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: var(--success-bg);
+    border: 2px solid var(--success-border);
+    color: var(--text);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 20px var(--shadow);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.success-message.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 3rem;
+    border-top: 2px solid var(--border);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .view-toggle {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .view-btn {
+        width: 100%;
+    }
+    
+    .spell-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #spell-search,
+    .filter-dropdown,
+    .btn-clear {
+        width: 100%;
+    }
+    
+    .result-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .grimoire-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .grimoire-actions .btn-secondary {
+        width: 100%;
+    }
+    
+    .ingredient-checkboxes {
+        grid-template-columns: 1fr;
+        max-height: 200px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+    
+    .spell-actions {
+        flex-direction: column;
+    }
+    
+    .btn-cast,
+    .btn-edit,
+    .btn-delete {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .form-section {
+        padding: 1rem;
+    }
+    
+    .spell-card {
+        padding: 1rem;
+    }
+}

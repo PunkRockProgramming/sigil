@@ -1,0 +1,704 @@
+/* ========================================
+   LUNAR TRACKER - STYLES
+   Requires: shared-theme.css
+   Note: Uses theme variables from shared-theme.css
+   and adds moon-specific variables below
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Moon-Specific Theme Variables */
+:root {
+    --primary: #8b5cf6;
+    --secondary: #6366f1;
+    --dark: #1e1b4b;
+    --darker: #0f0d29;
+    --light: #e0e7ff;
+    --text: #e2e8f0;
+    --subtle: #94a3b8;
+    --accent: #a78bfa;
+    --moon-glow: rgba(139, 92, 246, 0.6);
+    --card-bg: rgba(139, 92, 246, 0.1);
+    --card-border: rgba(139, 92, 246, 0.3);
+    --input-bg: rgba(30, 27, 75, 0.5);
+}
+
+[data-theme="shadow-work"] {
+    --primary: #4a5568;
+    --secondary: #2d3748;
+    --dark: #1a202c;
+    --darker: #0a0e14;
+    --light: #cbd5e0;
+    --text: #e2e8f0;
+    --subtle: #718096;
+    --accent: #718096;
+    --moon-glow: rgba(74, 85, 104, 0.6);
+    --card-bg: rgba(74, 85, 104, 0.1);
+    --card-border: rgba(74, 85, 104, 0.3);
+    --input-bg: rgba(26, 32, 44, 0.6);
+}
+
+[data-theme="golden-dawn"] {
+    --primary: #f59e0b;
+    --secondary: #d97706;
+    --dark: #451a03;
+    --darker: #1c0a00;
+    --light: #fef3c7;
+    --text: #fef3c7;
+    --subtle: #fbbf24;
+    --accent: #fcd34d;
+    --moon-glow: rgba(245, 158, 11, 0.6);
+    --card-bg: rgba(245, 158, 11, 0.1);
+    --card-border: rgba(245, 158, 11, 0.3);
+    --input-bg: rgba(69, 26, 3, 0.5);
+}
+
+[data-theme="green-witchcraft"] {
+    --primary: #10b981;
+    --secondary: #059669;
+    --dark: #064e3b;
+    --darker: #022c22;
+    --light: #d1fae5;
+    --text: #d1fae5;
+    --subtle: #6ee7b7;
+    --accent: #34d399;
+    --moon-glow: rgba(16, 185, 129, 0.6);
+    --card-bg: rgba(16, 185, 129, 0.1);
+    --card-border: rgba(16, 185, 129, 0.3);
+    --input-bg: rgba(6, 78, 59, 0.5);
+}
+
+[data-theme="blood-moon"] {
+    --primary: #dc2626;
+    --secondary: #991b1b;
+    --dark: #450a0a;
+    --darker: #1a0000;
+    --light: #fee2e2;
+    --text: #fecaca;
+    --subtle: #f87171;
+    --accent: #ef4444;
+    --moon-glow: rgba(220, 38, 38, 0.6);
+    --card-bg: rgba(220, 38, 38, 0.1);
+    --card-border: rgba(220, 38, 38, 0.3);
+    --input-bg: rgba(69, 10, 10, 0.5);
+}
+
+[data-theme="lunar-tides"] {
+    --primary: #3b82f6;
+    --secondary: #1d4ed8;
+    --dark: #1e3a8a;
+    --darker: #0a1628;
+    --light: #dbeafe;
+    --text: #dbeafe;
+    --subtle: #93c5fd;
+    --accent: #60a5fa;
+    --moon-glow: rgba(59, 130, 246, 0.6);
+    --card-bg: rgba(59, 130, 246, 0.1);
+    --card-border: rgba(59, 130, 246, 0.3);
+    --input-bg: rgba(30, 58, 138, 0.5);
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+    color: var(--text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated starfield background */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stars::before,
+.stars::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow: 
+        100px 200px white, 300px 100px white, 500px 300px white,
+        700px 150px white, 200px 400px white, 600px 250px white,
+        150px 50px white, 450px 450px white, 350px 200px white,
+        550px 100px white, 250px 300px white, 400px 350px white,
+        50px 150px white, 650px 400px white, 800px 250px white,
+        900px 150px white, 1000px 350px white, 1100px 200px white,
+        1200px 100px white, 1300px 300px white;
+    animation: twinkle 3s infinite;
+}
+
+.stars::after {
+    animation-delay: 1.5s;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px var(--moon-glow);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--subtle);
+    font-style: italic;
+}
+
+.theme-selector {
+    margin-top: 25px;
+    display: inline-block;
+    background: var(--card-bg);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: 2px solid var(--primary);
+}
+
+.theme-selector label {
+    margin-right: 10px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.theme-selector select {
+    padding: 8px 15px;
+    background: var(--input-bg);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+}
+
+.theme-selector select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--moon-glow);
+}
+
+/* Moon Display */
+.moon-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 50px;
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 20px;
+    border: 2px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+}
+
+.moon-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+#moon-canvas {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 30px var(--moon-glow));
+}
+
+.moon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, var(--moon-glow) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.moon-info {
+    text-align: center;
+    max-width: 400px;
+}
+
+.moon-info h2 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.moon-date {
+    font-size: 1.2rem;
+    color: var(--subtle);
+    margin-bottom: 15px;
+}
+
+.illumination,
+.moon-age {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+/* Correspondences */
+.correspondences {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--card-border);
+    margin-bottom: 40px;
+}
+
+.correspondences h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.correspondence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.correspondence-item {
+    background: var(--input-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+}
+
+.correspondence-item h4 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.correspondence-item p {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Rituals */
+.rituals {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--card-border);
+    margin-bottom: 40px;
+}
+
+.rituals h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+/* Ritual Filters */
+.ritual-filters {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group label {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.filter-group select {
+    padding: 8px 15px;
+    background: var(--input-bg);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--moon-glow);
+}
+
+.ritual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.ritual-card {
+    background: var(--input-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.ritual-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--moon-glow);
+}
+
+.ritual-card.expanded {
+    grid-column: span 2;
+}
+
+.ritual-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.ritual-card h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    flex: 1;
+}
+
+.ritual-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.meta-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.meta-badge.category {
+    background: var(--primary);
+    color: white;
+}
+
+.meta-badge.difficulty {
+    background: var(--secondary);
+    color: white;
+}
+
+.meta-badge.difficulty.Beginner {
+    background: #10b981;
+}
+
+.meta-badge.difficulty.Intermediate {
+    background: #f59e0b;
+}
+
+.meta-badge.difficulty.Advanced {
+    background: #dc2626;
+}
+
+.meta-badge.time {
+    background: var(--card-border);
+    color: var(--text);
+}
+
+.ritual-card p {
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Ritual details content styling (display logic in expandable-card.css) */
+
+.ritual-details h5 {
+    color: var(--accent);
+    margin: 15px 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.ritual-details ul,
+.ritual-details ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.ritual-details li {
+    color: var(--text);
+    padding: 5px 0;
+    line-height: 1.6;
+}
+
+.ritual-details ol li {
+    margin-bottom: 10px;
+}
+
+.tools-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tools-list li {
+    padding-left: 20px;
+    position: relative;
+}
+
+.tools-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.safety-note {
+    background: rgba(220, 38, 38, 0.1);
+    border-left: 3px solid #dc2626;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.safety-note strong {
+    color: #dc2626;
+}
+
+/* Expand toggle styles moved to expandable-card.css */
+
+/* Calendar */
+.calendar-section {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--card-border);
+    margin-bottom: 40px;
+}
+
+.calendar-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendar-controls button {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--text);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calendar-controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px var(--moon-glow);
+}
+
+.calendar-controls h4 {
+    color: var(--accent);
+    font-size: 1.5rem;
+}
+
+.moon-calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    background: var(--input-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calendar-day:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px var(--moon-glow);
+}
+
+.calendar-day.today {
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 20px var(--moon-glow);
+}
+
+.calendar-day .date-number {
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.calendar-day .mini-moon {
+    font-size: 1.5rem;
+}
+
+.calendar-day .phase-label {
+    font-size: 0.7rem;
+    color: var(--subtle);
+    margin-top: 5px;
+}
+
+/* Lunar Wisdom */
+.lunar-wisdom {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--card-border);
+    margin-bottom: 40px;
+}
+
+.lunar-wisdom h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-family: 'MedievalSharp', cursive;
+}
+
+.wisdom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.wisdom-card {
+    background: var(--input-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+}
+
+.wisdom-card h4 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.wisdom-card p {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    color: var(--subtle);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .moon-display {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    
+    .moon-container {
+        width: 250px;
+        height: 250px;
+    }
+    
+    #moon-canvas {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .correspondence-grid,
+    .ritual-grid,
+    .wisdom-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .moon-calendar {
+        gap: 8px;
+    }
+    
+    .calendar-day .date-number {
+        font-size: 1rem;
+    }
+    
+    .calendar-day .mini-moon {
+        font-size: 1.2rem;
+    }
+}

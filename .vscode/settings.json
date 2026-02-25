@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "cp": true,
+        "open": true,
+        "mv": true,
+        "git commit": true,
+        "git tag": true
+    }
+}

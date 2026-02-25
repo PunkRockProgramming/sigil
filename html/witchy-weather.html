@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="green-witchcraft">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witchy Weather - Mystical Path Tools</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/weather-styles.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <a href="../index.html" class="back-link">← Back to Tools</a>
+            <h1>🌦️ Witchy Weather</h1>
+            <p class="subtitle">Magical Correspondences for Current Conditions</p>
+            
+            <select id="mystical-path" aria-label="Select theme">
+                <option value="chaos-magick">Chaos Magick</option>
+                <option value="shadow-work">Shadow Work</option>
+                <option value="golden-dawn">Golden Dawn</option>
+                <option value="green-witchcraft" selected>Green Witchcraft</option>
+                <option value="blood-moon">Blood Moon</option>
+                <option value="lunar-tides">Lunar Tides</option>
+            </select>
+        </header>
+
+        <!-- Location Input Section -->
+        <section class="weather-section" role="region" aria-labelledby="location-heading">
+            <h2 id="location-heading">Find Your Weather</h2>
+            
+            <div class="location-controls">
+                <div class="search-wrapper">
+                    <input 
+                        type="text" 
+                        id="city-input" 
+                        placeholder="Enter city name..." 
+                        aria-label="City name"
+                    >
+                    <button id="search-btn" aria-label="Get weather for city">
+                        Search
+                    </button>
+                </div>
+                
+                <button id="geolocation-btn" class="geolocation-btn" aria-label="Use my current location">
+                    📍 Use My Location
+                </button>
+                
+                <button id="demo-btn" class="demo-btn" aria-label="View demo weather">
+                    ✨ Demo Mode
+                </button>
+            </div>
+            
+            <div class="api-key-section">
+                <details>
+                    <summary>Need an API Key? (Free)</summary>
+                    <p>Get your free OpenWeatherMap API key:</p>
+                    <ol>
+                        <li>Go to <a href="https://openweathermap.org/api" target="_blank" rel="noopener">OpenWeatherMap</a></li>
+                        <li>Sign up for a free account</li>
+                        <li>Get your API key (1000 calls/day free)</li>
+                        <li>Paste it below and it will be saved locally</li>
+                    </ol>
+                    <div class="api-input-group">
+                        <input 
+                            type="text" 
+                            id="api-key-input" 
+                            placeholder="Paste your API key here..." 
+                            aria-label="OpenWeatherMap API key"
+                        >
+                        <button id="save-key-btn" aria-label="Save API key">Save Key</button>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Current Weather Display -->
+        <section class="weather-display" id="weather-display" role="region" aria-live="polite" aria-label="Current weather">
+            <!-- Populated by JavaScript -->
+        </section>
+
+        <!-- Correspondences Section -->
+        <section class="correspondences-section" id="correspondences-section" role="region" aria-labelledby="correspondences-heading">
+            <h2 id="correspondences-heading">Magical Correspondences</h2>
+            <div class="correspondence-card" id="correspondence-card">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Ritual Suggestions -->
+        <section class="ritual-section" id="ritual-section" role="region" aria-labelledby="rituals-heading">
+            <h2 id="rituals-heading">Ritual Suggestions</h2>
+            <div class="ritual-suggestions" id="ritual-suggestions">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Moon Phase Integration -->
+        <section class="moon-integration" id="moon-integration" role="region" aria-labelledby="moon-heading">
+            <h2 id="moon-heading">Weather + Moon Synergy</h2>
+            <div class="moon-weather-combo" id="moon-weather-combo">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Usage Tips -->
+        <section class="tips-section" role="region" aria-labelledby="tips-heading">
+            <h2 id="tips-heading">How to Use</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>🌍 Find Your Weather</h3>
+                    <p>Enter your city name or use geolocation to get current conditions. Your API key is saved locally for convenience.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>✨ Magical Meanings</h3>
+                    <p>Each weather type has elemental associations, deity correspondences, and energy signatures for spellwork.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>🌙 Moon Combinations</h3>
+                    <p>Weather + moon phase creates unique magical opportunities. Check suggestions for powerful combinations.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>🔮 Ritual Timing</h3>
+                    <p>Weather affects energy quality. Use these correspondences to choose optimal times for different rituals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Weather data from OpenWeatherMap. For spiritual guidance only.</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/weather-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

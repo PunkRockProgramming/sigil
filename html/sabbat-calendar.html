@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabbat Calendar - Wheel of the Year | Mystical Path Tools</title>    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+        <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/sabbat-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+        
+        <header>
+            <h1>🌿 Sabbat Calendar & Wheel of the Year</h1>
+            <p class="subtitle">Celebrate the Sacred Cycles of Nature</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="intro-section" role="region" aria-label="Introduction to the Wheel of the Year">
+            <p class="intro-text">
+                The Wheel of the Year marks eight sacred celebrations that honor the changing seasons and 
+                the eternal cycle of birth, death, and rebirth. These sabbats connect us to the rhythms of 
+                nature and the cycles of the Earth, celebrating both the solar transitions (solstices and equinoxes) 
+                and the cross-quarter days between them.
+            </p>
+            <p class="disclaimer">
+                <strong>Note:</strong> Sabbat dates shown are traditional approximations. Actual solstice and equinox 
+                dates vary by 1-2 days per year based on astronomical calculations and your location.
+            </p>
+        </section>
+
+        <!-- Hemisphere Toggle -->
+        <section class="hemisphere-section" role="region" aria-labelledby="hemisphere-heading">
+            <h2 class="sr-only" id="hemisphere-heading">Hemisphere Selection</h2>
+            <div class="hemisphere-toggle">
+                <label>Celebrating in:</label>
+                <button id="northern-btn" class="hemisphere-btn active" aria-label="View sabbat dates for Northern Hemisphere" aria-pressed="true">Northern Hemisphere</button>
+                <button id="southern-btn" class="hemisphere-btn" aria-label="View sabbat dates for Southern Hemisphere" aria-pressed="false">Southern Hemisphere</button>
+                <button class="pdf-download-btn" onclick="downloadToolAsPDF('Sabbat Calendar', 'sabbats')" aria-label="Download sabbat calendar as PDF" style="margin-left: auto;">📄 Download PDF</button>
+            </div>
+        </section>
+
+        <!-- Next Sabbat Countdown -->
+        <section class="next-sabbat-section" role="region" aria-labelledby="countdown-heading">
+            <h2 id="countdown-heading">Next Sabbat</h2>
+            <div class="countdown-container">
+                <div class="sabbat-name-display">
+                    <span id="next-sabbat-name">Loading...</span>
+                    <span id="next-sabbat-date" class="sabbat-date-badge"></span>
+                </div>
+                <div id="countdown-timer" class="countdown-timer" role="status" aria-live="polite" aria-label="Time until next sabbat">
+                    <div class="time-unit">
+                        <span id="days" class="time-value">--</span>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="hours" class="time-value">--</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="minutes" class="time-value">--</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-unit">
+                        <span id="seconds" class="time-value">--</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sabbat Wheel/Grid -->
+        <section class="sabbat-wheel-section" role="region" aria-labelledby="wheel-heading">
+            <h2 id="wheel-heading">The Wheel of the Year</h2>
+            <div id="sabbat-grid" class="sabbat-grid" role="list">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <footer>
+            <p>✨ The wheel turns, and we turn with it. ✨</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/keyboard-nav.js"></script>
+    <script src="../js/pdf-utils.js"></script>
+    <script src="../js/sabbat-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

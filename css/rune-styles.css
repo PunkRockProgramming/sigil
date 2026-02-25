@@ -1,0 +1,649 @@
+/* ========================================
+   RUNE CASTER STYLES
+   Elder Futhark Divination Tool
+   Requires: shared-theme.css
+   ======================================== */
+
+/* Import Noto Sans Runic font for authentic rune display */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Runic&display=swap');
+
+/* ========================================
+   SPREAD SELECTION SECTION
+   ======================================== */
+
+.spread-selection {
+    background: var(--input-section-bg);
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.spread-selection h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.intro-text {
+    text-align: center;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.spread-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.control-group {
+    width: 100%;
+    max-width: 500px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    background: var(--input-bg);
+    color: var(--text);
+    border: 2px solid var(--result-box-border);
+    border-radius: 10px;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-group select:hover {
+    border-color: var(--primary);
+}
+
+.control-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--button-hover-shadow);
+}
+
+.cast-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 20px 60px;
+    font-size: 1.4rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px var(--button-hover-shadow);
+    letter-spacing: 1px;
+}
+
+.cast-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 30px var(--button-hover-shadow);
+}
+
+.cast-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.spread-info {
+    background: var(--step-bg);
+    border: 2px solid var(--secondary);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+}
+
+.spread-info h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.spread-info p {
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================
+   RUNE DISPLAY SECTION
+   ======================================== */
+
+.rune-display-section {
+    margin-bottom: 60px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.rune-display-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.rune-grid {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Grid layouts for different spreads */
+.rune-grid.spread-daily-draw {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-areas: "center";
+}
+
+.rune-grid.spread-three-rune {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "past present future";
+}
+
+.rune-grid.spread-five-cross {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        ". past ."
+        "challenge self future"
+        ". outcome .";
+}
+
+.rune-grid.spread-runic-cross {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        ". above ."
+        "past present future"
+        ". below ."
+        ". challenge .";
+}
+
+/* ========================================
+   RUNE CARDS
+   ======================================== */
+
+.rune-card {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    animation: popIn 0.5s ease-out backwards;
+}
+
+.rune-card:nth-child(1) { animation-delay: 0.1s; }
+.rune-card:nth-child(2) { animation-delay: 0.2s; }
+.rune-card:nth-child(3) { animation-delay: 0.3s; }
+.rune-card:nth-child(4) { animation-delay: 0.4s; }
+.rune-card:nth-child(5) { animation-delay: 0.5s; }
+.rune-card:nth-child(6) { animation-delay: 0.6s; }
+
+.rune-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px var(--button-hover-shadow);
+}
+
+.rune-card.expanded {
+    border-color: var(--primary);
+    background: var(--input-section-bg);
+}
+
+.position-label {
+    text-align: center;
+    color: var(--subtle);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.rune-symbol {
+    font-family: 'Noto Sans Runic', serif;
+    font-size: 5rem;
+    text-align: center;
+    color: var(--primary);
+    margin: 20px 0;
+    filter: drop-shadow(0 0 20px var(--primary));
+    transition: all 0.3s ease;
+}
+
+.rune-symbol.reversed {
+    transform: rotate(180deg);
+    color: var(--danger);
+    filter: drop-shadow(0 0 20px var(--danger));
+}
+
+.rune-card h3 {
+    text-align: center;
+    color: var(--accent);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.rune-keywords {
+    text-align: center;
+    color: var(--light);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.rune-meaning {
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.expand-label {
+    text-align: center;
+    color: var(--subtle);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--result-box-border);
+}
+
+/* Expandable details - display logic in expandable-card.css */
+.rune-details {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 2px solid var(--primary);
+}
+
+/* Content sections within details */
+
+.interpretation-section,
+.advice-section,
+.correspondences-section {
+    margin-bottom: 25px;
+}
+
+.rune-details h4 {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.rune-details p {
+    color: var(--text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.correspondences-section p {
+    margin-bottom: 8px;
+}
+
+.correspondences-section strong {
+    color: var(--light);
+}
+
+.reading-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ========================================
+   BIND RUNE CREATOR
+   ======================================== */
+
+.bind-rune-section {
+    background: var(--input-section-bg);
+    border: 2px solid var(--secondary);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+.bind-rune-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.section-description {
+    text-align: center;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 35px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bind-rune-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.rune-selector-grid h3,
+.canvas-area h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.rune-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.aett-group {
+    background: var(--step-bg);
+    border: 1px solid var(--result-box-border);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.aett-group h4 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.rune-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rune-checkbox-label:hover {
+    background: var(--card-bg);
+}
+
+.bind-rune-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.checkbox-rune {
+    font-family: 'Noto Sans Runic', serif;
+    font-size: 1.3rem;
+    color: var(--text);
+}
+
+.canvas-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bind-canvas {
+    border: 3px solid var(--primary);
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 8px 30px var(--button-hover-shadow);
+    max-width: 100%;
+    height: auto;
+}
+
+.bind-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--button-hover-shadow);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--button-hover-shadow);
+}
+
+.secondary-btn {
+    background: var(--step-bg);
+    color: var(--text);
+    border: 2px solid var(--result-box-border);
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary);
+    background: var(--card-bg);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   RUNE REFERENCE SECTION
+   ======================================== */
+
+.rune-reference {
+    margin-bottom: 60px;
+}
+
+.rune-reference h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--accent);
+}
+
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.ref-aett {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 15px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.ref-aett:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.ref-aett h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.aett-description {
+    color: var(--subtle);
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.ref-runes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ref-rune {
+    font-family: 'Noto Sans Runic', serif;
+    font-size: 1.1rem;
+    background: var(--step-bg);
+    border: 1px solid var(--result-box-border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: var(--text);
+    transition: all 0.2s ease;
+}
+
+.ref-rune:hover {
+    background: var(--input-section-bg);
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    border-top: 2px solid var(--primary);
+    padding-top: 30px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.wisdom {
+    color: var(--subtle);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .spread-selection,
+    .bind-rune-section {
+        padding: 25px 20px;
+    }
+    
+    .rune-grid.spread-three-rune {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "past"
+            "present"
+            "future";
+    }
+    
+    .rune-grid.spread-five-cross {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "past"
+            "challenge"
+            "self"
+            "future"
+            "outcome";
+    }
+    
+    .rune-grid.spread-runic-cross {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "above"
+            "past"
+            "present"
+            "future"
+            "below"
+            "challenge";
+    }
+    
+    .rune-symbol {
+        font-size: 4rem;
+    }
+    
+    .rune-card {
+        padding: 20px;
+    }
+    
+    .bind-rune-container {
+        grid-template-columns: 1fr;
+    }
+    
+    #bind-canvas {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .reference-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cast-btn {
+        padding: 18px 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .spread-selection h2,
+    .rune-display-section h2,
+    .bind-rune-section h2,
+    .rune-reference h2 {
+        font-size: 1.8rem;
+    }
+    
+    .rune-symbol {
+        font-size: 3.5rem;
+    }
+    
+    .rune-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .bind-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .bind-controls button {
+        width: 100%;
+    }
+}

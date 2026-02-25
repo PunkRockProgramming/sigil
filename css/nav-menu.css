@@ -1,0 +1,390 @@
+/* ========================================
+   GLOBAL NAVIGATION MENU
+   ======================================== */
+
+/* ========================================
+   THEME VARIABLES (Menu-Specific)
+   ======================================== */
+
+/* Default Theme: Chaos Magick */
+:root {
+    --nav-bg: rgba(15, 13, 41, 0.98);
+    --nav-border: rgba(139, 92, 246, 0.3);
+    --nav-text: #e2e8f0;
+    --nav-text-secondary: #94a3b8;
+    --nav-hover: rgba(139, 92, 246, 0.2);
+    --nav-current: rgba(139, 92, 246, 0.3);
+    --nav-hamburger: #8b5cf6;
+    --nav-overlay: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="shadow-work"] {
+    --nav-bg: rgba(26, 26, 26, 0.98);
+    --nav-border: rgba(74, 85, 104, 0.3);
+    --nav-text: #e2e8f0;
+    --nav-text-secondary: #cbd5e0;
+    --nav-hover: rgba(74, 85, 104, 0.2);
+    --nav-current: rgba(74, 85, 104, 0.3);
+    --nav-hamburger: #718096;
+    --nav-overlay: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="golden-dawn"] {
+    --nav-bg: rgba(255, 253, 247, 0.98);
+    --nav-border: rgba(212, 175, 55, 0.3);
+    --nav-text: #2d1b00;
+    --nav-text-secondary: #5a4a1f;
+    --nav-hover: rgba(212, 175, 55, 0.15);
+    --nav-current: rgba(212, 175, 55, 0.25);
+    --nav-hamburger: #d4af37;
+    --nav-overlay: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="green-witchcraft"] {
+    --nav-bg: rgba(6, 78, 59, 0.98);
+    --nav-border: rgba(5, 150, 105, 0.3);
+    --nav-text: #ecfdf5;
+    --nav-text-secondary: #a7f3d0;
+    --nav-hover: rgba(5, 150, 105, 0.2);
+    --nav-current: rgba(5, 150, 105, 0.3);
+    --nav-hamburger: #10b981;
+    --nav-overlay: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="blood-moon"] {
+    --nav-bg: rgba(69, 10, 10, 0.98);
+    --nav-border: rgba(220, 38, 38, 0.3);
+    --nav-text: #fee2e2;
+    --nav-text-secondary: #fca5a5;
+    --nav-hover: rgba(220, 38, 38, 0.2);
+    --nav-current: rgba(220, 38, 38, 0.3);
+    --nav-hamburger: #ef4444;
+    --nav-overlay: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="lunar-tides"] {
+    --nav-bg: rgba(8, 51, 68, 0.98);
+    --nav-border: rgba(6, 182, 212, 0.3);
+    --nav-text: #ecfeff;
+    --nav-text-secondary: #a5f3fc;
+    --nav-hover: rgba(6, 182, 212, 0.2);
+    --nav-current: rgba(6, 182, 212, 0.3);
+    --nav-hamburger: #22d3ee;
+    --nav-overlay: rgba(0, 0, 0, 0.7);
+}
+
+/* ========================================
+   HAMBURGER BUTTON
+   ======================================== */
+
+.nav-hamburger {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1001;
+    width: 48px;
+    height: 48px;
+    background: var(--nav-hamburger);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.nav-hamburger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-hamburger:focus-visible {
+    outline: 3px solid var(--nav-text);
+    outline-offset: 3px;
+}
+
+.nav-hamburger:active {
+    transform: scale(0.95);
+}
+
+.nav-icon {
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.nav-hamburger.is-active .nav-icon {
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   MENU OVERLAY
+   ======================================== */
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--nav-overlay);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========================================
+   MENU PANEL
+   ======================================== */
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 85vw;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid var(--nav-border);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+}
+
+.nav-menu.is-open {
+    transform: translateX(0);
+}
+
+/* ========================================
+   MENU HEADER
+   ======================================== */
+
+.nav-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--nav-border);
+}
+
+.nav-menu-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--nav-text);
+    margin: 0;
+    font-family: 'Cinzel', serif;
+}
+
+.nav-close-btn {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 2px solid var(--nav-border);
+    border-radius: 6px;
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-close-btn:hover {
+    background: var(--nav-hover);
+    border-color: var(--nav-hamburger);
+}
+
+.nav-close-btn:focus-visible {
+    outline: 3px solid var(--nav-hamburger);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   TOOL LIST
+   ======================================== */
+
+.nav-tool-list {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.nav-tool-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1.5rem;
+    color: var(--nav-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-tool-link:hover {
+    background: var(--nav-hover);
+    border-left-color: var(--nav-hamburger);
+}
+
+.nav-tool-link:focus-visible {
+    outline: 3px solid var(--nav-hamburger);
+    outline-offset: -3px;
+    background: var(--nav-hover);
+}
+
+.nav-tool-link.is-current {
+    background: var(--nav-current);
+    border-left-color: var(--nav-hamburger);
+    font-weight: 600;
+}
+
+.nav-tool-emoji {
+    font-size: 1.5rem;
+    width: 32px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.nav-tool-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    flex: 1;
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
+.nav-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.nav-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+    background: var(--nav-border);
+    border-radius: 4px;
+}
+
+.nav-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--nav-hamburger);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .nav-hamburger {
+        top: 1rem;
+        left: 1rem;
+        width: 44px;
+        height: 44px;
+    }
+    
+    .nav-menu {
+        width: 280px;
+    }
+    
+    .nav-menu-header {
+        padding: 1.5rem 1rem 0.75rem;
+    }
+    
+    .nav-menu-title {
+        font-size: 1.1rem;
+    }
+    
+    .nav-tool-link {
+        padding: 0.75rem 1rem;
+    }
+    
+    .nav-tool-emoji {
+        font-size: 1.25rem;
+        width: 28px;
+    }
+    
+    .nav-tool-name {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-hamburger {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .nav-icon {
+        font-size: 1.25rem;
+    }
+    
+    .nav-menu {
+        width: 260px;
+    }
+    
+    .nav-tool-link {
+        padding: 0.625rem 1rem;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .nav-menu,
+    .nav-overlay,
+    .nav-hamburger,
+    .nav-icon,
+    .nav-tool-link {
+        transition: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .nav-menu {
+        border-right: 2px solid var(--nav-border);
+    }
+    
+    .nav-tool-link:focus-visible {
+        outline-width: 4px;
+    }
+}

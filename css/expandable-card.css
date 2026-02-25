@@ -1,0 +1,195 @@
+/* ========================================
+   EXPANDABLE CARD PATTERN
+   Shared styles for expandable cards across tools
+   ======================================== */
+
+/* 
+   USAGE:
+   - Load this file AFTER shared-theme.css and tool-specific CSS
+   - Tool CSS must define card-specific variables:
+     --card-bg, --border, --shadow, --primary, --accent, --text
+   - Works with existing card patterns:
+     .ritual-card, .rune-card, .sabbat-card, .crystal-card, .herb-card
+   - Applies to cards with class ending in "-card"
+*/
+
+/* ========================================
+   EXPAND TOGGLE BUTTON (SHARED ACROSS ALL TOOLS)
+   ======================================== */
+
+.expand-toggle {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    background: transparent;
+    border: 1px solid var(--border, rgba(139, 92, 246, 0.3));
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--accent, #a78bfa);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.expand-toggle:hover {
+    background: var(--card-bg, rgba(139, 92, 246, 0.1));
+    border-color: var(--primary, #8b5cf6);
+    transform: scale(1.02);
+}
+
+.expand-toggle:active {
+    transform: scale(0.98);
+}
+
+/* Expand toggle arrow indicator (default) */
+.expand-toggle::after {
+    content: ' ▼';
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Arrow rotates when expanded */
+[class*="-card"].expanded .expand-toggle::after {
+    content: ' ▲';
+}
+
+/* ========================================
+   CARD DETAILS (HIDDEN BY DEFAULT)
+   Applied to: .ritual-details, .rune-details, etc.
+   ======================================== */
+
+[class*="-details"] {
+    display: none;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border, rgba(139, 92, 246, 0.3));
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Show details when card is expanded */
+[class*="-card"].expanded [class*="-details"] {
+    display: block !important;
+}
+
+/* Grid layout variant (herbal-database uses this) */
+[class*="-card"].expanded [class*="-details"][style*="grid"] {
+    display: grid !important;
+}
+
+/* ========================================
+   KEYBOARD FOCUS STYLES
+   ======================================== */
+
+/* Focus outline for keyboard navigation */
+[class*="-card"]:focus {
+    outline: none;
+}
+
+[class*="-card"]:focus-visible {
+    outline: 3px solid var(--primary, #8b5cf6);
+    outline-offset: 4px;
+    box-shadow: 
+        0 0 0 4px var(--background, rgba(0, 0, 0, 0.2)),
+        0 0 20px var(--shadow, rgba(139, 92, 246, 0.4));
+    transform: scale(1.02);
+    z-index: 10;
+    position: relative;
+}
+
+/* Expand toggle focus */
+.expand-toggle:focus {
+    outline: none;
+}
+
+.expand-toggle:focus-visible {
+    outline: 2px solid var(--accent, #a78bfa);
+    outline-offset: 2px;
+    box-shadow: 0 0 10px var(--shadow, rgba(139, 92, 246, 0.3));
+}
+
+/* ========================================
+   DETAIL SECTIONS (INSIDE EXPANDED CARDS)
+   ======================================== */
+
+.details-section h5 {
+    color: var(--accent, #a78bfa);
+    margin: 0.75rem 0 0.75rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.details-section p {
+    color: var(--text-secondary, #e2e8f0);
+    line-height: 1.7;
+    margin: 0 0 0.75rem 0;
+}
+
+.details-section ul {
+    color: var(--text-secondary, #e2e8f0);
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.details-section li {
+    margin-bottom: 0.5rem;
+}
+
+.details-section li:last-child {
+    margin-bottom: 0;
+}
+
+/* Full-width detail section (in grid layouts) */
+.details-section.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    [class*="-card"].expanded {
+        grid-column: 1;
+    }
+
+    .expand-toggle {
+        padding: 0.65rem 0.85rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    [class*="-details"] {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
+    .expand-toggle {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .details-section h5 {
+        font-size: 1rem;
+    }
+}
+

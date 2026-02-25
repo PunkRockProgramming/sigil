@@ -1,0 +1,86 @@
+{
+  "name": "Mystical Path Tools",
+  "short_name": "Mystical Path",
+  "description": "A collection of mystical and spiritual tools for modern practitioners. Includes sigil generation, lunar tracking, rune casting, sabbat calendar, crystal database, herbal correspondences, and more.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0f0d29",
+  "theme_color": "#8b5cf6",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["lifestyle", "utilities", "education"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Sigil Generator",
+      "short_name": "Sigils",
+      "description": "Create mystical sigils",
+      "url": "/html/sigil-maker.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Moon Tracker",
+      "short_name": "Moon",
+      "description": "Track lunar phases and rituals",
+      "url": "/html/moon-tracker.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Rune Caster",
+      "short_name": "Runes",
+      "description": "Cast Elder Futhark runes",
+      "url": "/html/rune-caster.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Crystal Database",
+      "short_name": "Crystals",
+      "description": "Browse crystal properties",
+      "url": "/html/crystal-database.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Mystical Path Tools Homepage"
+    },
+    {
+      "src": "screenshots/mobile-sigil.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Sigil Generator"
+    }
+  ]
+}

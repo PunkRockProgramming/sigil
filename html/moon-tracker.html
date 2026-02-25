@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Tracker - Mystical Path Tools</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/moon-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+        <header>
+            <h1>🌙 Lunar Tracker</h1>
+            <p class="subtitle">Harness the Power of the Moon's Phases</p>
+            
+            <div class="theme-selector">
+                <label for="mystical-path">Mystical Path:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <!-- Current Moon Phase Display -->
+            <section class="moon-display" role="region" aria-labelledby="phase-name">
+                <div class="moon-container">
+                    <canvas id="moon-canvas" width="300" height="300" aria-label="Current moon phase visualization"></canvas>
+                    <div class="moon-glow"></div>
+                </div>
+                <div class="moon-info" role="status" aria-live="polite">
+                    <h2 id="phase-name">New Moon</h2>
+                    <p class="moon-date" id="current-date"></p>
+                    <p class="illumination" id="illumination">0% Illuminated</p>
+                    <p class="moon-age" id="moon-age">Day 0 of Lunar Cycle</p>
+                </div>
+            </section>
+
+            <!-- Phase Correspondences -->
+            <section class="correspondences" role="region" aria-labelledby="correspondences-heading">
+                <h3 id="correspondences-heading">Phase Correspondences</h3>
+                <div class="correspondence-grid" role="list">
+                    <div class="correspondence-item" role="listitem">
+                        <h4>🔮 Energy</h4>
+                        <p id="energy-desc"></p>
+                    </div>
+                    <div class="correspondence-item" role="listitem">
+                        <h4>✨ Magickal Focus</h4>
+                        <p id="magick-desc"></p>
+                    </div>
+                    <div class="correspondence-item" role="listitem">
+                        <h4>🕯️ Best For</h4>
+                        <p id="best-for-desc"></p>
+                    </div>
+                    <div class="correspondence-item" role="listitem">
+                        <h4>⚠️ Avoid</h4>
+                        <p id="avoid-desc"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ritual Suggestions -->
+            <section class="rituals" role="region" aria-labelledby="rituals-heading">
+                <h3 id="rituals-heading">Ritual & Spell Suggestions</h3>
+                
+                <!-- Filter Controls -->
+                <div class="ritual-filters" role="search" aria-label="Filter rituals">
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter">
+                            <option value="all">All Categories</option>
+                            <option value="Manifestation">Manifestation</option>
+                            <option value="Prosperity">Prosperity</option>
+                            <option value="Protection">Protection</option>
+                            <option value="Love & Connection">Love & Connection</option>
+                            <option value="Personal Growth">Personal Growth</option>
+                            <option value="Divination">Divination</option>
+                            <option value="Cleansing">Cleansing</option>
+                            <option value="Healing">Healing</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="difficulty-filter">Difficulty:</label>
+                        <select id="difficulty-filter" aria-label="Filter by difficulty level">
+                            <option value="all">All Levels</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <button class="pdf-download-btn" onclick="downloadToolAsPDF('Moon Tracker', 'rituals')" aria-label="Download moon tracker information as PDF">
+                        📄 Download PDF
+                    </button>
+                </div>
+                
+                <div id="ritual-suggestions" class="ritual-grid" role="region" aria-live="polite" aria-label="Ritual results">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Moon Calendar -->
+            <section class="calendar-section" role="region" aria-labelledby="calendar-heading">
+                <h3 id="calendar-heading">Upcoming Moon Phases</h3>
+                <div class="calendar-controls" role="navigation" aria-label="Calendar navigation">
+                    <button id="prev-month" aria-label="Previous month">← Previous</button>
+                    <h4 id="calendar-month" aria-live="polite">January 2026</h4>
+                    <button id="next-month" aria-label="Next month">Next →</button>
+                </div>
+                <div id="moon-calendar" class="moon-calendar" role="grid" aria-labelledby="calendar-month">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Additional Info -->
+            <section class="lunar-wisdom" role="region" aria-labelledby="wisdom-heading">
+                <h3 id="wisdom-heading">Lunar Wisdom</h3>
+                <div class="wisdom-grid" role="list">
+                    <div class="wisdom-card" role="listitem">
+                        <h4>🌑 Dark Moon vs New Moon</h4>
+                        <p>The Dark Moon (3 days before New) is for banishing and deep shadow work. The New Moon is for fresh starts and setting intentions.</p>
+                    </div>
+                    <div class="wisdom-card" role="listitem">
+                        <h4>🌕 Full Moon Power</h4>
+                        <p>The Full Moon amplifies all energies. It's the most powerful time for charging tools, manifestation, and divination.</p>
+                    </div>
+                    <div class="wisdom-card" role="listitem">
+                        <h4>⚖️ Balance Points</h4>
+                        <p>First & Last Quarter Moons are times of decision and action - turning points between intention and manifestation.</p>
+                    </div>
+                    <div class="wisdom-card" role="listitem">
+                        <h4>🌙 Blue Moon</h4>
+                        <p>When two Full Moons occur in one calendar month, the second is called a Blue Moon - rare magick for impossible goals.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>✨ The moon does not fight. It attacks no one. It does not worry. It does not try to crush others. It keeps to its course, but by its very nature, it gently influences. ✨</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/keyboard-nav.js"></script>
+    <script src="../js/pdf-utils.js"></script>
+    <script src="../js/moon-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="chaos-magick">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Mystical Path Tools</title>
+    <link rel="stylesheet" href="css/shared-theme.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            font-family: 'Cinzel', serif;
+            color: var(--text);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .offline-container {
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(139, 92, 246, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
+        }
+        
+        .offline-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        
+        .cached-tools {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .cached-tools h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .tool-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tool-link {
+            display: block;
+            padding: 12px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .tool-link:hover {
+            background: rgba(139, 92, 246, 0.25);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .back-home {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .back-home:hover {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 480px) {
+            .offline-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .tool-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">🌙</div>
+        <h1>You're Offline</h1>
+        <p>
+            The mystical energies of the internet have temporarily waned. 
+            But fear not—many of your tools are cached and still accessible.
+        </p>
+        <p>
+            Once your connection returns, all features will be fully restored.
+        </p>
+        
+        <div class="cached-tools">
+            <h2>✨ Available Tools</h2>
+            <p style="font-size: 0.95rem; margin-bottom: 20px;">
+                These tools are cached and ready to use offline:
+            </p>
+            <div class="tool-links">
+                <a href="index.html" class="tool-link">🏠 Home</a>
+                <a href="html/sigil-maker.html" class="tool-link">✨ Sigil Generator</a>
+                <a href="html/moon-tracker.html" class="tool-link">🌙 Moon Tracker</a>
+                <a href="html/rune-caster.html" class="tool-link">ᚱ Rune Caster</a>
+                <a href="html/sabbat-calendar.html" class="tool-link">🎃 Sabbat Calendar</a>
+                <a href="html/crystal-database.html" class="tool-link">💎 Crystal Database</a>
+                <a href="html/herbal-database.html" class="tool-link">🌿 Herbal Guide</a>
+                <a href="html/meditation-timer.html" class="tool-link">🧘 Meditation Timer</a>
+                <a href="html/spell-builder.html" class="tool-link">📖 Spell Builder</a>
+                <a href="html/numerology-calculator.html" class="tool-link">🔢 Numerology</a>
+                <a href="html/affirmation-generator.html" class="tool-link">💫 Affirmations</a>
+                <a href="html/pendulum-tool.html" class="tool-link">⚖️ Pendulum</a>
+                <a href="html/witchy-weather.html" class="tool-link">🌦️ Witchy Weather</a>
+                <a href="html/altar-setup.html" class="tool-link">🕯️ Altar Guide</a>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-home">← Return to Home</a>
+    </div>
+</body>
+</html>

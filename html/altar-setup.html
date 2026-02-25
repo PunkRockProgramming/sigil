@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altar Setup Guide - Sacred Space Design | Mystical Path Tools</title>    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/altar-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+        
+        <header>
+            <h1>🕯️ Altar Setup Guide</h1>
+            <p class="subtitle">Design Your Sacred Space with Intention</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft" selected>Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="intro-section" role="region" aria-label="Introduction to altar setup">
+            <p class="intro-text">
+                An altar is your personal sacred space—a physical touchpoint for spiritual work, meditation, and magic. 
+                Whether you're honoring deities, celebrating sabbats, or focusing energy for spellwork, a well-designed 
+                altar becomes a powerful tool in your practice.
+            </p>
+            <p class="intro-text">
+                This guide will help you create an altar that resonates with your path, from traditional Wiccan layouts 
+                to eclectic personal designs. Remember: there are no strict rules. Your altar should reflect your unique 
+                practice and what feels sacred to you.
+            </p>
+        </section>
+
+        <!-- Element Directions Guide -->
+        <section class="directions-section" role="region" aria-labelledby="directions-heading">
+            <h2 id="directions-heading">⊕ Cardinal Directions & Elements</h2>
+            <p class="section-description">
+                Traditional altar setups align with the four cardinal directions and their corresponding elements. 
+                Use a compass or compass app to find true North, then arrange your tools accordingly.
+            </p>
+            
+            <div class="compass-diagram">
+                <div class="compass-quarter north">
+                    <div class="direction-label">North</div>
+                    <div class="element-name">🜃 Earth</div>
+                    <div class="element-correspondences">
+                        <strong>Colors:</strong> Green, Brown, Black<br>
+                        <strong>Tools:</strong> Pentacle, Salt, Stones<br>
+                        <strong>Season:</strong> Winter<br>
+                        <strong>Energy:</strong> Grounding, Stability, Abundance
+                    </div>
+                </div>
+                
+                <div class="compass-quarter east">
+                    <div class="direction-label">East</div>
+                    <div class="element-name">🜁 Air</div>
+                    <div class="element-correspondences">
+                        <strong>Colors:</strong> Yellow, White, Pale Blue<br>
+                        <strong>Tools:</strong> Athame, Incense, Feather<br>
+                        <strong>Season:</strong> Spring<br>
+                        <strong>Energy:</strong> Thought, Communication, New Beginnings
+                    </div>
+                </div>
+                
+                <div class="compass-quarter south">
+                    <div class="direction-label">South</div>
+                    <div class="element-name">🜂 Fire</div>
+                    <div class="element-correspondences">
+                        <strong>Colors:</strong> Red, Orange, Gold<br>
+                        <strong>Tools:</strong> Wand, Candles, Matches<br>
+                        <strong>Season:</strong> Summer<br>
+                        <strong>Energy:</strong> Passion, Transformation, Willpower
+                    </div>
+                </div>
+                
+                <div class="compass-quarter west">
+                    <div class="direction-label">West</div>
+                    <div class="element-name">🜄 Water</div>
+                    <div class="element-correspondences">
+                        <strong>Colors:</strong> Blue, Silver, Teal<br>
+                        <strong>Tools:</strong> Chalice, Water Bowl, Shells<br>
+                        <strong>Season:</strong> Autumn<br>
+                        <strong>Energy:</strong> Emotion, Intuition, Healing
+                    </div>
+                </div>
+                
+                <div class="compass-center">
+                    <div class="element-name">Spirit / Akasha</div>
+                    <div class="element-correspondences">
+                        Divine connection, deity representations, 
+                        working tools, spell components
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Essential Tools Database -->
+        <section class="tools-section" role="region" aria-labelledby="tools-heading">
+            <h2 id="tools-heading">🔮 Essential Altar Tools</h2>
+            <p class="section-description">
+                Browse the foundational tools for altar work. Each entry includes correspondences, purpose, 
+                and budget-friendly alternatives.
+            </p>
+            
+            <div class="tools-filters" role="search" aria-label="Filter altar tools">
+                <div class="filter-group">
+                    <input type="text" id="tool-search" placeholder="Search tools..." aria-label="Search altar tools" />
+                    
+                    <select id="element-filter" aria-label="Filter by element">
+                        <option value="all">All Elements</option>
+                        <option value="Earth">Earth</option>
+                        <option value="Air">Air</option>
+                        <option value="Fire">Fire</option>
+                        <option value="Water">Water</option>
+                        <option value="Spirit">Spirit</option>
+                    </select>
+                    
+                    <select id="essential-filter" aria-label="Filter by priority">
+                        <option value="all">All Tools</option>
+                        <option value="true">Essential Only</option>
+                        <option value="false">Optional</option>
+                    </select>
+                    
+                    <button id="clear-tools-btn" class="clear-btn" aria-label="Clear all filters">Clear Filters</button>
+                </div>
+                
+                <div class="results-count" role="status" aria-live="polite">
+                    Showing <span id="tools-count">0</span> tools
+                </div>
+            </div>
+            
+            <div id="tools-grid" class="tools-grid" role="region" aria-live="polite" aria-label="Filtered tool results">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Layout Templates -->
+        <section class="layouts-section" role="region" aria-labelledby="layouts-heading">
+            <h2 id="layouts-heading">📐 Altar Layout Templates</h2>
+            <p class="section-description">
+                Pre-designed altar layouts for different traditions and levels of experience. Each template 
+                includes placement guidance, suggested items, and seasonal adaptations.
+            </p>
+            
+            <div class="layouts-filters" role="search" aria-label="Filter layouts">
+                <div class="filter-group">
+                    <select id="tradition-filter" aria-label="Filter by tradition">
+                        <option value="all">All Traditions</option>
+                        <option value="Wiccan">Wiccan</option>
+                        <option value="Eclectic">Eclectic</option>
+                        <option value="Ceremonial">Ceremonial</option>
+                        <option value="Green Witch">Green Witch</option>
+                        <option value="Kitchen Witch">Kitchen Witch</option>
+                    </select>
+                    
+                    <select id="difficulty-filter" aria-label="Filter by difficulty">
+                        <option value="all">All Levels</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                    
+                    <button id="clear-layouts-btn" class="clear-btn" aria-label="Clear all filters">Clear Filters</button>
+                </div>
+                
+                <div class="results-count" role="status" aria-live="polite">
+                    Showing <span id="layouts-count">0</span> layouts
+                </div>
+            </div>
+            
+            <div id="layouts-grid" class="layouts-grid" role="region" aria-live="polite" aria-label="Filtered layout results">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Seasonal Altar Guide -->
+        <section class="seasonal-section" role="region" aria-labelledby="seasonal-heading">
+            <h2 id="seasonal-heading">🌿 Seasonal Altar Adaptations</h2>
+            <p class="section-description">
+                Align your altar with the Wheel of the Year. Quick reference for sabbat-specific decorations, 
+                colors, herbs, and crystals. <a href="sabbat-calendar.html">View full Sabbat Calendar →</a>
+            </p>
+            
+            <div id="seasonal-grid" class="seasonal-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <footer>
+            <p>✨ Your altar is a reflection of your soul. Make it yours. ✨</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/keyboard-nav.js"></script>
+    <script src="../js/altar-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('✨ SW registered:', reg.scope))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

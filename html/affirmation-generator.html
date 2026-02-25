@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affirmation Generator - Mystical Path Tools</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/affirmation-styles.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Tools</a>
+
+    <div class="theme-selector">
+        <label for="mystical-path">Theme:</label>
+        <select id="mystical-path">
+            <option value="chaos-magick">Chaos Magick</option>
+            <option value="shadow-work">Shadow Work</option>
+            <option value="golden-dawn">Golden Dawn</option>
+            <option value="green-witchcraft">Green Witchcraft</option>
+            <option value="blood-moon">Blood Moon</option>
+            <option value="lunar-tides">Lunar Tides</option>
+        </select>
+    </div>
+
+    <header>
+        <h1>✨ Affirmation Generator</h1>
+        <p class="tagline">Empower your practice with sacred words of intention</p>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro-section" role="region" aria-labelledby="intro-heading">
+        <h2 id="intro-heading" class="sr-only">About Affirmations</h2>
+        <p>Affirmations are powerful statements that reprogram your subconscious mind and align your energy with your intentions. Speak them aloud, write them in your grimoire, or meditate upon them daily to manifest positive change.</p>
+    </section>
+
+    <!-- View Toggle -->
+    <div class="view-toggle" role="tablist" aria-label="Affirmation views">
+        <button 
+            id="generate-tab" 
+            class="tab-btn active" 
+            role="tab" 
+            aria-selected="true" 
+            aria-controls="generate-section"
+        >
+            ✨ Generate Affirmation
+        </button>
+        <button 
+            id="favorites-tab" 
+            class="tab-btn" 
+            role="tab" 
+            aria-selected="false" 
+            aria-controls="favorites-section"
+        >
+            💜 My Favorites (<span id="favorites-count">0</span>)
+        </button>
+    </div>
+
+    <!-- Generate Section -->
+    <section 
+        id="generate-section" 
+        class="generate-section" 
+        role="tabpanel" 
+        aria-labelledby="generate-tab"
+    >
+        <!-- Category Filter -->
+        <div class="filter-section" role="region" aria-labelledby="filter-heading">
+            <h2 id="filter-heading" class="sr-only">Filter affirmations</h2>
+            <label for="category-filter">Category:</label>
+            <select id="category-filter" aria-label="Filter affirmations by category">
+                <option value="all">All Categories</option>
+                <option value="Self-Love">Self-Love</option>
+                <option value="Abundance">Abundance</option>
+                <option value="Protection">Protection</option>
+                <option value="Healing">Healing</option>
+                <option value="Manifestation">Manifestation</option>
+                <option value="Intuition">Intuition</option>
+                <option value="Strength">Strength</option>
+                <option value="Peace">Peace</option>
+            </select>
+        </div>
+
+        <!-- Affirmation Display -->
+        <div class="affirmation-display" role="region" aria-live="polite" aria-labelledby="affirmation-heading">
+            <h2 id="affirmation-heading" class="sr-only">Current affirmation</h2>
+            <div class="affirmation-card">
+                <p id="affirmation-text" class="affirmation-text">
+                    Click "Next Affirmation" to begin your journey...
+                </p>
+                <span id="category-badge" class="category-badge" style="display: none;"></span>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="next-btn" class="primary-btn" aria-label="Show next affirmation">
+                Next Affirmation
+            </button>
+            <button id="favorite-btn" class="favorite-btn" aria-label="Add to favorites" style="display: none;">
+                <span class="heart">♡</span>
+                <span class="text">Add to Favorites</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section 
+        id="favorites-section" 
+        class="favorites-section" 
+        role="tabpanel" 
+        aria-labelledby="favorites-tab" 
+        style="display: none;"
+    >
+        <div class="favorites-header">
+            <h2>Your Sacred Affirmations</h2>
+            <p class="favorites-subtitle">Return to these words whenever you need their power</p>
+        </div>
+        
+        <div id="favorites-grid" class="favorites-grid" role="list">
+            <!-- Favorites populated by JS -->
+        </div>
+
+        <div id="favorites-empty" class="empty-state">
+            <p class="empty-icon">💜</p>
+            <p class="empty-text">You haven't saved any favorites yet.</p>
+            <p class="empty-subtext">Click the heart button when an affirmation resonates with you.</p>
+        </div>
+    </section>
+
+    <!-- Usage Tips -->
+    <section class="tips-section" role="region" aria-labelledby="tips-heading">
+        <h2 id="tips-heading">Working with Affirmations</h2>
+        <div class="tips-grid" role="list">
+            <div class="tip-card" role="listitem">
+                <span class="tip-icon">🌅</span>
+                <h3>Morning Practice</h3>
+                <p>Repeat your affirmation 3 times upon waking to set your intention for the day.</p>
+            </div>
+            <div class="tip-card" role="listitem">
+                <span class="tip-icon">📝</span>
+                <h3>Written Power</h3>
+                <p>Write affirmations in your grimoire or on paper to amplify their manifestation energy.</p>
+            </div>
+            <div class="tip-card" role="listitem">
+                <span class="tip-icon">🧘</span>
+                <h3>Meditation</h3>
+                <p>Use affirmations as mantras during meditation to deepen their impact on your subconscious.</p>
+            </div>
+            <div class="tip-card" role="listitem">
+                <span class="tip-icon">🔮</span>
+                <h3>Ritual Work</h3>
+                <p>Incorporate affirmations into spells, candle magic, or crystal charging for aligned energy.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/affirmation-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

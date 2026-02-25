@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendulum Decision Tool - Mystical Path Tools</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/pendulum-styles.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Tools</a>
+
+    <div class="theme-selector">
+        <label for="mystical-path">Theme:</label>
+        <select id="mystical-path">
+            <option value="chaos-magick">Chaos Magick</option>
+            <option value="shadow-work">Shadow Work</option>
+            <option value="golden-dawn">Golden Dawn</option>
+            <option value="green-witchcraft">Green Witchcraft</option>
+            <option value="blood-moon">Blood Moon</option>
+            <option value="lunar-tides">Lunar Tides</option>
+        </select>
+    </div>
+
+    <header>
+        <h1>🔮 Pendulum Decision Tool</h1>
+        <p class="tagline">Let the crystal guide you to clarity</p>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro-section" role="region" aria-labelledby="intro-heading">
+        <h2 id="intro-heading" class="sr-only">About Pendulum Divination</h2>
+        <p>Pendulum divination is an ancient practice of seeking guidance through the movement of a suspended object. Clear your mind, focus on your question, and trust the wisdom that flows through the crystal.</p>
+    </section>
+
+    <!-- Question Input -->
+    <section class="question-section" role="region" aria-labelledby="question-heading">
+        <h2 id="question-heading">Ask Your Question</h2>
+        
+        <div class="input-group">
+            <label for="question-input">Frame your question clearly (yes/no questions work best)</label>
+            <input 
+                type="text" 
+                id="question-input" 
+                placeholder="e.g., Should I start this new project?"
+                aria-label="Enter your yes/no question for pendulum guidance"
+            >
+        </div>
+
+        <button id="ask-btn" class="primary-btn" aria-label="Ask the pendulum">
+            Ask the Pendulum
+        </button>
+    </section>
+
+    <!-- Pendulum Visualization -->
+    <section class="pendulum-section" role="region" aria-labelledby="pendulum-heading">
+        <h2 id="pendulum-heading" class="sr-only">Pendulum visualization</h2>
+        <canvas id="pendulum-canvas" width="400" height="500" aria-label="Animated pendulum visualization"></canvas>
+    </section>
+
+    <!-- Answer Display -->
+    <section 
+        id="answer-section" 
+        class="answer-section" 
+        role="region" 
+        aria-live="polite" 
+        aria-labelledby="answer-heading"
+        style="display: none;"
+    >
+        <h2 id="answer-heading" class="sr-only">Pendulum answer</h2>
+        <div class="answer-card">
+            <h3 id="answer-text" class="answer-text"></h3>
+            <p id="answer-description" class="answer-description"></p>
+            <button id="ask-again-btn" class="secondary-btn" aria-label="Ask another question">
+                Ask Another Question
+            </button>
+        </div>
+    </section>
+
+    <!-- Question History -->
+    <section class="history-section" role="region" aria-labelledby="history-heading">
+        <h2 id="history-heading">Question History</h2>
+        
+        <div class="history-controls">
+            <button id="toggle-history-btn" class="toggle-btn" aria-label="Show question history">
+                <span class="toggle-icon">▼</span>
+                <span class="toggle-text">Show History</span>
+            </button>
+            <button id="clear-history-btn" class="clear-btn" aria-label="Clear all question history">
+                Clear History
+            </button>
+        </div>
+
+        <div id="history-list" class="history-list" role="list" style="display: none;">
+            <!-- History populated by JS -->
+        </div>
+
+        <div id="history-empty" class="empty-state">
+            <p class="empty-icon">🔮</p>
+            <p class="empty-text">No questions asked yet.</p>
+            <p class="empty-subtext">Your recent questions will appear here.</p>
+        </div>
+    </section>
+
+    <!-- Usage Guide -->
+    <section class="guide-section" role="region" aria-labelledby="guide-heading">
+        <h2 id="guide-heading">How to Use the Pendulum</h2>
+        <div class="guide-grid" role="list">
+            <div class="guide-card" role="listitem">
+                <span class="guide-icon">🧘</span>
+                <h3>1. Ground & Center</h3>
+                <p>Take a few deep breaths and clear your mind. Release any attachment to a specific outcome.</p>
+            </div>
+            <div class="guide-card" role="listitem">
+                <span class="guide-icon">❓</span>
+                <h3>2. Frame Your Question</h3>
+                <p>Ask clear yes/no questions. Avoid vague or multiple-part questions for best results.</p>
+            </div>
+            <div class="guide-card" role="listitem">
+                <span class="guide-icon">🔮</span>
+                <h3>3. Trust the Movement</h3>
+                <p>Watch the pendulum's swing. The crystal channels subtle energies to reveal the answer.</p>
+            </div>
+            <div class="guide-card" role="listitem">
+                <span class="guide-icon">📝</span>
+                <h3>4. Reflect & Act</h3>
+                <p>Consider the guidance received. Use it to inform your decision, but trust your intuition ultimately.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/canvas-utils.js"></script>
+    <script src="../js/pendulum-script.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
