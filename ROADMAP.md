@@ -370,9 +370,11 @@
 
 ## 🎯 CURRENT SPRINT
 
-**Status:** 🔥 ACTIVE — User Power Improvements Sprint
+**Status:** ✅ COMPLETE — User Power Improvements Sprint (Feb 26, 2026)
 
-**Result:** Candle Magic Guide shipped (1,705 lines). Tech debt (card rendering consolidation) skipped after code review — duplication was superficial. See `SPRINT.md` for full notes.
+**Result:** Candle Magic Guide shipped (1,705 lines). Tech debt (card rendering consolidation) skipped after code review — duplication was superficial.
+
+**User Power Sprint result:** 3 features shipped across 2 tools (~1,135 lines). Sigil history gallery (localStorage PNG thumbnails, max 10, load/delete/clear). Crystal database expanded 24→50 (26 new crystals, all 15 fields). Crystal notes field (per-owned-crystal textarea, auto-save, mini-card preview, backward-compatible schema). See `sprints/SPRINT-2026-02-26-user-power.md` for full notes.
 
 ---
 
@@ -708,7 +710,7 @@ All high-priority MVP tools complete! 🎉
 - [ ] Performance audit (lighthouse scores)
 
 ### Sigil Generator
-- [ ] LocalStorage: Save sigil history (last 10)
+- [done] LocalStorage: Save sigil history (last 10)
 - [ ] Export styles: SVG option in addition to PNG
 - [ ] Additional algorithms: Add 5 more generation styles
 - [ ] Tutorial: First-time user walkthrough
@@ -729,12 +731,13 @@ All high-priority MVP tools complete! 🎉
 - [ ] Rune of the day notification
 
 ### Crystal Database
-- [ ] Expand to 50-100 crystals (currently 25)
+- [done] Expand to 50 crystals (was 24)
+- [done] Notes field for personal collection items
+- [ ] Expand to 100 crystals (currently 50)
 - [ ] Add more filter options (element, color, planetary correspondences)
 - [ ] Export collection as PDF shopping list
 - [ ] Crystal grid templates & layouts
 - [ ] "Crystal of the Day" random feature
-- [ ] Notes field for personal collection items
 
 ---
 
