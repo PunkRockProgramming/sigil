@@ -542,18 +542,181 @@ footer {
     h1 {
         font-size: 2rem;
     }
-    
+
     .letter-item {
         width: 60px;
         height: 70px;
         font-size: 1.8rem;
     }
-    
+
     #sigil-canvas {
         width: 100%;
     }
-    
+
     .canvas-controls {
         gap: 10px;
+    }
+}
+
+/* ─── Sigil History Gallery ───────────────────────────────────────────────── */
+
+.history-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: var(--card-bg, rgba(139, 92, 246, 0.05));
+    border: 1px solid var(--border, rgba(139, 92, 246, 0.2));
+    border-radius: 15px;
+    animation: fadeIn 0.4s ease-in;
+}
+
+.history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.history-header h2 {
+    font-size: 1.4rem;
+    color: var(--primary, #8b5cf6);
+    margin: 0;
+}
+
+.history-intro {
+    color: var(--subtle, #94a3b8);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.history-item {
+    background: var(--card-bg, rgba(139, 92, 246, 0.08));
+    border: 1px solid var(--border, rgba(139, 92, 246, 0.25));
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.history-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow, rgba(139, 92, 246, 0.3));
+}
+
+.history-thumb {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border, rgba(139, 92, 246, 0.2));
+}
+
+.history-meta {
+    padding: 8px 10px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.history-intention {
+    font-size: 0.78rem;
+    color: var(--text, #e2e8f0);
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-label {
+    font-size: 0.72rem;
+    color: var(--primary, #8b5cf6);
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.history-time {
+    font-size: 0.68rem;
+    color: var(--subtle, #94a3b8);
+}
+
+.history-actions {
+    display: flex;
+    gap: 6px;
+    padding: 8px 10px;
+    border-top: 1px solid var(--border, rgba(139, 92, 246, 0.15));
+}
+
+.history-load-btn,
+.history-delete-btn {
+    flex: 1;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    font-family: inherit;
+    border: 1px solid;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.history-load-btn {
+    background: var(--primary, #8b5cf6);
+    color: #fff;
+    border-color: var(--primary, #8b5cf6);
+}
+
+.history-load-btn:hover {
+    background: transparent;
+    color: var(--primary, #8b5cf6);
+}
+
+.history-delete-btn {
+    background: transparent;
+    color: var(--subtle, #94a3b8);
+    border-color: var(--border, rgba(139, 92, 246, 0.3));
+}
+
+.history-delete-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-color: #f87171;
+}
+
+.clear-history-btn {
+    background: transparent;
+    border: 1px solid var(--border, rgba(139, 92, 246, 0.3));
+    color: var(--subtle, #94a3b8);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.clear-history-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-color: #f87171;
+}
+
+@media (max-width: 768px) {
+    .history-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .history-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

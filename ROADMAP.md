@@ -370,7 +370,7 @@
 
 ## 🎯 CURRENT SPRINT
 
-**Status:** ✅ Candle Magic Guide Sprint — COMPLETE
+**Status:** 🔥 ACTIVE — User Power Improvements Sprint
 
 **Result:** Candle Magic Guide shipped (1,705 lines). Tech debt (card rendering consolidation) skipped after code review — duplication was superficial. See `SPRINT.md` for full notes.
 

@@ -2928,8 +2928,8 @@ addDrawingEvents(canvas, ctx, {
 
 clearBtn.addEventListener('click', () => clearCanvas(canvas, ctx));
 downloadBtn.addEventListener('click', () => exportCanvasPNG(canvas, 'my-sigil.png'));
-autoGenerateBtn.addEventListener('click', autoGenerateSigil);
-simplifyRuneBtn.addEventListener('click', simplifyToRune);
+autoGenerateBtn.addEventListener('click', () => { autoGenerateSigil(); saveToHistory(); });
+simplifyRuneBtn.addEventListener('click', () => { simplifyToRune(); saveToHistory(); });
 
 brushSize.addEventListener('input', (e) => {
     brushSizeLabel.textContent = `${e.target.value}px`;
@@ -2937,3 +2937,118 @@ brushSize.addEventListener('input', (e) => {
 
 // Initialize brush size label
 brushSizeLabel.textContent = `${brushSize.value}px`;
+
+// ─── Sigil History ────────────────────────────────────────────────────────────
+
+const HISTORY_KEY = 'mystical-path-sigil-history';
+const HISTORY_MAX = 10;
+
+const historySection = document.getElementById('history-section');
+const historyGrid = document.getElementById('history-grid');
+const historyCount = document.getElementById('history-count');
+const clearHistoryBtn = document.getElementById('clear-history-btn');
+
+function loadHistory() {
+    try {
+        return JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
+    } catch {
+        return [];
+    }
+}
+
+function saveHistory(history) {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+}
+
+function saveToHistory() {
+    // Only save if a sigil was actually drawn (currentLetters is set)
+    if (!currentLetters) return;
+
+    const entry = {
+        dataUrl: canvas.toDataURL('image/png'),
+        intention: intentionInput.value.trim(),
+        algorithm: generationStyle.value,
+        timestamp: Date.now()
+    };
+
+    const history = loadHistory();
+    history.unshift(entry);
+    if (history.length > HISTORY_MAX) history.length = HISTORY_MAX;
+    saveHistory(history);
+    renderHistory();
+}
+
+function deleteFromHistory(index) {
+    const history = loadHistory();
+    history.splice(index, 1);
+    saveHistory(history);
+    renderHistory();
+}
+
+function clearHistory() {
+    saveHistory([]);
+    renderHistory();
+}
+
+function reloadFromHistory(dataUrl) {
+    const img = new Image();
+    img.onload = () => {
+        clearCanvas(canvas, ctx);
+        ctx.drawImage(img, 0, 0);
+    };
+    img.src = dataUrl;
+    // Scroll up to canvas
+    canvas.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function formatTimestamp(ts) {
+    const d = new Date(ts);
+    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) +
+        ' ' + d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+}
+
+function renderHistory() {
+    const history = loadHistory();
+    historyCount.textContent = history.length;
+
+    if (history.length === 0) {
+        historySection.style.display = 'none';
+        return;
+    }
+
+    historySection.style.display = 'block';
+    historyGrid.innerHTML = '';
+
+    history.forEach((entry, index) => {
+        const item = document.createElement('div');
+        item.className = 'history-item';
+        item.setAttribute('role', 'listitem');
+
+        const label = entry.algorithm
+            ? entry.algorithm.charAt(0).toUpperCase() + entry.algorithm.slice(1)
+            : 'Custom';
+
+        item.innerHTML = `
+            <img class="history-thumb" src="${entry.dataUrl}" alt="Sigil ${index + 1}: ${entry.intention || 'unnamed'}" loading="lazy">
+            <div class="history-meta">
+                <span class="history-intention" title="${entry.intention}">${entry.intention || '(no intention)'}</span>
+                <span class="history-label">${label}</span>
+                <span class="history-time">${formatTimestamp(entry.timestamp)}</span>
+            </div>
+            <div class="history-actions">
+                <button class="history-load-btn" aria-label="Reload sigil ${index + 1} onto canvas">↩ Load</button>
+                <button class="history-delete-btn" aria-label="Delete sigil ${index + 1} from history">✕</button>
+            </div>
+        `;
+
+        item.querySelector('.history-load-btn').addEventListener('click', () => reloadFromHistory(entry.dataUrl));
+        item.querySelector('.history-delete-btn').addEventListener('click', () => deleteFromHistory(index));
+
+        historyGrid.appendChild(item);
+    });
+}
+
+clearHistoryBtn.addEventListener('click', clearHistory);
+
+// Render history on page load
+renderHistory();
