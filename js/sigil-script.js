@@ -13,6 +13,7 @@ const canvas = canvasData.canvas;
 const ctx = canvasData.ctx;
 const clearBtn = document.getElementById('clear-canvas');
 const downloadBtn = document.getElementById('download-sigil');
+const downloadSvgBtn = document.getElementById('download-sigil-svg');
 const colorPicker = document.getElementById('color-picker');
 const brushSize = document.getElementById('brush-size');
 const brushSizeLabel = document.getElementById('brush-size-label');
@@ -2928,6 +2929,24 @@ addDrawingEvents(canvas, ctx, {
 
 clearBtn.addEventListener('click', () => clearCanvas(canvas, ctx));
 downloadBtn.addEventListener('click', () => exportCanvasPNG(canvas, 'my-sigil.png'));
+downloadSvgBtn.addEventListener('click', exportSigilAsSVG);
+
+function exportSigilAsSVG() {
+    const dataUrl = canvas.toDataURL('image/png');
+    const w = canvas.width;
+    const h = canvas.height;
+    const svgContent = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+  <image width="${w}" height="${h}" xlink:href="${dataUrl}"/>
+</svg>`;
+    const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'my-sigil.svg';
+    a.click();
+    URL.revokeObjectURL(url);
+}
 autoGenerateBtn.addEventListener('click', () => { autoGenerateSigil(); saveToHistory(); });
 simplifyRuneBtn.addEventListener('click', () => { simplifyToRune(); saveToHistory(); });
 
