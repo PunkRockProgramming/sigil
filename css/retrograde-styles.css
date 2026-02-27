@@ -1,0 +1,550 @@
+/* ========================================
+   RETROGRADE TRACKER - STYLES
+   Requires: shared-theme.css
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tool-Specific Theme Variables */
+:root {
+    --primary: #8b5cf6;
+    --secondary: #6366f1;
+    --dark: #1e1b4b;
+    --darker: #0f0d29;
+    --text: #e2e8f0;
+    --subtle: #94a3b8;
+    --accent: #a78bfa;
+    --card-bg: rgba(139, 92, 246, 0.1);
+    --card-border: rgba(139, 92, 246, 0.3);
+    --input-bg: rgba(30, 27, 75, 0.5);
+    --glow: rgba(167, 139, 250, 0.4);
+}
+
+[data-theme="shadow-work"] {
+    --primary: #4a5568;
+    --secondary: #2d3748;
+    --dark: #1a202c;
+    --darker: #0a0e14;
+    --text: #e2e8f0;
+    --subtle: #718096;
+    --accent: #718096;
+    --card-bg: rgba(74, 85, 104, 0.1);
+    --card-border: rgba(74, 85, 104, 0.3);
+    --input-bg: rgba(26, 32, 44, 0.6);
+    --glow: rgba(113, 128, 150, 0.4);
+}
+
+[data-theme="golden-dawn"] {
+    --primary: #f59e0b;
+    --secondary: #d97706;
+    --dark: #451a03;
+    --darker: #1c0a00;
+    --text: #fef3c7;
+    --subtle: #fbbf24;
+    --accent: #fcd34d;
+    --card-bg: rgba(245, 158, 11, 0.1);
+    --card-border: rgba(245, 158, 11, 0.3);
+    --input-bg: rgba(69, 26, 3, 0.5);
+    --glow: rgba(252, 211, 77, 0.4);
+}
+
+[data-theme="green-witchcraft"] {
+    --primary: #10b981;
+    --secondary: #059669;
+    --dark: #064e3b;
+    --darker: #022c22;
+    --text: #d1fae5;
+    --subtle: #6ee7b7;
+    --accent: #34d399;
+    --card-bg: rgba(16, 185, 129, 0.1);
+    --card-border: rgba(16, 185, 129, 0.3);
+    --input-bg: rgba(6, 78, 59, 0.5);
+    --glow: rgba(52, 211, 153, 0.4);
+}
+
+[data-theme="blood-moon"] {
+    --primary: #dc2626;
+    --secondary: #991b1b;
+    --dark: #450a0a;
+    --darker: #1a0000;
+    --text: #fecaca;
+    --subtle: #f87171;
+    --accent: #ef4444;
+    --card-bg: rgba(220, 38, 38, 0.1);
+    --card-border: rgba(220, 38, 38, 0.3);
+    --input-bg: rgba(69, 10, 10, 0.5);
+    --glow: rgba(239, 68, 68, 0.4);
+}
+
+[data-theme="lunar-tides"] {
+    --primary: #3b82f6;
+    --secondary: #1d4ed8;
+    --dark: #1e3a8a;
+    --darker: #0a1628;
+    --text: #dbeafe;
+    --subtle: #93c5fd;
+    --accent: #60a5fa;
+    --card-bg: rgba(59, 130, 246, 0.1);
+    --card-border: rgba(59, 130, 246, 0.3);
+    --input-bg: rgba(30, 58, 138, 0.5);
+    --glow: rgba(96, 165, 250, 0.4);
+}
+
+/* ========================================
+   BASE
+   ======================================== */
+
+body {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--subtle);
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   INTRO
+   ======================================== */
+
+.intro-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.intro-text {
+    color: var(--subtle);
+    line-height: 1.8;
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+.disclaimer {
+    color: var(--subtle);
+    font-size: 0.85rem;
+    font-family: Georgia, serif;
+    opacity: 0.8;
+}
+
+/* ========================================
+   CURRENT STATUS
+   ======================================== */
+
+.current-section {
+    margin-bottom: 30px;
+}
+
+.current-section h2 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.current-retrogrades {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 20px 25px;
+    backdrop-filter: blur(10px);
+}
+
+.no-retrogrades {
+    text-align: center;
+    color: var(--subtle);
+    font-family: Georgia, serif;
+    padding: 8px 0;
+}
+
+.active-retrograde-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 16px;
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.active-retrograde-item:last-child {
+    margin-bottom: 0;
+}
+
+.active-planet-emoji {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.active-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.active-info strong {
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.active-info span {
+    color: var(--subtle);
+    font-size: 0.85rem;
+    font-family: Georgia, serif;
+}
+
+/* ========================================
+   FILTER
+   ======================================== */
+
+.filter-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 16px 25px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.filter-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group label {
+    color: var(--subtle);
+    font-size: 0.9rem;
+}
+
+.filter-group select {
+    padding: 8px 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* ========================================
+   PLANET CARDS
+   ======================================== */
+
+.planet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.planet-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 25px 22px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 3px solid var(--planet-color, var(--primary));
+}
+
+.planet-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--glow);
+}
+
+.planet-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.planet-symbol {
+    font-size: 2.8rem;
+    line-height: 1;
+    font-family: serif;
+}
+
+.planet-title h3 {
+    font-size: 1.4rem;
+    color: var(--text);
+    margin-bottom: 3px;
+}
+
+.planet-rules {
+    color: var(--subtle);
+    font-size: 0.8rem;
+}
+
+.planet-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.keyword-tag {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.78rem;
+    color: var(--subtle);
+}
+
+/* Status Badges */
+.status-badge {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+    line-height: 1.4;
+}
+
+.status-active {
+    background: rgba(220, 38, 38, 0.15);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    color: #fca5a5;
+}
+
+.status-upcoming {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fcd34d;
+}
+
+.status-none {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #6ee7b7;
+}
+
+.planet-meaning-preview {
+    color: var(--subtle);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    font-family: Georgia, serif;
+}
+
+/* ========================================
+   EXPANDED DETAILS
+   ======================================== */
+
+.planet-details {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 16px;
+    animation: fadeIn 0.3s ease;
+}
+
+.planet-card.expanded .planet-details {
+    display: flex;
+}
+
+.planet-card.expanded .planet-meaning-preview {
+    display: none;
+}
+
+.planet-meaning {
+    color: var(--subtle);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-family: Georgia, serif;
+}
+
+.planet-advice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.advice-block {
+    padding: 14px;
+    border-radius: 10px;
+    font-family: Georgia, serif;
+}
+
+.advice-block.avoid {
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+.advice-block.embrace {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.advice-block h4 {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.advice-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.advice-block li {
+    color: var(--subtle);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.advice-block li:last-child {
+    border-bottom: none;
+}
+
+/* Upcoming Periods */
+.upcoming-periods {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.upcoming-periods h4 {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.periods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.period-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+    align-items: center;
+    font-size: 0.82rem;
+    color: var(--subtle);
+    font-family: Georgia, serif;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.period-row:last-child {
+    border-bottom: none;
+}
+
+.period-row.period-active {
+    color: #fca5a5;
+    font-weight: 600;
+}
+
+.frequency-note {
+    color: var(--subtle);
+    font-size: 0.78rem;
+    font-family: Georgia, serif;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+/* Affirmation */
+.planet-affirmation {
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid var(--planet-color, var(--primary));
+    border-radius: 0 8px 8px 0;
+    padding: 12px 15px;
+}
+
+.planet-affirmation h4 {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.planet-affirmation p {
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-family: Georgia, serif;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    color: var(--subtle);
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+
+    .planet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .planet-advice {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 20px 15px; }
+    h1 { font-size: 1.7rem; }
+
+    .period-row {
+        grid-template-columns: 1fr auto 1fr;
+        font-size: 0.75rem;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrograde Tracker | Mystical Path Tools</title>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/retrograde-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+
+        <header>
+            <h1>🪐 Retrograde Tracker</h1>
+            <p class="subtitle">Navigate Planetary Retrogrades with Wisdom</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="intro-section" role="region" aria-label="Introduction to planetary retrogrades">
+            <p class="intro-text">
+                When a planet appears to move backward through the sky from Earth's perspective, it is
+                said to be in retrograde. Each planet rules different areas of life — and when retrograde,
+                those areas call for reflection rather than action. Learning to work with, not against,
+                these cycles is a cornerstone of astrological timing.
+            </p>
+            <p class="disclaimer">
+                <strong>Note:</strong> Retrograde dates are approximate. Consult an ephemeris for precise astronomical timing.
+            </p>
+        </section>
+
+        <!-- Current Status Banner -->
+        <section class="current-section" role="region" aria-labelledby="current-heading" aria-live="polite">
+            <h2 id="current-heading">Right Now</h2>
+            <div id="current-retrogrades" class="current-retrogrades">
+                <div id="current-content">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter -->
+        <section class="filter-section" role="search" aria-label="Filter planets">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="planet-filter">Planet:</label>
+                    <select id="planet-filter" aria-label="Filter by planet">
+                        <option value="all">All Planets</option>
+                        <option value="Mercury">Mercury</option>
+                        <option value="Venus">Venus</option>
+                        <option value="Mars">Mars</option>
+                        <option value="Jupiter">Jupiter</option>
+                        <option value="Saturn">Saturn</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planet Cards -->
+        <section class="planets-section" role="region" aria-labelledby="planets-heading">
+            <h2 class="sr-only" id="planets-heading">Planet Retrograde Guides</h2>
+            <div id="planet-grid" class="planet-grid" role="list" aria-label="Planet retrograde cards">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <footer>
+            <p>🪐 The planets dance backward so we may look forward. 🪐</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/retrograde-script.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('✨ SW registered:', reg.scope))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

@@ -32,7 +32,7 @@
 ### High Value / Low Effort — Do First
 - [done] **Angel Numbers Guide** (~4h) — 111, 222, 333 etc. High search traffic. Reference pattern.
 - [in-progress] **SVG export for Sigil Generator** (~2h) — Scalable output alongside existing PNG.
-- [in-progress] **Retrograde Tracker** (~5h) — Mercury/Venus/Mars/Jupiter dates + what to do. Static data + date math.
+- [done] **Retrograde Tracker** (~5h) — Mercury/Venus/Mars/Jupiter dates + what to do. Static data + date math.
 
 ### High Value / Medium Effort — Next 2–3 Sprints
 - [ ] **Dream Journal** (~8h) — Calendar entries, tagging, pattern recognition. localStorage.
