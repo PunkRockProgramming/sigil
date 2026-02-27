@@ -24,6 +24,7 @@ const TOOLS = [
     { name: 'Angel Numbers', emoji: '🔢', path: './html/angel-numbers.html', toolPath: '../html/angel-numbers.html' },
     { name: 'Retrograde Tracker', emoji: '🪐', path: './html/retrograde-tracker.html', toolPath: '../html/retrograde-tracker.html' },
     { name: 'Correspondence Lookup', emoji: '🔍', path: './html/correspondence-lookup.html', toolPath: '../html/correspondence-lookup.html' },
+    { name: 'Daily Practice', emoji: '🌅', path: './html/daily-dashboard.html', toolPath: '../html/daily-dashboard.html' },
     { name: 'Home', emoji: '🏠', path: './index.html', toolPath: '../index.html' }
 ];
 

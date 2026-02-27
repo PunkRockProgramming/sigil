@@ -1,7 +1,7 @@
 // Mystical Path Tools - Service Worker
 // Enables offline functionality and fast loading
 
-const CACHE_NAME = 'mystical-path-v1.6';
+const CACHE_NAME = 'mystical-path-v1.7';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache on install
@@ -42,6 +42,7 @@ const PRECACHE_ASSETS = [
   '/html/angel-numbers.html',
   '/html/retrograde-tracker.html',
   '/html/correspondence-lookup.html',
+  '/html/daily-dashboard.html',
 
   // Tool-specific CSS
   '/css/sigil-styles.css',
@@ -61,6 +62,7 @@ const PRECACHE_ASSETS = [
   '/css/angel-numbers-styles.css',
   '/css/retrograde-styles.css',
   '/css/correspondence-styles.css',
+  '/css/dashboard-styles.css',
 
   // Tool-specific JavaScript
   '/js/sigil-script.js',
@@ -81,6 +83,7 @@ const PRECACHE_ASSETS = [
   '/js/retrograde-script.js',
   '/js/correspondence-data.js',
   '/js/correspondence-script.js',
+  '/js/dashboard-script.js',
 
   // Manifest
   '/manifest.json'

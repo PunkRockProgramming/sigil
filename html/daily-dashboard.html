@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="chaos-magick">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Practice — Mystical Path Tools</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/dashboard-styles.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="tool-header">
+            <a href="../index.html" class="back-link">← Back</a>
+            <div class="header-content">
+                <h1>🌅 Daily Practice</h1>
+                <p id="today-date" class="header-date"></p>
+            </div>
+            <div class="theme-selector-wrapper">
+                <select id="mystical-path" aria-label="Select theme">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <main class="dashboard-grid">
+
+            <!-- Moon Phase -->
+            <section class="dash-card moon-card" role="region" aria-labelledby="moon-heading">
+                <div class="card-label">🌙 Moon</div>
+                <div class="moon-emoji" id="moon-emoji" aria-hidden="true">🌕</div>
+                <h2 id="moon-heading" class="card-main" id="moon-phase-name">—</h2>
+                <p class="card-sub" id="moon-illumination">—</p>
+                <a href="moon-tracker.html" class="dash-link">Open Moon Tracker →</a>
+            </section>
+
+            <!-- Next Sabbat -->
+            <section class="dash-card sabbat-card" role="region" aria-labelledby="sabbat-heading">
+                <div class="card-label">🔆 Next Sabbat</div>
+                <div class="sabbat-emoji" id="sabbat-emoji" aria-hidden="true">🌿</div>
+                <h2 id="sabbat-heading" class="card-main" id="sabbat-name">—</h2>
+                <p class="card-sub" id="sabbat-date">—</p>
+                <p class="card-countdown" id="sabbat-countdown">—</p>
+                <a href="sabbat-calendar.html" class="dash-link">Open Sabbat Calendar →</a>
+            </section>
+
+            <!-- Crystal of the Day -->
+            <section class="dash-card crystal-card" role="region" aria-labelledby="crystal-heading">
+                <div class="card-label">💎 Crystal of the Day</div>
+                <div class="crystal-emoji" id="crystal-emoji" aria-hidden="true">💎</div>
+                <h2 id="crystal-heading" class="card-main" id="crystal-name">—</h2>
+                <p class="card-sub" id="crystal-intentions">—</p>
+                <p class="card-note" id="crystal-note"></p>
+                <a href="crystal-database.html" class="dash-link">Open Crystal Database →</a>
+            </section>
+
+            <!-- Rune of the Day -->
+            <section class="dash-card rune-card" role="region" aria-labelledby="rune-heading">
+                <div class="card-label">ᚱ Rune of the Day</div>
+                <div class="rune-symbol" id="rune-symbol" aria-hidden="true">ᚠ</div>
+                <h2 id="rune-heading" class="card-main" id="rune-name">—</h2>
+                <p class="card-sub" id="rune-keywords">—</p>
+                <a href="rune-caster.html" class="dash-link">Open Rune Caster →</a>
+            </section>
+
+            <!-- Daily Affirmation -->
+            <section class="dash-card affirmation-card wide-card" role="region" aria-labelledby="affirmation-heading">
+                <div class="card-label">✨ Today's Affirmation</div>
+                <blockquote id="affirmation-text" class="affirmation-text">—</blockquote>
+                <p class="card-sub" id="affirmation-category">—</p>
+                <div class="affirmation-actions">
+                    <button id="new-affirmation" class="dash-btn" aria-label="Get a new affirmation">New Affirmation</button>
+                    <a href="affirmation-generator.html" class="dash-link">Open Affirmations →</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/dashboard-script.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('✨ SW registered:', reg.scope))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

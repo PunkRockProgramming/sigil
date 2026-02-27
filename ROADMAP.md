@@ -1,7 +1,7 @@
 # Mystical Path Tools — Roadmap
 
 **Last Updated:** February 27, 2026
-**Status:** Active sprint — see `SPRINT.md`.
+**Status:** No active sprint.
 
 ---
 
@@ -25,6 +25,8 @@
 | 14 | Candle Magic | `html/candle-magic.html` | 15 colors, 12 spell templates, dual-tab layout |
 | 15 | Angel Numbers | `html/angel-numbers.html` | 20 sequences, master/triple/quad/special categories |
 | 16 | Retrograde Tracker | `html/retrograde-tracker.html` | 5 planets, live status, avoid/embrace guidance, 2025-2026 periods |
+| 17 | Correspondence Lookup | `html/correspondence-lookup.html` | 154 items, cross-tool keyword search, element/planet filters |
+| 18 | Daily Practice | `html/daily-dashboard.html` | Moon phase, sabbat countdown, Crystal/Rune of Day, affirmation |
 
 ---
 
@@ -61,8 +63,8 @@
 ## Cross-Tool Platform Features
 
 - [ ] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
-- [in-progress] **Correspondence Lookup** — Keyword → all matching items across every database
-- [in-progress] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
+- [done] **Correspondence Lookup** — Keyword → all matching items across every database
+- [done] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
 - [ ] **Universal Search** — Homepage search spanning all tool databases
 - [ ] **Share via URL** (~5h) — Encode tool state in query params. Shareable readings.
 - [ ] **Personal Profile** (~12–15h) — Birth date + name stored locally, auto-populates Numerology, informs Chakra Guide
