@@ -26,23 +26,23 @@ Build the shared data layer that makes cross-tool features possible, then ship t
 ## Checklist
 
 ### Tech Debt
-- [ ] `crystal-script.js` — add `emoji` to Crystal of Day localStorage save
-- [ ] `rune-script.js` — add `emoji` to Rune of Day localStorage save
+- [x] `crystal-script.js` — add `emoji` to Crystal of Day localStorage save
+- [x] `rune-script.js` — add `emoji` to Rune of Day localStorage save
 
 ### Correspondence Data Layer
-- [ ] `js/correspondence-data.js` — crystals subset (93 items)
-- [ ] `js/correspondence-data.js` — herbs subset (22 items)
-- [ ] `js/correspondence-data.js` — runes subset (24 items)
-- [ ] `js/correspondence-data.js` — candle colors subset (15 items)
+- [x] `js/correspondence-data.js` — crystals subset (93 items)
+- [x] `js/correspondence-data.js` — herbs subset (22 items)
+- [x] `js/correspondence-data.js` — runes subset (24 items)
+- [x] `js/correspondence-data.js` — candle colors subset (15 items)
 
 ### Correspondence Lookup Tool
-- [ ] `html/correspondence-lookup.html`
-- [ ] `css/correspondence-styles.css`
-- [ ] `js/correspondence-script.js`
-- [ ] Add to `sw.js` PRECACHE_ASSETS + bump CACHE_NAME
-- [ ] Add to `js/nav-menu.js` TOOLS array
-- [ ] Add to `index.html`
-- [ ] Add to `offline.html`
+- [x] `html/correspondence-lookup.html`
+- [x] `css/correspondence-styles.css`
+- [x] `js/correspondence-script.js`
+- [x] Add to `sw.js` PRECACHE_ASSETS + bump CACHE_NAME
+- [x] Add to `js/nav-menu.js` TOOLS array
+- [x] Add to `index.html`
+- [x] Add to `offline.html`
 
 ### Daily Practice Dashboard
 - [ ] `html/daily-dashboard.html`

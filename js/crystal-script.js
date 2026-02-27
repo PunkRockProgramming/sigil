@@ -2092,7 +2092,8 @@ function initCrystalOfDay() {
         crystal = CRYSTALS[Math.floor(Math.random() * CRYSTALS.length)];
         localStorage.setItem('mystical-path-crystal-of-day', JSON.stringify({
             date: today,
-            name: crystal.name
+            name: crystal.name,
+            emoji: crystal.emoji
         }));
     }
 

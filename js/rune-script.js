@@ -676,7 +676,8 @@ function initRuneOfDay() {
         rune = ELDER_FUTHARK[Math.floor(Math.random() * ELDER_FUTHARK.length)];
         localStorage.setItem('mystical-path-rune-of-day', JSON.stringify({
             date: today,
-            name: rune.name
+            name: rune.name,
+            emoji: rune.symbol
         }));
     }
 
