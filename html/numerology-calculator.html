@@ -66,6 +66,31 @@
         <button id="calculate-btn" class="primary-btn" aria-label="Calculate your numerology numbers">
             Calculate My Numbers
         </button>
+
+        <div class="input-group" id="tradition-group" style="margin-top:16px;">
+            <label for="tradition-select">Magical Tradition (Optional)</label>
+            <select id="tradition-select" aria-label="Select your magical tradition">
+                <option value="">— Choose your path —</option>
+                <option value="Wiccan">Wiccan</option>
+                <option value="Druidry">Druidry</option>
+                <option value="Heathen">Heathen</option>
+                <option value="Ceremonial">Ceremonial</option>
+                <option value="Green Witch">Green Witch</option>
+                <option value="Kitchen Witch">Kitchen Witch</option>
+                <option value="Eclectic">Eclectic</option>
+                <option value="Chaos Magick">Chaos Magick</option>
+            </select>
+        </div>
+
+        <div class="profile-actions" id="profile-actions">
+            <button id="save-profile-btn" class="secondary-btn" aria-label="Save name, birthdate, and tradition to your profile">
+                💾 Save to Profile
+            </button>
+            <button id="load-profile-btn" class="secondary-btn" aria-label="Load your saved profile">
+                👤 Load from Profile
+            </button>
+        </div>
+        <p id="profile-status" class="profile-status" role="status" aria-live="polite"></p>
     </section>
 
     <!-- Results Section -->
@@ -145,6 +170,7 @@
 
     <script src="../js/theme-manager.js"></script>
     <script src="../js/nav-menu.js"></script>
+    <script src="../js/profile-manager.js"></script>
     <script src="../js/numerology-script.js"></script>
     
     <!-- Service Worker Registration -->

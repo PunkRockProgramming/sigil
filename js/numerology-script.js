@@ -438,4 +438,52 @@ document.addEventListener('DOMContentLoaded', () => {
     if (compatBtn) {
         compatBtn.addEventListener('click', handleCompatibility);
     }
+
+    // ─── Profile Save / Load ──────────────────────────────────────
+    const profileStatus = document.getElementById('profile-status');
+
+    function setProfileStatus(msg) {
+        if (!profileStatus) return;
+        profileStatus.textContent = msg;
+        setTimeout(() => { profileStatus.textContent = ''; }, 3000);
+    }
+
+    const traditionSelect = document.getElementById('tradition-select');
+
+    const saveBtn = document.getElementById('save-profile-btn');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+            const name = document.getElementById('full-name').value.trim();
+            const birthdate = document.getElementById('birth-date').value;
+            const tradition = traditionSelect ? traditionSelect.value : '';
+            if (!name && !birthdate) {
+                setProfileStatus('Enter a name or birthdate first.');
+                return;
+            }
+            saveProfile({ name, birthdate, tradition });
+            setProfileStatus('Profile saved! ✨');
+        });
+    }
+
+    const loadBtn = document.getElementById('load-profile-btn');
+    if (loadBtn) {
+        loadBtn.addEventListener('click', () => {
+            const profile = getProfile();
+            if (!profile.name && !profile.birthdate) {
+                setProfileStatus('No profile saved yet.');
+                return;
+            }
+            if (profile.name) document.getElementById('full-name').value = profile.name;
+            if (profile.birthdate) document.getElementById('birth-date').value = profile.birthdate;
+            if (traditionSelect && profile.tradition) traditionSelect.value = profile.tradition;
+            setProfileStatus('Profile loaded! ✨');
+        });
+    }
+
+    // On load: if profile exists, pre-populate tradition and offer hint
+    const profile = getProfile();
+    if (traditionSelect && profile.tradition) traditionSelect.value = profile.tradition;
+    if ((profile.name || profile.birthdate) && profileStatus) {
+        profileStatus.textContent = 'Profile found — click "Load from Profile" to auto-fill.';
+    }
 });

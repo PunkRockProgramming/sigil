@@ -20,6 +20,7 @@
         <header>
             <h1>ᚱ Elder Futhark Rune Caster</h1>
             <p class="subtitle">Ancient Norse Wisdom Through the Elder Futhark</p>
+            <p id="profile-cast-for" class="profile-cast-for" style="display:none;"></p>
             <div class="theme-selector">
                 <label for="mystical-path">Theme:</label>
                 <select id="mystical-path">
@@ -57,6 +58,7 @@
                         <option value="three-rune">Past-Present-Future (3 runes)</option>
                         <option value="five-cross" selected>Five Rune Cross (5 runes)</option>
                         <option value="runic-cross">Runic Cross (6 runes)</option>
+                        <option value="world-tree">World Tree / Yggdrasil (9 runes)</option>
                     </select>
                 </div>
                 
@@ -80,6 +82,7 @@
             
             <div class="reading-actions">
                 <button id="cast-button-2" class="secondary-btn">Cast Again</button>
+                <button id="share-reading-btn" class="secondary-btn" aria-label="Share this reading via URL" style="display:none;">🔗 Share Reading</button>
             </div>
         </section>
 
@@ -309,6 +312,8 @@
     <script src="../js/filter-utils.js"></script>
     <script src="../js/canvas-utils.js"></script>
     <script src="../js/pdf-utils.js"></script>
+    <script src="../js/profile-manager.js"></script>
+    <script src="../js/share-utils.js"></script>
     <script src="../js/rune-script.js"></script>
     
     <script>
@@ -333,6 +338,10 @@
             'runic-cross': {
                 name: 'Runic Cross (6 Runes)',
                 description: 'Comprehensive reading with spiritual and material aspects. Examines your situation from multiple dimensions including higher purpose and earthly concerns.'
+            },
+            'world-tree': {
+                name: 'World Tree — Yggdrasil (9 Runes)',
+                description: 'A nine-realm spread mirroring the cosmic World Tree of Norse cosmology. Moving from the deep roots of your hidden foundation through the branches of your future to the crown of destiny.'
             }
         };
         
@@ -353,6 +362,74 @@
                 displaySpread(spreadKey, currentCast);
                 addToRuneHistory(spreadKey, currentCast);
             });
+        }
+
+        // Show profile name if set
+        const _runeProfile = getProfile();
+        if (_runeProfile.name) {
+            const castFor = document.getElementById('profile-cast-for');
+            if (castFor) {
+                castFor.textContent = `Cast for: ${_runeProfile.name}`;
+                castFor.style.display = '';
+            }
+        }
+
+        // ─── Share Reading ───────────────────────────────────────────
+        const shareBtn = document.getElementById('share-reading-btn');
+        let _lastSpreadKey = null;
+
+        function showShareBtn(spreadKey) {
+            _lastSpreadKey = spreadKey;
+            if (shareBtn) shareBtn.style.display = '';
+        }
+
+        // Wrap the cast button to capture spread key for share
+        const _origCastListener = castButton ? castButton.onclick : null;
+        if (castButton) {
+            castButton.addEventListener('click', () => {
+                showShareBtn(spreadSelector.value);
+            });
+        }
+        if (castButton2) {
+            castButton2.addEventListener('click', () => {
+                showShareBtn(spreadSelector.value);
+            });
+        }
+
+        if (shareBtn) {
+            shareBtn.addEventListener('click', () => {
+                if (!currentCast || !currentCast.length || !_lastSpreadKey) return;
+                const data = {
+                    spread: _lastSpreadKey,
+                    runes: currentCast.map(c => ({
+                        idx: ELDER_FUTHARK.indexOf(c.rune),
+                        reversed: c.reversed
+                    }))
+                };
+                const url = buildShareURL('reading', data);
+                if (url) showShareModal(url);
+            });
+        }
+
+        // ─── Restore from URL param ──────────────────────────────────
+        const _sharedReading = checkShareParam('reading');
+        if (_sharedReading && _sharedReading.spread && Array.isArray(_sharedReading.runes)) {
+            const spread = SPREADS[_sharedReading.spread];
+            if (spread) {
+                currentCast = _sharedReading.runes.map(r => ({
+                    rune: ELDER_FUTHARK[r.idx] || ELDER_FUTHARK[0],
+                    reversed: !!r.reversed
+                }));
+                spreadSelector.value = _sharedReading.spread;
+                displaySpread(_sharedReading.spread, currentCast);
+                showShareBtn(_sharedReading.spread);
+                // Update spread info display
+                const selected = spreadDescriptions[_sharedReading.spread];
+                if (selected) {
+                    document.getElementById('spread-info').innerHTML =
+                        `<h3>${selected.name}</h3><p>${selected.description}</p>`;
+                }
+            }
         }
     </script>
     

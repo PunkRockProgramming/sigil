@@ -11,6 +11,7 @@ const clearSearchBtn = document.getElementById('clear-search');
 const toolFilter     = document.getElementById('tool-filter');
 const elementFilter  = document.getElementById('element-filter');
 const planetFilter   = document.getElementById('planet-filter');
+const traditionFilter = document.getElementById('tradition-filter');
 const clearFiltersBtn = document.getElementById('clear-filters');
 const resultCount    = document.getElementById('result-count');
 const resultHint     = document.getElementById('result-hint');
@@ -50,6 +51,7 @@ function filterData() {
     const tool = toolFilter.value;
     const element = elementFilter.value;
     const planet = planetFilter.value;
+    const tradition = traditionFilter ? traditionFilter.value : 'all';
 
     return CORRESPONDENCE_DATA.filter(item => {
         if (tool !== 'all' && item.tool !== tool) return false;
@@ -58,6 +60,9 @@ function filterData() {
             if (!item.planet) return false;
             // planet field can be "Mercury / Saturn" — check contains
             if (!item.planet.toLowerCase().includes(planet.toLowerCase())) return false;
+        }
+        if (tradition !== 'all') {
+            if (!item.traditions || !item.traditions.includes(tradition)) return false;
         }
         if (!itemMatchesSearch(item, term)) return false;
         return true;
@@ -188,15 +193,25 @@ clearSearchBtn.addEventListener('click', () => {
 toolFilter.addEventListener('change', render);
 elementFilter.addEventListener('change', render);
 planetFilter.addEventListener('change', render);
+if (traditionFilter) traditionFilter.addEventListener('change', render);
 
 clearFiltersBtn.addEventListener('click', () => {
     searchInput.value = '';
     toolFilter.value = 'all';
     elementFilter.value = 'all';
     planetFilter.value = 'all';
+    if (traditionFilter) traditionFilter.value = 'all';
     render();
 });
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
+
+// Auto-select tradition from profile if set
+if (traditionFilter) {
+    const _profile = getProfile();
+    if (_profile.tradition && _profile.tradition !== '') {
+        traditionFilter.value = _profile.tradition;
+    }
+}
 
 render();

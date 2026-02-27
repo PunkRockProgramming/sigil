@@ -31,7 +31,8 @@ const CRYSTALS = [
             'Wear as jewelry for constant energy'
         ],
         affirmation: 'I am clear, focused, and aligned with my highest purpose.',
-        care_tips: 'Very durable. Can fade in prolonged sunlight. Cleanse regularly as it absorbs energy from surroundings.'
+        care_tips: 'Very durable. Can fade in prolonged sunlight. Cleanse regularly as it absorbs energy from surroundings.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Amethyst',
@@ -56,7 +57,8 @@ const CRYSTALS = [
             'Use in grids for protection and purification'
         ],
         affirmation: 'I trust my intuition and connect with divine wisdom.',
-        care_tips: 'Do not leave in direct sunlight as color will fade. Very durable stone safe for water cleansing.'
+        care_tips: 'Do not leave in direct sunlight as color will fade. Very durable stone safe for water cleansing.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Rose Quartz',
@@ -81,7 +83,8 @@ const CRYSTALS = [
             'Meditate with to open heart chakra'
         ],
         affirmation: 'I am worthy of love. I give and receive love freely.',
-        care_tips: 'Color may fade in direct sunlight. Safe to cleanse with water. Very durable.'
+        care_tips: 'Color may fade in direct sunlight. Safe to cleanse with water. Very durable.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Black Tourmaline',
@@ -106,7 +109,8 @@ const CRYSTALS = [
             'Keep by front door to block negative energy'
         ],
         affirmation: 'I am protected, grounded, and safe in all situations.',
-        care_tips: 'Do not cleanse with water as it may damage the stone. Use dry methods only.'
+        care_tips: 'Do not cleanse with water as it may damage the stone. Use dry methods only.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Citrine',
@@ -131,7 +135,8 @@ const CRYSTALS = [
             'Meditate with for solar plexus activation'
         ],
         affirmation: 'I attract abundance and success in all areas of my life.',
-        care_tips: 'Loves sunlight and rarely needs cleansing. Most citrine on market is heat-treated amethyst - natural citrine is pale yellow.'
+        care_tips: 'Loves sunlight and rarely needs cleansing. Most citrine on market is heat-treated amethyst - natural citrine is pale yellow.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Selenite',
@@ -156,7 +161,8 @@ const CRYSTALS = [
             'Create grid for space clearing'
         ],
         affirmation: 'I am open to divine guidance and higher wisdom.',
-        care_tips: 'NEVER use water - selenite dissolves in water! Very soft stone, handle gently. Self-cleansing.'
+        care_tips: 'NEVER use water - selenite dissolves in water! Very soft stone, handle gently. Self-cleansing.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Labradorite',
@@ -181,7 +187,8 @@ const CRYSTALS = [
             'Keep in workspace for creative inspiration'
         ],
         affirmation: 'I trust my inner magic and embrace transformation.',
-        care_tips: 'Can cleanse with water. Protect from scratches. Flash (labradorescence) is best viewed in light.'
+        care_tips: 'Can cleanse with water. Protect from scratches. Flash (labradorescence) is best viewed in light.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry', 'Chaos Magick']
     },
     {
         name: 'Carnelian',
@@ -206,7 +213,8 @@ const CRYSTALS = [
             'Keep in workspace for motivation'
         ],
         affirmation: 'I am creative, confident, and full of vital energy.',
-        care_tips: 'Loves sunlight. Safe to cleanse with water. Very stable stone.'
+        care_tips: 'Loves sunlight. Safe to cleanse with water. Very stable stone.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Heathen']
     },
     {
         name: 'Moonstone',
@@ -231,7 +239,8 @@ const CRYSTALS = [
             'Use in fertility and pregnancy work'
         ],
         affirmation: 'I flow with the rhythms of life and trust divine timing.',
-        care_tips: 'Charge under full moon. Avoid prolonged sunlight exposure. Handle gently as it can scratch.'
+        care_tips: 'Charge under full moon. Avoid prolonged sunlight exposure. Handle gently as it can scratch.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Hematite',
@@ -256,7 +265,8 @@ const CRYSTALS = [
             'Use in protection grids'
         ],
         affirmation: 'I am grounded, protected, and connected to the Earth.',
-        care_tips: 'Can rust with water - use dry cleansing only. Magnetic hematite is man-made.'
+        care_tips: 'Can rust with water - use dry cleansing only. Magnetic hematite is man-made.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen']
     },
     {
         name: 'Lapis Lazuli',
@@ -281,7 +291,8 @@ const CRYSTALS = [
             'Carry for psychic protection'
         ],
         affirmation: 'I speak my truth with clarity and confidence.',
-        care_tips: 'Avoid water and harsh chemicals. Soft stone - protect from scratches.'
+        care_tips: 'Avoid water and harsh chemicals. Soft stone - protect from scratches.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Green Aventurine',
@@ -306,7 +317,8 @@ const CRYSTALS = [
             'Meditate with for heart chakra opening'
         ],
         affirmation: 'I attract luck and abundance into my life.',
-        care_tips: 'Safe to cleanse with water. Durable stone.'
+        care_tips: 'Safe to cleanse with water. Durable stone.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Druidry']
     },
     {
         name: 'Obsidian',
@@ -331,7 +343,8 @@ const CRYSTALS = [
             'Use in root chakra healing'
         ],
         affirmation: 'I face my shadows with courage and emerge transformed.',
-        care_tips: 'Glass-like and brittle - handle with care. Do not expose to water for extended periods.'
+        care_tips: 'Glass-like and brittle - handle with care. Do not expose to water for extended periods.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen', 'Chaos Magick']
     },
     {
         name: 'Tiger\'s Eye',
@@ -355,7 +368,8 @@ const CRYSTALS = [
             'Use in manifestation work'
         ],
         affirmation: 'I am confident, powerful, and protected.',
-        care_tips: 'Loves sunlight. Safe to cleanse with water. Chatoyancy (cat\'s eye effect) best viewed in light.'
+        care_tips: 'Loves sunlight. Safe to cleanse with water. Chatoyancy (cat\'s eye effect) best viewed in light.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Amazonite',
@@ -380,7 +394,8 @@ const CRYSTALS = [
             'Use in throat chakra work'
         ],
         affirmation: 'I speak my truth from the heart with courage and clarity.',
-        care_tips: 'Brief water exposure okay but avoid prolonged soaking. Soft stone - protect from scratches.'
+        care_tips: 'Brief water exposure okay but avoid prolonged soaking. Soft stone - protect from scratches.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Garnet',
@@ -405,7 +420,8 @@ const CRYSTALS = [
             'Use in commitment and love rituals'
         ],
         affirmation: 'I am passionate, committed, and full of vital life force.',
-        care_tips: 'Safe to cleanse with water. Durable stone. Red garnet most common but exists in many colors.'
+        care_tips: 'Safe to cleanse with water. Durable stone. Red garnet most common but exists in many colors.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen']
     },
     {
         name: 'Fluorite',
@@ -430,7 +446,8 @@ const CRYSTALS = [
             'Use in study or workspace'
         ],
         affirmation: 'My mind is clear, focused, and brilliantly capable.',
-        care_tips: 'Avoid water and sunlight (can fade). Very soft - handle gently.'
+        care_tips: 'Avoid water and sunlight (can fade). Very soft - handle gently.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Turquoise',
@@ -455,7 +472,8 @@ const CRYSTALS = [
             'Meditate with for spiritual connection'
         ],
         affirmation: 'I speak my truth clearly and am protected on my journey.',
-        care_tips: 'Never use water or chemicals - very porous. Can change color with body chemistry. Often stabilized or imitation.'
+        care_tips: 'Never use water or chemicals - very porous. Can change color with body chemistry. Often stabilized or imitation.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Sodalite',
@@ -480,7 +498,8 @@ const CRYSTALS = [
             'Use in throat chakra work'
         ],
         affirmation: 'I trust my intuition and speak my truth calmly.',
-        care_tips: 'Avoid prolonged water exposure. Sometimes confused with lapis lazuli.'
+        care_tips: 'Avoid prolonged water exposure. Sometimes confused with lapis lazuli.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Malachite',
@@ -505,7 +524,8 @@ const CRYSTALS = [
             'Place by electronics for EMF protection'
         ],
         affirmation: 'I release what no longer serves me and embrace transformation.',
-        care_tips: 'TOXIC in raw form - only use polished. Never make elixirs. Avoid water. Very soft.'
+        care_tips: 'TOXIC in raw form - only use polished. Never make elixirs. Avoid water. Very soft.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Pyrite',
@@ -530,7 +550,8 @@ const CRYSTALS = [
             'Display in workspace for ideas'
         ],
         affirmation: 'I attract abundance and prosperity flows to me effortlessly.',
-        care_tips: 'Never use water - pyrite oxidizes and creates rust/sulfuric acid. Dry cleansing only.'
+        care_tips: 'Never use water - pyrite oxidizes and creates rust/sulfuric acid. Dry cleansing only.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Heathen']
     },
     {
         name: 'Rhodonite',
@@ -555,7 +576,8 @@ const CRYSTALS = [
             'Use in self-love rituals'
         ],
         affirmation: 'I forgive, I heal, and I love myself unconditionally.',
-        care_tips: 'Safe to cleanse with water. Durable stone.'
+        care_tips: 'Safe to cleanse with water. Durable stone.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Smoky Quartz',
@@ -580,7 +602,8 @@ const CRYSTALS = [
             'Meditate with to release anxiety'
         ],
         affirmation: 'I release negativity and ground myself in the present moment.',
-        care_tips: 'Very durable. Safe for water. Color from natural irradiation - don\'t confuse with dyed clear quartz.'
+        care_tips: 'Very durable. Safe for water. Color from natural irradiation - don\'t confuse with dyed clear quartz.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Aquamarine',
@@ -605,7 +628,8 @@ const CRYSTALS = [
             'Use in calming rituals'
         ],
         affirmation: 'I speak and live my truth with courage and clarity.',
-        care_tips: 'Very durable. Safe for water (sacred connection to ocean). Can fade in sunlight.'
+        care_tips: 'Very durable. Safe for water (sacred connection to ocean). Can fade in sunlight.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry', 'Ceremonial']
     },
     {
         name: 'Blue Lace Agate',
@@ -630,7 +654,8 @@ const CRYSTALS = [
             'Gift to those who feel unheard'
         ],
         affirmation: 'I speak my truth with clarity, confidence, and compassion.',
-        care_tips: 'Relatively durable. Avoid prolonged water exposure. Keep from harsh sunlight to preserve banding color.'
+        care_tips: 'Relatively durable. Avoid prolonged water exposure. Keep from harsh sunlight to preserve banding color.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Howlite',
@@ -655,7 +680,8 @@ const CRYSTALS = [
             'Place on crown chakra for higher connection'
         ],
         affirmation: 'I am patient, peaceful, and open to higher wisdom.',
-        care_tips: 'Soft stone — handle with care. Avoid water (water-soluble minerals). Keep away from sunlight and harsh chemicals.'
+        care_tips: 'Soft stone — handle with care. Avoid water (water-soluble minerals). Keep away from sunlight and harsh chemicals.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Lepidolite',
@@ -680,7 +706,8 @@ const CRYSTALS = [
             'Meditate with to release old patterns'
         ],
         affirmation: 'I release what no longer serves me and trust in peaceful change.',
-        care_tips: 'Very soft and fragile — avoid tumbling. Keep dry; sensitive to water. Handle gently to preserve mica layers.'
+        care_tips: 'Very soft and fragile — avoid tumbling. Keep dry; sensitive to water. Handle gently to preserve mica layers.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Sunstone',
@@ -705,7 +732,8 @@ const CRYSTALS = [
             'Gift to someone feeling stuck or sad'
         ],
         affirmation: 'I radiate joy, warmth, and confidence in all that I do.',
-        care_tips: 'Durable stone. Sunlight is ideal for charging. Cleanse with warm water — avoid harsh chemicals.'
+        care_tips: 'Durable stone. Sunlight is ideal for charging. Cleanse with warm water — avoid harsh chemicals.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Red Jasper',
@@ -730,7 +758,8 @@ const CRYSTALS = [
             'Use in Mars or fire rituals'
         ],
         affirmation: 'I am grounded, strong, and fully alive in my body.',
-        care_tips: 'Very durable. Safe for water and sunlight. An excellent daily carry stone.'
+        care_tips: 'Very durable. Safe for water and sunlight. An excellent daily carry stone.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen']
     },
     {
         name: 'Orange Calcite',
@@ -755,7 +784,8 @@ const CRYSTALS = [
             'Add to abundance grids'
         ],
         affirmation: 'My creativity flows freely and abundantly in all areas of my life.',
-        care_tips: 'Soft and sensitive — handle gently. Avoid water (will dissolve over time). May fade in direct sunlight.'
+        care_tips: 'Soft and sensitive — handle gently. Avoid water (will dissolve over time). May fade in direct sunlight.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Celestite',
@@ -780,7 +810,8 @@ const CRYSTALS = [
             'Hold when journaling intuitive messages'
         ],
         affirmation: 'I am surrounded by divine light and guided by angelic wisdom.',
-        care_tips: 'Very fragile — do not tumble. Sensitive to water and sunlight. Keep away from high-traffic areas. Dust with soft brush only.'
+        care_tips: 'Very fragile — do not tumble. Sensitive to water and sunlight. Keep away from high-traffic areas. Dust with soft brush only.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Shungite',
@@ -805,7 +836,8 @@ const CRYSTALS = [
             'Add to water (only raw Elite shungite) for purification'
         ],
         affirmation: 'I am grounded, protected, and clear of all harmful energies.',
-        care_tips: 'Avoid extended water exposure — will leave black residue. Wipe clean with dry cloth. Elite shungite is more fragile than regular.'
+        care_tips: 'Avoid extended water exposure — will leave black residue. Wipe clean with dry cloth. Elite shungite is more fragile than regular.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen', 'Chaos Magick']
     },
     {
         name: 'Kyanite',
@@ -830,7 +862,8 @@ const CRYSTALS = [
             'Carry for honest, effective communication'
         ],
         affirmation: 'All my energy centers are aligned, clear, and flowing freely.',
-        care_tips: 'Never needs cleansing. Avoid water — can weaken the stone. Handle gently; blades can be fragile along cleavage planes.'
+        care_tips: 'Never needs cleansing. Avoid water — can weaken the stone. Handle gently; blades can be fragile along cleavage planes.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Peridot',
@@ -855,7 +888,8 @@ const CRYSTALS = [
             'Add to heart chakra crystal layouts'
         ],
         affirmation: 'I release the past with grace and welcome abundance in all its forms.',
-        care_tips: 'Moderately durable. Avoid household acids and prolonged sunlight. Safe for brief water cleansing.'
+        care_tips: 'Moderately durable. Avoid household acids and prolonged sunlight. Safe for brief water cleansing.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Bloodstone',
@@ -880,7 +914,8 @@ const CRYSTALS = [
             'Hold during difficult confrontations'
         ],
         affirmation: 'I face challenges with courage and my energy is vital and strong.',
-        care_tips: 'Durable and great for everyday carry. Safe for water. Avoid prolonged direct sunlight to preserve color.'
+        care_tips: 'Durable and great for everyday carry. Safe for water. Avoid prolonged direct sunlight to preserve color.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry', 'Heathen']
     },
     {
         name: 'Unakite',
@@ -905,7 +940,8 @@ const CRYSTALS = [
             'Gift to those in recovery'
         ],
         affirmation: 'I heal gently and completely, integrating all parts of myself.',
-        care_tips: 'Durable. Safe for brief water exposure. Avoid prolonged sun exposure — pink feldspar may fade slightly.'
+        care_tips: 'Durable. Safe for brief water exposure. Avoid prolonged sun exposure — pink feldspar may fade slightly.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Chrysocolla',
@@ -930,7 +966,8 @@ const CRYSTALS = [
             'Keep near during emotional conversations'
         ],
         affirmation: 'My voice is sacred. I speak with wisdom, compassion, and truth.',
-        care_tips: 'Very soft and fragile — handle with care. Never expose to water. Avoid chemicals and rough surfaces.'
+        care_tips: 'Very soft and fragile — handle with care. Never expose to water. Avoid chemicals and rough surfaces.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Prehnite',
@@ -955,7 +992,8 @@ const CRYSTALS = [
             'Keep in meditation space for inner knowing'
         ],
         affirmation: 'I trust my inner knowing and align with divine guidance.',
-        care_tips: 'Moderately durable. Avoid harsh chemicals. Safe for brief water exposure. Keep from extreme temperatures.'
+        care_tips: 'Moderately durable. Avoid harsh chemicals. Safe for brief water exposure. Keep from extreme temperatures.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Iolite',
@@ -980,7 +1018,8 @@ const CRYSTALS = [
             'Use for addiction recovery support'
         ],
         affirmation: 'I trust my inner compass and navigate my path with clarity.',
-        care_tips: 'Durable and safe for most cleansing methods. Avoid harsh chemicals. Brief water exposure is fine.'
+        care_tips: 'Durable and safe for most cleansing methods. Avoid harsh chemicals. Brief water exposure is fine.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial', 'Chaos Magick']
     },
     {
         name: 'Larimar',
@@ -1005,7 +1044,8 @@ const CRYSTALS = [
             'Place near water features or on altars'
         ],
         affirmation: 'I am as calm, deep, and infinite as the ocean.',
-        care_tips: 'Somewhat soft — avoid scratching. Brief water exposure is fine but avoid long soaking. Store carefully to prevent chipping.'
+        care_tips: 'Somewhat soft — avoid scratching. Brief water exposure is fine but avoid long soaking. Store carefully to prevent chipping.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Charoite',
@@ -1030,7 +1070,8 @@ const CRYSTALS = [
             'Keep on altar as a focus stone for healers'
         ],
         affirmation: 'I embrace transformation and serve the world with an open heart.',
-        care_tips: 'Moderate hardness. Avoid water exposure. Store separately to prevent scratching. Handle gently.'
+        care_tips: 'Moderate hardness. Avoid water exposure. Store separately to prevent scratching. Handle gently.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Chaos Magick']
     },
     {
         name: 'Snowflake Obsidian',
@@ -1055,7 +1096,8 @@ const CRYSTALS = [
             'Hold during meditation on balance'
         ],
         affirmation: 'I embrace both my light and shadow with acceptance and grace.',
-        care_tips: 'Can be sharp if fractured — handle carefully. Avoid water. Durable for everyday use when tumbled.'
+        care_tips: 'Can be sharp if fractured — handle carefully. Avoid water. Durable for everyday use when tumbled.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen']
     },
     {
         name: 'Apache Tears',
@@ -1080,7 +1122,8 @@ const CRYSTALS = [
             'Keep at root chakra during grief meditation'
         ],
         affirmation: 'I allow myself to grieve and trust that healing comes in its own time.',
-        care_tips: 'Fragile if thin. Avoid water. Handle gently and store safely. Smudge regularly during use for grief work.'
+        care_tips: 'Fragile if thin. Avoid water. Handle gently and store safely. Smudge regularly during use for grief work.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen']
     },
     {
         name: 'Blue Apatite',
@@ -1105,7 +1148,8 @@ const CRYSTALS = [
             'Wear for psychic development'
         ],
         affirmation: 'My mind is clear, my purpose is focused, and my goals manifest with ease.',
-        care_tips: 'Relatively soft — avoid scratching surfaces. Not safe for water. Store away from harder stones.'
+        care_tips: 'Relatively soft — avoid scratching surfaces. Not safe for water. Store away from harder stones.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Pink Calcite',
@@ -1130,7 +1174,8 @@ const CRYSTALS = [
             'Gift to those in need of comfort'
         ],
         affirmation: 'I am worthy of love. I forgive myself and others with compassion.',
-        care_tips: 'Very soft — handle gently. Avoid water (will erode). Avoid harsh chemicals and direct sunlight.'
+        care_tips: 'Very soft — handle gently. Avoid water (will erode). Avoid harsh chemicals and direct sunlight.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Dalmatian Jasper',
@@ -1155,7 +1200,8 @@ const CRYSTALS = [
             'Use in pet blessing rituals'
         ],
         affirmation: 'I embrace joy, playfulness, and the wonder of each new day.',
-        care_tips: 'Durable and great for everyday carry. Safe for water and sunlight. An excellent worry stone.'
+        care_tips: 'Durable and great for everyday carry. Safe for water and sunlight. An excellent worry stone.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Moldavite',
@@ -1180,7 +1226,8 @@ const CRYSTALS = [
             'Work with during major life transitions'
         ],
         affirmation: 'I welcome rapid transformation and trust the universe\'s plan for my evolution.',
-        care_tips: 'Fairly fragile — avoid dropping. Verify authenticity when purchasing (many fakes exist). Start with short meditation sessions if new to its energy. Always pair with grounding stones.'
+        care_tips: 'Fairly fragile — avoid dropping. Verify authenticity when purchasing (many fakes exist). Start with short meditation sessions if new to its energy. Always pair with grounding stones.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Chaos Magick']
     },
     {
         name: 'Seraphinite',
@@ -1205,7 +1252,8 @@ const CRYSTALS = [
             'Set on altar during healing ceremonies'
         ],
         affirmation: 'I am held in the wings of the angels and healed on every level.',
-        care_tips: 'Soft and fragile — handle with great care. Avoid water and harsh chemicals. Store wrapped in cloth to prevent scratching.'
+        care_tips: 'Soft and fragile — handle with great care. Avoid water and harsh chemicals. Store wrapped in cloth to prevent scratching.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Chaos Magick']
     },
     {
         name: 'Peacock Ore',
@@ -1230,7 +1278,8 @@ const CRYSTALS = [
             'Use in rituals calling in magic and wonder'
         ],
         affirmation: 'I choose joy. My life is a rainbow of possibility and magic.',
-        care_tips: 'Very soft and fragile — display rather than carry. The iridescence is from surface oxidation — avoid polishing or harsh cleansers. Dry display only.'
+        care_tips: 'Very soft and fragile — display rather than carry. The iridescence is from surface oxidation — avoid polishing or harsh cleansers. Dry display only.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Chaos Magick']
     },
     {
         name: 'Pietersite',
@@ -1255,7 +1304,8 @@ const CRYSTALS = [
             'Use in layouts for akashic records access'
         ],
         affirmation: 'I see clearly through all illusions. My will is aligned with my highest truth.',
-        care_tips: 'Durable for everyday use. Safe for brief water exposure. The chatoyancy is best seen in direct light. Avoid harsh chemicals.'
+        care_tips: 'Durable for everyday use. Safe for brief water exposure. The chatoyancy is best seen in direct light. Avoid harsh chemicals.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Chaos Magick']
     },
     {
         name: 'Lapis Lazuli',
@@ -1274,7 +1324,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Sunlight (brief)'],
         uses: ['Wear at throat for truthful communication', 'Place on third eye during meditation', 'Use in dreamwork on the pillow', 'Carry for wisdom in decisions', 'Include in truth-revealing rituals'],
         affirmation: 'I speak my truth with clarity, wisdom, and compassion.',
-        care_tips: 'Avoid salt water and harsh chemicals. Relatively soft — handle with care. Pyrite inclusions may oxidize in prolonged sunlight.'
+        care_tips: 'Avoid salt water and harsh chemicals. Relatively soft — handle with care. Pyrite inclusions may oxidize in prolonged sunlight.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Sodalite',
@@ -1293,7 +1344,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Visualization'],
         uses: ['Place at work for clear thinking', 'Carry during public speaking', 'Use in group meditations', 'Wear to calm anxiety', 'Place in study area for focus'],
         affirmation: 'My mind is clear, calm, and attuned to inner wisdom.',
-        care_tips: 'Avoid prolonged sun exposure as color may fade. Safe for brief water use. Relatively soft so store carefully.'
+        care_tips: 'Avoid prolonged sun exposure as color may fade. Safe for brief water use. Relatively soft so store carefully.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Moonstone',
@@ -1312,7 +1364,8 @@ const CRYSTALS = [
         charging: ['Full Moonlight', 'New Moonlight'],
         uses: ['Place on windowsill during full moon', 'Wear during lunar rituals', 'Carry for new beginnings', 'Use for fertility and goddess work', 'Meditate for dream enhancement'],
         affirmation: 'I flow with the cycles of life, trusting my intuition and inner light.',
-        care_tips: 'Moderately fragile — avoid drops and harsh impacts. Do not clean with chemicals. Charge only in moonlight, not direct sun.'
+        care_tips: 'Moderately fragile — avoid drops and harsh impacts. Do not clean with chemicals. Charge only in moonlight, not direct sun.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Labradorite',
@@ -1331,7 +1384,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Candlelight', 'Visualization'],
         uses: ['Wear to protect aura from energy drain', 'Use in transformation rituals', 'Meditate with to reveal hidden truths', 'Place on third eye for psychic work', 'Carry during major life changes'],
         affirmation: 'I embrace transformation and shine my inner magic into the world.',
-        care_tips: 'Avoid harsh chemicals. The labradorescence is internal — do not polish aggressively. Safe for brief water use.'
+        care_tips: 'Avoid harsh chemicals. The labradorescence is internal — do not polish aggressively. Safe for brief water use.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry', 'Chaos Magick']
     },
     {
         name: 'Fluorite',
@@ -1350,7 +1404,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Sunlight (brief)'],
         uses: ['Place on desk for study and focus', 'Hold during meditation for clarity', 'Use in energy grids for mental work', 'Carry in testing or interview situations', 'Place in workspace to absorb negative energy'],
         affirmation: 'My mind is clear, organized, and open to new wisdom.',
-        care_tips: 'Very soft at 4 Mohs — handle carefully. Do not leave in salt water. Avoid direct sunlight for colored varieties. Store separately to prevent scratching.'
+        care_tips: 'Very soft at 4 Mohs — handle carefully. Do not leave in salt water. Avoid direct sunlight for colored varieties. Store separately to prevent scratching.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Lepidolite',
@@ -1369,7 +1424,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Rose quartz cluster'],
         uses: ['Place under pillow for peaceful sleep', 'Carry during stressful periods', 'Hold during anxiety or panic', 'Use in meditation for emotional release', 'Place in home for calming energy'],
         affirmation: 'I release what no longer serves me and embrace peaceful transformation.',
-        care_tips: 'Very soft and fragile — display rather than carry in pockets. Avoid water as the mica structure can delaminate. Keep away from harsh light.'
+        care_tips: 'Very soft and fragile — display rather than carry in pockets. Avoid water as the mica structure can delaminate. Keep away from harsh light.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Malachite',
@@ -1388,7 +1444,8 @@ const CRYSTALS = [
         charging: ['Sunlight (brief)', 'Earth burial'],
         uses: ['Place on heart chakra for emotional healing', 'Carry for protection during travel', 'Use in abundance rituals', 'Place near electronics to absorb EMF', 'Meditate with for transformation work'],
         affirmation: 'I transform with courage and emerge stronger, clearer, and more aligned.',
-        care_tips: 'TOXIC — never use in elixirs or place in drinking water. Avoid inhaling malachite dust. Do not use with salt water. Relatively soft — store carefully.'
+        care_tips: 'TOXIC — never use in elixirs or place in drinking water. Avoid inhaling malachite dust. Do not use with salt water. Relatively soft — store carefully.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Turquoise',
@@ -1407,7 +1464,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Earth burial'],
         uses: ['Wear as protective amulet', 'Use in communication rituals', 'Carry for safe travel', 'Place on throat chakra for healing', 'Include in Native-inspired spiritual practices'],
         affirmation: 'I am protected, whole, and speak my truth with courage.',
-        care_tips: 'Avoid exposure to oils, cosmetics, and chemicals which can alter color. Very porous — do not soak in water. Store away from direct sun as color may fade.'
+        care_tips: 'Avoid exposure to oils, cosmetics, and chemicals which can alter color. Very porous — do not soak in water. Store away from direct sun as color may fade.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Amazonite',
@@ -1426,7 +1484,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Earth burial'],
         uses: ['Carry to speak truth without fear', 'Place by computer for EMF protection', 'Wear when negotiating or having difficult conversations', 'Use in rituals for courage', 'Meditate with for heart-throat alignment'],
         affirmation: 'I speak my truth with courage, clarity, and loving honesty.',
-        care_tips: 'Avoid harsh chemicals and prolonged sun exposure. Safe for brief water use. Moderately durable for everyday wear.'
+        care_tips: 'Avoid harsh chemicals and prolonged sun exposure. Safe for brief water use. Moderately durable for everyday wear.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Garnet',
@@ -1445,7 +1504,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Earth burial'],
         uses: ['Wear for passion and vitality', 'Use in love rituals', 'Carry for energizing on low-energy days', 'Place at root chakra for grounding', 'Use in business rituals for prosperity'],
         affirmation: 'I am energized, passionate, and fully alive in this moment.',
-        care_tips: 'Durable for everyday wear. Safe for water and sunlight. Clean with mild soap and water. Different garnet varieties have slightly different care needs.'
+        care_tips: 'Durable for everyday wear. Safe for water and sunlight. Clean with mild soap and water. Different garnet varieties have slightly different care needs.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen']
     },
     {
         name: 'Aquamarine',
@@ -1464,7 +1524,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Ocean water', 'Sunlight'],
         uses: ['Wear for courage in difficult conversations', 'Meditate with for inner peace', 'Use in water rituals', 'Carry for safe sea travel', 'Place near throat for clear communication'],
         affirmation: 'I flow with courage and speak my deepest truth with gentle clarity.',
-        care_tips: 'Very durable and suitable for everyday wear. Safe for water. Avoid prolonged intense sunlight as color may lighten slightly. Clean with mild soap.'
+        care_tips: 'Very durable and suitable for everyday wear. Safe for water. Avoid prolonged intense sunlight as color may lighten slightly. Clean with mild soap.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry', 'Ceremonial']
     },
     {
         name: 'Rhodonite',
@@ -1483,7 +1544,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Rose quartz cluster'],
         uses: ['Carry during emotional healing process', 'Use in forgiveness rituals', 'Place on heart chakra for emotional balance', 'Gift to someone healing from heartbreak', 'Meditate with for self-love'],
         affirmation: 'I forgive, I heal, and I open my heart to give and receive love.',
-        care_tips: 'Moderately durable. Avoid harsh chemicals and prolonged sun. Safe for brief water cleansing. Store wrapped to prevent scratching.'
+        care_tips: 'Moderately durable. Avoid harsh chemicals and prolonged sun. Safe for brief water cleansing. Store wrapped to prevent scratching.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Sunstone',
@@ -1502,7 +1564,8 @@ const CRYSTALS = [
         charging: ['Direct Sunlight', 'Fire'],
         uses: ['Carry for confidence and positivity', 'Use in solar rituals at midsummer', 'Wear to attract abundance and joy', 'Meditate with during depression', 'Place in workspace to uplift energy'],
         affirmation: 'I radiate joy, confidence, and the abundant warmth of the sun.',
-        care_tips: 'Fairly durable. The aventurescence is from internal platelets — do not polish aggressively. Safe for sunlight and brief water use.'
+        care_tips: 'Fairly durable. The aventurescence is from internal platelets — do not polish aggressively. Safe for sunlight and brief water use.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Prehnite',
@@ -1521,7 +1584,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Earth burial'],
         uses: ['Use in healing others sessions', 'Place under pillow for prophetic dreams', 'Carry for unconditional love work', 'Meditate with for inner knowing', 'Place in garden for nature connection'],
         affirmation: 'I am at peace with what is, and I trust in the healing wisdom of the universe.',
-        care_tips: 'Moderately durable. Avoid harsh chemicals. Safe for water and sunlight. Translucent varieties are most prized — store carefully to prevent scratches.'
+        care_tips: 'Moderately durable. Avoid harsh chemicals. Safe for water and sunlight. Translucent varieties are most prized — store carefully to prevent scratches.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Chrysoprase',
@@ -1540,7 +1604,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Moonlight'],
         uses: ['Wear to attract love and abundance', 'Place on heart chakra for healing', 'Carry to boost optimism', 'Use in abundance rituals', 'Meditate with for self-acceptance'],
         affirmation: 'I am worthy of love and abundance. My heart is open and joyful.',
-        care_tips: 'Moderately durable. Color may fade with prolonged sunlight. Keep away from strong heat. Safe for water cleansing.'
+        care_tips: 'Moderately durable. Color may fade with prolonged sunlight. Keep away from strong heat. Safe for water cleansing.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Peridot',
@@ -1559,7 +1624,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Earth burial'],
         uses: ['Carry for abundance and prosperity', 'Wear to release negativity', 'Use in rituals for new beginnings', 'Place on solar plexus for confidence', 'Give as gift for health and happiness'],
         affirmation: 'I release jealousy and embrace the abundant flow of goodness in my life.',
-        care_tips: 'Moderately durable but can be sensitive to acids and temperature changes. Avoid harsh chemicals. Safe for brief water cleansing. Store carefully.'
+        care_tips: 'Moderately durable but can be sensitive to acids and temperature changes. Avoid harsh chemicals. Safe for brief water cleansing. Store carefully.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Blue Kyanite',
@@ -1578,7 +1644,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Moonlight', 'Self-cleansing'],
         uses: ['Use as a clearing wand for other crystals', 'Carry for instant chakra alignment', 'Place at throat for clear speech', 'Use in cord-cutting rituals', 'Meditate with for instant centering'],
         affirmation: 'I am aligned, clear, and in perfect communication with my highest self.',
-        care_tips: 'Unusual hardness — very hard along one direction, much softer across. Do not hit hard surfaces. Avoid water as the layered structure can split. Handle with gentle care.'
+        care_tips: 'Unusual hardness — very hard along one direction, much softer across. Do not hit hard surfaces. Avoid water as the layered structure can split. Handle with gentle care.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Howlite',
@@ -1597,7 +1664,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Visualization'],
         uses: ['Place by bed for restful sleep', 'Hold during meditation for mental quiet', 'Carry to absorb anger', 'Use in patience rituals', 'Program as a substitute for other stones'],
         affirmation: 'I am calm, patient, and open to the wisdom that flows to me.',
-        care_tips: 'Soft and porous — avoid water and chemicals. Often dyed to simulate turquoise or other stones. Easily scratched — store separately.'
+        care_tips: 'Soft and porous — avoid water and chemicals. Often dyed to simulate turquoise or other stones. Easily scratched — store separately.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Rhodochrosite',
@@ -1616,7 +1684,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Rose quartz cluster'],
         uses: ['Use in deep emotional healing work', 'Meditate with for self-love', 'Place on heart chakra to heal old wounds', 'Carry during inner child work', 'Gift to those experiencing heartbreak'],
         affirmation: 'I love myself completely and I am worthy of love in its purest form.',
-        care_tips: 'Soft and fragile — handle with great care. Avoid water, acids, and harsh chemicals. Display pieces rather than wear. Clean with dry soft cloth only.'
+        care_tips: 'Soft and fragile — handle with great care. Avoid water, acids, and harsh chemicals. Display pieces rather than wear. Clean with dry soft cloth only.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Kunzite',
@@ -1635,7 +1704,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Rose quartz cluster'],
         uses: ['Meditate with for heart opening', 'Carry for peaceful interactions', 'Gift between partners or loved ones', 'Use in love rituals', 'Wear for emotional protection and love'],
         affirmation: 'My heart is open to love in all its forms — I give and receive with ease.',
-        care_tips: 'Can fade in direct sunlight — keep away from prolonged UV exposure. Relatively fragile — avoid dropping. Clean with mild soap and water.'
+        care_tips: 'Can fade in direct sunlight — keep away from prolonged UV exposure. Relatively fragile — avoid dropping. Clean with mild soap and water.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Iolite',
@@ -1654,7 +1724,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Sunlight'],
         uses: ['Wear for spiritual guidance', 'Use during vision work and dreamwork', 'Carry when navigating difficult choices', 'Meditate with for inner compass work', 'Place on third eye for psychic development'],
         affirmation: 'I trust my inner compass and navigate my path with clarity and wisdom.',
-        care_tips: 'Fairly durable for everyday wear. Avoid harsh chemicals. Safe for water cleansing. May appear different colors from different angles (trichroic) — this is normal.'
+        care_tips: 'Fairly durable for everyday wear. Avoid harsh chemicals. Safe for water cleansing. May appear different colors from different angles (trichroic) — this is normal.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial', 'Chaos Magick']
     },
     {
         name: 'Tanzanite',
@@ -1673,7 +1744,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Amethyst cluster'],
         uses: ['Use in high-level spiritual meditation', 'Wear for spiritual evolution', 'Place on third eye for inner vision', 'Use in channeling and spirit communication work', 'Carry for accessing Akashic Records'],
         affirmation: 'I open to spiritual wisdom and embody higher frequencies of light.',
-        care_tips: 'Handle with care — moderate hardness and can be brittle. Avoid temperature changes and ultrasonic cleaners. Clean with mild soap and soft brush.'
+        care_tips: 'Handle with care — moderate hardness and can be brittle. Avoid temperature changes and ultrasonic cleaners. Clean with mild soap and soft brush.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial', 'Chaos Magick']
     },
     {
         name: 'Topaz (Blue)',
@@ -1692,7 +1764,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Sunlight'],
         uses: ['Wear for clear and honest communication', 'Use in writing and artistic endeavors', 'Carry for truth-seeking', 'Meditate with for inner truth', 'Gift to writers, speakers, and artists'],
         affirmation: 'I communicate my truth with clarity, grace, and confidence.',
-        care_tips: 'Very hard and durable. Avoid knocking against hard surfaces as it has cleavage planes and can chip. Safe for water and sunlight. Excellent for everyday jewelry.'
+        care_tips: 'Very hard and durable. Avoid knocking against hard surfaces as it has cleavage planes and can chip. Safe for water and sunlight. Excellent for everyday jewelry.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Larimar',
@@ -1711,7 +1784,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Ocean visualization'],
         uses: ['Wear for deep calm and serenity', 'Place on throat for communication healing', 'Use in water rituals and ocean magic', 'Carry for stress relief', 'Meditate with for deep emotional healing'],
         affirmation: 'I flow in peace, speak my truth, and ride the waves of life with grace.',
-        care_tips: 'Relatively soft — handle with care. Avoid extended water soaking. Keep away from harsh chemicals and extended sunlight. Rare and precious — store wrapped.'
+        care_tips: 'Relatively soft — handle with care. Avoid extended water soaking. Keep away from harsh chemicals and extended sunlight. Rare and precious — store wrapped.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Charoite',
@@ -1730,7 +1804,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Amethyst cluster'],
         uses: ['Use during major life transitions', 'Meditate with for deep transformation', 'Carry for courage through change', 'Place on crown for higher spiritual work', 'Use in shadow work sessions'],
         affirmation: 'I embrace transformation with grace and courage, knowing all change serves my highest good.',
-        care_tips: 'Handle with care — moderately soft. Avoid water soaking and harsh chemicals. The swirling patterns are natural — no two are alike. Store wrapped.'
+        care_tips: 'Handle with care — moderately soft. Avoid water soaking and harsh chemicals. The swirling patterns are natural — no two are alike. Store wrapped.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Chaos Magick']
     },
     {
         name: 'Sugilite',
@@ -1749,7 +1824,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Amethyst cluster'],
         uses: ['Wear for spiritual protection', 'Use in healing work', 'Meditate with for spiritual love', 'Place at crown for channeling', 'Carry for protection in harsh environments'],
         affirmation: 'I am protected by divine love and my spirit shines its highest light.',
-        care_tips: 'Moderately fragile. Avoid water, chemicals, and ultrasonic cleaners. Handle with care. Rare and valuable — store wrapped in cloth.'
+        care_tips: 'Moderately fragile. Avoid water, chemicals, and ultrasonic cleaners. Handle with care. Rare and valuable — store wrapped in cloth.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Shungite',
@@ -1768,7 +1844,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Earth burial'],
         uses: ['Place near router or electronics for EMF protection', 'Use in water purification', 'Carry for grounding and protection', 'Place at home entrances as guardian', 'Use in protective grids'],
         affirmation: 'I am protected, purified, and grounded in the ancient wisdom of the Earth.',
-        care_tips: 'Soft and may leave black residue on hands — wash after handling. Keep away from salts. Safe for water purification (genuine only). Not all shungite is equal — seek verified sources.'
+        care_tips: 'Soft and may leave black residue on hands — wash after handling. Keep away from salts. Safe for water purification (genuine only). Not all shungite is equal — seek verified sources.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen', 'Chaos Magick']
     },
     {
         name: 'Selenite',
@@ -1787,7 +1864,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Self-charging'],
         uses: ['Place on other crystals to cleanse them', 'Use as cleansing wand across aura', 'Place in all rooms for peaceful energy', 'Use in meditation for access to higher realms', 'Create crystal grids as amplifier'],
         affirmation: 'I am clear, peaceful, and aligned with the highest light.',
-        care_tips: 'VERY SOFT — extremely fragile. Never place in water as it will dissolve. Avoid humidity and chemicals. Handle with extreme care. Do not drop. Store wrapped in cloth.'
+        care_tips: 'VERY SOFT — extremely fragile. Never place in water as it will dissolve. Avoid humidity and chemicals. Handle with extreme care. Do not drop. Store wrapped in cloth.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Chalcopyrite',
@@ -1806,7 +1884,8 @@ const CRYSTALS = [
         charging: ['Sunlight (brief)', 'Candlelight'],
         uses: ['Use in abundance rituals', 'Place on altar for prosperity', 'Carry for enhanced creativity', 'Meditate with for cosmic connection', 'Use in mystical work for perception'],
         affirmation: 'I shine with golden possibility and abundance flows freely to me.',
-        care_tips: 'Soft and fragile — handle gently. Avoid water as it can react with sulfur content. The golden surface is natural tarnishing — cleaning will remove it.'
+        care_tips: 'Soft and fragile — handle gently. Avoid water as it can react with sulfur content. The golden surface is natural tarnishing — cleaning will remove it.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Chaos Magick']
     },
     {
         name: 'Aragonite',
@@ -1825,7 +1904,8 @@ const CRYSTALS = [
         charging: ['Earth burial', 'Sunlight'],
         uses: ['Use in Earth healing ceremonies', 'Place in garden to improve soil energy', 'Carry for deep grounding', 'Use for geopathic stress clearing', 'Meditate for connection to Earth Mother'],
         affirmation: 'I am rooted in the Earth\'s wisdom, stable, patient, and deeply nourished.',
-        care_tips: 'Relatively soft. Avoid acids, including vinegar and lemon juice, as they dissolve aragonite. Handle with care. Avoid dropping. Brief water cleansing is safe.'
+        care_tips: 'Relatively soft. Avoid acids, including vinegar and lemon juice, as they dissolve aragonite. Handle with care. Avoid dropping. Brief water cleansing is safe.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Orange Calcite',
@@ -1844,7 +1924,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Candlelight'],
         uses: ['Carry to boost creativity and enthusiasm', 'Place on sacral chakra for healing', 'Use in creativity rituals', 'Wear when feeling emotionally blocked', 'Place in creative workspace'],
         affirmation: 'I am alive with creative fire. Joy and inspiration flow through me.',
-        care_tips: 'Very soft at 3 Mohs — avoid scratching. Do not use vinegar or acids. Avoid prolonged direct sunlight. Safe for brief water cleansing. Store wrapped.'
+        care_tips: 'Very soft at 3 Mohs — avoid scratching. Do not use vinegar or acids. Avoid prolonged direct sunlight. Safe for brief water cleansing. Store wrapped.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Green Calcite',
@@ -1863,7 +1944,8 @@ const CRYSTALS = [
         charging: ['Sunlight (brief)', 'Earth burial'],
         uses: ['Place on heart chakra for healing', 'Use in abundance rituals', 'Place in home for harmonious energy', 'Carry during emotional healing', 'Connect with nature spirits in rituals'],
         affirmation: 'My heart is open, healed, and aligned with the abundance of nature.',
-        care_tips: 'Very soft at 3 Mohs. Avoid acids, harsh chemicals, and vinegar. Handle gently and store wrapped. Safe for very brief water cleansing.'
+        care_tips: 'Very soft at 3 Mohs. Avoid acids, harsh chemicals, and vinegar. Handle gently and store wrapped. Safe for very brief water cleansing.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Apatite',
@@ -1882,7 +1964,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Sunlight'],
         uses: ['Use in manifestation rituals', 'Wear for enhanced communication', 'Meditate with for third eye activation', 'Carry for spiritual attunement', 'Place on desk for mental clarity'],
         affirmation: 'I manifest with clarity and my words and visions create powerful reality.',
-        care_tips: 'Moderately soft — avoid scratching with harder materials. Avoid acids and harsh chemicals. Safe for brief water cleansing. Store separately.'
+        care_tips: 'Moderately soft — avoid scratching with harder materials. Avoid acids and harsh chemicals. Safe for brief water cleansing. Store separately.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Scolecite',
@@ -1901,7 +1984,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Visualization'],
         uses: ['Place under pillow for vivid dreams', 'Use in meditation for spirit contact', 'Carry for inner peace', 'Place in group settings for harmonious energy', 'Use in high-level spiritual work'],
         affirmation: 'I am at peace and open to the gentle wisdom of the spirit realms.',
-        care_tips: 'Fragile and delicate — handle with extreme care. Avoid water, heat, and harsh chemicals. Store wrapped in soft cloth. Display pieces rather than carry.'
+        care_tips: 'Fragile and delicate — handle with extreme care. Avoid water, heat, and harsh chemicals. Store wrapped in soft cloth. Display pieces rather than carry.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Chrysocolla',
@@ -1920,7 +2004,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Visualization'],
         uses: ['Wear for wise and empowered communication', 'Use in goddess rituals', 'Place on throat for healing', 'Carry for emotional balance', 'Use in teaching or healing practices'],
         affirmation: 'I speak with wisdom, grace, and compassion, honoring the goddess within.',
-        care_tips: 'Very soft and fragile — often reinforced with quartz as druzy or with chrysocolla. Avoid water, acids, and rough handling. Display rather than carry when possible.'
+        care_tips: 'Very soft and fragile — often reinforced with quartz as druzy or with chrysocolla. Avoid water, acids, and rough handling. Display rather than carry when possible.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Azurite',
@@ -1939,7 +2024,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Amethyst cluster'],
         uses: ['Meditate with for third eye activation', 'Use in channeling and spirit communication', 'Place on forehead for psychic development', 'Carry for deeper spiritual insight', 'Use in rituals to access Akashic Records'],
         affirmation: 'I open to divine wisdom and my intuition guides me with perfect clarity.',
-        care_tips: 'Soft and sensitive — avoid water, acids, and harsh chemicals. Do not polish. May fade in direct sunlight. Handle with great care. Store wrapped separately.'
+        care_tips: 'Soft and sensitive — avoid water, acids, and harsh chemicals. Do not polish. May fade in direct sunlight. Handle with great care. Store wrapped separately.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Hemimorphite',
@@ -1958,7 +2044,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Sunlight'],
         uses: ['Use in spirit communication work', 'Carry for joyful interactions', 'Place on throat for clear expression', 'Meditate with for spiritual expansion', 'Use in channeling sessions'],
         affirmation: 'I joyfully expand my spiritual awareness and communicate with ease and grace.',
-        care_tips: 'Moderately fragile — handle with care. Avoid water and acids. Store separately. The blue variety is rarer and more prized.'
+        care_tips: 'Moderately fragile — handle with care. Avoid water and acids. Store separately. The blue variety is rarer and more prized.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Spinel',
@@ -1977,7 +2064,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Moonlight'],
         uses: ['Carry for revitalization and stamina', 'Use in rituals for new beginnings', 'Wear for confidence in difficult times', 'Place at root for grounding', 'Use in healing work for vitality'],
         affirmation: 'I renew my spirit and face each challenge with hope and vitality.',
-        care_tips: 'Very hard and durable — excellent for all types of wear. Safe for water and most chemicals. Clean with mild soap and water.'
+        care_tips: 'Very hard and durable — excellent for all types of wear. Safe for water and most chemicals. Clean with mild soap and water.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Smithsonite',
@@ -1996,7 +2084,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Rose quartz cluster'],
         uses: ['Use in inner child healing work', 'Carry for comfort and safety', 'Place on heart chakra for emotional healing', 'Gift to those feeling unloved or lonely', 'Meditate with for gentle self-soothing'],
         affirmation: 'I am lovable, worthy, and safe. My inner child is healed and whole.',
-        care_tips: 'Relatively fragile. Avoid water, acids, and harsh chemicals. Handle with gentle care. The color variations are natural — all are beautiful.'
+        care_tips: 'Relatively fragile. Avoid water, acids, and harsh chemicals. Handle with gentle care. The color variations are natural — all are beautiful.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Ulexite',
@@ -2015,7 +2104,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Visualization'],
         uses: ['Use in scrying and divination', 'Meditate with for enhanced vision', 'Place on third eye for clarity', 'Use to reveal hidden truths in situations', 'Carry for insight into complex matters'],
         affirmation: 'I see clearly with both my eyes and my inner vision.',
-        care_tips: 'Very soft and delicate. Avoid water as it dissolves slowly. Never expose to chemicals. Handle with extreme care and store wrapped separately.'
+        care_tips: 'Very soft and delicate. Avoid water as it dissolves slowly. Never expose to chemicals. Handle with extreme care and store wrapped separately.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Ceremonial']
     },
     {
         name: 'Vanadinite',
@@ -2034,7 +2124,8 @@ const CRYSTALS = [
         charging: ['Sunlight', 'Candlelight'],
         uses: ['Use in manifestation rituals', 'Carry to overcome procrastination', 'Place on desk for creative work', 'Use in fire rituals and candle magic', 'Meditate with for passion and vitality'],
         affirmation: 'I am filled with creative fire and I passionately pursue my goals.',
-        care_tips: 'TOXIC — contains vanadium and lead compounds. Wash hands after handling. Never use in elixirs. Handle with care. Avoid ingestion. Display rather than carry. Keep away from children.'
+        care_tips: 'TOXIC — contains vanadium and lead compounds. Wash hands after handling. Never use in elixirs. Handle with care. Avoid ingestion. Display rather than carry. Keep away from children.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen']
     },
     {
         name: 'Sphalerite',
@@ -2053,7 +2144,8 @@ const CRYSTALS = [
         charging: ['Earth burial', 'Sunlight'],
         uses: ['Carry for grounding after spiritual work', 'Use to verify psychic information', 'Place at root chakra for stability', 'Use in earth rituals', 'Carry during heavy spiritual practice'],
         affirmation: 'I am grounded, discerning, and fully embodied in my physical reality.',
-        care_tips: 'Soft and fragile. Avoid water, acids, and rough handling. Do not use in elixirs. Handle with care. The various color forms have the same properties.'
+        care_tips: 'Soft and fragile. Avoid water, acids, and rough handling. Do not use in elixirs. Handle with care. The various color forms have the same properties.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen']
     },
     {
         name: 'Magnesite',
@@ -2072,7 +2164,8 @@ const CRYSTALS = [
         charging: ['Moonlight', 'Visualization'],
         uses: ['Use as meditation aid for deep relaxation', 'Carry to accept difficult emotions', 'Place on third eye for visualization', 'Use in healing emotional wounds', 'Include in surrender and release rituals'],
         affirmation: 'I surrender to peace and accept the wisdom my heart is ready to receive.',
-        care_tips: 'Relatively soft. Avoid acids and harsh chemicals. Often confused with white howlite. Safe for brief water cleansing. Store wrapped to prevent scratches.'
+        care_tips: 'Relatively soft. Avoid acids and harsh chemicals. Often confused with white howlite. Safe for brief water cleansing. Store wrapped to prevent scratches.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     }
 ];
 
@@ -2135,6 +2228,7 @@ const intentionFilter = document.getElementById('intention-filter');
 const chakraFilter = document.getElementById('chakra-filter');
 const elementFilter = document.getElementById('element-filter');
 const colorFilter = document.getElementById('color-filter');
+const traditionFilter = document.getElementById('tradition-filter');
 const clearFiltersBtn = document.getElementById('clear-filters-btn');
 const crystalGrid = document.getElementById('crystal-grid');
 const crystalCount = document.getElementById('crystal-count');
@@ -2174,6 +2268,13 @@ function filterCrystals() {
     if (colorVal !== 'all') {
         candidates = candidates.filter(c =>
             c.color.some(col => col.toLowerCase().includes(colorVal.toLowerCase()))
+        );
+    }
+    // Tradition filter
+    const tradVal = traditionFilter ? traditionFilter.value : 'all';
+    if (tradVal !== 'all') {
+        candidates = candidates.filter(c =>
+            c.traditions && c.traditions.includes(tradVal)
         );
     }
     filteredCrystals = candidates;
@@ -2426,7 +2527,8 @@ function saveFilterState() {
         intention: intentionFilter.value,
         chakra: chakraFilter.value,
         element: elementFilter.value,
-        color: colorFilter.value
+        color: colorFilter.value,
+        tradition: traditionFilter ? traditionFilter.value : 'all'
     }));
 }
 
@@ -2441,6 +2543,12 @@ function loadFilterState() {
         chakraFilter.value = state.chakra || 'all';
         if (elementFilter) elementFilter.value = state.element || 'all';
         if (colorFilter) colorFilter.value = state.color || 'all';
+        if (traditionFilter) traditionFilter.value = state.tradition || 'all';
+    }
+    // Auto-select tradition from profile if filter not already set
+    if (traditionFilter && traditionFilter.value === 'all') {
+        const profile = getProfile();
+        if (profile.tradition) traditionFilter.value = profile.tradition;
     }
 }
 
@@ -2450,7 +2558,7 @@ function loadFilterState() {
 function clearFiltersLocal() {
     clearFilters({
         search: searchInput,
-        filters: [intentionFilter, chakraFilter, elementFilter, colorFilter]
+        filters: [intentionFilter, chakraFilter, elementFilter, colorFilter, traditionFilter]
     });
     saveFilterState();
     filterCrystals();
@@ -2465,6 +2573,7 @@ function setupEventListeners() {
     chakraFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
     elementFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
     colorFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
+    if (traditionFilter) traditionFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
     clearFiltersBtn.addEventListener('click', clearFiltersLocal);
     
     ownedTab.addEventListener('click', () => {

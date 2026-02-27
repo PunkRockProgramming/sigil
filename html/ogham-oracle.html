@@ -21,6 +21,7 @@
         <header>
             <h1>ᚁ Ogham Oracle</h1>
             <p class="subtitle">Celtic Tree Alphabet — Ancient Irish Divination</p>
+            <p id="profile-cast-for" class="profile-cast-for" style="display:none;"></p>
             <div class="theme-selector">
                 <label for="mystical-path">Theme:</label>
                 <select id="mystical-path">
@@ -79,6 +80,7 @@
             <div id="reading-grid" class="reading-grid" role="list"></div>
             <div class="reading-actions">
                 <button id="cast-again-btn" class="secondary-btn">Cast Again</button>
+                <button id="share-reading-btn" class="secondary-btn" aria-label="Share this reading via URL" style="display:none;">🔗 Share Reading</button>
             </div>
         </section>
 
@@ -129,6 +131,8 @@
     <script src="../js/theme-manager.js"></script>
     <script src="../js/nav-menu.js"></script>
     <script src="../js/pdf-utils.js"></script>
+    <script src="../js/profile-manager.js"></script>
+    <script src="../js/share-utils.js"></script>
     <script src="../js/ogham-script.js"></script>
 
     <script>
@@ -157,6 +161,59 @@
         document.getElementById('cast-again-btn').addEventListener('click', function () {
             document.getElementById('cast-button').click();
         });
+
+        // Show profile name if set
+        const _oghamProfile = getProfile();
+        if (_oghamProfile.name) {
+            const castFor = document.getElementById('profile-cast-for');
+            if (castFor) {
+                castFor.textContent = `Cast for: ${_oghamProfile.name}`;
+                castFor.style.display = '';
+            }
+        }
+
+        // ─── Share Reading ───────────────────────────────────────────
+        const _oghamShareBtn = document.getElementById('share-reading-btn');
+        let _oghamLastSpread = null;
+
+        function _oghamShowShare(spreadKey) {
+            _oghamLastSpread = spreadKey;
+            if (_oghamShareBtn) _oghamShareBtn.style.display = '';
+        }
+
+        document.getElementById('cast-button').addEventListener('click', () => {
+            _oghamShowShare(document.getElementById('spread-selector').value);
+        });
+
+        if (_oghamShareBtn) {
+            _oghamShareBtn.addEventListener('click', () => {
+                if (!currentCast || !currentCast.length || !_oghamLastSpread) return;
+                const data = {
+                    spread: _oghamLastSpread,
+                    fews: currentCast.map(c => ({
+                        idx: OGHAM_FEWS.indexOf(c.few),
+                        reversed: c.reversed
+                    }))
+                };
+                const url = buildShareURL('reading', data);
+                if (url) showShareModal(url);
+            });
+        }
+
+        // ─── Restore from URL param ──────────────────────────────────
+        const _sharedOgham = checkShareParam('reading');
+        if (_sharedOgham && _sharedOgham.spread && Array.isArray(_sharedOgham.fews)) {
+            const spread = SPREADS[_sharedOgham.spread];
+            if (spread) {
+                currentCast = _sharedOgham.fews.map(f => ({
+                    few: OGHAM_FEWS[f.idx] || OGHAM_FEWS[0],
+                    reversed: !!f.reversed
+                }));
+                document.getElementById('spread-selector').value = _sharedOgham.spread;
+                displaySpread(_sharedOgham.spread, currentCast);
+                _oghamShowShare(_sharedOgham.spread);
+            }
+        }
     </script>
 
     <!-- Service Worker Registration -->

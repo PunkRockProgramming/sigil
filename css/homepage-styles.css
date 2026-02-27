@@ -4,6 +4,11 @@
    Requires: shared-theme.css
    ======================================== */
 
+/* Wider container for 3-column grid */
+.container {
+    max-width: 1400px;
+}
+
 /* Hero Section */
 .hero {
     text-align: center;
@@ -37,9 +42,21 @@
 
 .tool-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
     margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    .tool-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1500px) {
+    .tool-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .tool-card {
@@ -85,7 +102,6 @@
     color: var(--text);
     line-height: 1.7;
     margin-bottom: 25px;
-    flex-grow: 1;
 }
 
 .tool-features {
@@ -122,6 +138,7 @@
     letter-spacing: 1px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px var(--button-hover-shadow);
+    margin-top: auto;
 }
 
 .launch-btn:hover {
@@ -271,11 +288,6 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .tool-cards-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
     .hero-text {
         font-size: 1.05rem;
     }
@@ -302,10 +314,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .tool-cards-grid {
-        grid-template-columns: 1fr;
-    }
-    
+
     .tools-section h2 {
         font-size: 1.8rem;
     }

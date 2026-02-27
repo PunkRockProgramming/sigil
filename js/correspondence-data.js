@@ -16,7 +16,8 @@ const CORRESPONDENCE_DATA = [
         element: "All Elements",
         chakra: "Crown",
         planet: null,
-        zodiac: ["All Signs"]
+        zodiac: ["All Signs"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -27,7 +28,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Pisces","Virgo","Aquarius","Capricorn"]
+        zodiac: ["Pisces","Virgo","Aquarius","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -38,7 +40,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Taurus","Libra"]
+        zodiac: ["Taurus","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -49,7 +52,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Capricorn"]
+        zodiac: ["Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -60,7 +64,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Solar Plexus",
         planet: null,
-        zodiac: ["Aries","Gemini","Leo","Libra"]
+        zodiac: ["Aries","Gemini","Leo","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -71,7 +76,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Taurus"]
+        zodiac: ["Taurus"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -82,7 +88,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Leo","Scorpio","Sagittarius"]
+        zodiac: ["Leo","Scorpio","Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -93,7 +100,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Sacral",
         planet: null,
-        zodiac: ["Aries","Leo","Virgo"]
+        zodiac: ["Aries","Leo","Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -104,7 +112,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Cancer","Libra","Scorpio"]
+        zodiac: ["Cancer","Libra","Scorpio"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -115,7 +124,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Aries","Aquarius"]
+        zodiac: ["Aries","Aquarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -126,7 +136,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Sagittarius","Libra"]
+        zodiac: ["Sagittarius","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -137,7 +148,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Aries","Leo"]
+        zodiac: ["Aries","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -148,7 +160,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth/Fire",
         chakra: "Root",
         planet: null,
-        zodiac: ["Scorpio","Sagittarius"]
+        zodiac: ["Scorpio","Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -159,7 +172,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire/Earth",
         chakra: "Solar Plexus",
         planet: null,
-        zodiac: ["Capricorn","Leo"]
+        zodiac: ["Capricorn","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -170,7 +184,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Virgo"]
+        zodiac: ["Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -181,7 +196,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Root",
         planet: null,
-        zodiac: ["Aquarius","Capricorn","Leo"]
+        zodiac: ["Aquarius","Capricorn","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -192,7 +208,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air/Water",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Pisces","Capricorn"]
+        zodiac: ["Pisces","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -203,7 +220,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air/Water",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Scorpio","Sagittarius","Pisces"]
+        zodiac: ["Scorpio","Sagittarius","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -214,7 +232,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water/Air",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Sagittarius"]
+        zodiac: ["Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -225,7 +244,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Scorpio","Capricorn"]
+        zodiac: ["Scorpio","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -236,7 +256,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire/Earth",
         chakra: "Solar Plexus",
         planet: null,
-        zodiac: ["Leo"]
+        zodiac: ["Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -247,7 +268,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire/Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Taurus"]
+        zodiac: ["Taurus"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -258,7 +280,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Scorpio","Capricorn"]
+        zodiac: ["Scorpio","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -269,7 +292,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Aries","Gemini","Pisces"]
+        zodiac: ["Aries","Gemini","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -280,7 +304,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Gemini","Pisces"]
+        zodiac: ["Gemini","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -291,7 +316,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Gemini","Virgo"]
+        zodiac: ["Gemini","Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -302,7 +328,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Libra","Pisces"]
+        zodiac: ["Libra","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -313,7 +340,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Sacral",
         planet: null,
-        zodiac: ["Leo","Libra","Aries"]
+        zodiac: ["Leo","Libra","Aries"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -324,7 +352,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Root",
         planet: null,
-        zodiac: ["Aries","Scorpio","Taurus"]
+        zodiac: ["Aries","Scorpio","Taurus"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -335,7 +364,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Sacral",
         planet: null,
-        zodiac: ["Cancer","Leo"]
+        zodiac: ["Cancer","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -346,7 +376,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Gemini","Libra"]
+        zodiac: ["Gemini","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -357,7 +388,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Scorpio","Capricorn"]
+        zodiac: ["Scorpio","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -368,7 +400,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Aries","Taurus","Libra"]
+        zodiac: ["Aries","Taurus","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -379,7 +412,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Leo","Virgo","Scorpio","Sagittarius"]
+        zodiac: ["Leo","Virgo","Scorpio","Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -390,7 +424,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Aries","Pisces","Libra"]
+        zodiac: ["Aries","Pisces","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -401,7 +436,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Scorpio","Capricorn"]
+        zodiac: ["Scorpio","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -412,7 +448,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Taurus","Gemini","Virgo"]
+        zodiac: ["Taurus","Gemini","Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -423,7 +460,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Libra","Capricorn"]
+        zodiac: ["Libra","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -434,7 +472,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Libra","Sagittarius","Taurus"]
+        zodiac: ["Libra","Sagittarius","Taurus"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Chaos Magick", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -445,7 +484,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Leo","Pisces"]
+        zodiac: ["Leo","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -456,7 +496,8 @@ const CORRESPONDENCE_DATA = [
         element: "Wind",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Sagittarius","Scorpio"]
+        zodiac: ["Sagittarius","Scorpio"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -467,7 +508,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Capricorn","Virgo"]
+        zodiac: ["Capricorn","Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -478,7 +520,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Aries","Capricorn"]
+        zodiac: ["Aries","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -489,7 +532,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Gemini","Pisces"]
+        zodiac: ["Gemini","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -500,7 +544,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Cancer","Libra"]
+        zodiac: ["Cancer","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -511,7 +556,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Virgo","Gemini"]
+        zodiac: ["Virgo","Gemini"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -522,7 +568,8 @@ const CORRESPONDENCE_DATA = [
         element: "Storm",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Scorpio","All Signs"]
+        zodiac: ["Scorpio","All Signs"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -533,7 +580,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Sagittarius","Taurus"]
+        zodiac: ["Sagittarius","Taurus"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -544,7 +592,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "All Chakras",
         planet: null,
-        zodiac: ["Capricorn","Aquarius"]
+        zodiac: ["Capricorn","Aquarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -555,7 +604,8 @@ const CORRESPONDENCE_DATA = [
         element: "Storm",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Leo","Aquarius"]
+        zodiac: ["Leo","Aquarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -566,7 +616,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Sagittarius","Aquarius","Pisces"]
+        zodiac: ["Sagittarius","Aquarius","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -577,7 +628,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Sagittarius","Virgo"]
+        zodiac: ["Sagittarius","Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -588,7 +640,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Cancer","Libra","Scorpio"]
+        zodiac: ["Cancer","Libra","Scorpio"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -599,7 +652,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Leo","Scorpio","Sagittarius"]
+        zodiac: ["Leo","Scorpio","Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -610,7 +664,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Capricorn","Pisces"]
+        zodiac: ["Capricorn","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -621,7 +676,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Libra","Pisces"]
+        zodiac: ["Libra","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -632,7 +688,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Capricorn","Scorpio"]
+        zodiac: ["Capricorn","Scorpio"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -643,7 +700,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Sagittarius","Scorpio","Pisces"]
+        zodiac: ["Sagittarius","Scorpio","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -654,7 +712,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Virgo","Aries"]
+        zodiac: ["Virgo","Aries"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -665,7 +724,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Root",
         planet: null,
-        zodiac: ["Capricorn","Aquarius","Aries","Leo"]
+        zodiac: ["Capricorn","Aquarius","Aries","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -676,7 +736,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Gemini","Pisces","Aries"]
+        zodiac: ["Gemini","Pisces","Aries"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -687,7 +748,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Taurus","Aries"]
+        zodiac: ["Taurus","Aries"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -698,7 +760,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Sacral",
         planet: null,
-        zodiac: ["Leo","Libra"]
+        zodiac: ["Leo","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -709,7 +772,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Libra","Capricorn"]
+        zodiac: ["Libra","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -720,7 +784,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Taurus","Libra","Gemini"]
+        zodiac: ["Taurus","Libra","Gemini"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -731,7 +796,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Leo","Virgo","Sagittarius","Scorpio"]
+        zodiac: ["Leo","Virgo","Sagittarius","Scorpio"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -742,7 +808,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Taurus","Libra","Aries"]
+        zodiac: ["Taurus","Libra","Aries"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -753,7 +820,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Gemini","Virgo"]
+        zodiac: ["Gemini","Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -764,7 +832,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Scorpio","Leo"]
+        zodiac: ["Scorpio","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -775,7 +844,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Taurus","Leo","Libra","Scorpio"]
+        zodiac: ["Taurus","Leo","Libra","Scorpio"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -786,7 +856,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Taurus","Libra","Sagittarius"]
+        zodiac: ["Taurus","Libra","Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Chaos Magick", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -797,7 +868,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Sagittarius","Aries","Pisces"]
+        zodiac: ["Sagittarius","Aries","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Chaos Magick", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -808,7 +880,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Sagittarius","Virgo","Leo"]
+        zodiac: ["Sagittarius","Virgo","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -819,7 +892,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Leo"]
+        zodiac: ["Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -830,7 +904,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Scorpio","Sagittarius"]
+        zodiac: ["Scorpio","Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -841,7 +916,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Virgo"]
+        zodiac: ["Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -852,7 +928,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Scorpio","Capricorn"]
+        zodiac: ["Scorpio","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen", "Chaos Magick"]
     },
     {
         tool: "Crystal",
@@ -863,7 +940,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Taurus","Cancer"]
+        zodiac: ["Taurus","Cancer"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -874,7 +952,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Capricorn","Taurus"]
+        zodiac: ["Capricorn","Taurus"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -885,7 +964,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Capricorn"]
+        zodiac: ["Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -896,7 +976,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Sacral",
         planet: null,
-        zodiac: ["Cancer","Leo"]
+        zodiac: ["Cancer","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Crystal",
@@ -907,7 +988,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Cancer"]
+        zodiac: ["Cancer"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -918,7 +1000,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Gemini","Capricorn"]
+        zodiac: ["Gemini","Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -929,7 +1012,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Crown",
         planet: null,
-        zodiac: ["Capricorn"]
+        zodiac: ["Capricorn"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -940,7 +1024,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Gemini","Virgo","Taurus"]
+        zodiac: ["Gemini","Virgo","Taurus"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Crystal",
@@ -951,7 +1036,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Sagittarius"]
+        zodiac: ["Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Crystal",
@@ -962,7 +1048,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Throat",
         planet: null,
-        zodiac: ["Libra"]
+        zodiac: ["Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -973,7 +1060,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Aries","Sagittarius"]
+        zodiac: ["Aries","Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -984,7 +1072,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: "Heart",
         planet: null,
-        zodiac: ["Virgo","Pisces"]
+        zodiac: ["Virgo","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -995,7 +1084,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Gemini"]
+        zodiac: ["Gemini"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
     },
     {
         tool: "Crystal",
@@ -1006,7 +1096,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Sacral",
         planet: null,
-        zodiac: ["Virgo","Aries"]
+        zodiac: ["Virgo","Aries"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -1017,7 +1108,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: "Root",
         planet: null,
-        zodiac: ["Gemini"]
+        zodiac: ["Gemini"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Heathen"]
     },
     {
         tool: "Crystal",
@@ -1028,8 +1120,9 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: "Third Eye",
         planet: null,
-        zodiac: ["Aries"]
-    }
+        zodiac: ["Aries"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch"]
+    },
 
     // ─── HERBS (22) ─────────────────────────────────────────────
     {
@@ -1041,7 +1134,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Mercury",
-        zodiac: ["Gemini","Virgo"]
+        zodiac: ["Gemini","Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Herb",
@@ -1052,7 +1146,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: ["Aries","Leo"]
+        zodiac: ["Aries","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Ceremonial"]
     },
     {
         tool: "Herb",
@@ -1063,7 +1158,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Moon",
-        zodiac: ["Cancer","Pisces"]
+        zodiac: ["Cancer","Pisces"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Heathen", "Chaos Magick"]
     },
     {
         tool: "Herb",
@@ -1074,7 +1170,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Jupiter",
-        zodiac: ["Sagittarius"]
+        zodiac: ["Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Ceremonial"]
     },
     {
         tool: "Herb",
@@ -1085,7 +1182,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Sun",
-        zodiac: ["Leo"]
+        zodiac: ["Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Herb",
@@ -1096,7 +1194,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Mars",
-        zodiac: ["Aries","Scorpio"]
+        zodiac: ["Aries","Scorpio"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Herb",
@@ -1107,7 +1206,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Mercury",
-        zodiac: ["Gemini","Virgo"]
+        zodiac: ["Gemini","Virgo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Herb",
@@ -1118,7 +1218,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Venus",
-        zodiac: ["Libra"]
+        zodiac: ["Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Heathen"]
     },
     {
         tool: "Herb",
@@ -1129,7 +1230,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: ["Leo"]
+        zodiac: ["Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Druidry", "Ceremonial"]
     },
     {
         tool: "Herb",
@@ -1140,7 +1242,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Venus",
-        zodiac: ["Taurus","Libra"]
+        zodiac: ["Taurus","Libra"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Druidry"]
     },
     {
         tool: "Herb",
@@ -1151,7 +1254,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: ["Aries","Leo"]
+        zodiac: ["Aries","Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Ceremonial"]
     },
     {
         tool: "Herb",
@@ -1162,7 +1266,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Moon",
-        zodiac: ["Cancer"]
+        zodiac: ["Cancer"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Herb",
@@ -1173,7 +1278,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: ["Leo"]
+        zodiac: ["Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Druidry"]
     },
     {
         tool: "Herb",
@@ -1184,7 +1290,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Mars",
-        zodiac: ["Aries","Scorpio"]
+        zodiac: ["Aries","Scorpio"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Heathen"]
     },
     {
         tool: "Herb",
@@ -1195,7 +1302,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Jupiter",
-        zodiac: ["Sagittarius"]
+        zodiac: ["Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Herb",
@@ -1206,7 +1314,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Venus",
-        zodiac: ["Pisces","Cancer"]
+        zodiac: ["Pisces","Cancer"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Heathen"]
     },
     {
         tool: "Herb",
@@ -1217,7 +1326,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Jupiter",
-        zodiac: ["Sagittarius"]
+        zodiac: ["Sagittarius"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Druidry"]
     },
     {
         tool: "Herb",
@@ -1228,7 +1338,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: ["Leo"]
+        zodiac: ["Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Heathen"]
     },
     {
         tool: "Herb",
@@ -1239,7 +1350,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Venus",
-        zodiac: ["Taurus"]
+        zodiac: ["Taurus"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     },
     {
         tool: "Herb",
@@ -1250,7 +1362,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Jupiter",
-        zodiac: ["Aries"]
+        zodiac: ["Aries"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Ceremonial"]
     },
     {
         tool: "Herb",
@@ -1261,7 +1374,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: ["Leo"]
+        zodiac: ["Leo"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Ceremonial"]
     },
     {
         tool: "Herb",
@@ -1272,8 +1386,9 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Moon",
-        zodiac: ["Cancer"]
-    }
+        zodiac: ["Cancer"],
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Ceremonial"]
+    },
 
     // ─── RUNES (24) ─────────────────────────────────────────────
     {
@@ -1285,7 +1400,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Mars",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1296,7 +1412,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Mars",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1307,7 +1424,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Mars",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1318,7 +1436,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Mercury",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1329,7 +1448,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Mercury",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1340,7 +1460,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Venus",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1351,7 +1472,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Venus",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1362,7 +1484,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Jupiter",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1373,7 +1496,8 @@ const CORRESPONDENCE_DATA = [
         element: "Ice",
         chakra: null,
         planet: "Uranus",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1384,7 +1508,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Saturn",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1395,7 +1520,8 @@ const CORRESPONDENCE_DATA = [
         element: "Ice",
         chakra: null,
         planet: "Saturn",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1406,7 +1532,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Earth",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1417,7 +1544,8 @@ const CORRESPONDENCE_DATA = [
         element: "All",
         chakra: null,
         planet: "Pluto",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1428,7 +1556,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Neptune",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1439,7 +1568,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Neptune",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1450,7 +1580,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1461,7 +1592,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Mars",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1472,7 +1604,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Moon",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1483,7 +1616,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Mercury",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1494,7 +1628,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Jupiter",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1505,7 +1640,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Moon",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1516,7 +1652,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Earth",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1527,7 +1664,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
     },
     {
         tool: "Rune",
@@ -1538,8 +1676,9 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Saturn",
-        zodiac: null
-    }
+        zodiac: null,
+        traditions: ["Heathen", "Eclectic", "Ceremonial"]
+    },
 
     // ─── CANDLE COLORS (15) ─────────────────────────────────────
     {
@@ -1552,7 +1691,8 @@ const CORRESPONDENCE_DATA = [
         element: "Spirit",
         chakra: null,
         planet: "Moon",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch", "Ceremonial", "Druidry", "Heathen", "Chaos Magick"]
     },
     {
         tool: "Candle",
@@ -1564,7 +1704,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Saturn",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Heathen", "Chaos Magick", "Ceremonial"]
     },
     {
         tool: "Candle",
@@ -1576,7 +1717,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Mars",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Heathen", "Chaos Magick", "Ceremonial"]
     },
     {
         tool: "Candle",
@@ -1588,7 +1730,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Venus",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Kitchen Witch", "Green Witch"]
     },
     {
         tool: "Candle",
@@ -1600,7 +1743,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Mercury / Sun",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Chaos Magick"]
     },
     {
         tool: "Candle",
@@ -1612,7 +1756,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Mercury",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Ceremonial", "Kitchen Witch"]
     },
     {
         tool: "Candle",
@@ -1624,7 +1769,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Venus",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry", "Kitchen Witch"]
     },
     {
         tool: "Candle",
@@ -1636,7 +1782,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Moon",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Ceremonial", "Druidry"]
     },
     {
         tool: "Candle",
@@ -1648,7 +1795,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Jupiter / Saturn",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Ceremonial", "Heathen"]
     },
     {
         tool: "Candle",
@@ -1660,7 +1808,8 @@ const CORRESPONDENCE_DATA = [
         element: "Spirit",
         chakra: null,
         planet: "Jupiter / Neptune",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Ceremonial", "Chaos Magick"]
     },
     {
         tool: "Candle",
@@ -1672,7 +1821,8 @@ const CORRESPONDENCE_DATA = [
         element: "Earth",
         chakra: null,
         planet: "Saturn / Earth",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Druidry"]
     },
     {
         tool: "Candle",
@@ -1684,7 +1834,8 @@ const CORRESPONDENCE_DATA = [
         element: "Water",
         chakra: null,
         planet: "Moon",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Ceremonial", "Druidry"]
     },
     {
         tool: "Candle",
@@ -1696,7 +1847,8 @@ const CORRESPONDENCE_DATA = [
         element: "Fire",
         chakra: null,
         planet: "Sun",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Ceremonial", "Druidry"]
     },
     {
         tool: "Candle",
@@ -1708,7 +1860,8 @@ const CORRESPONDENCE_DATA = [
         element: "Spirit",
         chakra: null,
         planet: "Mercury / Saturn",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Heathen", "Ceremonial"]
     },
     {
         tool: "Candle",
@@ -1720,7 +1873,8 @@ const CORRESPONDENCE_DATA = [
         element: "Air",
         chakra: null,
         planet: "Mercury / Neptune",
-        zodiac: null
+        zodiac: null,
+        traditions: ["Wiccan", "Eclectic", "Green Witch", "Kitchen Witch"]
     }
 
 ];

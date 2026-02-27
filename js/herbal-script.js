@@ -23,7 +23,8 @@ const HERBS = [
         storage: 'Store dried flowers in airtight container away from light. Keeps potency for 1 year.',
         substitutions: ['Rose', 'Chamomile (for sleep)'],
         folklore: 'Victorian women would hide lavender in their clothing to attract suitors. Romans used it in their baths, giving it the name from "lavare" (to wash).',
-        affirmation: 'I am calm, peaceful, and surrounded by loving energy.'
+        affirmation: 'I am calm, peaceful, and surrounded by loving energy.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Druidry']
     },
     {
         name: 'Rosemary',
@@ -45,7 +46,8 @@ const HERBS = [
         storage: 'Hang bundles to dry or freeze fresh. Store dried in airtight container. Keeps potency for 6-12 months.',
         substitutions: ['Basil (for protection)', 'Sage (for cleansing)'],
         folklore: 'Ancient Greeks believed rosemary strengthened memory and wore it in their hair during exams. Associated with remembrance in funeral rites.',
-        affirmation: 'My mind is clear, my spirit protected, and my path illuminated.'
+        affirmation: 'My mind is clear, my spirit protected, and my path illuminated.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Ceremonial']
     },
     {
         name: 'Mugwort',
@@ -67,7 +69,8 @@ const HERBS = [
         storage: 'Store dried leaves in airtight container away from light. Keeps potency for 1 year.',
         substitutions: ['Wormwood (similar properties, also use caution)', 'Chamomile (for dreams, safer)'],
         folklore: 'Roman soldiers placed mugwort in their sandals to prevent fatigue on long marches. Used by Celtic druids for protection and prophecy.',
-        affirmation: 'I trust my visions, honor my dreams, and walk between worlds with wisdom.'
+        affirmation: 'I trust my visions, honor my dreams, and walk between worlds with wisdom.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen', 'Druidry', 'Ceremonial']
     },
     {
         name: 'Sage',
@@ -89,7 +92,8 @@ const HERBS = [
         storage: 'Hang bundles to dry. Store dried leaves in airtight container. Keeps potency for 1 year.',
         substitutions: ['Rosemary (for purification)', 'Cedar (for smudging)'],
         folklore: 'Medieval saying: "Why should a man die whilst sage grows in his garden?" Associated with longevity and wisdom.',
-        affirmation: 'I release what no longer serves me and welcome wisdom into my life.'
+        affirmation: 'I release what no longer serves me and welcome wisdom into my life.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Ceremonial']
     },
     {
         name: 'Chamomile',
@@ -111,7 +115,8 @@ const HERBS = [
         storage: 'Store dried flowers in airtight container away from light. Keeps potency for 6-12 months.',
         substitutions: ['Lavender (for calming)', 'Lemon balm (for sleep)'],
         folklore: 'Ancient Egyptians dedicated chamomile to Ra, the sun god. Used as a strewing herb in medieval times for its pleasant scent.',
-        affirmation: 'I am calm, grounded, and attracting prosperity into my life.'
+        affirmation: 'I am calm, grounded, and attracting prosperity into my life.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Druidry']
     },
     {
         name: 'Basil',
@@ -133,7 +138,8 @@ const HERBS = [
         storage: 'Best used fresh. Can freeze in ice cubes with olive oil or water. Dried basil loses flavor quickly - use within 3-6 months.',
         substitutions: ['Mint (for prosperity)', 'Cinnamon (for love)'],
         folklore: 'Sacred in Hindu tradition (especially Holy Basil/Tulsi). In Italy, a pot of basil on the balcony signaled a woman was ready to receive suitors.',
-        affirmation: 'Love and abundance flow freely into my life.'
+        affirmation: 'Love and abundance flow freely into my life.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Peppermint',
@@ -155,7 +161,8 @@ const HERBS = [
         storage: 'Dry quickly to preserve oils. Store in airtight container away from light. Keeps potency for 1 year.',
         substitutions: ['Spearmint (milder)', 'Eucalyptus (for clarity)'],
         folklore: 'Greek myth: Menthe, a nymph loved by Hades, was transformed into mint by Persephone. Romans crowned banquet guests with peppermint.',
-        affirmation: 'My mind is clear, my energy refreshed, and abundance flows to me.'
+        affirmation: 'My mind is clear, my energy refreshed, and abundance flows to me.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Yarrow',
@@ -177,7 +184,8 @@ const HERBS = [
         storage: 'Store dried flowers and leaves separately in airtight containers. Keeps potency for 1 year.',
         substitutions: ['Cayenne (for courage)', 'Calendula (for healing)'],
         folklore: 'Named for Achilles, who used it to heal warriors. I Ching divination traditionally uses yarrow stalks. "Seven years love" charm involves hanging over marriage bed.',
-        affirmation: 'I am protected, courageous, and my wounds are healed.'
+        affirmation: 'I am protected, courageous, and my wounds are healed.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen', 'Druidry']
     },
     {
         name: 'Bay Laurel',
@@ -199,7 +207,8 @@ const HERBS = [
         storage: 'Store whole dried leaves in airtight container away from light. Keeps potency for 1-2 years.',
         substitutions: ['Basil (for protection)', 'Cinnamon (for success)'],
         folklore: 'Ancient Greeks crowned Olympic victors and poets with bay laurel. Priests at Delphi chewed bay leaves for prophetic visions.',
-        affirmation: 'I am victorious, protected, and my visions are clear.'
+        affirmation: 'I am victorious, protected, and my visions are clear.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Ceremonial']
     },
     {
         name: 'Thyme',
@@ -221,7 +230,8 @@ const HERBS = [
         storage: 'Dry quickly to preserve volatile oils. Store in airtight container. Keeps potency for 6-12 months.',
         substitutions: ['Oregano (for purification)', 'Hyssop (for cleansing)'],
         folklore: 'Ancient Greeks burned thyme in temples. Roman soldiers bathed in thyme water for courage. Associated with faery sight.',
-        affirmation: 'I am brave, healthy, and spiritually cleansed.'
+        affirmation: 'I am brave, healthy, and spiritually cleansed.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Druidry']
     },
     {
         name: 'Cinnamon',
@@ -243,7 +253,8 @@ const HERBS = [
         storage: 'Store cinnamon sticks in airtight container. Ground cinnamon loses potency quickly - use within 6 months.',
         substitutions: ['Ginger (for prosperity)', 'Clove (for love)'],
         folklore: 'Once worth more than gold. Ancient Egyptians used it in mummification. Mentioned in the Song of Solomon.',
-        affirmation: 'Success and abundance flow to me in perfect timing.'
+        affirmation: 'Success and abundance flow to me in perfect timing.',
+        traditions: ['Wiccan', 'Eclectic', 'Kitchen Witch', 'Ceremonial']
     },
     {
         name: 'Lemon Balm',
@@ -265,7 +276,8 @@ const HERBS = [
         storage: 'Best used fresh (freezes well). Dried lemon balm loses scent quickly. Store dried in airtight container, use within 3-6 months.',
         substitutions: ['Mint (for prosperity)', 'Rose (for love)'],
         folklore: 'Greek name "Melissa" means honey bee. Medieval beekeepers rubbed hives with lemon balm. Associated with longevity.',
-        affirmation: 'Joy fills my heart, and love surrounds me always.'
+        affirmation: 'Joy fills my heart, and love surrounds me always.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Druidry']
     },
     {
         name: 'Calendula',
@@ -287,7 +299,8 @@ const HERBS = [
         storage: 'Dry flowers whole on screens. Store in airtight container away from light. Keeps potency for 1 year.',
         substitutions: ['Chamomile (for healing)', 'Sunflower (for solar energy)'],
         folklore: 'Also called "pot marigold." Used to predict weather - flowers close before rain. Associated with legal victory charms.',
-        affirmation: 'I am healed, protected, and radiate golden light.'
+        affirmation: 'I am healed, protected, and radiate golden light.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Druidry']
     },
     {
         name: 'Nettle',
@@ -309,7 +322,8 @@ const HERBS = [
         storage: 'Dry leaves thoroughly. Store in airtight container. Keeps potency for 1 year. Very nutritious dried.',
         substitutions: ['Rosemary (for protection)', 'Cayenne (for banishing)'],
         folklore: 'Associated with Norse god Thor. Used in "urtication" - whipping with nettles to relieve rheumatism. "Grasp the nettle firmly" proverb.',
-        affirmation: 'I am protected, strong, and nourished from within.'
+        affirmation: 'I am protected, strong, and nourished from within.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Heathen', 'Kitchen Witch']
     },
     {
         name: 'Echinacea',
@@ -331,7 +345,8 @@ const HERBS = [
         storage: 'Dry roots thoroughly and store in airtight container. Tincture preserves best. Use dried within 1 year.',
         substitutions: ['Goldenseal (for immunity - endangered, use sustainably)', 'Astragalus (for immune support)'],
         folklore: 'Native American medicine - Plains tribes used for infections and snakebite. Roots were valuable trade items.',
-        affirmation: 'I am healthy, protected, and abundance multiplies in my life.'
+        affirmation: 'I am healthy, protected, and abundance multiplies in my life.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Elderflower',
@@ -353,7 +368,8 @@ const HERBS = [
         storage: 'Dry flowers on screens - use within 6 months. Berries best used fresh or as syrup/tincture.',
         substitutions: ['Yarrow (for protection)', 'Ginger (for immunity)'],
         folklore: 'Never cut elder without asking permission. Associated with witches, faeries, and the underworld. Wands made from elder are powerful.',
-        affirmation: 'I am protected by ancient wisdom and natural healing.'
+        affirmation: 'I am protected by ancient wisdom and natural healing.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry', 'Heathen']
     },
     {
         name: 'Dandelion',
@@ -375,7 +391,8 @@ const HERBS = [
         storage: 'Dry roots and roast for "coffee." Store dried leaves and roots in airtight container. Use within 1 year.',
         substitutions: ['Chicory (for divination)', 'Burdock (for cleansing root)'],
         folklore: 'Name from French "dent de lion" (lion\'s tooth). Folklore says if you can blow all seeds off in one breath, your wish comes true.',
-        affirmation: 'My wishes are heard, and the universe answers my call.'
+        affirmation: 'My wishes are heard, and the universe answers my call.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Druidry']
     },
     {
         name: 'St. John\'s Wort',
@@ -397,7 +414,8 @@ const HERBS = [
         storage: 'Dry quickly to preserve yellow color. Store away from light. Best as fresh plant tincture. Use dried within 6 months.',
         substitutions: ['Rue (for protection - also caution)', 'Sunflower (for solar energy)'],
         folklore: 'Named for St. John the Baptist. Traditionally harvested on Midsummer. Used against demons and faeries. Red oil from flowers symbolizes blood of St. John.',
-        affirmation: 'Light fills my being, and all darkness is banished from my path.'
+        affirmation: 'Light fills my being, and all darkness is banished from my path.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch']
     },
     {
         name: 'Catnip',
@@ -419,7 +437,8 @@ const HERBS = [
         storage: 'Store dried in very airtight container (cats will find it!). Keeps potency for 6-12 months.',
         substitutions: ['Chamomile (for calming)', 'Valerian (for sleep)'],
         folklore: 'Cats go wild for nepetalactone compound. Hangmen used catnip to gain courage. Associated with cat  magic and Egyptian Bast.',
-        affirmation: 'I am calm, loved, and protected by divine feline energy.'
+        affirmation: 'I am calm, loved, and protected by divine feline energy.',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     },
     {
         name: 'Clove',
@@ -441,7 +460,8 @@ const HERBS = [
         storage: 'Store whole cloves in airtight container (last years). Ground cloves lose potency quickly - use within 6 months.',
         substitutions: ['Cinnamon (for prosperity)', 'Ginger (for protection)'],
         folklore: 'Chinese courtiers held cloves in mouth to freshen breath before addressing emperor. Once worth their weight in gold.',
-        affirmation: 'I am powerful, protected, and attracting prosperity.'
+        affirmation: 'I am powerful, protected, and attracting prosperity.',
+        traditions: ['Wiccan', 'Eclectic', 'Kitchen Witch', 'Ceremonial']
     },
     {
         name: 'Frankincense',
@@ -463,7 +483,8 @@ const HERBS = [
         storage: 'Store resin tears in airtight container away from heat. Lasts indefinitely.',
         substitutions: ['Myrrh (similar properties)', 'Copal (for purification)'],
         folklore: 'One of the gifts of the Magi to baby Jesus. Used in ancient Egyptian temples and mummification. Worth more than gold historically.',
-        affirmation: 'I am purified, protected, and connected to the divine.'
+        affirmation: 'I am purified, protected, and connected to the divine.',
+        traditions: ['Wiccan', 'Eclectic', 'Ceremonial', 'Druidry']
     },
     {
         name: 'Myrrh',
@@ -485,7 +506,8 @@ const HERBS = [
         storage: 'Store resin in airtight container. Can last indefinitely.',
         substitutions: ['Frankincense (for purification)', 'Pine resin (for protection)'],
         folklore: 'Gift of the Magi. Ancient Egyptians used in mummification. Associated with death mysteries and underworld deities.',
-        affirmation: 'I embrace transformation, release the old, and welcome rebirth.'
+        affirmation: 'I embrace transformation, release the old, and welcome rebirth.',
+        traditions: ['Wiccan', 'Eclectic', 'Ceremonial', 'Druidry']
     }
 ];
 

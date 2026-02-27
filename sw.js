@@ -1,7 +1,7 @@
 // Mystical Path Tools - Service Worker
 // Enables offline functionality and fast loading
 
-const CACHE_NAME = 'mystical-path-v1.9';
+const CACHE_NAME = 'mystical-path-v2.0';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache on install
@@ -23,6 +23,8 @@ const PRECACHE_ASSETS = [
   '/js/filter-utils.js',
   '/js/keyboard-nav.js',
   '/js/canvas-utils.js',
+  '/js/profile-manager.js',
+  '/js/share-utils.js',
   
   // All 12 tools
   '/html/sigil-maker.html',
@@ -124,6 +126,12 @@ self.addEventListener('activate', (event) => {
         );
       })
       .then(() => self.clients.claim())
+      .then(() => {
+        // Notify all open tabs that a new version is active
+        return self.clients.matchAll({ type: 'window' }).then(clients => {
+          clients.forEach(client => client.postMessage({ type: 'SW_UPDATED' }));
+        });
+      })
   );
 });
 

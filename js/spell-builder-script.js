@@ -163,7 +163,89 @@ document.addEventListener('DOMContentLoaded', () => {
     if (spellMoonPhaseSelect && !spellMoonPhaseSelect.value) {
         spellMoonPhaseSelect.value = getCurrentMoonPhaseValue();
     }
+
+    // ─── Restore shared spell from URL param ──────────────────────
+    if (typeof checkShareParam === 'function') {
+        const sharedSpell = checkShareParam('spell');
+        if (sharedSpell && sharedSpell.name) {
+            showSharedSpell(sharedSpell);
+        }
+    }
 });
+
+function showSharedSpell(spell) {
+    // Show a read-only view of the shared spell with "Add to Grimoire" option
+    const overlay = document.createElement('div');
+    overlay.id = 'shared-spell-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.style.cssText = [
+        'position:fixed', 'inset:0', 'background:rgba(0,0,0,0.7)',
+        'z-index:9999', 'display:flex', 'align-items:center', 'justify-content:center',
+        'padding:20px', 'overflow-y:auto'
+    ].join(';');
+
+    const intentEmojis = { love:'💖', protection:'🛡️', prosperity:'💰', healing:'💚',
+        wisdom:'📚', creativity:'🎨', peace:'🕊️', power:'⚡', divination:'🔮', cleansing:'✨' };
+    const intentEmoji = intentEmojis[spell.intent] || '✨';
+
+    const modal = document.createElement('div');
+    modal.style.cssText = [
+        'background:var(--darker,#1a1a2e)', 'border:2px solid var(--primary,#8b5cf6)',
+        'border-radius:20px', 'padding:30px', 'max-width:600px', 'width:100%',
+        'box-shadow:0 20px 60px rgba(0,0,0,0.5)'
+    ].join(';');
+
+    const herbs = spell.herbs && spell.herbs.length ? spell.herbs.join(', ') : '—';
+    const crystals = spell.crystals && spell.crystals.length ? spell.crystals.join(', ') : '—';
+    const instructions = spell.instructions ? spell.instructions.replace(/\n/g, '<br>') : '—';
+
+    modal.innerHTML = `
+        <p style="color:var(--accent,#f59e0b);font-size:0.85rem;margin:0 0 4px;">✨ Shared Spell</p>
+        <h3 style="margin:0 0 16px;color:var(--text,#e0e0e0);font-size:1.4rem;">${intentEmoji} ${spell.name}</h3>
+        <p style="color:var(--text-secondary,#aaa);font-size:0.9rem;margin-bottom:4px;"><strong>Intent:</strong> ${spell.intent || '—'}</p>
+        ${spell.moonPhase ? `<p style="color:var(--text-secondary,#aaa);font-size:0.9rem;margin-bottom:4px;"><strong>Moon Phase:</strong> ${spell.moonPhase}</p>` : ''}
+        <p style="color:var(--text-secondary,#aaa);font-size:0.9rem;margin-bottom:4px;"><strong>Herbs:</strong> ${herbs}</p>
+        <p style="color:var(--text-secondary,#aaa);font-size:0.9rem;margin-bottom:16px;"><strong>Crystals:</strong> ${crystals}</p>
+        <div style="background:var(--card-bg,rgba(255,255,255,0.05));border-radius:12px;padding:16px;margin-bottom:20px;">
+            <p style="color:var(--text,#e0e0e0);font-size:0.9rem;line-height:1.7;">${instructions}</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button id="add-to-grimoire-btn" style="padding:10px 20px;border-radius:20px;border:none;
+                background:var(--primary,#8b5cf6);color:#fff;cursor:pointer;font-size:0.9rem;">
+                📖 Add to My Grimoire
+            </button>
+            <button id="close-shared-spell-btn" style="padding:10px 20px;border-radius:20px;
+                border:1px solid var(--card-border,#444);background:transparent;
+                color:var(--text,#e0e0e0);cursor:pointer;font-size:0.9rem;">
+                Close
+            </button>
+        </div>
+    `;
+
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
+
+    document.getElementById('add-to-grimoire-btn').addEventListener('click', () => {
+        // Add to grimoire with a new ID and today's date
+        const newSpell = {
+            ...spell,
+            id: Date.now(),
+            dateCreated: new Date().toISOString(),
+            lastCast: null,
+            castCount: 0
+        };
+        grimoire.push(newSpell);
+        saveGrimoire();
+        renderGrimoire();
+        updateSpellCount();
+        overlay.remove();
+        showMessage(`"${spell.name}" added to your grimoire! 📖`);
+    });
+
+    document.getElementById('close-shared-spell-btn').addEventListener('click', () => overlay.remove());
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+}
 
 function initializeEventListeners() {
     // View toggle
@@ -594,8 +676,21 @@ function createSpellCard(spell) {
         }
     });
     
+    const shareBtn = document.createElement('button');
+    shareBtn.className = 'btn-share';
+    shareBtn.textContent = '🔗 Share';
+    shareBtn.setAttribute('aria-label', `Share spell: ${spell.name}`);
+    shareBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (typeof buildShareURL === 'function') {
+            const url = buildShareURL('spell', spell);
+            if (url) showShareModal(url);
+        }
+    });
+
     actions.appendChild(castBtn);
     actions.appendChild(editBtn);
+    actions.appendChild(shareBtn);
     actions.appendChild(deleteBtn);
     details.appendChild(actions);
     

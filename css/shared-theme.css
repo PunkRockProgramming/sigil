@@ -533,3 +533,26 @@ textarea {
         gap: 10px;
     }
 }
+
+/* ─── PROFILE ELEMENTS ─────────────────────────────────────────── */
+
+.profile-cast-for {
+    font-size: 0.95rem;
+    color: var(--text-secondary, #aaa);
+    margin: 4px 0 0;
+    font-style: italic;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.profile-status {
+    font-size: 0.9rem;
+    color: var(--accent, #f59e0b);
+    margin-top: 8px;
+    min-height: 1.2em;
+}

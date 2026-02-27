@@ -181,6 +181,16 @@
         ". challenge .";
 }
 
+.rune-grid.spread-world-tree {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        ".      crown    ."
+        "sky    fire     branches"
+        "winds  earth    leaves"
+        ".      waters   ."
+        ".      roots    .";
+}
+
 /* ========================================
    RUNE CARDS
    ======================================== */
@@ -204,6 +214,9 @@
 .rune-card:nth-child(4) { animation-delay: 0.4s; }
 .rune-card:nth-child(5) { animation-delay: 0.5s; }
 .rune-card:nth-child(6) { animation-delay: 0.6s; }
+.rune-card:nth-child(7) { animation-delay: 0.7s; }
+.rune-card:nth-child(8) { animation-delay: 0.8s; }
+.rune-card:nth-child(9) { animation-delay: 0.9s; }
 
 .rune-card:hover {
     transform: translateY(-8px);
@@ -593,6 +606,20 @@ footer {
             "future"
             "below"
             "challenge";
+    }
+
+    .rune-grid.spread-world-tree {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "roots"
+            "waters"
+            "earth"
+            "winds"
+            "fire"
+            "branches"
+            "leaves"
+            "sky"
+            "crown";
     }
     
     .rune-symbol {

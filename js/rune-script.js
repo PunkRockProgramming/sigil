@@ -657,6 +657,22 @@ const SPREADS = {
             { name: 'Above (Spiritual)', gridArea: 'above' },
             { name: 'Below (Material)', gridArea: 'below' }
         ]
+    },
+    'world-tree': {
+        name: 'World Tree (Yggdrasil)',
+        positions: 9,
+        description: 'A nine-realm spread mirroring Yggdrasil, the cosmic World Tree of Norse cosmology.',
+        layout: [
+            { name: 'Roots — Hidden Foundation', gridArea: 'roots' },
+            { name: 'Waters — Emotional Depth', gridArea: 'waters' },
+            { name: 'Earth — Present Reality', gridArea: 'earth' },
+            { name: 'Winds — Thoughts & Communication', gridArea: 'winds' },
+            { name: 'Fire — Will & Action', gridArea: 'fire' },
+            { name: 'Branches — Near Future', gridArea: 'branches' },
+            { name: 'Leaves — What Shifts', gridArea: 'leaves' },
+            { name: 'Sky — Higher Guidance', gridArea: 'sky' },
+            { name: 'Crown — Outcome & Destiny', gridArea: 'crown' }
+        ]
     }
 };
 

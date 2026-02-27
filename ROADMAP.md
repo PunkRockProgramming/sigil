@@ -1,7 +1,7 @@
 # Mystical Path Tools — Roadmap
 
 **Last Updated:** February 27, 2026
-**Status:** No active sprint.
+**Status:** Sprint complete — Platform Features + Tech Debt sprint finished.
 
 ---
 
@@ -11,13 +11,13 @@
 |---|---|---|---|
 | 1 | Sigil Generator | `html/sigil-maker.html` | 14 generation algorithms, canvas drawing |
 | 2 | Lunar Tracker | `html/moon-tracker.html` | Real-time moon phase, 33 ritual guides, journal |
-| 3 | Rune Caster | `html/rune-caster.html` | Elder Futhark 24 runes, 4 spreads, reading journal |
+| 3 | Rune Caster | `html/rune-caster.html` | Elder Futhark 24 runes, 5 spreads (incl. World Tree), share reading, profile name |
 | 4 | Sabbat Calendar | `html/sabbat-calendar.html` | All 8 sabbats, hemisphere support, live countdown |
-| 5 | Crystal Database | `html/crystal-database.html` | 93 crystals, collection tracking, Crystal of the Day |
-| 6 | Herbal Guide | `html/herbal-database.html` | 3-tier safety system, 22 herbs, apothecary tracker |
+| 5 | Crystal Database | `html/crystal-database.html` | 93 crystals, tradition filter, collection tracking, Crystal of the Day |
+| 6 | Herbal Guide | `html/herbal-database.html` | 3-tier safety system, 22 herbs, tradition data, apothecary tracker |
 | 7 | Meditation Timer | `html/meditation-timer.html` | Web Audio bells, SVG progress ring, interval alerts |
 | 8 | Spell Builder | `html/spell-builder.html` | Multi-step grimoire, 10 intents, JSON export/import |
-| 9 | Numerology | `html/numerology-calculator.html` | 4 core numbers, compatibility calculator |
+| 9 | Numerology | `html/numerology-calculator.html` | 4 core numbers, compatibility calculator, Personal Profile hub |
 | 10 | Affirmations | `html/affirmation-generator.html` | 80 affirmations, 8 categories, favorites |
 | 11 | Pendulum Tool | `html/pendulum-tool.html` | Canvas spring physics, question history |
 | 12 | Witchy Weather | `html/witchy-weather.html` | OpenWeatherMap API, 8 weather types, moon combos |
@@ -66,17 +66,17 @@
 - [done] **Correspondence Lookup** — Keyword → all matching items across every database
 - [done] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
 - [done] **Universal Search** — Homepage search spanning all tool databases
-- [ ] **Share via URL** (~5h) — Encode tool state in query params. Shareable readings.
-- [ ] **Personal Profile** (~12–15h) — Birth date + name stored locally, auto-populates Numerology, informs Chakra Guide
-- [ ] **Tradition Selector** (~6–8h) — Filter content by practice tradition (Wicca, Druidry, Ceremonial, etc.)
+- [done] **Share via URL** — Rune Caster, Ogham Oracle, Spell Builder. Base64 URL encoding + modal. Read-only spell view with Add to Grimoire.
+- [done] **Personal Profile** — Name + birthdate + tradition stored in localStorage via profile-manager.js. Set from Numerology, shown in Rune/Ogham subtitles, auto-selects tradition filters.
+- [done] **Tradition Selector** — 8 traditions + Universal. traditions[] field added to all 154 correspondence items, 93 crystals, 22 herbs, 15 candles. Dropdown filters in Crystal DB + Correspondence Lookup. Profile auto-selects.
 
 ---
 
 ## Technical Debt (Open Items)
 
 ### All Tools
-- [ ] Share via URL — encode state in query params
-- [ ] Service worker update notifications — prompt when new version available (~2h)
+- [done] Share via URL — Rune, Ogham, Spell Builder. share-utils.js with encode/decode/modal.
+- [done] Service worker update notifications — postMessage on activate + controllerchange banner in theme-manager.js
 
 ### Per-Tool Improvements
 
@@ -91,7 +91,7 @@
 - [ ] Lunar eclipse calculations (~4h)
 
 **Rune Caster**
-- [ ] Additional spreads: Runic Cross, 9-rune World Tree (~3h)
+- [done] Additional spreads: Runic Cross (done earlier), World Tree 9-rune Yggdrasil spread
 - [ ] Rune study/flashcard mode (~4h)
 
 **Crystal Database**
@@ -107,7 +107,7 @@
 **Spell Builder**
 - [ ] Grimoire statistics dashboard (~3h)
 - [ ] Success/failure outcome tracking (~2h)
-- [ ] Share spell via URL (~3h)
+- [done] Share spell via URL — share-utils.js + ?spell= param + read-only modal with Add to Grimoire
 
 **Meditation Timer**
 - [ ] Guided meditation scripts synced to timer (~4h)

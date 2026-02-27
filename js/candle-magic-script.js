@@ -19,7 +19,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Purification rituals, new moon intentions, truth-seeking spells, consecrating tools and sacred space, calling spirit guides and ancestors, healing work, cleansing negative energy, all-purpose spellwork.',
         dressing: 'Frankincense, sandalwood, white sage, jasmine oil, rose water, myrrh. Clear quartz enhances white candle workings.',
         timing: 'New Moon for intentions, Full Moon for amplification, Monday (Moon\'s day). Effective at any time — truly versatile.',
-        day_of_week: 'Monday'
+        day_of_week: 'Monday',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch', 'Ceremonial', 'Druidry', 'Heathen', 'Chaos Magick']
     },
     {
         name: 'Black',
@@ -33,7 +34,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Banishing unwanted energies, binding harmful people or patterns, reversing spells sent your way, protection wards, shadow work and exploring the subconscious, breaking bad habits, endings and closure.',
         dressing: 'Dragon\'s blood resin, black pepper, obsidian chips, myrrh, clove. Roll outward (away from you) to banish.',
         timing: 'Waning Moon for banishing and releasing, Saturday (Saturn\'s day), midnight or the dark of the moon.',
-        day_of_week: 'Saturday'
+        day_of_week: 'Saturday',
+        traditions: ['Wiccan', 'Eclectic', 'Heathen', 'Chaos Magick', 'Ceremonial']
     },
     {
         name: 'Red',
@@ -47,7 +49,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Passionate love spells, courage-building workings, raising energy for spellwork, protection through strength, vitality and health magic, justice and revenge (use carefully), competitive edge.',
         dressing: 'Rose oil, cinnamon, dragon\'s blood, ginger, black pepper. Carnelian or garnet chips amplify.',
         timing: 'Waxing to Full Moon for passion and attraction, Tuesday (Mars\' day), noon when the sun is highest.',
-        day_of_week: 'Tuesday'
+        day_of_week: 'Tuesday',
+        traditions: ['Wiccan', 'Eclectic', 'Heathen', 'Chaos Magick', 'Ceremonial']
     },
     {
         name: 'Pink',
@@ -61,7 +64,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Attracting romantic love (gentle, lasting), self-love rituals, healing broken relationships, friendship spells, emotional healing, forgiveness work, opening the heart after hurt.',
         dressing: 'Rose oil, rose petals, vanilla, ylang-ylang, jasmine. Rose quartz is the ideal crystal companion.',
         timing: 'Full Moon for self-love, Waxing Moon for attracting love, Friday (Venus\' day), dawn.',
-        day_of_week: 'Friday'
+        day_of_week: 'Friday',
+        traditions: ['Wiccan', 'Eclectic', 'Kitchen Witch', 'Green Witch']
     },
     {
         name: 'Orange',
@@ -75,7 +79,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Career success and job interviews, creative projects and artistic work, boosting confidence and charisma, attracting opportunity, legal matters, overcoming obstacles with wit and speed.',
         dressing: 'Cinnamon, orange peel, bergamot, sunflower petals, sweet orange essential oil. Carnelian or sunstone amplifies.',
         timing: 'Waxing Moon for building opportunities, Wednesday (Mercury) or Sunday (Sun), sunrise.',
-        day_of_week: 'Wednesday'
+        day_of_week: 'Wednesday',
+        traditions: ['Wiccan', 'Eclectic', 'Chaos Magick']
     },
     {
         name: 'Yellow',
@@ -89,7 +94,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Studying and passing exams, communication spells (letters, contracts, difficult conversations), travel protection, confidence building, mental clarity and focus, divination to enhance clarity of vision.',
         dressing: 'Lemon oil, eucalyptus, mint, bay leaf, lemon verbena. Citrine or yellow topaz enhances.',
         timing: 'Any Moon phase, Wednesday (Mercury\'s day), sunrise for maximum mental clarity.',
-        day_of_week: 'Wednesday'
+        day_of_week: 'Wednesday',
+        traditions: ['Wiccan', 'Eclectic', 'Ceremonial', 'Kitchen Witch']
     },
     {
         name: 'Green',
@@ -103,7 +109,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Money and prosperity spells, healing work (physical and emotional), fertility magic, connecting with nature spirits and plant allies, abundance in career or creative projects, growth and renewal rituals.',
         dressing: 'Basil, patchouli, mint, cinnamon, bergamot, green aventurine chips. Bay leaf inscribed with intention works well.',
         timing: 'Waxing to Full Moon for growth and abundance, Thursday (Jupiter) for expansion, Friday (Venus) for heart-centered work.',
-        day_of_week: 'Thursday'
+        day_of_week: 'Thursday',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry', 'Kitchen Witch']
     },
     {
         name: 'Light Blue',
@@ -117,7 +124,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Peace rituals and calming conflict, healing after emotional wounds, throat chakra work and communication, truth-speaking in difficult situations, calming anxiety and sleep spells, water elemental work.',
         dressing: 'Chamomile, eucalyptus, blue lotus, aquamarine chips, spearmint. Celestite or blue lace agate amplifies.',
         timing: 'Full Moon for deep healing, Waning Moon for releasing anxiety, Monday (Moon\'s day), evening.',
-        day_of_week: 'Monday'
+        day_of_week: 'Monday',
+        traditions: ['Wiccan', 'Eclectic', 'Ceremonial', 'Druidry']
     },
     {
         name: 'Dark Blue',
@@ -131,7 +139,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Psychic development and strengthening intuition, prophetic dreaming, deep meditation and trance work, divination of all kinds, accessing higher wisdom and guides, astral travel, justice workings.',
         dressing: 'Mugwort, wormwood, lapis lazuli chips, frankincense, blue lotus oil. Amethyst and lapis amplify.',
         timing: 'Full Moon for visions, Thursday (Jupiter) for wisdom, Saturday (Saturn) for serious work, midnight.',
-        day_of_week: 'Thursday'
+        day_of_week: 'Thursday',
+        traditions: ['Wiccan', 'Eclectic', 'Ceremonial', 'Heathen']
     },
     {
         name: 'Purple',
@@ -145,7 +154,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Amplifying any other spell, spiritual development and advancement, contacting spirit guides and higher self, manifestation work with deep will, power rituals, transformation and transmutation, royalty and recognition.',
         dressing: 'Frankincense, lavender, amethyst chips, violet flowers, sandalwood, myrrh. Amethyst is the natural companion.',
         timing: 'Full Moon for maximum power, Thursday (Jupiter) for wisdom and expansion, spiritual new moons.',
-        day_of_week: 'Thursday'
+        day_of_week: 'Thursday',
+        traditions: ['Wiccan', 'Eclectic', 'Ceremonial', 'Chaos Magick']
     },
     {
         name: 'Brown',
@@ -159,7 +169,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Home protection and blessing, grounding rituals and releasing overwhelm, connecting with animal guides and familiars, stability in finances, earth elemental work, locating lost objects, gardening and nature magic.',
         dressing: 'Patchouli, vetiver, cedar, oak bark, obsidian. Smoky quartz, tiger\'s eye, or petrified wood amplifies.',
         timing: 'Any Moon phase for stability work, Saturday for long-term practical matters, midday.',
-        day_of_week: 'Saturday'
+        day_of_week: 'Saturday',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Druidry']
     },
     {
         name: 'Silver',
@@ -173,7 +184,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Full moon rituals and lunar workings, working with moon goddesses (Artemis, Selene, Hecate), dream magic and prophetic dreaming, scrying and mirror magic, honoring feminine divine energy, psychic amplification.',
         dressing: 'Moonstone chips, jasmine, white sandalwood, myrrh, silver moonflower oil. Moonstone or selenite amplifies.',
         timing: 'Full Moon is essential — silver is the moon\'s candle. Monday (Moon\'s day), midnight.',
-        day_of_week: 'Monday'
+        day_of_week: 'Monday',
+        traditions: ['Wiccan', 'Eclectic', 'Ceremonial', 'Druidry']
     },
     {
         name: 'Gold',
@@ -187,7 +199,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Career advancement and leadership recognition, solar rituals and Litha/Midsummer celebrations, honoring solar gods (Ra, Apollo, Lugh), drawing wealth through effort and deserving, confidence and authority spells.',
         dressing: 'Cinnamon, frankincense, sunflower petals, citrine chips, orange peel, gold flake oil. Citrine or pyrite amplifies.',
         timing: 'Full Moon for maximum power, Sunday (Sun\'s day), noon at the sun\'s height, Midsummer/Litha.',
-        day_of_week: 'Sunday'
+        day_of_week: 'Sunday',
+        traditions: ['Wiccan', 'Eclectic', 'Ceremonial', 'Druidry']
     },
     {
         name: 'Gray',
@@ -201,7 +214,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Binding harmful energy without banishing it (neutralizing), canceling unwanted spells, making complex decisions where there is no clear right answer, shadow examination from a neutral perspective, legal matters requiring balance.',
         dressing: 'Benzoin, mugwort, clear quartz, frankincense. Gray moonstone or hematite for neutrality.',
         timing: 'Waning Moon for neutralizing, Wednesday (Mercury) for decisions, Saturday (Saturn) for binding.',
-        day_of_week: 'Wednesday'
+        day_of_week: 'Wednesday',
+        traditions: ['Wiccan', 'Eclectic', 'Heathen', 'Ceremonial']
     },
     {
         name: 'Lavender',
@@ -215,7 +229,8 @@ const CANDLE_COLORS = [
         magical_uses: 'Sleep enhancement and dream recall, gentle psychic development and third eye opening, meditation and trance support, memory work, connecting to fairy realms and nature spirits, gentle healing of spirit and mind.',
         dressing: 'Lavender essential oil, chamomile, moonstone, amethyst, butterfly pea flowers. Amethyst or lepidolite amplifies.',
         timing: 'Waning Moon for sleep and releasing anxiety, New Moon for spiritual beginnings, Monday at dusk.',
-        day_of_week: 'Monday'
+        day_of_week: 'Monday',
+        traditions: ['Wiccan', 'Eclectic', 'Green Witch', 'Kitchen Witch']
     }
 ];
 
