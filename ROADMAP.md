@@ -1,7 +1,7 @@
 # Mystical Path Tools — Roadmap
 
 **Last Updated:** February 27, 2026
-**Status:** No active sprint.
+**Status:** Active sprint — see `SPRINT.md`.
 
 ---
 
@@ -42,14 +42,14 @@
 - [ ] **Planetary Hours Calculator** (~8h) — Real-time by geolocation. Reuses Moon Tracker calc pattern.
 - [ ] **Chakra Healing Guide** (~8–10h) — Interactive map + assessment + recommendations. Bridges Crystal + Herbal.
 - [ ] **Deity Database** (~10h) — Greek/Norse/Egyptian/Celtic/Hindu. Filterable by intention, tradition.
-- [ ] **Ogham Oracle** (~8h) — Celtic tree alphabet, 20 fews. Divination similar to Rune Caster.
-- [ ] **Correspondence Lookup** (~6–8h) — Enter any keyword → matching crystals, herbs, runes, candles across all databases.
+- [in-progress] **Ogham Oracle** (~8h) — Celtic tree alphabet, 20 fews. Divination similar to Rune Caster.
+- [done] **Correspondence Lookup** (~6–8h) — Enter any keyword → matching crystals, herbs, runes, candles across all databases.
 - [ ] **Sacred Geometry Generator** (~8h) — Canvas. Flower of Life, Metatron's Cube, Sri Yantra.
 
 ### High Value / High Effort — Plan Carefully
 - [ ] **Tarot Spread Generator** (~16–20h, two sprints) — 78-card database, spread engine, reversed meanings.
 - [ ] **I Ching Oracle** (~12–16h) — 64 hexagrams, changing lines.
-- [ ] **Daily Practice Dashboard** (~15h) — Unified today view: moon + sabbat + rune/crystal + affirmation.
+- [done] **Daily Practice Dashboard** (~15h) — Unified today view: moon + sabbat + rune/crystal + affirmation.
 - [ ] **Elemental Profile Quiz** (~12h) — Multi-question → dominant element → tool recommendations.
 - [ ] **Personal Profile** (~12–15h) — localStorage birth date/name, persistent personalization across tools.
 
@@ -62,10 +62,9 @@
 
 ## Cross-Tool Platform Features
 
-- [ ] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
 - [done] **Correspondence Lookup** — Keyword → all matching items across every database
 - [done] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
-- [ ] **Universal Search** — Homepage search spanning all tool databases
+- [in-progress] **Universal Search** — Homepage search spanning all tool databases
 - [ ] **Share via URL** (~5h) — Encode tool state in query params. Shareable readings.
 - [ ] **Personal Profile** (~12–15h) — Birth date + name stored locally, auto-populates Numerology, informs Chakra Guide
 - [ ] **Tradition Selector** (~6–8h) — Filter content by practice tradition (Wicca, Druidry, Ceremonial, etc.)
@@ -95,7 +94,7 @@
 - [ ] Rune study/flashcard mode (~4h)
 
 **Crystal Database**
-- [ ] More filter options: element, color, planetary (~2h)
+- [in-progress] More filter options: element, color, planetary (~2h)
 - [ ] Crystal compatibility checker (~4h)
 - [ ] Crystal grid templates (~6h)
 
