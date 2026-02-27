@@ -122,12 +122,47 @@ const importFileInput = document.getElementById('import-file-input');
 // INITIALIZATION
 // ==========================================
 
+/**
+ * Get current moon phase value matching the spell-moon-phase select options
+ */
+function getCurrentMoonPhaseValue() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    let y = year;
+    let m = month;
+    if (m <= 2) { y -= 1; m += 12; }
+    const a = Math.floor(y / 100);
+    const b = 2 - a + Math.floor(a / 4);
+    const jd = Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + day + b - 1524.5;
+    const daysSinceNew = jd - 2451550.1;
+    const synodicMonth = 29.53058867;
+    const phase = ((daysSinceNew / synodicMonth) - Math.floor(daysSinceNew / synodicMonth)) * synodicMonth;
+
+    if (phase < 1.84566) return 'new';
+    else if (phase < 5.53699) return 'waxing-crescent';
+    else if (phase < 9.22831) return 'first-quarter';
+    else if (phase < 12.91963) return 'waxing-gibbous';
+    else if (phase < 16.61096) return 'full';
+    else if (phase < 20.30228) return 'waning-gibbous';
+    else if (phase < 23.99361) return 'last-quarter';
+    else if (phase < 27.68493) return 'waning-crescent';
+    else return 'new';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadGrimoire();
     populateIngredientCheckboxes();
     initializeEventListeners();
     renderGrimoire();
     updateSpellCount();
+
+    // Auto-detect current moon phase if user hasn't selected one
+    if (spellMoonPhaseSelect && !spellMoonPhaseSelect.value) {
+        spellMoonPhaseSelect.value = getCurrentMoonPhaseValue();
+    }
 });
 
 function initializeEventListeners() {

@@ -306,19 +306,136 @@ function handleCalculate() {
 }
 
 // ========================================
+// COMPATIBILITY CALCULATOR
+// ========================================
+
+/**
+ * Generate compatibility note for two numerology numbers
+ */
+function getCompatibilityNote(numA, numB) {
+    if (numA === numB) {
+        return { icon: '🔮', label: 'Deep Resonance', desc: 'Shared energy and mirrored strengths — you understand each other on an instinctive level.' };
+    }
+    const diff = Math.abs(numA - numB);
+    if (diff === 1 || diff === 9) {
+        return { icon: '✨', label: 'Complementary', desc: 'Adjacent vibrations that flow naturally together, each balancing the other\'s edges.' };
+    }
+    if ((numA === 11 || numA === 22 || numA === 33) && (numB === 11 || numB === 22 || numB === 33)) {
+        return { icon: '⚡', label: 'Rare Spiritual Connection', desc: 'Two master numbers in harmony — an uncommon and intensely spiritual bond.' };
+    }
+    // General pairings
+    const pairs = {
+        '1-4': 'Builder and Pioneer — structure meets innovation for lasting results.',
+        '1-7': 'Leader and Seeker — ambition guided by wisdom and introspection.',
+        '2-8': 'Diplomat and Powerhouse — sensitivity tempers strength, strength protects sensitivity.',
+        '3-9': 'Creative and Humanitarian — expression in service of a higher cause.',
+        '4-8': 'Two Builders — immense practical power, grounded manifestation.',
+        '5-3': 'Freedom and Creativity — adventure and expression spark each other.',
+        '6-9': 'Nurturer and Humanitarian — deep care for family and world alike.',
+        '2-6': 'Harmony and Service — both seek peace and love; deeply supportive.',
+        '1-9': 'Pioneer and Sage — the beginner and the completer, a full-cycle bond.',
+        '3-6': 'Creator and Caretaker — joy and beauty meet responsibility.',
+        '5-9': 'Free Spirit and Old Soul — restless adventure meets universal wisdom.'
+    };
+    const key1 = `${Math.min(numA, numB)}-${Math.max(numA, numB)}`;
+    if (pairs[key1]) {
+        return { icon: '🌟', label: 'Dynamic Pair', desc: pairs[key1] };
+    }
+    return { icon: '🌙', label: 'Unique Connection', desc: `${NUMBER_MEANINGS[numA]?.name || numA} and ${NUMBER_MEANINGS[numB]?.name || numB} energies weave a distinctive, one-of-a-kind dynamic.` };
+}
+
+/**
+ * Calculate and display compatibility
+ */
+function handleCompatibility() {
+    const nameA = document.getElementById('compat-name-a').value.trim();
+    const dateA = document.getElementById('compat-date-a').value;
+    const nameB = document.getElementById('compat-name-b').value.trim();
+    const dateB = document.getElementById('compat-date-b').value;
+
+    if (!nameA || !dateA) { alert('Please enter Person A\'s full name and birth date.'); return; }
+    if (!nameB || !dateB) { alert('Please enter Person B\'s full name and birth date.'); return; }
+
+    const resultsA = {
+        lifePath: calculateLifePath(dateA),
+        soulUrge: calculateSoulUrge(nameA),
+        destiny: calculateDestiny(nameA),
+        personality: calculatePersonality(nameA)
+    };
+    const resultsB = {
+        lifePath: calculateLifePath(dateB),
+        soulUrge: calculateSoulUrge(nameB),
+        destiny: calculateDestiny(nameB),
+        personality: calculatePersonality(nameB)
+    };
+
+    const types = [
+        { key: 'lifePath', title: 'Life Path', icon: '🌟' },
+        { key: 'soulUrge', title: 'Soul Urge', icon: '💜' },
+        { key: 'destiny', title: 'Destiny', icon: '✨' },
+        { key: 'personality', title: 'Personality', icon: '🎭' }
+    ];
+
+    const resultsEl = document.getElementById('compat-results');
+    const firstNameA = nameA.split(' ')[0];
+    const firstNameB = nameB.split(' ')[0];
+
+    resultsEl.innerHTML = `
+        <h3 class="compat-results-title">${firstNameA} & ${firstNameB}</h3>
+        <div class="compat-grid">
+            ${types.map(type => {
+                const nA = resultsA[type.key];
+                const nB = resultsB[type.key];
+                const compat = getCompatibilityNote(nA, nB);
+                const meaningA = NUMBER_MEANINGS[nA];
+                const meaningB = NUMBER_MEANINGS[nB];
+                return `
+                <div class="compat-row">
+                    <div class="compat-person">
+                        <span class="compat-type-label">${type.icon} ${type.title}</span>
+                        <span class="compat-number">${nA}</span>
+                        <span class="compat-name-label">${meaningA ? meaningA.name : ''}</span>
+                    </div>
+                    <div class="compat-center">
+                        <span class="compat-icon">${compat.icon}</span>
+                        <span class="compat-label">${compat.label}</span>
+                        <p class="compat-desc">${compat.desc}</p>
+                    </div>
+                    <div class="compat-person">
+                        <span class="compat-type-label">${type.icon} ${type.title}</span>
+                        <span class="compat-number">${nB}</span>
+                        <span class="compat-name-label">${meaningB ? meaningB.name : ''}</span>
+                    </div>
+                </div>
+                `;
+            }).join('')}
+        </div>
+    `;
+
+    resultsEl.style.display = 'block';
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ========================================
 // EVENT LISTENERS
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
     const calculateBtn = document.getElementById('calculate-btn');
     calculateBtn.addEventListener('click', handleCalculate);
-    
+
     // Allow Enter key to calculate
     document.getElementById('full-name').addEventListener('keypress', (e) => {
         if (e.key === 'Enter') handleCalculate();
     });
-    
+
     document.getElementById('birth-date').addEventListener('keypress', (e) => {
         if (e.key === 'Enter') handleCalculate();
     });
+
+    // Compatibility calculator
+    const compatBtn = document.getElementById('compat-calculate-btn');
+    if (compatBtn) {
+        compatBtn.addEventListener('click', handleCompatibility);
+    }
 });

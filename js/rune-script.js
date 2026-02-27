@@ -661,6 +661,43 @@ const SPREADS = {
 };
 
 // ========================================
+// RUNE OF THE DAY
+// ========================================
+
+function initRuneOfDay() {
+    const today = new Date().toISOString().split('T')[0];
+    const stored = JSON.parse(localStorage.getItem('mystical-path-rune-of-day') || '{}');
+
+    let rune;
+    if (stored.date === today) {
+        rune = ELDER_FUTHARK.find(r => r.name === stored.name);
+    }
+    if (!rune) {
+        rune = ELDER_FUTHARK[Math.floor(Math.random() * ELDER_FUTHARK.length)];
+        localStorage.setItem('mystical-path-rune-of-day', JSON.stringify({
+            date: today,
+            name: rune.name
+        }));
+    }
+
+    const card = document.getElementById('rune-of-day-card');
+    if (!card) return;
+
+    card.innerHTML = `
+        <div class="rotd-label">ᚱ Rune of the Day</div>
+        <div class="rotd-symbol">${rune.symbol}</div>
+        <div class="rotd-info">
+            <h3 class="rotd-name">${rune.name}</h3>
+            <div class="rotd-tags">
+                ${rune.upright.keywords.slice(0, 3).map(k => `<span class="rotd-tag">${k}</span>`).join('')}
+            </div>
+            <p class="rotd-meaning">${rune.upright.meaning}</p>
+            <p class="rotd-refresh">Refreshes tomorrow at midnight</p>
+        </div>
+    `;
+}
+
+// ========================================
 // UTILITY FUNCTIONS
 // ========================================
 
@@ -842,6 +879,117 @@ function drawBindRune() {
 }
 
 // ========================================
+// READING HISTORY
+// ========================================
+
+const HISTORY_MAX = 20;
+const HISTORY_KEY = 'mystical-path-rune-history';
+let runeHistory = [];
+
+function loadRuneHistory() {
+    const saved = localStorage.getItem(HISTORY_KEY);
+    runeHistory = saved ? JSON.parse(saved) : [];
+}
+
+function saveRuneHistory() {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(runeHistory));
+}
+
+function addToRuneHistory(spreadKey, castResults) {
+    const spread = SPREADS[spreadKey];
+    const entry = {
+        spread: spread.name,
+        runes: castResults.map((cast, i) => ({
+            name: cast.rune.name,
+            symbol: cast.rune.symbol,
+            position: spread.layout[i].name,
+            reversed: cast.reversed
+        })),
+        timestamp: Date.now()
+    };
+    runeHistory.unshift(entry);
+    if (runeHistory.length > HISTORY_MAX) runeHistory = runeHistory.slice(0, HISTORY_MAX);
+    saveRuneHistory();
+    renderRuneHistory();
+}
+
+function renderRuneHistory() {
+    const historyList = document.getElementById('history-list');
+    const historyEmpty = document.getElementById('history-empty');
+    if (!historyList) return;
+
+    if (runeHistory.length === 0) {
+        historyList.innerHTML = '';
+        if (historyEmpty) historyEmpty.style.display = 'block';
+        return;
+    }
+
+    if (historyEmpty) historyEmpty.style.display = 'none';
+    historyList.innerHTML = '';
+
+    runeHistory.forEach((entry, idx) => {
+        const date = new Date(entry.timestamp);
+        const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        const timeStr = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+        const item = document.createElement('div');
+        item.className = 'history-item';
+        item.setAttribute('role', 'listitem');
+        item.innerHTML = `
+            <div class="history-item-header">
+                <div>
+                    <span class="history-spread">${entry.spread}</span>
+                    <span class="history-date">${dateStr} at ${timeStr}</span>
+                </div>
+            </div>
+            <div class="history-runes">
+                ${entry.runes.map(r => `
+                    <div class="history-rune">
+                        <span class="history-rune-symbol ${r.reversed ? 'reversed' : ''}">${r.symbol}</span>
+                        <span class="history-rune-name">${r.name}${r.reversed ? ' ↕' : ''}</span>
+                        <span class="history-rune-pos">${r.position}</span>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        historyList.appendChild(item);
+    });
+}
+
+function initRuneHistoryUI() {
+    const toggleBtn = document.getElementById('toggle-history-btn');
+    const clearBtn = document.getElementById('clear-history-btn');
+    const historyList = document.getElementById('history-list');
+
+    if (toggleBtn && historyList) {
+        toggleBtn.addEventListener('click', () => {
+            const isVisible = historyList.style.display !== 'none';
+            historyList.style.display = isVisible ? 'none' : 'block';
+            const icon = toggleBtn.querySelector('.toggle-icon');
+            const text = toggleBtn.querySelector('.toggle-text');
+            if (icon) icon.textContent = isVisible ? '▼' : '▲';
+            if (text) text.textContent = isVisible ? 'Show History' : 'Hide History';
+        });
+    }
+
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            if (runeHistory.length === 0) return;
+            if (confirm('Clear all reading history? This cannot be undone.')) {
+                runeHistory = [];
+                saveRuneHistory();
+                renderRuneHistory();
+                if (historyList) historyList.style.display = 'none';
+                const icon = toggleBtn ? toggleBtn.querySelector('.toggle-icon') : null;
+                const text = toggleBtn ? toggleBtn.querySelector('.toggle-text') : null;
+                if (icon) icon.textContent = '▼';
+                if (text) text.textContent = 'Show History';
+            }
+        });
+    }
+}
+
+// ========================================
 // EVENT LISTENERS
 // ========================================
 
@@ -851,6 +999,7 @@ if (castButton) {
         const spread = SPREADS[spreadKey];
         currentCast = castRunes(spread.positions);
         displaySpread(spreadKey, currentCast);
+        addToRuneHistory(spreadKey, currentCast);
     });
 }
 
@@ -889,3 +1038,11 @@ if (clearBindButton) {
         selectedRunesForBind = [];
     });
 }
+
+// Initialize Rune of the Day
+initRuneOfDay();
+
+// Initialize Reading History
+loadRuneHistory();
+renderRuneHistory();
+initRuneHistoryUI();

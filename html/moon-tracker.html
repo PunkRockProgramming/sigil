@@ -115,6 +115,24 @@
                 </div>
             </section>
 
+            <!-- Ritual Journal -->
+            <section class="ritual-journal-section" role="region" aria-labelledby="journal-heading">
+                <h2 id="journal-heading">Ritual Journal</h2>
+                <div class="history-controls">
+                    <button id="toggle-journal-btn" class="toggle-btn" aria-label="Show ritual journal">
+                        <span class="toggle-icon">▼</span>
+                        <span class="toggle-text">Show Journal</span>
+                    </button>
+                    <button id="clear-journal-btn" class="clear-history-btn" aria-label="Clear all journal entries">Clear Journal</button>
+                </div>
+                <div id="journal-list" class="history-list" role="list" style="display: none;"></div>
+                <div id="journal-empty" class="empty-state">
+                    <p class="empty-icon">🌙</p>
+                    <p class="empty-text">No rituals recorded yet.</p>
+                    <p class="empty-subtext">Click "Record" on any ritual to log your practice.</p>
+                </div>
+            </section>
+
             <!-- Moon Calendar -->
             <section class="calendar-section" role="region" aria-labelledby="calendar-heading">
                 <h3 id="calendar-heading">Upcoming Moon Phases</h3>

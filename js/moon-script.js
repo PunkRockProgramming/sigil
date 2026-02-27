@@ -957,6 +957,155 @@ function updateMoonDisplay(date = new Date()) {
     displayRituals(corr.rituals);
 }
 
+// ========================================
+// RITUAL JOURNAL
+// ========================================
+
+const JOURNAL_MAX = 50;
+const JOURNAL_KEY = 'mystical-path-moon-journal';
+let moonJournal = [];
+
+function loadMoonJournal() {
+    const saved = localStorage.getItem(JOURNAL_KEY);
+    moonJournal = saved ? JSON.parse(saved) : [];
+}
+
+function saveMoonJournal() {
+    localStorage.setItem(JOURNAL_KEY, JSON.stringify(moonJournal));
+}
+
+function addToMoonJournal(ritualTitle, notes) {
+    const currentPhase = phaseName ? phaseName.textContent : getMoonPhase(new Date()).phaseName;
+    const entry = {
+        ritualTitle,
+        moonPhase: currentPhase,
+        notes: notes || '',
+        timestamp: Date.now()
+    };
+    moonJournal.unshift(entry);
+    if (moonJournal.length > JOURNAL_MAX) moonJournal = moonJournal.slice(0, JOURNAL_MAX);
+    saveMoonJournal();
+    renderMoonJournal();
+}
+
+function renderMoonJournal() {
+    const journalList = document.getElementById('journal-list');
+    const journalEmpty = document.getElementById('journal-empty');
+    if (!journalList) return;
+
+    if (moonJournal.length === 0) {
+        journalList.innerHTML = '';
+        if (journalEmpty) journalEmpty.style.display = 'block';
+        return;
+    }
+    if (journalEmpty) journalEmpty.style.display = 'none';
+    journalList.innerHTML = '';
+
+    moonJournal.forEach((entry) => {
+        const date = new Date(entry.timestamp);
+        const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        const timeStr = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+
+        const item = document.createElement('div');
+        item.className = 'history-item';
+        item.setAttribute('role', 'listitem');
+        item.innerHTML = `
+            <div class="history-item-header">
+                <div>
+                    <span class="history-spread">${entry.ritualTitle}</span>
+                    <span class="history-date">${entry.moonPhase} &middot; ${dateStr} at ${timeStr}</span>
+                </div>
+            </div>
+            ${entry.notes ? `<p class="journal-notes">"${entry.notes}"</p>` : ''}
+        `;
+        journalList.appendChild(item);
+    });
+}
+
+function showRecordModal(ritualTitle) {
+    // Remove existing modal if any
+    const existing = document.getElementById('record-modal');
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'record-modal';
+    modal.className = 'record-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-labelledby', 'record-modal-title');
+    modal.innerHTML = `
+        <div class="record-modal-content">
+            <h3 id="record-modal-title">Record Ritual</h3>
+            <p class="record-ritual-name">${ritualTitle}</p>
+            <textarea id="record-notes" class="record-notes-input"
+                      placeholder="Add personal notes (optional)..."
+                      aria-label="Ritual notes"></textarea>
+            <div class="record-modal-actions">
+                <button id="record-save-btn" class="primary-btn">Save to Journal</button>
+                <button id="record-cancel-btn" class="secondary-btn">Cancel</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Focus on textarea
+    const notesInput = document.getElementById('record-notes');
+    if (notesInput) notesInput.focus();
+
+    document.getElementById('record-save-btn').addEventListener('click', () => {
+        const notes = notesInput ? notesInput.value.trim() : '';
+        addToMoonJournal(ritualTitle, notes);
+        modal.remove();
+        // Auto-show journal
+        const journalList = document.getElementById('journal-list');
+        const toggleBtn = document.getElementById('toggle-journal-btn');
+        if (journalList && journalList.style.display === 'none') {
+            journalList.style.display = 'block';
+            const icon = toggleBtn ? toggleBtn.querySelector('.toggle-icon') : null;
+            const text = toggleBtn ? toggleBtn.querySelector('.toggle-text') : null;
+            if (icon) icon.textContent = '▲';
+            if (text) text.textContent = 'Hide Journal';
+        }
+    });
+
+    document.getElementById('record-cancel-btn').addEventListener('click', () => modal.remove());
+
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.remove(); });
+}
+
+function initJournalUI() {
+    const toggleBtn = document.getElementById('toggle-journal-btn');
+    const clearBtn = document.getElementById('clear-journal-btn');
+    const journalList = document.getElementById('journal-list');
+
+    if (toggleBtn && journalList) {
+        toggleBtn.addEventListener('click', () => {
+            const isVisible = journalList.style.display !== 'none';
+            journalList.style.display = isVisible ? 'none' : 'block';
+            const icon = toggleBtn.querySelector('.toggle-icon');
+            const text = toggleBtn.querySelector('.toggle-text');
+            if (icon) icon.textContent = isVisible ? '▼' : '▲';
+            if (text) text.textContent = isVisible ? 'Show Journal' : 'Hide Journal';
+        });
+    }
+
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            if (moonJournal.length === 0) return;
+            if (confirm('Clear all journal entries? This cannot be undone.')) {
+                moonJournal = [];
+                saveMoonJournal();
+                renderMoonJournal();
+                if (journalList) journalList.style.display = 'none';
+                const icon = toggleBtn ? toggleBtn.querySelector('.toggle-icon') : null;
+                const text = toggleBtn ? toggleBtn.querySelector('.toggle-text') : null;
+                if (icon) icon.textContent = '▼';
+                if (text) text.textContent = 'Show Journal';
+            }
+        });
+    }
+}
+
 // Display Rituals with Filtering
 let currentRituals = [];
 
@@ -968,7 +1117,7 @@ function displayRituals(rituals) {
 function filterAndDisplayRituals() {
     const categoryFilter = document.getElementById('category-filter').value;
     const difficultyFilter = document.getElementById('difficulty-filter').value;
-    
+
     // Use shared filter utility
     let filtered = filterItems(
         currentRituals,
@@ -981,37 +1130,39 @@ function filterAndDisplayRituals() {
             difficulty: (item) => item.difficulty
         }
     );
-    
+
     ritualSuggestions.innerHTML = '';
-    
+
     filtered.forEach((ritual, index) => {
         const card = document.createElement('div');
         card.className = 'ritual-card';
         card.dataset.index = index;
-        
+
         const stepsHTML = ritual.steps ? `
             <h5>Steps:</h5>
             <ol>
                 ${ritual.steps.map(step => `<li>${step}</li>`).join('')}
             </ol>
         ` : '';
-        
+
         const toolsHTML = ritual.tools ? `
             <h5>You'll Need:</h5>
             <ul class="tools-list">
                 ${ritual.tools.map(tool => `<li>${tool}</li>`).join('')}
             </ul>
         ` : '';
-        
+
         const safetyHTML = ritual.safety ? `
             <div class="safety-note">
                 <strong>⚠️ Safety:</strong> ${ritual.safety}
             </div>
         ` : '';
-        
+
         card.innerHTML = `
             <div class="ritual-header">
                 <h4>${ritual.title}</h4>
+                <button class="record-ritual-btn" data-title="${ritual.title.replace(/"/g, '&quot;')}"
+                        aria-label="Record ${ritual.title} in journal">Record</button>
             </div>
             <div class="ritual-meta">
                 <span class="meta-badge category">${ritual.category}</span>
@@ -1026,27 +1177,66 @@ function filterAndDisplayRituals() {
                 ${safetyHTML}
             </div>
         `;
-        
-        // Add click handler for expansion
-        card.addEventListener('click', () => {
-            card.classList.toggle('expanded');
+
+        // Add click handler for expansion (not on the record button)
+        card.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('record-ritual-btn')) {
+                card.classList.toggle('expanded');
+            }
         });
-        
+
+        // Record button handler
+        const recordBtn = card.querySelector('.record-ritual-btn');
+        if (recordBtn) {
+            recordBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showRecordModal(ritual.title);
+            });
+        }
+
         ritualSuggestions.appendChild(card);
     });
+}
+
+// Filter persistence
+function saveMoonFilterState() {
+    const categoryFilter = document.getElementById('category-filter');
+    const difficultyFilter = document.getElementById('difficulty-filter');
+    localStorage.setItem('mystical-path-moon-filters', JSON.stringify({
+        category: categoryFilter ? categoryFilter.value : 'all',
+        difficulty: difficultyFilter ? difficultyFilter.value : 'all'
+    }));
+}
+
+function loadMoonFilterState() {
+    const saved = localStorage.getItem('mystical-path-moon-filters');
+    if (saved) {
+        const state = JSON.parse(saved);
+        const categoryFilter = document.getElementById('category-filter');
+        const difficultyFilter = document.getElementById('difficulty-filter');
+        if (categoryFilter) categoryFilter.value = state.category || 'all';
+        if (difficultyFilter) difficultyFilter.value = state.difficulty || 'all';
+    }
 }
 
 // Add filter event listeners
 document.addEventListener('DOMContentLoaded', () => {
     const categoryFilter = document.getElementById('category-filter');
     const difficultyFilter = document.getElementById('difficulty-filter');
-    
+
+    loadMoonFilterState();
+
     if (categoryFilter) {
-        categoryFilter.addEventListener('change', filterAndDisplayRituals);
+        categoryFilter.addEventListener('change', () => { saveMoonFilterState(); filterAndDisplayRituals(); });
     }
     if (difficultyFilter) {
-        difficultyFilter.addEventListener('change', filterAndDisplayRituals);
+        difficultyFilter.addEventListener('change', () => { saveMoonFilterState(); filterAndDisplayRituals(); });
     }
+
+    // Initialize ritual journal
+    loadMoonJournal();
+    renderMoonJournal();
+    initJournalUI();
 });
 
 // Calendar Functions

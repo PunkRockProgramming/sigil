@@ -500,3 +500,108 @@
     color: var(--text-secondary, #94a3b8);
     font-style: italic;
 }
+
+/* ========================================
+   CRYSTAL OF THE DAY
+   ======================================== */
+
+.crystal-of-day-section {
+    margin-bottom: 1.5rem;
+}
+
+.crystal-of-day-card {
+    background: linear-gradient(135deg, var(--card-bg), rgba(167, 139, 250, 0.08));
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px var(--shadow);
+    animation: fadeIn 0.5s ease;
+}
+
+.cotd-label {
+    position: absolute;
+    top: -0.6rem;
+    left: 1rem;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.08em;
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.crystal-of-day-card {
+    position: relative;
+}
+
+.cotd-emoji {
+    font-size: 3rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.cotd-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cotd-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.cotd-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.cotd-tag {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.cotd-tag.chakra {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.cotd-affirmation {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin: 0 0 0.3rem 0;
+}
+
+.cotd-refresh {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin: 0;
+    opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+    .crystal-of-day-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+    .cotd-tags {
+        justify-content: center;
+    }
+}

@@ -1,7 +1,7 @@
 // Mystical Path Tools - Service Worker
 // Enables offline functionality and fast loading
 
-const CACHE_NAME = 'mystical-path-v1.2';
+const CACHE_NAME = 'mystical-path-v1.3';
 const OFFLINE_URL = '/offline.html';
 
 // Assets to cache on install

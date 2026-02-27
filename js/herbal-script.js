@@ -782,6 +782,28 @@ function loadCollection() {
 }
 
 /**
+ * Save filter state to localStorage
+ */
+function saveFilterState() {
+    localStorage.setItem('mystical-path-herbal-filters', JSON.stringify({
+        intention: intentionFilter.value,
+        element: elementFilter.value
+    }));
+}
+
+/**
+ * Load filter state from localStorage
+ */
+function loadFilterState() {
+    const saved = localStorage.getItem('mystical-path-herbal-filters');
+    if (saved) {
+        const state = JSON.parse(saved);
+        intentionFilter.value = state.intention || 'all';
+        elementFilter.value = state.element || 'all';
+    }
+}
+
+/**
  * Clear all filters
  */
 function clearFiltersLocal() {
@@ -789,6 +811,7 @@ function clearFiltersLocal() {
         search: searchInput,
         filters: [intentionFilter, elementFilter]
     });
+    saveFilterState();
     filterHerbs();
 }
 
@@ -797,8 +820,8 @@ function clearFiltersLocal() {
  */
 function setupEventListeners() {
     searchInput.addEventListener('input', filterHerbs);
-    intentionFilter.addEventListener('change', filterHerbs);
-    elementFilter.addEventListener('change', filterHerbs);
+    intentionFilter.addEventListener('change', () => { saveFilterState(); filterHerbs(); });
+    elementFilter.addEventListener('change', () => { saveFilterState(); filterHerbs(); });
     clearFiltersBtn.addEventListener('click', clearFiltersLocal);
     
     ownedTab.addEventListener('click', () => {
@@ -824,8 +847,9 @@ function setupEventListeners() {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadCollection();
+    loadFilterState();
     setupEventListeners();
-    renderHerbs();
+    filterHerbs();
     renderCollection();
     
     // Enable keyboard navigation for herb cards

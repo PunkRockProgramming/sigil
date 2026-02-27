@@ -1,6 +1,6 @@
 # 🔮 Mystical Path Tools - Development Roadmap
 
-**Last Updated:** February 25, 2026 (v2 Sprint 1)
+**Last Updated:** February 26, 2026 (Enhancement Sprint — journals, daily features, compatibility, data expansion)
 
 ---
 
@@ -616,44 +616,101 @@ All high-priority MVP tools complete! 🎉
 ## 📋 MEDIUM PRIORITY
 
 ### [ ] Tarot Spread Generator
-**Complexity:** Complex (4-6 weeks)  
-**Why Medium Priority:** Requires 78-card database, complex spread logic, extensive testing  
-**Reuses:** Card filtering patterns, expandable cards, localStorage for saved readings
+**Complexity:** Complex (~16-20h with patterns, two sprints)
+**Why Medium Priority:** #1 most-requested divination tool. 78-card database + spread engine.
+**Reuses:** Rune Caster pattern (data structure, spread layout, expandable cards), filter-utils, localStorage readings
 
 ### [ ] Planetary Hours Calculator
-**Complexity:** Medium (1-2 weeks)  
-**Why Medium Priority:** Geolocation API, sunrise/sunset calculations, timezone handling  
-**Reuses:** Date/time utilities, real-time updates like moon tracker
+**Complexity:** Medium (~6-8h with patterns)
+**Why Medium Priority:** Completes the timing toolkit. Real-time planetary hours by geolocation.
+**Reuses:** Moon Tracker's live calculation pattern, date/time utilities, real-time setInterval
 
 ### [done] Spell Builder & Grimoire
-**Completed:** February 26, 2026  
-**Actual Time:** 6-8 hours (vs. estimated 6-8 weeks!)  
+**Completed:** February 26, 2026
+**Actual Time:** 6-8 hours (vs. estimated 6-8 weeks!)
 **Reused:** filter-utils.js, expandable-card.css, keyboard-nav.js, print.css, theme system, localStorage patterns
 
 ### [ ] Dream Journal
-**Complexity:** Medium (2-3 weeks)  
-**Why Medium Priority:** Calendar-based entries, pattern recognition, tags/symbols  
-**Reuses:** localStorage, date utilities, expandable entries
+**Complexity:** Medium (~8h with patterns)
+**Why Medium Priority:** Calendar-based entries, pattern recognition, tags/symbols. High long-term user value.
+**Reuses:** localStorage, date utilities, expandable entries, collection tracking pattern
+
+### [ ] Angel Numbers Guide
+**Complexity:** Simple (~4h)
+**Why Medium Priority:** Extremely high search traffic (111, 222, 333, etc.). Quick win with high discoverability.
+**Reuses:** Crystal/Herbal reference pattern, filter-utils, expandable cards
+
+### [ ] Chakra Healing Guide
+**Complexity:** Medium (~8-10h)
+**Why Medium Priority:** Bridges Crystal + Herbal tools. Interactive chakra map + assessment + healing recommendations.
+**Reuses:** filter-utils, expandable cards, collection tracking, Crystal/Herbal data patterns
+
+### [ ] Deity Database
+**Complexity:** Medium (~10h)
+**Why Medium Priority:** Major gap — pantheons (Greek, Norse, Egyptian, Celtic, Hindu, Slavic). Filterable by intention, element, tradition, pantheon.
+**Reuses:** filter-utils, expandable cards, collection favorites, Herbal/Crystal data structure pattern
 
 ---
 
 ## 💭 BACKLOG
 
-### Simple Tools (2-4 hours each)
+### Simple Tools (2-5 hours each)
 - [done] **Numerology Calculator** — Completed Feb 26, 2026 (901 lines: Life Path, Soul Urge, Destiny, Personality numbers)
 - [done] **Affirmation Generator** — Completed Feb 26, 2026 (1,154 lines: 80 affirmations, 8 categories, favorites)
 - [done] **Meditation Timer** — Customizable duration, interval bells, ambient sounds
 - [done] **Pendulum Decision Tool** — Completed Feb 26, 2026 (1,103 lines: Canvas animation, 4 answers, question history)
 - [done] **Witchy Weather** — Completed Feb 26, 2026 (1,432 lines: OpenWeatherMap API, 8 weather types, moon phase combos)
 
-### Medium Tools (1-2 weeks each)
-- [ ] **Sacred Geometry Generator** — Canvas drawing of Flower of Life, Metatron's Cube, etc.
+### Medium Tools (6-12 hours each)
+- [ ] **Sacred Geometry Generator** — Canvas drawing of Flower of Life, Metatron's Cube, Sri Yantra, etc. Reuses canvas-utils.js.
 - [done] **Candle Magic Guide** — Completed sprint. 15 colors, 12 spell templates, dual-tab layout.
+- [ ] **Ogham Oracle** — Celtic tree alphabet (20 fews). Divination readings similar to Rune Caster. Strong for Druid/Celtic tradition users.
+- [ ] **I Ching Oracle** — 64 hexagrams with changing lines and full interpretations. More data than runes, similar UX pattern.
+- [ ] **Elemental Profile Quiz** — Multi-question quiz → discover dominant element(s) → personalized tool recommendations. New quiz flow pattern.
+- [ ] **Retrograde Tracker** — Mercury, Venus, Mars, Jupiter retrograde dates + what to avoid/embrace during each. Static data + date math.
+- [ ] **Tarot Study Mode** — Flashcard-style learning for all 78 cards. Can reuse Tarot Spread Generator card data.
 
-### Complex Tools (4+ weeks each)
-- [ ] **Astrology Birth Chart** — Full natal chart calculation and interpretation
-- [ ] **I Ching Oracle** — 64 hexagrams, changing lines, full interpretations
-- [ ] **Elemental Balancing Tool** — Quiz + recommendations for balancing your elements
+### Complex Tools (15+ hours each)
+- [ ] **Astrology Birth Chart** — Full natal chart calculation and interpretation. Requires planetary position math.
+- [ ] **Witch's Planner** — Personal calendar overlaid with moon phases + sabbats + planetary days. Combines multiple tools.
+- [ ] **Crystal Grid Builder** — Visual drag-and-drop crystal grid templates with crystal placement guides.
+- [ ] **Magical Recipe Builder** — Combine herbs + crystals + candles into custom workings. Cross-tool integration.
+
+---
+
+## 🔗 CROSS-TOOL PLATFORM FEATURES
+
+These multiply the value of every existing tool. High leverage, planned for after core tool set is stable.
+
+### [ ] Daily Practice Dashboard
+**Complexity:** High (~15h)
+**Description:** Single unified view — today's moon phase, current sabbat season, planetary day ruler, affirmation of the day, rune/crystal of the day. The "home base" for daily practitioners.
+**Value:** Highest engagement driver — gives users a reason to open the app every day.
+
+### [ ] Correspondence Lookup
+**Complexity:** Medium (~6-8h)
+**Description:** Enter any keyword (Venus, fire, love, Scorpio) → see all matching crystals, herbs, candles, runes, deities, and planets across every tool database.
+**Value:** Makes all existing data cross-referenceable. Unique feature not found in other mystical apps.
+
+### [ ] Universal Search
+**Complexity:** Medium (~6-8h)
+**Description:** Search bar on homepage that queries all tool databases simultaneously. Results grouped by tool type.
+**Value:** Power user feature. Reduces friction for practitioners who know what they want.
+
+### [ ] Share via URL
+**Complexity:** Medium (~5h)
+**Description:** Encode tool state (reading results, sigil settings, spell details) in URL query params. Shareable links to specific readings/configurations.
+**Value:** Viral sharing mechanic. Practitioners share readings with friends.
+
+### [ ] Personal Profile
+**Complexity:** High (~10-15h)
+**Description:** Store birth date + name locally for persistent numerology/astrology integration across all tools. Auto-populates Numerology Calculator, informs Chakra Guide, etc.
+**Value:** Personalization layer that makes every tool feel custom to the user.
+
+### [ ] Tradition Selector
+**Complexity:** Medium (~6-8h)
+**Description:** Users indicate their practice tradition (Wicca, Druidry, Ceremonial, Hoodoo, Secular/Eclectic, etc.) to surface tradition-appropriate content across tools.
+**Value:** Inclusivity and relevance — different traditions use different correspondences.
 
 ---
 
@@ -675,7 +732,53 @@ All high-priority MVP tools complete! 🎉
 - [done] **PWA manifest** - Completed Feb 27, 2026 - Created manifest.json, sw.js (~180 lines), offline.html, integrated into all 13 files
 - [done] **Export to PDF** - Completed Feb 27, 2026 - Created pdf-utils.js (65 lines), added 6 PDF buttons (Moon, Herbal, Crystal, Spell, Sabbat, Rune)
 - [ ] **Share via URL** - Encode state in query params (~5 hours)
+- [ ] **Filter persistence** - Remember user's last-used filters in localStorage across Crystal, Herbal, Moon tools (~2-3 hours)
+- [ ] **Universal search** - Search bar on homepage spanning all tool databases (~6-8 hours)
+- [ ] **Performance audit** - Lighthouse scoring and optimization pass
+- [ ] **Service worker update notifications** - Prompt user when new version available (~2h)
 
+
+---
+
+## 🎯 PM PRIORITY MATRIX
+
+Updated after PM discovery session (Feb 26, 2026). Use this to scope sprints quickly.
+
+### High Value / Low Effort — Do First
+- Angel Numbers Guide (~4h)
+- [done] Reading journal for Rune Caster — ships in Enhancement Sprint
+- [done] Crystal of the Day — ships in Enhancement Sprint
+- [done] Rune of the Day — ships in Enhancement Sprint
+- [done] Filter persistence across Crystal/Herbal/Moon — ships in Enhancement Sprint
+- [done] Moon Tracker ritual journal — ships in Enhancement Sprint
+- [done] Expand Crystal Database to 93 crystals — ships in Enhancement Sprint
+- [done] Spell Builder: moon phase auto-detect on open — ships in Enhancement Sprint
+- [done] Numerology compatibility calculator — ships in Enhancement Sprint
+- SVG export for Sigil Generator (~2h)
+
+### High Value / Medium Effort — Next 2-3 Sprints
+- Dream Journal (~8h)
+- Planetary Hours Calculator (~8h)
+- Chakra Healing Guide (~10h)
+- Deity Database (~10h)
+- Numerology Compatibility + Forecasting (~6-8h)
+- Ogham Oracle (~8h)
+- Retrograde Tracker (~5h)
+- Correspondence Lookup cross-tool feature (~6-8h)
+- Sacred Geometry Generator (~8h)
+
+### High Value / High Effort — Plan Carefully
+- Tarot Spread Generator (~16-20h across two sprints)
+- I Ching Oracle (~12-16h)
+- Daily Practice Dashboard (~15h)
+- Elemental Profile Quiz (~12h)
+- Personal Profile system (~12-15h)
+
+### Low Value / Any Effort — Deprioritize
+- JSDoc comments (zero user value)
+- Lenormand cards (very niche audience)
+- Tea Leaf / Tasseography (niche)
+- Performance audit (no visible user benefit)
 
 ---
 
@@ -711,33 +814,84 @@ All high-priority MVP tools complete! 🎉
 
 ### Sigil Generator
 - [done] LocalStorage: Save sigil history (last 10)
-- [ ] Export styles: SVG option in addition to PNG
-- [ ] Additional algorithms: Add 5 more generation styles
-- [ ] Tutorial: First-time user walkthrough
-- [ ] Gallery: Show example sigils for inspiration
+- [ ] Export styles: SVG option in addition to PNG (~2h)
+- [ ] Additional algorithms: Add 5 more generation styles (~4h)
+- [ ] Tutorial: First-time user walkthrough (~3h)
+- [ ] Gallery: Show example sigils for inspiration (~2h)
+- [ ] Charge/activate instructions: Display ritual guidance after sigil creation (~1h)
 
 ### Moon Tracker
-- [ ] Lunar eclipse calculations & notifications
-- [ ] Filter persistence (remember user preferences)
-- [ ] Ritual journal: Save personal notes on rituals tried
-- [ ] Export calendar to .ics format
-- [ ] Void of Course moon tracking
+- [done] Ritual journal: Save personal notes on rituals tried — record modal with notes, moon phase logged
+- [done] Filter persistence: Remember last-used filters in localStorage
+- [ ] Void of Course moon tracking (~3h)
+- [ ] Lunar eclipse calculations & notifications (~4h)
+- [ ] Export calendar to .ics format (~3h)
+- [ ] "Moon phase a year from now" calculator (~2h)
 
 ### Rune Caster
-- [ ] Journal: Save cast readings with notes
-- [ ] Export reading as image/PDF
-- [ ] Bind rune improvements: Better overlaying algorithm
-- [ ] Additional spreads: Add 3-4 more traditional spreads
-- [ ] Rune of the day notification
+- [done] Reading journal: Save cast readings with spread name, runes, and timestamp (last 20)
+- [done] Rune of the Day feature — daily rune with symbol, name, keywords, meaning
+- [ ] Additional spreads: Runic Cross, 9-rune World Tree spread (~3h)
+- [ ] Bind rune improvements: Better overlaying/stacking algorithm (~3h)
+- [ ] Rune learning/study mode: Flashcard drill for all 24 runes (~4h)
 
 ### Crystal Database
 - [done] Expand to 50 crystals (was 24)
 - [done] Notes field for personal collection items
-- [ ] Expand to 100 crystals (currently 50)
-- [ ] Add more filter options (element, color, planetary correspondences)
-- [ ] Export collection as PDF shopping list
-- [ ] Crystal grid templates & layouts
-- [ ] "Crystal of the Day" random feature
+- [done] Expand to 93 crystals (was 50 — added 43 new entries)
+- [done] "Crystal of the Day" — daily crystal with emoji, intentions, affirmation (persisted)
+- [done] Filter persistence: intention + chakra filters remembered across sessions
+- [ ] Add more filter options: element, color, planetary correspondences (~2h)
+- [ ] Export collection as PDF shopping list (~2h)
+- [ ] Crystal grid templates & layouts (~6h)
+- [ ] Crystal compatibility checker: Which crystals work well together (~4h)
+
+### Herbal Database
+- [done] Filter persistence: intention + element filters remembered across sessions
+- [ ] Expand to 50+ herbs (~4h — data entry, safety-reviewed)
+- [ ] Seasonal harvest calendar: When to wildcraft each herb by zone (~4h)
+- [ ] Herb combination notes: Which herbs combine well for intentions (~3h)
+- [ ] Integration with Spell Builder: Suggest herbs based on intention (~3h)
+
+### Spell Builder & Grimoire
+- [done] Moon phase auto-detect: Pre-fills current moon phase on open
+- [ ] Grimoire statistics dashboard: Most-used herbs, crystals, intents (~3h)
+- [ ] Spell tags/categories: Freeform tagging beyond intent categories (~2h)
+- [ ] Share spell via URL: Encode spell template in query params (~3h)
+- [ ] Success/failure tracking: Mark outcomes with notes (~2h)
+
+### Meditation Timer
+- [ ] Guided meditation scripts: Text prompts synced to timer phases (~4h)
+- [ ] Chakra meditation sequences: 7-chakra guided session presets (~3h)
+- [ ] Moon phase suggestions: Recommend meditation style based on current phase (~2h)
+- [ ] Body scan script preset (~2h)
+
+### Affirmation Generator
+- [ ] Personalize by Life Path number: Filter affirmations to numerology number (~2h)
+- [ ] Create and save custom affirmations: User-written entries alongside generated ones (~3h)
+- [ ] Daily affirmation push notification: Service worker notification at chosen time (~4h)
+- [ ] Moon phase affirmation sets: Different affirmations for waxing/full/waning/new (~2h)
+
+### Numerology Calculator
+- [done] Compatibility calculator: Compare two people's 4 core numbers side by side with qualitative notes
+- [ ] Personal year/month/day forecasting: Current cycle numbers + interpretations (~4h)
+- [ ] Name change analysis: Before/after comparison for name changes (~2h)
+- [ ] Business name analysis: Destiny number for brand names (~1h)
+
+### Sabbat Calendar
+- [ ] Personal sabbat planner: Save your own traditions and planned rituals per sabbat (~3h)
+- [ ] Printable ritual guide: One-page printout per sabbat (~2h) — uses existing print.css
+- [ ] Countdown to all sabbats: Show next 3 upcoming (not just the nearest one) (~2h)
+
+### Pendulum Tool
+- [ ] Custom answer sets: Let user define their own answer options beyond Yes/No/Maybe (~3h)
+- [ ] Question categories: Tag questions by life area (love, career, health, etc.) (~2h)
+- [ ] Pattern analysis: "You ask about [career] most" summary of history (~3h)
+
+### Candle Magic Guide
+- [ ] Expand spell templates to 20+ (~2h — data entry)
+- [ ] Candle color compatibility: Which colors combine for compound intentions (~2h)
+- [ ] Ritual timer integration: Link to Meditation Timer for timed candle rituals (~2h)
 
 ---
 
@@ -819,22 +973,29 @@ All high-priority MVP tools complete! 🎉
 
 ## 🚀 FUTURE CONSIDERATIONS
 
-**Potential Infrastructure Upgrades:**
-- User accounts & cloud sync (Firebase/Supabase)
-- Backend API for community features
-- Mobile native apps (React Native/Flutter)
+**Near-Term Platform Upgrades (no backend required):**
+- Daily Practice Dashboard — unified today view (moon + sabbat + rune/crystal of the day + affirmation)
+- Correspondence Lookup — cross-tool keyword search
+- Personal Profile — localStorage birth date/name for persistent personalization
+- Tradition Selector — filter content by practice tradition
+- Share via URL — shareable readings via query params
 
-**Community Features:**
-- Spell/ritual sharing
-- Review system
-- Resource library
-- User forums
+**Medium-Term Infrastructure:**
+- User accounts & cloud sync (Firebase/Supabase) — sync collection/grimoire across devices
+- PWA install prompt improvements — more prominent "Add to Home Screen" CTA
+- Push notifications — daily affirmation, moon phase alerts, sabbat countdowns
 
-**Advanced Tools:**
-- Audio/video meditation guides
-- Interactive visualizations
-- AI-assisted interpretations (ethical considerations)
-- Multi-user rituals/circles
+**Community Features (long-term):**
+- Spell/ritual sharing — public grimoire submissions
+- Review system for tools and rituals
+- Resource library (books, teachers, traditions)
+- User forums / circle groups
+
+**Advanced Tools (long-term):**
+- Astrology Birth Chart — full natal chart with planetary positions
+- Audio/video meditation guides — pre-recorded sessions
+- AI-assisted interpretations — ethical, consent-based oracle responses
+- Multi-user rituals/circles — shared sacred space
 
 ---
 

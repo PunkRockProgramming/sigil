@@ -647,3 +647,259 @@ footer {
         width: 100%;
     }
 }
+
+/* ========================================
+   RUNE OF THE DAY
+   ======================================== */
+
+.rune-of-day-section {
+    margin-bottom: 1.5rem;
+}
+
+.rune-of-day-card {
+    position: relative;
+    background: linear-gradient(135deg, var(--card-bg), rgba(167, 139, 250, 0.08));
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px var(--shadow);
+    animation: fadeIn 0.5s ease;
+}
+
+.rotd-label {
+    position: absolute;
+    top: -0.6rem;
+    left: 1rem;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.08em;
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.rotd-symbol {
+    font-size: 3.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    color: var(--primary);
+    font-family: 'Noto Sans Runic', serif;
+}
+
+.rotd-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.rotd-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.rotd-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+}
+
+.rotd-tag {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.rotd-meaning {
+    color: var(--text);
+    font-size: 0.875rem;
+    margin: 0 0 0.3rem 0;
+}
+
+.rotd-refresh {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin: 0;
+    opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+    .rune-of-day-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+    .rotd-tags {
+        justify-content: center;
+    }
+}
+
+/* ========================================
+   READING HISTORY
+   ======================================== */
+
+.reading-history-section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.reading-history-section h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary);
+    margin: 0 0 1rem 0;
+}
+
+.history-controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.toggle-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.2s ease;
+}
+
+.toggle-btn:hover {
+    opacity: 0.85;
+}
+
+.clear-history-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clear-history-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.history-item {
+    background: rgba(0,0,0,0.15);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+}
+
+.history-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.history-spread {
+    font-family: 'Cinzel', serif;
+    color: var(--primary);
+    font-size: 0.95rem;
+    display: block;
+}
+
+.history-date {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: block;
+}
+
+.history-runes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.history-rune {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+    min-width: 60px;
+}
+
+.history-rune-symbol {
+    font-size: 1.4rem;
+    color: var(--primary);
+    font-family: 'Noto Sans Runic', serif;
+}
+
+.history-rune-symbol.reversed {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+.history-rune-name {
+    font-size: 0.7rem;
+    color: var(--text);
+    text-align: center;
+}
+
+.history-rune-pos {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+    font-family: 'Noto Sans Runic', serif;
+}
+
+.empty-text {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.empty-subtext {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}

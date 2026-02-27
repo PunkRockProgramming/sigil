@@ -33,6 +33,13 @@
             </div>
         </header>
 
+        <!-- Rune of the Day -->
+        <section id="rune-of-day-section" class="rune-of-day-section" role="region" aria-labelledby="rune-of-day-heading">
+            <div id="rune-of-day-card" class="rune-of-day-card">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
         <!-- Spread Selection -->
         <section class="spread-selection" role="region" aria-labelledby="cast-heading">
             <h2 id="cast-heading">Cast the Runes</h2>
@@ -73,6 +80,24 @@
             
             <div class="reading-actions">
                 <button id="cast-button-2" class="secondary-btn">Cast Again</button>
+            </div>
+        </section>
+
+        <!-- Reading History -->
+        <section class="reading-history-section" role="region" aria-labelledby="reading-history-heading">
+            <h2 id="reading-history-heading">Reading History</h2>
+            <div class="history-controls">
+                <button id="toggle-history-btn" class="toggle-btn" aria-label="Show reading history">
+                    <span class="toggle-icon">▼</span>
+                    <span class="toggle-text">Show History</span>
+                </button>
+                <button id="clear-history-btn" class="clear-history-btn" aria-label="Clear all reading history">Clear History</button>
+            </div>
+            <div id="history-list" class="history-list" role="list" style="display: none;"></div>
+            <div id="history-empty" class="empty-state">
+                <p class="empty-icon">ᚱ</p>
+                <p class="empty-text">No readings saved yet.</p>
+                <p class="empty-subtext">Cast the runes to begin your reading history.</p>
             </div>
         </section>
 
@@ -326,6 +351,7 @@
                 const spread = SPREADS[spreadKey];
                 currentCast = castRunes(spread.positions);
                 displaySpread(spreadKey, currentCast);
+                addToRuneHistory(spreadKey, currentCast);
             });
         }
     </script>

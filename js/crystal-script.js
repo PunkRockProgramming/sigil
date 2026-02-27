@@ -1256,8 +1256,863 @@ const CRYSTALS = [
         ],
         affirmation: 'I see clearly through all illusions. My will is aligned with my highest truth.',
         care_tips: 'Durable for everyday use. Safe for brief water exposure. The chatoyancy is best seen in direct light. Avoid harsh chemicals.'
+    },
+    {
+        name: 'Lapis Lazuli',
+        emoji: '🌌',
+        color: ['Blue', 'Gold', 'Deep Blue'],
+        chakra: ['Third Eye', 'Throat'],
+        element: 'Water',
+        zodiac: ['Sagittarius', 'Aquarius', 'Pisces'],
+        mohs_hardness: '5-6',
+        intentions: ['Intuition', 'Communication', 'Truth'],
+        properties: 'One of the most ancient spiritual stones, Lapis Lazuli has been prized since antiquity for its deep celestial blue. It stimulates wisdom, truth, and inner power, opening the third eye and balancing the throat chakra.',
+        metaphysical: 'Enhances psychic abilities and intuition, facilitates spiritual journeying, stimulates personal and spiritual power, encourages honesty of the spirit.',
+        physical_healing: 'Supports the throat, immune system, and nervous system. Alleviates migraines and headaches.',
+        emotional_healing: 'Releases stress, brings deep peace, promotes self-awareness and self-expression. Bonds relationships and encourages compassion.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Moonlight', 'Sunlight (brief)'],
+        uses: ['Wear at throat for truthful communication', 'Place on third eye during meditation', 'Use in dreamwork on the pillow', 'Carry for wisdom in decisions', 'Include in truth-revealing rituals'],
+        affirmation: 'I speak my truth with clarity, wisdom, and compassion.',
+        care_tips: 'Avoid salt water and harsh chemicals. Relatively soft — handle with care. Pyrite inclusions may oxidize in prolonged sunlight.'
+    },
+    {
+        name: 'Sodalite',
+        emoji: '🔵',
+        color: ['Blue', 'White', 'Navy'],
+        chakra: ['Third Eye', 'Throat'],
+        element: 'Air',
+        zodiac: ['Sagittarius', 'Virgo'],
+        mohs_hardness: '5.5-6',
+        intentions: ['Intuition', 'Communication', 'Peace'],
+        properties: 'Sodalite brings order and calmness to the mind, encouraging rational thought and intuition. It promotes emotional balance and calms panic attacks. Excellent for groups and communication.',
+        metaphysical: 'Eliminates mental confusion, encourages idealism and truth, unites logic with intuition, enhances group cooperation and harmony.',
+        physical_healing: 'Lowers blood pressure, reduces fever, supports lymphatic system and metabolism.',
+        emotional_healing: 'Releases fears, guilt and control mechanisms. Enhances self-esteem, self-acceptance and self-trust.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Moonlight', 'Visualization'],
+        uses: ['Place at work for clear thinking', 'Carry during public speaking', 'Use in group meditations', 'Wear to calm anxiety', 'Place in study area for focus'],
+        affirmation: 'My mind is clear, calm, and attuned to inner wisdom.',
+        care_tips: 'Avoid prolonged sun exposure as color may fade. Safe for brief water use. Relatively soft so store carefully.'
+    },
+    {
+        name: 'Moonstone',
+        emoji: '🌙',
+        color: ['White', 'Cream', 'Blue Sheen', 'Peach'],
+        chakra: ['Crown', 'Sacral', 'Third Eye'],
+        element: 'Water',
+        zodiac: ['Cancer', 'Libra', 'Scorpio'],
+        mohs_hardness: '6-6.5',
+        intentions: ['Intuition', 'Feminine Energy', 'New Beginnings'],
+        properties: 'A stone of inner growth and strength, Moonstone has long been connected to the moon and feminine energy. It soothes emotional instability and stress while enhancing intuition and promoting inspiration.',
+        metaphysical: 'Connects to lunar energy and cycles, enhances psychic perception, promotes lucid dreaming, balances hormonal and emotional patterns, channels divine feminine energy.',
+        physical_healing: 'Supports the female reproductive system, alleviates PMS, aids fertility, and regulates hormonal cycles.',
+        emotional_healing: 'Stabilizes emotional overreactions, opens the heart to nurturance, assists in accepting change and new cycles.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Full Moonlight', 'New Moonlight'],
+        uses: ['Place on windowsill during full moon', 'Wear during lunar rituals', 'Carry for new beginnings', 'Use for fertility and goddess work', 'Meditate for dream enhancement'],
+        affirmation: 'I flow with the cycles of life, trusting my intuition and inner light.',
+        care_tips: 'Moderately fragile — avoid drops and harsh impacts. Do not clean with chemicals. Charge only in moonlight, not direct sun.'
+    },
+    {
+        name: 'Labradorite',
+        emoji: '🌀',
+        color: ['Grey', 'Blue', 'Green', 'Gold', 'Labradorescent'],
+        chakra: ['Third Eye', 'Crown', 'Throat'],
+        element: 'Air',
+        zodiac: ['Leo', 'Scorpio', 'Sagittarius'],
+        mohs_hardness: '6-6.5',
+        intentions: ['Transformation', 'Protection', 'Intuition'],
+        properties: 'A stone of transformation and magic, Labradorite is a powerful protector that creates a shielding force throughout the aura. Its iridescent flash symbolizes the light of spiritual illumination.',
+        metaphysical: 'Banishes fears and insecurities, strengthens faith in self and the universe, stimulates the imagination, calms an overactive mind, elevates consciousness.',
+        physical_healing: 'Regulates metabolism, treats disorders of the eyes and brain, relieves stress and anxiety.',
+        emotional_healing: 'Tempers the negative side of personality, brings out the best of one\'s inner magic, encourages enthusiasm and self-confidence.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Moonlight', 'Candlelight', 'Visualization'],
+        uses: ['Wear to protect aura from energy drain', 'Use in transformation rituals', 'Meditate with to reveal hidden truths', 'Place on third eye for psychic work', 'Carry during major life changes'],
+        affirmation: 'I embrace transformation and shine my inner magic into the world.',
+        care_tips: 'Avoid harsh chemicals. The labradorescence is internal — do not polish aggressively. Safe for brief water use.'
+    },
+    {
+        name: 'Fluorite',
+        emoji: '🟩',
+        color: ['Purple', 'Green', 'Blue', 'Yellow', 'Clear', 'Rainbow'],
+        chakra: ['Third Eye', 'Crown', 'Heart'],
+        element: 'Air',
+        zodiac: ['Capricorn', 'Pisces'],
+        mohs_hardness: '4',
+        intentions: ['Focus', 'Protection', 'Purification'],
+        properties: 'Known as the Genius Stone, Fluorite increases concentration and helps absorb new information. It draws off negative energies and stress, cleanses the aura, and brings mental clarity and order.',
+        metaphysical: 'Heightens mental abilities, clears confusion, stabilizes and produces order and coherence, shields from psychic manipulation, cleanses the aura.',
+        physical_healing: 'Strengthens teeth and bones, relieves arthritis and joint pain, supports the immune system.',
+        emotional_healing: 'Dissolves fixed patterns of behavior, provides stability, increases self-confidence and correct use of power.',
+        cleansing: ['Moonlight', 'Sound', 'Visualization'],
+        charging: ['Moonlight', 'Sunlight (brief)'],
+        uses: ['Place on desk for study and focus', 'Hold during meditation for clarity', 'Use in energy grids for mental work', 'Carry in testing or interview situations', 'Place in workspace to absorb negative energy'],
+        affirmation: 'My mind is clear, organized, and open to new wisdom.',
+        care_tips: 'Very soft at 4 Mohs — handle carefully. Do not leave in salt water. Avoid direct sunlight for colored varieties. Store separately to prevent scratching.'
+    },
+    {
+        name: 'Lepidolite',
+        emoji: '💜',
+        color: ['Lilac', 'Pink', 'Purple', 'Grey'],
+        chakra: ['Third Eye', 'Crown', 'Heart'],
+        element: 'Water',
+        zodiac: ['Libra', 'Pisces'],
+        mohs_hardness: '2.5-3',
+        intentions: ['Peace', 'Healing', 'Transformation'],
+        properties: 'Known as the Peace Stone, Lepidolite contains lithium and is naturally calming and soothing. It alleviates anxiety, depression, and stress while supporting major life changes with its gentle transformative energy.',
+        metaphysical: 'Clears electromagnetic pollution, activates and opens the throat, heart, third eye and crown chakras, releases and reorganizes old behavioral patterns, brings transformation.',
+        physical_healing: 'Supports the immune system, relieves exhaustion, reduces stress-related illness, beneficial for allergies and nerve pain.',
+        emotional_healing: 'Stabilizes mood swings, relieves depression and anxiety, promotes emotional balance and inner peace.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Rose quartz cluster'],
+        uses: ['Place under pillow for peaceful sleep', 'Carry during stressful periods', 'Hold during anxiety or panic', 'Use in meditation for emotional release', 'Place in home for calming energy'],
+        affirmation: 'I release what no longer serves me and embrace peaceful transformation.',
+        care_tips: 'Very soft and fragile — display rather than carry in pockets. Avoid water as the mica structure can delaminate. Keep away from harsh light.'
+    },
+    {
+        name: 'Malachite',
+        emoji: '🌿',
+        color: ['Green', 'Dark Green'],
+        chakra: ['Heart', 'Solar Plexus'],
+        element: 'Earth',
+        zodiac: ['Capricorn', 'Scorpio'],
+        mohs_hardness: '3.5-4',
+        intentions: ['Transformation', 'Protection', 'Abundance'],
+        properties: 'The Stone of Transformation, Malachite shows what is blocking spiritual growth. A powerful emotional cleanser, it draws out and absorbs negative energies and pollutants while amplifying positive energies.',
+        metaphysical: 'Absorbs negative energies, clears electromagnetic pollution, facilitates deep emotional healing, amplifies both positive and negative energies, stimulates dreams and visualizations.',
+        physical_healing: 'Supports the liver, reduces pain and fever, lowers blood pressure, treats depression and stress-related illnesses.',
+        emotional_healing: 'Releases trauma and emotional wounds, breaks unwanted ties and old patterns, encourages risk-taking and change.',
+        cleansing: ['Smudging', 'Sound', 'Visualization'],
+        charging: ['Sunlight (brief)', 'Earth burial'],
+        uses: ['Place on heart chakra for emotional healing', 'Carry for protection during travel', 'Use in abundance rituals', 'Place near electronics to absorb EMF', 'Meditate with for transformation work'],
+        affirmation: 'I transform with courage and emerge stronger, clearer, and more aligned.',
+        care_tips: 'TOXIC — never use in elixirs or place in drinking water. Avoid inhaling malachite dust. Do not use with salt water. Relatively soft — store carefully.'
+    },
+    {
+        name: 'Turquoise',
+        emoji: '🩵',
+        color: ['Turquoise', 'Blue-Green'],
+        chakra: ['Throat', 'Third Eye', 'Heart'],
+        element: 'Earth',
+        zodiac: ['Sagittarius', 'Scorpio', 'Pisces'],
+        mohs_hardness: '5-6',
+        intentions: ['Protection', 'Communication', 'Healing'],
+        properties: 'One of the oldest protection stones, Turquoise has been revered in many cultures for centuries. It is a purification stone that dispels negative energy and cleanses the spirit while enhancing communication and healing.',
+        metaphysical: 'Unites the Earth and Sky energies, enhances communication between worlds, supports whole-body healing, strengthens intuition, protects against negative influences.',
+        physical_healing: 'Excellent for the throat and lungs, anti-inflammatory, supports nutrient absorption, strengthens the entire body.',
+        emotional_healing: 'Stabilizes mood, dispels panic attacks, promotes self-realization, assists creative problem-solving.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Sunlight', 'Earth burial'],
+        uses: ['Wear as protective amulet', 'Use in communication rituals', 'Carry for safe travel', 'Place on throat chakra for healing', 'Include in Native-inspired spiritual practices'],
+        affirmation: 'I am protected, whole, and speak my truth with courage.',
+        care_tips: 'Avoid exposure to oils, cosmetics, and chemicals which can alter color. Very porous — do not soak in water. Store away from direct sun as color may fade.'
+    },
+    {
+        name: 'Amazonite',
+        emoji: '🌊',
+        color: ['Teal', 'Green', 'Blue-Green'],
+        chakra: ['Heart', 'Throat'],
+        element: 'Earth',
+        zodiac: ['Virgo', 'Aries'],
+        mohs_hardness: '6-6.5',
+        intentions: ['Communication', 'Courage', 'Peace'],
+        properties: 'The Stone of Courage and Truth, Amazonite empowers one to discover one\'s own truths and move beyond fear of judgment. It supports both speaking and living the truth for the highest good.',
+        metaphysical: 'Filters information passing through the brain, aligns intellect and intuition, soothes emotional trauma, dispels worrying and fear, assists in manifesting universal love.',
+        physical_healing: 'Protects against electromagnetic pollution, relieves muscle spasms, supports metabolic processes.',
+        emotional_healing: 'Calms anxiety, releases grief, soothes emotional trauma, inspires truth, sincerity, and honor.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound', 'Running Water'],
+        charging: ['Moonlight', 'Earth burial'],
+        uses: ['Carry to speak truth without fear', 'Place by computer for EMF protection', 'Wear when negotiating or having difficult conversations', 'Use in rituals for courage', 'Meditate with for heart-throat alignment'],
+        affirmation: 'I speak my truth with courage, clarity, and loving honesty.',
+        care_tips: 'Avoid harsh chemicals and prolonged sun exposure. Safe for brief water use. Moderately durable for everyday wear.'
+    },
+    {
+        name: 'Garnet',
+        emoji: '🔴',
+        color: ['Red', 'Burgundy', 'Deep Red'],
+        chakra: ['Root', 'Sacral', 'Heart'],
+        element: 'Fire',
+        zodiac: ['Capricorn', 'Aquarius', 'Aries', 'Leo'],
+        mohs_hardness: '6.5-7.5',
+        intentions: ['Love', 'Passion', 'Grounding'],
+        properties: 'A stone of regeneration and energizing, Garnet cleanses and re-energizes the chakras while revitalizing, purifying, and balancing energy. It inspires love and devotion, alleviating emotional disharmony.',
+        metaphysical: 'Stimulates controlled rise of kundalini energy, aids astral travel and protection, sharpens perceptions of oneself and others, dissolves ingrained behavior patterns.',
+        physical_healing: 'Regenerates the body, stimulates the metabolism, treats disorders of the spine, spleen, and heart.',
+        emotional_healing: 'Inspires love and devotion, alleviates depression, brings courage, hope, and serenity.',
+        cleansing: ['Moonlight', 'Sunlight', 'Running Water', 'Smudging'],
+        charging: ['Sunlight', 'Earth burial'],
+        uses: ['Wear for passion and vitality', 'Use in love rituals', 'Carry for energizing on low-energy days', 'Place at root chakra for grounding', 'Use in business rituals for prosperity'],
+        affirmation: 'I am energized, passionate, and fully alive in this moment.',
+        care_tips: 'Durable for everyday wear. Safe for water and sunlight. Clean with mild soap and water. Different garnet varieties have slightly different care needs.'
+    },
+    {
+        name: 'Aquamarine',
+        emoji: '💧',
+        color: ['Blue', 'Blue-Green', 'Aqua'],
+        chakra: ['Throat', 'Heart'],
+        element: 'Water',
+        zodiac: ['Gemini', 'Pisces', 'Aries'],
+        mohs_hardness: '7.5-8',
+        intentions: ['Communication', 'Courage', 'Peace'],
+        properties: 'The Stone of Courage, Aquamarine calms the mind and reduces stress while harmonizing its surroundings. It provides a shielding property and courage to speak one\'s truth, especially in situations of conflict.',
+        metaphysical: 'Supports spiritual awareness and the higher self, stimulates meditation, filters information reaching the brain, promotes clarity of thought, shields the aura.',
+        physical_healing: 'Soothes sore throats, calms the immune system, reduces allergies, supports glandular disorders.',
+        emotional_healing: 'Reduces fear, calms and harmonizes, alleviates grief, soothes anger and mental trauma.',
+        cleansing: ['Running Water', 'Moonlight', 'Smudging'],
+        charging: ['Moonlight', 'Ocean water', 'Sunlight'],
+        uses: ['Wear for courage in difficult conversations', 'Meditate with for inner peace', 'Use in water rituals', 'Carry for safe sea travel', 'Place near throat for clear communication'],
+        affirmation: 'I flow with courage and speak my deepest truth with gentle clarity.',
+        care_tips: 'Very durable and suitable for everyday wear. Safe for water. Avoid prolonged intense sunlight as color may lighten slightly. Clean with mild soap.'
+    },
+    {
+        name: 'Rhodonite',
+        emoji: '🌸',
+        color: ['Pink', 'Rose', 'Black'],
+        chakra: ['Heart'],
+        element: 'Earth',
+        zodiac: ['Taurus', 'Aries'],
+        mohs_hardness: '5.5-6.5',
+        intentions: ['Love', 'Healing', 'Forgiveness'],
+        properties: 'The Stone of Compassion, Rhodonite is an emotional balancer that clears away emotional wounds and scars from the past. It nurtures love and encourages brotherhood and sisterhood while grounding energy in the present.',
+        metaphysical: 'Activates the heart chakra, clears emotional wounds, stimulates the heart during meditation, connects heart and root chakras, grounds light and love.',
+        physical_healing: 'Supports the heart and joints, aids bone growth, relieves insect bites and stings.',
+        emotional_healing: 'Balances emotions, heals emotional wounds, cultivates forgiveness, clears away resentment, nurtures love.',
+        cleansing: ['Moonlight', 'Running Water', 'Smudging'],
+        charging: ['Moonlight', 'Rose quartz cluster'],
+        uses: ['Carry during emotional healing process', 'Use in forgiveness rituals', 'Place on heart chakra for emotional balance', 'Gift to someone healing from heartbreak', 'Meditate with for self-love'],
+        affirmation: 'I forgive, I heal, and I open my heart to give and receive love.',
+        care_tips: 'Moderately durable. Avoid harsh chemicals and prolonged sun. Safe for brief water cleansing. Store wrapped to prevent scratching.'
+    },
+    {
+        name: 'Sunstone',
+        emoji: '☀️',
+        color: ['Orange', 'Gold', 'Red-Orange'],
+        chakra: ['Sacral', 'Solar Plexus'],
+        element: 'Fire',
+        zodiac: ['Leo', 'Libra'],
+        mohs_hardness: '6-6.5',
+        intentions: ['Joy', 'Abundance', 'Courage'],
+        properties: 'A stone of joy and self-empowerment, Sunstone instills good nature and heightens intuition. It allows the real self to shine through happily, instilling independence and originality.',
+        metaphysical: 'Clears all the chakras, brings in light and energy of the sun, promotes personal power, freedom, and expanded consciousness.',
+        physical_healing: 'Benefits the autonomic nervous system, regulates the digestive system, relieves stomach tension and ulcers.',
+        emotional_healing: 'Removes hooks of others from the aura, alleviates fearfulness and stress, increases self-worth and confidence.',
+        cleansing: ['Sunlight', 'Moonlight', 'Smudging'],
+        charging: ['Direct Sunlight', 'Fire'],
+        uses: ['Carry for confidence and positivity', 'Use in solar rituals at midsummer', 'Wear to attract abundance and joy', 'Meditate with during depression', 'Place in workspace to uplift energy'],
+        affirmation: 'I radiate joy, confidence, and the abundant warmth of the sun.',
+        care_tips: 'Fairly durable. The aventurescence is from internal platelets — do not polish aggressively. Safe for sunlight and brief water use.'
+    },
+    {
+        name: 'Prehnite',
+        emoji: '💚',
+        color: ['Light Green', 'Yellow-Green', 'Translucent Green'],
+        chakra: ['Heart', 'Solar Plexus'],
+        element: 'Earth',
+        zodiac: ['Libra', 'Capricorn'],
+        mohs_hardness: '6-6.5',
+        intentions: ['Peace', 'Healing', 'Intuition'],
+        properties: 'Called the Stone of Unconditional Love, Prehnite is a stone of vision. It heals the healer and promotes inner knowing. It is said to be the stone to heal the healer — first heal thyself.',
+        metaphysical: 'Enhances precognition and inner knowing, connects to archangel Raphael, calms the environment and brings peace, promotes dreaming and remembering.',
+        physical_healing: 'Supports kidneys and bladder, treats anemia and blood disorders, relieves hyperactivity and nervous disorders.',
+        emotional_healing: 'Promotes acceptance, inner peace, surrender to higher will, alleviates nightmares, phobias, and deep fears.',
+        cleansing: ['Moonlight', 'Running Water', 'Smudging'],
+        charging: ['Sunlight', 'Earth burial'],
+        uses: ['Use in healing others sessions', 'Place under pillow for prophetic dreams', 'Carry for unconditional love work', 'Meditate with for inner knowing', 'Place in garden for nature connection'],
+        affirmation: 'I am at peace with what is, and I trust in the healing wisdom of the universe.',
+        care_tips: 'Moderately durable. Avoid harsh chemicals. Safe for water and sunlight. Translucent varieties are most prized — store carefully to prevent scratches.'
+    },
+    {
+        name: 'Chrysoprase',
+        emoji: '🌱',
+        color: ['Apple Green', 'Mint Green'],
+        chakra: ['Heart', 'Sacral'],
+        element: 'Earth',
+        zodiac: ['Taurus', 'Libra', 'Gemini'],
+        mohs_hardness: '6-7',
+        intentions: ['Love', 'Joy', 'Abundance'],
+        properties: 'The Stone of Venus, Chrysoprase promotes joy, grace, and healing. It activates and opens the heart chakra and can attract new love, abundance, and prosperity. It brings in a lighter, more loving energy.',
+        metaphysical: 'Aligns the ego with higher wisdom, promotes acceptance, heals the heart of childhood trauma, facilitates forgiveness and compassion.',
+        physical_healing: 'Benefits the heart and reproductive organs, treats skin disorders, aids in the absorption of vitamin C.',
+        emotional_healing: 'Reduces inferiority or superiority complexes, calms neurotic patterns, heals codependency, promotes independence.',
+        cleansing: ['Moonlight', 'Running Water', 'Sound'],
+        charging: ['Sunlight', 'Moonlight'],
+        uses: ['Wear to attract love and abundance', 'Place on heart chakra for healing', 'Carry to boost optimism', 'Use in abundance rituals', 'Meditate with for self-acceptance'],
+        affirmation: 'I am worthy of love and abundance. My heart is open and joyful.',
+        care_tips: 'Moderately durable. Color may fade with prolonged sunlight. Keep away from strong heat. Safe for water cleansing.'
+    },
+    {
+        name: 'Peridot',
+        emoji: '🌿',
+        color: ['Lime Green', 'Olive Green', 'Yellow-Green'],
+        chakra: ['Heart', 'Solar Plexus'],
+        element: 'Earth',
+        zodiac: ['Leo', 'Virgo', 'Sagittarius', 'Scorpio'],
+        mohs_hardness: '6.5-7',
+        intentions: ['Abundance', 'Healing', 'Protection'],
+        properties: 'One of only two gems formed not in the Earth\'s crust but in molten rock, Peridot is a powerful cleanser that releases and neutralizes toxins on all levels. It alleviates jealousy, resentment, spite, and anger.',
+        metaphysical: 'Opens, cleanses, and activates the heart and solar plexus chakras, purifies the subtle bodies, releases negative patterns of jealousy and resentment.',
+        physical_healing: 'Strengthens metabolism, benefits the liver and digestive system, supports the adrenal glands.',
+        emotional_healing: 'Alleviates jealousy, resentment, and spite. Clears negative emotions. Promotes responsibility and forgiveness.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Sunlight', 'Earth burial'],
+        uses: ['Carry for abundance and prosperity', 'Wear to release negativity', 'Use in rituals for new beginnings', 'Place on solar plexus for confidence', 'Give as gift for health and happiness'],
+        affirmation: 'I release jealousy and embrace the abundant flow of goodness in my life.',
+        care_tips: 'Moderately durable but can be sensitive to acids and temperature changes. Avoid harsh chemicals. Safe for brief water cleansing. Store carefully.'
+    },
+    {
+        name: 'Blue Kyanite',
+        emoji: '🪶',
+        color: ['Blue', 'Blue-Grey', 'Striped Blue'],
+        chakra: ['Throat', 'Third Eye', 'All Chakras'],
+        element: 'Air',
+        zodiac: ['Taurus', 'Libra', 'Aries'],
+        mohs_hardness: '4.5-7 (anisotropic)',
+        intentions: ['Communication', 'Intuition', 'Purification'],
+        properties: 'Blue Kyanite is one of two crystals that never need cleansing as it does not absorb negative energy. It aligns all chakras automatically and immediately. Excellent for communication and self-expression.',
+        metaphysical: 'Instantly aligns all chakras without conscious direction, bridges communication gaps, facilitates meditation, never needs cleansing, transmits and amplifies high-frequency energies.',
+        physical_healing: 'Supports throat and vocal cords, calms the nervous system, aids in healing from surgery.',
+        emotional_healing: 'Bridges emotional gaps, assists in resolving disagreements, supports speaking one\'s truth, eases frustration.',
+        cleansing: ['Never needs cleansing'],
+        charging: ['Sunlight', 'Moonlight', 'Self-cleansing'],
+        uses: ['Use as a clearing wand for other crystals', 'Carry for instant chakra alignment', 'Place at throat for clear speech', 'Use in cord-cutting rituals', 'Meditate with for instant centering'],
+        affirmation: 'I am aligned, clear, and in perfect communication with my highest self.',
+        care_tips: 'Unusual hardness — very hard along one direction, much softer across. Do not hit hard surfaces. Avoid water as the layered structure can split. Handle with gentle care.'
+    },
+    {
+        name: 'Howlite',
+        emoji: '🤍',
+        color: ['White', 'Grey-White'],
+        chakra: ['Crown', 'Third Eye'],
+        element: 'Air',
+        zodiac: ['Gemini', 'Virgo'],
+        mohs_hardness: '3.5',
+        intentions: ['Peace', 'Patience', 'Purification'],
+        properties: 'Howlite is an extremely calming stone. It links to spiritual dimensions, opening attunement and preparing the mind to receive wisdom. It teaches patience and helps to eliminate rage, pain, and stress.',
+        metaphysical: 'Calms overactive or racing mind, strengthens memory, stimulates desire for knowledge, facilitates awareness, encourages emotional expression.',
+        physical_healing: 'Balances calcium levels in the body, benefits teeth, bones, and soft tissue. Relieves insomnia caused by overactive mind.',
+        emotional_healing: 'Calms rage, reduces selfishness, eliminates rudeness, confronts and resolves issues of selfishness, criticalness, and greed.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Visualization'],
+        uses: ['Place by bed for restful sleep', 'Hold during meditation for mental quiet', 'Carry to absorb anger', 'Use in patience rituals', 'Program as a substitute for other stones'],
+        affirmation: 'I am calm, patient, and open to the wisdom that flows to me.',
+        care_tips: 'Soft and porous — avoid water and chemicals. Often dyed to simulate turquoise or other stones. Easily scratched — store separately.'
+    },
+    {
+        name: 'Rhodochrosite',
+        emoji: '🌺',
+        color: ['Pink', 'Rose', 'Red-Pink', 'Banded'],
+        chakra: ['Heart', 'Solar Plexus'],
+        element: 'Fire',
+        zodiac: ['Scorpio', 'Leo'],
+        mohs_hardness: '3.5-4',
+        intentions: ['Love', 'Healing', 'Self-Love'],
+        properties: 'The Stone of the Compassionate Heart, Rhodochrosite is one of the best stones for deep emotional healing. It teaches the heart to assimilate painful feelings without shutting down and opens the soul to the impossible.',
+        metaphysical: 'Integrates spiritual with material energies, expands consciousness, clears the solar plexus and base chakras, improves self-worth, attracts love.',
+        physical_healing: 'Regulates heart rate, stabilizes blood pressure, treats skin disorders and infections.',
+        emotional_healing: 'Heals childhood trauma and abandonment, confronts irrational fears, encourages forgiveness, promotes unconditional self-love.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Moonlight', 'Rose quartz cluster'],
+        uses: ['Use in deep emotional healing work', 'Meditate with for self-love', 'Place on heart chakra to heal old wounds', 'Carry during inner child work', 'Gift to those experiencing heartbreak'],
+        affirmation: 'I love myself completely and I am worthy of love in its purest form.',
+        care_tips: 'Soft and fragile — handle with great care. Avoid water, acids, and harsh chemicals. Display pieces rather than wear. Clean with dry soft cloth only.'
+    },
+    {
+        name: 'Kunzite',
+        emoji: '🩷',
+        color: ['Pink', 'Lilac-Pink', 'Pale Pink'],
+        chakra: ['Heart'],
+        element: 'Water',
+        zodiac: ['Taurus', 'Leo', 'Libra', 'Scorpio'],
+        mohs_hardness: '6.5-7',
+        intentions: ['Love', 'Peace', 'Healing'],
+        properties: 'A high-vibration stone of love and peace, Kunzite connects one with universal love and draws love into one\'s life. It activates the heart chakra and aligns it with the throat and third eye, stimulating loving communication.',
+        metaphysical: 'Activates the heart chakra and creates a powerful resonance with the throat and third eye, clears emotional debris, helps to release feelings that have been suppressed.',
+        physical_healing: 'Supports the heart and circulatory system, treats psychiatric disorders, alleviates PMS and menstrual cramps.',
+        emotional_healing: 'Removes negativity from one\'s center, encourages maturity and responsibility, clears emotional debris, allows surrender to divine love.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Rose quartz cluster'],
+        uses: ['Meditate with for heart opening', 'Carry for peaceful interactions', 'Gift between partners or loved ones', 'Use in love rituals', 'Wear for emotional protection and love'],
+        affirmation: 'My heart is open to love in all its forms — I give and receive with ease.',
+        care_tips: 'Can fade in direct sunlight — keep away from prolonged UV exposure. Relatively fragile — avoid dropping. Clean with mild soap and water.'
+    },
+    {
+        name: 'Iolite',
+        emoji: '🔮',
+        color: ['Blue-Violet', 'Purple-Blue', 'Greyish Blue'],
+        chakra: ['Third Eye', 'Crown'],
+        element: 'Air',
+        zodiac: ['Taurus', 'Libra', 'Sagittarius'],
+        mohs_hardness: '7-7.5',
+        intentions: ['Intuition', 'Transformation', 'Inner Vision'],
+        properties: 'Called the Viking\'s Compass, Iolite was used by Norse explorers to determine the position of the sun on cloudy days. Today it is the stone of inner vision, helping one to navigate one\'s inner world and find one\'s true path.',
+        metaphysical: 'Activates the third eye, strengthens intuition, aids in releasing discord, encourages taking responsibility, eliminates debt.',
+        physical_healing: 'Treats disorders of the liver, releases fat deposits, reduces pain of migraine headaches.',
+        emotional_healing: 'Assists in releasing addictions, encourages responsibility, breaks free of co-dependent relationships.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Sunlight'],
+        uses: ['Wear for spiritual guidance', 'Use during vision work and dreamwork', 'Carry when navigating difficult choices', 'Meditate with for inner compass work', 'Place on third eye for psychic development'],
+        affirmation: 'I trust my inner compass and navigate my path with clarity and wisdom.',
+        care_tips: 'Fairly durable for everyday wear. Avoid harsh chemicals. Safe for water cleansing. May appear different colors from different angles (trichroic) — this is normal.'
+    },
+    {
+        name: 'Tanzanite',
+        emoji: '💜',
+        color: ['Blue-Violet', 'Purple', 'Ultramarine'],
+        chakra: ['Third Eye', 'Crown', 'Throat'],
+        element: 'Air',
+        zodiac: ['Sagittarius', 'Aries', 'Pisces'],
+        mohs_hardness: '6-7',
+        intentions: ['Spiritual Growth', 'Transformation', 'Communication'],
+        properties: 'Found only near Mount Kilimanjaro, Tanzanite is one of the most recently discovered gemstones with powerful metaphysical properties. It facilitates spiritual communication at the highest level and is ideal for those seeking spiritual awakening.',
+        metaphysical: 'Links the mind and heart with a higher frequency, facilitates communication with the higher self and spiritual guides, activates the blue lotus.',
+        physical_healing: 'Strengthens the immune system, detoxifies the blood, treats skin disorders.',
+        emotional_healing: 'Dissolves old patterns of disease, balances emotions, brings one into a space of integration.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Amethyst cluster'],
+        uses: ['Use in high-level spiritual meditation', 'Wear for spiritual evolution', 'Place on third eye for inner vision', 'Use in channeling and spirit communication work', 'Carry for accessing Akashic Records'],
+        affirmation: 'I open to spiritual wisdom and embody higher frequencies of light.',
+        care_tips: 'Handle with care — moderate hardness and can be brittle. Avoid temperature changes and ultrasonic cleaners. Clean with mild soap and soft brush.'
+    },
+    {
+        name: 'Topaz (Blue)',
+        emoji: '🩵',
+        color: ['Blue', 'Sky Blue', 'London Blue'],
+        chakra: ['Throat', 'Third Eye'],
+        element: 'Air',
+        zodiac: ['Sagittarius', 'Virgo', 'Leo'],
+        mohs_hardness: '8',
+        intentions: ['Communication', 'Intuition', 'Truth'],
+        properties: 'Blue Topaz brings truth and wisdom to those who seek it. It calms, heals, and recharges, stimulating communication, artistic inspiration, writing, and truth. It assists in recognizing where one has strayed from one\'s own truth.',
+        metaphysical: 'Connects to the angels of truth and wisdom, enhances psychic gifts, aids in visualization, promotes self-realization.',
+        physical_healing: 'Aids digestion, combats eating disorders, stimulates the metabolism.',
+        emotional_healing: 'Brings joy, generosity, abundance, and good health, creates a shield of protection, promotes peace and calm.',
+        cleansing: ['Running Water', 'Moonlight', 'Smudging'],
+        charging: ['Moonlight', 'Sunlight'],
+        uses: ['Wear for clear and honest communication', 'Use in writing and artistic endeavors', 'Carry for truth-seeking', 'Meditate with for inner truth', 'Gift to writers, speakers, and artists'],
+        affirmation: 'I communicate my truth with clarity, grace, and confidence.',
+        care_tips: 'Very hard and durable. Avoid knocking against hard surfaces as it has cleavage planes and can chip. Safe for water and sunlight. Excellent for everyday jewelry.'
+    },
+    {
+        name: 'Larimar',
+        emoji: '🌊',
+        color: ['Sky Blue', 'Blue-White', 'Turquoise Blue'],
+        chakra: ['Throat', 'Heart', 'Third Eye'],
+        element: 'Water',
+        zodiac: ['Leo'],
+        mohs_hardness: '4.5-5',
+        intentions: ['Peace', 'Communication', 'Healing'],
+        properties: 'The Dolphin Stone, Larimar is a rare Caribbean gem found only in the Dominican Republic. It embodies the energy of the sea and sky, bringing tranquility and cooling emotions. It radiates love and peace and promotes communication.',
+        metaphysical: 'Connects to Earth Mother, soothes and heals, facilitates angelic contact, goes to the root of emotional issues, dissolves emotional barriers.',
+        physical_healing: 'Soothes throat inflammation, treats cartilage and bone issues, relieves stress-related conditions.',
+        emotional_healing: 'Brings deep calm, removes self-sabotage, encourages clear communication, heals grief and trauma.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Ocean visualization'],
+        uses: ['Wear for deep calm and serenity', 'Place on throat for communication healing', 'Use in water rituals and ocean magic', 'Carry for stress relief', 'Meditate with for deep emotional healing'],
+        affirmation: 'I flow in peace, speak my truth, and ride the waves of life with grace.',
+        care_tips: 'Relatively soft — handle with care. Avoid extended water soaking. Keep away from harsh chemicals and extended sunlight. Rare and precious — store wrapped.'
+    },
+    {
+        name: 'Charoite',
+        emoji: '🔮',
+        color: ['Purple', 'Lilac', 'Swirling Purple'],
+        chakra: ['Crown', 'Third Eye', 'Heart'],
+        element: 'Water',
+        zodiac: ['Scorpio', 'Sagittarius'],
+        mohs_hardness: '5-6',
+        intentions: ['Transformation', 'Spiritual Growth', 'Healing'],
+        properties: 'Found only in Siberia, Charoite is a stone of transformation. It bestows the ability to remain grounded despite high-vibration shifts and is excellent for supporting major life changes with courage and grace.',
+        metaphysical: 'Clears the aura and removes blockages, stimulates inner vision, transmutes negative energy, synthesizes the heart and crown chakras, encourages service to humanity.',
+        physical_healing: 'Heals and integrates the physical body, regulates blood pressure, treats liver and pancreas disorders.',
+        emotional_healing: 'Transmutes feelings of alienation and victimhood, overcomes fears, encourages inner strength during difficult life changes.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Amethyst cluster'],
+        uses: ['Use during major life transitions', 'Meditate with for deep transformation', 'Carry for courage through change', 'Place on crown for higher spiritual work', 'Use in shadow work sessions'],
+        affirmation: 'I embrace transformation with grace and courage, knowing all change serves my highest good.',
+        care_tips: 'Handle with care — moderately soft. Avoid water soaking and harsh chemicals. The swirling patterns are natural — no two are alike. Store wrapped.'
+    },
+    {
+        name: 'Sugilite',
+        emoji: '💜',
+        color: ['Violet', 'Purple', 'Pink-Purple'],
+        chakra: ['Crown', 'Third Eye'],
+        element: 'Air',
+        zodiac: ['Virgo'],
+        mohs_hardness: '5.5-6.5',
+        intentions: ['Spiritual Protection', 'Healing', 'Love'],
+        properties: 'The Love Stone for the New Age, Sugilite is a premier love stone, representing the perfection of spiritual love. It protects the soul from disappointments, assists with forgiveness, and opens the third eye and crown to spiritual love.',
+        metaphysical: 'Promotes channeling abilities, shields the aura from negative influences, protects against harsh environments, teaches how to live from one\'s truth.',
+        physical_healing: 'Treats headaches and other pain symptoms, supports the brain and nervous system, beneficial for autism and dyslexia.',
+        emotional_healing: 'Heals disappointments, helps forgiveness, alleviates grief, reduces hostility and prejudice.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Moonlight', 'Amethyst cluster'],
+        uses: ['Wear for spiritual protection', 'Use in healing work', 'Meditate with for spiritual love', 'Place at crown for channeling', 'Carry for protection in harsh environments'],
+        affirmation: 'I am protected by divine love and my spirit shines its highest light.',
+        care_tips: 'Moderately fragile. Avoid water, chemicals, and ultrasonic cleaners. Handle with care. Rare and valuable — store wrapped in cloth.'
+    },
+    {
+        name: 'Shungite',
+        emoji: '⚫',
+        color: ['Black'],
+        chakra: ['Root'],
+        element: 'Earth',
+        zodiac: ['Scorpio', 'Capricorn'],
+        mohs_hardness: '3.5-4',
+        intentions: ['Protection', 'Purification', 'Grounding'],
+        properties: 'Shungite is a carbon-based stone from Russia that is over 2 billion years old. It is one of the most effective stones for EMF protection and purification. It neutralizes negative energies, grounds, and balances.',
+        metaphysical: 'Shields from electromagnetic fields, detoxifies the body and energy field, shields against psychic attack, grounds spiritual energies, cleanses the chakras.',
+        physical_healing: 'Purifies water, acts as a powerful antioxidant, anti-inflammatory properties, reduces stress and insomnia.',
+        emotional_healing: 'Provides powerful grounding, stabilizes the root chakra, promotes emotional equanimity, shields from external influences.',
+        cleansing: ['Running Water (with care)', 'Smudging', 'Sound'],
+        charging: ['Sunlight', 'Earth burial'],
+        uses: ['Place near router or electronics for EMF protection', 'Use in water purification', 'Carry for grounding and protection', 'Place at home entrances as guardian', 'Use in protective grids'],
+        affirmation: 'I am protected, purified, and grounded in the ancient wisdom of the Earth.',
+        care_tips: 'Soft and may leave black residue on hands — wash after handling. Keep away from salts. Safe for water purification (genuine only). Not all shungite is equal — seek verified sources.'
+    },
+    {
+        name: 'Selenite',
+        emoji: '🤍',
+        color: ['White', 'Translucent', 'Pearly White'],
+        chakra: ['Crown', 'Higher Crown'],
+        element: 'Air',
+        zodiac: ['Taurus', 'Cancer'],
+        mohs_hardness: '2',
+        intentions: ['Purification', 'Intuition', 'Peace'],
+        properties: 'One of the most powerful cleansing and purifying crystals, Selenite never needs cleansing and can cleanse other crystals. Named after the moon goddess Selene, it brings mental clarity, removes confusion, and accesses higher consciousness.',
+        metaphysical: 'Opens a channel to the highest level of consciousness, cleanses the aura, aligns the spine and promotes flexibility, accesses angelic realm, enhances all other crystals\' properties.',
+        physical_healing: 'Aligns the spinal column, guards against epilepsy, neutralizes mercury poisoning from amalgam fillings.',
+        emotional_healing: 'Creates calm, peace, and mental clarity. Clears confusion. Assists judgment and insight.',
+        cleansing: ['Never needs cleansing — self-cleansing'],
+        charging: ['Moonlight', 'Self-charging'],
+        uses: ['Place on other crystals to cleanse them', 'Use as cleansing wand across aura', 'Place in all rooms for peaceful energy', 'Use in meditation for access to higher realms', 'Create crystal grids as amplifier'],
+        affirmation: 'I am clear, peaceful, and aligned with the highest light.',
+        care_tips: 'VERY SOFT — extremely fragile. Never place in water as it will dissolve. Avoid humidity and chemicals. Handle with extreme care. Do not drop. Store wrapped in cloth.'
+    },
+    {
+        name: 'Chalcopyrite',
+        emoji: '✨',
+        color: ['Gold', 'Yellow', 'Iridescent Gold'],
+        chakra: ['Crown', 'All Chakras'],
+        element: 'Fire',
+        zodiac: ['Capricorn', 'Taurus'],
+        mohs_hardness: '3.5-4',
+        intentions: ['Abundance', 'Creativity', 'Confidence'],
+        properties: 'The Stone of the Mystic, Chalcopyrite is a copper-iron sulfide that gleams with a gold sheen. It is prized for attracting wealth and abundance while enhancing creativity, perception, and the ability to find lost objects.',
+        metaphysical: 'Opens the crown chakra to cosmic awareness, removes energy blockages, aids in perception, helps find lost objects or missing information.',
+        physical_healing: 'Treats brain disorders, supports lubrication of cells and joints, treats bronchitis.',
+        emotional_healing: 'Enhances happiness, alleviates fear and anxiety, boosts confidence and creativity.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Sunlight (brief)', 'Candlelight'],
+        uses: ['Use in abundance rituals', 'Place on altar for prosperity', 'Carry for enhanced creativity', 'Meditate with for cosmic connection', 'Use in mystical work for perception'],
+        affirmation: 'I shine with golden possibility and abundance flows freely to me.',
+        care_tips: 'Soft and fragile — handle gently. Avoid water as it can react with sulfur content. The golden surface is natural tarnishing — cleaning will remove it.'
+    },
+    {
+        name: 'Aragonite',
+        emoji: '🌿',
+        color: ['Brown', 'White', 'Yellow', 'Blue', 'Green'],
+        chakra: ['Root', 'Earth Star'],
+        element: 'Earth',
+        zodiac: ['Capricorn'],
+        mohs_hardness: '3.5-4',
+        intentions: ['Grounding', 'Healing', 'Patience'],
+        properties: 'The Earth Healer, Aragonite is an excellent Earth-healing stone that stabilizes and grounds, transforms geopathic stress, and is a reliable Earth-energy stone. Blue aragonite heightens communication while brown grounds and stabilizes.',
+        metaphysical: 'Supports the Earth, grounds and centers the physical self, transforms underground geopathic stress, deepens connection to the Earth.',
+        physical_healing: 'Treats calcium deficiency, boosts immune system, treats nervous system disorders.',
+        emotional_healing: 'Combats oversensitivity, grounds and centers even in chaotic situations, calms stress and anxiety.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Earth burial', 'Sunlight'],
+        uses: ['Use in Earth healing ceremonies', 'Place in garden to improve soil energy', 'Carry for deep grounding', 'Use for geopathic stress clearing', 'Meditate for connection to Earth Mother'],
+        affirmation: 'I am rooted in the Earth\'s wisdom, stable, patient, and deeply nourished.',
+        care_tips: 'Relatively soft. Avoid acids, including vinegar and lemon juice, as they dissolve aragonite. Handle with care. Avoid dropping. Brief water cleansing is safe.'
+    },
+    {
+        name: 'Orange Calcite',
+        emoji: '🍊',
+        color: ['Orange', 'Peach-Orange'],
+        chakra: ['Sacral', 'Solar Plexus'],
+        element: 'Fire',
+        zodiac: ['Cancer', 'Leo'],
+        mohs_hardness: '3',
+        intentions: ['Creativity', 'Joy', 'Sexuality'],
+        properties: 'A highly energizing and cleansing stone, Orange Calcite is particularly helpful with emotional issues. It boosts creativity, energizes the sacral chakra, and helps integrate new ideas, past trauma, and emotional patterns.',
+        metaphysical: 'Removes energy blockages from the sacral chakra, restores motivation, brings playful and creative energy, facilitates exploration and expression.',
+        physical_healing: 'Balances hormones, aids digestion, boosts energy, treats reproductive disorders.',
+        emotional_healing: 'Heals past trauma, removes fear, restores joy and enthusiasm, supports recovery from depression.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Sunlight', 'Candlelight'],
+        uses: ['Carry to boost creativity and enthusiasm', 'Place on sacral chakra for healing', 'Use in creativity rituals', 'Wear when feeling emotionally blocked', 'Place in creative workspace'],
+        affirmation: 'I am alive with creative fire. Joy and inspiration flow through me.',
+        care_tips: 'Very soft at 3 Mohs — avoid scratching. Do not use vinegar or acids. Avoid prolonged direct sunlight. Safe for brief water cleansing. Store wrapped.'
+    },
+    {
+        name: 'Green Calcite',
+        emoji: '💚',
+        color: ['Green', 'Mint Green', 'Pale Green'],
+        chakra: ['Heart'],
+        element: 'Fire',
+        zodiac: ['Cancer'],
+        mohs_hardness: '3',
+        intentions: ['Healing', 'Love', 'Abundance'],
+        properties: 'A powerful amplifier and energy cleanser, Green Calcite removes stagnant energy from within itself and its environment. It moves energy through the heart chakra, promoting healing and balance while connecting to the energies of nature.',
+        metaphysical: 'Releases ingrained patterns and mental conditioning, dissolves rigid thought structures, reconnects to nature spirits and the energy of plants.',
+        physical_healing: 'Excellent for the heart and lungs, reduces fever and inflammation, heals bacterial and viral infections.',
+        emotional_healing: 'Dissolves mental blocks, dispels aggression, helps release suppressed emotions, promotes harmony.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Sunlight (brief)', 'Earth burial'],
+        uses: ['Place on heart chakra for healing', 'Use in abundance rituals', 'Place in home for harmonious energy', 'Carry during emotional healing', 'Connect with nature spirits in rituals'],
+        affirmation: 'My heart is open, healed, and aligned with the abundance of nature.',
+        care_tips: 'Very soft at 3 Mohs. Avoid acids, harsh chemicals, and vinegar. Handle gently and store wrapped. Safe for very brief water cleansing.'
+    },
+    {
+        name: 'Apatite',
+        emoji: '💙',
+        color: ['Blue', 'Green', 'Yellow', 'Purple'],
+        chakra: ['Third Eye', 'Throat'],
+        element: 'Air',
+        zodiac: ['Gemini', 'Capricorn'],
+        mohs_hardness: '5',
+        intentions: ['Intuition', 'Communication', 'Manifestation'],
+        properties: 'A stone of manifestation and clarity, Apatite stimulates the development of psychic gifts and spiritual attunement, deepens meditation, and increases access to the higher realms. Blue apatite particularly enhances communication.',
+        metaphysical: 'Opens the third eye, enhances psychic perception, stimulates the intellect, promotes humanitarian attitudes, reduces negativity about oneself and others.',
+        physical_healing: 'Aids in the assimilation of calcium, heals bones and teeth, reduces hunger and aids in overcoming eating disorders.',
+        emotional_healing: 'Clears confusion, reduces apathy, stimulates creativity, heals the heart, promotes a humanitarian outlook.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Sunlight'],
+        uses: ['Use in manifestation rituals', 'Wear for enhanced communication', 'Meditate with for third eye activation', 'Carry for spiritual attunement', 'Place on desk for mental clarity'],
+        affirmation: 'I manifest with clarity and my words and visions create powerful reality.',
+        care_tips: 'Moderately soft — avoid scratching with harder materials. Avoid acids and harsh chemicals. Safe for brief water cleansing. Store separately.'
+    },
+    {
+        name: 'Scolecite',
+        emoji: '🌟',
+        color: ['White', 'Cream', 'Translucent'],
+        chakra: ['Crown', 'Third Eye'],
+        element: 'Air',
+        zodiac: ['Capricorn'],
+        mohs_hardness: '5-5.5',
+        intentions: ['Peace', 'Spiritual Growth', 'Dreamwork'],
+        properties: 'A high-vibration stone of inner peace, Scolecite facilitates deep meditation and enhances the dream state. It promotes team-work and kindness, and is excellent for those wishing to open up to the spirit realms.',
+        metaphysical: 'Facilitates communication with spirit guides, enhances dreams, promotes inner peace, supports spiritual awakening, promotes kindness and service.',
+        physical_healing: 'Supports the brain and nervous system, aids sleep disorders, reduces anxiety.',
+        emotional_healing: 'Brings deep inner peace, promotes cooperative relationships, dissolves aggression, encourages receptivity.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Visualization'],
+        uses: ['Place under pillow for vivid dreams', 'Use in meditation for spirit contact', 'Carry for inner peace', 'Place in group settings for harmonious energy', 'Use in high-level spiritual work'],
+        affirmation: 'I am at peace and open to the gentle wisdom of the spirit realms.',
+        care_tips: 'Fragile and delicate — handle with extreme care. Avoid water, heat, and harsh chemicals. Store wrapped in soft cloth. Display pieces rather than carry.'
+    },
+    {
+        name: 'Chrysocolla',
+        emoji: '🌊',
+        color: ['Blue-Green', 'Teal', 'Cyan'],
+        chakra: ['Throat', 'Heart'],
+        element: 'Water',
+        zodiac: ['Gemini', 'Virgo', 'Taurus'],
+        mohs_hardness: '2.5-3.5',
+        intentions: ['Communication', 'Feminine Energy', 'Peace'],
+        properties: 'The Goddess Stone, Chrysocolla is a stone of communication devoted to expression, empowerment, and teaching. Its energy is gentle and soothing, making it an excellent teaching stone that empowers feminine energies.',
+        metaphysical: 'Draws off negative energies of all kinds, cleanses and re-energizes all the chakras, infuses the aura with life, draws off the effects of domestic violence, teaches the value of both expression and non-action.',
+        physical_healing: 'Treats infection, lowers blood pressure, treats arthritis, supports the thyroid.',
+        emotional_healing: 'Encourages self-expression, assists with meditation, soothes emotional wounds, promotes self-forgiveness.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Moonlight', 'Visualization'],
+        uses: ['Wear for wise and empowered communication', 'Use in goddess rituals', 'Place on throat for healing', 'Carry for emotional balance', 'Use in teaching or healing practices'],
+        affirmation: 'I speak with wisdom, grace, and compassion, honoring the goddess within.',
+        care_tips: 'Very soft and fragile — often reinforced with quartz as druzy or with chrysocolla. Avoid water, acids, and rough handling. Display rather than carry when possible.'
+    },
+    {
+        name: 'Azurite',
+        emoji: '🔵',
+        color: ['Deep Blue', 'Azure Blue'],
+        chakra: ['Third Eye', 'Crown'],
+        element: 'Air',
+        zodiac: ['Sagittarius'],
+        mohs_hardness: '3.5-4',
+        intentions: ['Intuition', 'Spiritual Growth', 'Communication'],
+        properties: 'The Stone of Heaven, Azurite inspires intellect and stimulates psychic gifts and opens the door to the Divine. It is a powerful third eye activator and supports communication with guides, angels, and higher realms.',
+        metaphysical: 'Deepens the connection to the spiritual world, enhances meditation, clears blockages from the mind, activates the brow and crown chakras, facilitates psychic development.',
+        physical_healing: 'Treats disorders of the brain and nervous system, soothes sore throats, treats arthritis.',
+        emotional_healing: 'Releases stress and grief, promotes flexibility and healing in attitudes and beliefs, encourages compassion.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Moonlight', 'Amethyst cluster'],
+        uses: ['Meditate with for third eye activation', 'Use in channeling and spirit communication', 'Place on forehead for psychic development', 'Carry for deeper spiritual insight', 'Use in rituals to access Akashic Records'],
+        affirmation: 'I open to divine wisdom and my intuition guides me with perfect clarity.',
+        care_tips: 'Soft and sensitive — avoid water, acids, and harsh chemicals. Do not polish. May fade in direct sunlight. Handle with great care. Store wrapped separately.'
+    },
+    {
+        name: 'Hemimorphite',
+        emoji: '🩵',
+        color: ['Blue', 'White', 'Teal-Blue'],
+        chakra: ['Throat', 'Third Eye', 'Crown'],
+        element: 'Air',
+        zodiac: ['Libra'],
+        mohs_hardness: '4.5-5',
+        intentions: ['Communication', 'Spiritual Growth', 'Joy'],
+        properties: 'A stone of joy and spiritual growth, Hemimorphite assists in self-development, emotional healing, and expansion of one\'s range of spiritual experiences. Blue hemimorphite is especially powerful for communication and connecting to spiritual guides.',
+        metaphysical: 'Enhances empathy, helps channel high-frequency spiritual energies, supports astral projection, facilitates connection to guides and angels.',
+        physical_healing: 'Treats blood disorders, supports the immune system, treats pain.',
+        emotional_healing: 'Promotes kindness and joy, eases ego-based behavior, supports emotional healing and expression.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Sunlight'],
+        uses: ['Use in spirit communication work', 'Carry for joyful interactions', 'Place on throat for clear expression', 'Meditate with for spiritual expansion', 'Use in channeling sessions'],
+        affirmation: 'I joyfully expand my spiritual awareness and communicate with ease and grace.',
+        care_tips: 'Moderately fragile — handle with care. Avoid water and acids. Store separately. The blue variety is rarer and more prized.'
+    },
+    {
+        name: 'Spinel',
+        emoji: '💎',
+        color: ['Red', 'Pink', 'Blue', 'Black', 'Violet'],
+        chakra: ['Root', 'Crown'],
+        element: 'Earth',
+        zodiac: ['Aries', 'Sagittarius'],
+        mohs_hardness: '8',
+        intentions: ['Vitality', 'Grounding', 'Renewal'],
+        properties: 'Often mistaken for rubies and sapphires in ancient jewelry, Spinel is a stone of revitalization and new hope. It encourages one to look at the positive side of difficult situations and provides hope in times of adversity.',
+        metaphysical: 'Revitalizes all chakras, increases confidence, promotes hope, helps move through difficult experiences with grace.',
+        physical_healing: 'Boosts stamina and vitality, supports the spine and muscles, aids in recovery from illness or injury.',
+        emotional_healing: 'Dispels stress and anxiety, promotes positive attitudes, helps one accept difficult circumstances with equanimity.',
+        cleansing: ['Running Water', 'Moonlight', 'Smudging'],
+        charging: ['Sunlight', 'Moonlight'],
+        uses: ['Carry for revitalization and stamina', 'Use in rituals for new beginnings', 'Wear for confidence in difficult times', 'Place at root for grounding', 'Use in healing work for vitality'],
+        affirmation: 'I renew my spirit and face each challenge with hope and vitality.',
+        care_tips: 'Very hard and durable — excellent for all types of wear. Safe for water and most chemicals. Clean with mild soap and water.'
+    },
+    {
+        name: 'Smithsonite',
+        emoji: '🌸',
+        color: ['Pink', 'Blue', 'Green', 'Lavender'],
+        chakra: ['Heart', 'Crown', 'Third Eye'],
+        element: 'Water',
+        zodiac: ['Virgo', 'Pisces'],
+        mohs_hardness: '4.5',
+        intentions: ['Healing', 'Peace', 'Love'],
+        properties: 'A stone of gentle healing, Smithsonite soothes the emotions and promotes kindness. It is excellent for those who have had a difficult childhood, feel unloved, or who are healing from abuse or abandonment.',
+        metaphysical: 'Activates and aligns the chakras, brings a sense of safety, encourages diplomacy and kindness, assists in healing the inner child.',
+        physical_healing: 'Benefits the immune system, treats alcoholism, supports the sinuses.',
+        emotional_healing: 'Heals emotional wounds from childhood, eases loneliness, promotes trust, encourages kindness to self and others.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Rose quartz cluster'],
+        uses: ['Use in inner child healing work', 'Carry for comfort and safety', 'Place on heart chakra for emotional healing', 'Gift to those feeling unloved or lonely', 'Meditate with for gentle self-soothing'],
+        affirmation: 'I am lovable, worthy, and safe. My inner child is healed and whole.',
+        care_tips: 'Relatively fragile. Avoid water, acids, and harsh chemicals. Handle with gentle care. The color variations are natural — all are beautiful.'
+    },
+    {
+        name: 'Ulexite',
+        emoji: '🔮',
+        color: ['White', 'Translucent', 'Fibrous White'],
+        chakra: ['Third Eye', 'Crown'],
+        element: 'Air',
+        zodiac: ['Gemini'],
+        mohs_hardness: '2.5',
+        intentions: ['Intuition', 'Clarity', 'Vision'],
+        properties: 'Also known as TV Stone for its ability to transmit images through its fibers, Ulexite is a stone of vision. It clears the mind, enhances visualization, and helps one see what is hidden beneath the surface.',
+        metaphysical: 'Activates the third eye, enhances telepathy, reveals hidden truths, aids in understanding complex problems, projects images through its fibers.',
+        physical_healing: 'Treats disorders of the eyes, supports the nervous system.',
+        emotional_healing: 'Reveals the root causes of problems, promotes clarity of perception, helps see through deception.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Visualization'],
+        uses: ['Use in scrying and divination', 'Meditate with for enhanced vision', 'Place on third eye for clarity', 'Use to reveal hidden truths in situations', 'Carry for insight into complex matters'],
+        affirmation: 'I see clearly with both my eyes and my inner vision.',
+        care_tips: 'Very soft and delicate. Avoid water as it dissolves slowly. Never expose to chemicals. Handle with extreme care and store wrapped separately.'
+    },
+    {
+        name: 'Vanadinite',
+        emoji: '🔴',
+        color: ['Red', 'Orange-Red', 'Brown-Red'],
+        chakra: ['Sacral', 'Solar Plexus', 'Root'],
+        element: 'Fire',
+        zodiac: ['Virgo', 'Aries'],
+        mohs_hardness: '2.5-3',
+        intentions: ['Creativity', 'Vitality', 'Manifestation'],
+        properties: 'A stone of fire, creativity, and earthly pleasure, Vanadinite provides a link between the physical and spiritual realms. It is extraordinary for those who have a problem with procrastination, endurance, and achieving goals.',
+        metaphysical: 'Assists in defining and pursuing goals, fills the aura with fire energy, enhances creativity, connects the sacral chakra to higher spiritual energies.',
+        physical_healing: 'Restores physical vitality, treats exhaustion, supports the lungs and respiratory system.',
+        emotional_healing: 'Fills life with excitement and passion, overcomes inertia and procrastination, promotes acceptance of the body and physical pleasures.',
+        cleansing: ['Moonlight', 'Smudging', 'Sound'],
+        charging: ['Sunlight', 'Candlelight'],
+        uses: ['Use in manifestation rituals', 'Carry to overcome procrastination', 'Place on desk for creative work', 'Use in fire rituals and candle magic', 'Meditate with for passion and vitality'],
+        affirmation: 'I am filled with creative fire and I passionately pursue my goals.',
+        care_tips: 'TOXIC — contains vanadium and lead compounds. Wash hands after handling. Never use in elixirs. Handle with care. Avoid ingestion. Display rather than carry. Keep away from children.'
+    },
+    {
+        name: 'Sphalerite',
+        emoji: '⚡',
+        color: ['Red', 'Orange', 'Yellow', 'Black', 'Brown'],
+        chakra: ['Root', 'Sacral'],
+        element: 'Earth',
+        zodiac: ['Gemini'],
+        mohs_hardness: '3.5-4',
+        intentions: ['Grounding', 'Vitality', 'Manifestation'],
+        properties: 'A powerful grounding stone, Sphalerite helps one to distinguish between fact and fantasy and grounds spiritual work in the physical. It is excellent for those who feel ungrounded or are prone to psychic overwhelm.',
+        metaphysical: 'Grounds spiritual energy, balances masculine and feminine energies, sharpens discernment, energizes the root and sacral chakras.',
+        physical_healing: 'Supports the reproductive system, boosts physical vitality, aids in recovery from exhaustion.',
+        emotional_healing: 'Aids in recognizing whether intuitions are genuine, helps discern truth from illusion, grounds emotional energy.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Earth burial', 'Sunlight'],
+        uses: ['Carry for grounding after spiritual work', 'Use to verify psychic information', 'Place at root chakra for stability', 'Use in earth rituals', 'Carry during heavy spiritual practice'],
+        affirmation: 'I am grounded, discerning, and fully embodied in my physical reality.',
+        care_tips: 'Soft and fragile. Avoid water, acids, and rough handling. Do not use in elixirs. Handle with care. The various color forms have the same properties.'
+    },
+    {
+        name: 'Magnesite',
+        emoji: '🤍',
+        color: ['White', 'Cream', 'Grey-White'],
+        chakra: ['Third Eye', 'Crown'],
+        element: 'Fire',
+        zodiac: ['Aries'],
+        mohs_hardness: '3.5-4.5',
+        intentions: ['Peace', 'Intuition', 'Healing'],
+        properties: 'A powerful meditation aid, Magnesite induces a deep state of peaceful surrender and is excellent for those who feel unheard or who have difficulty accepting love. It creates a powerful resonance within the higher chakras.',
+        metaphysical: 'Supports visualization and imagery, opens the third eye, promotes deep relaxation in meditation, helps identify and accept needed changes.',
+        physical_healing: 'Supports the detoxification of the body, treats magnesium deficiency, aids muscle spasms.',
+        emotional_healing: 'Promotes tolerance of emotional stress, develops passive acceptance of life, helps one to listen to and act upon feelings.',
+        cleansing: ['Moonlight', 'Sound', 'Smudging'],
+        charging: ['Moonlight', 'Visualization'],
+        uses: ['Use as meditation aid for deep relaxation', 'Carry to accept difficult emotions', 'Place on third eye for visualization', 'Use in healing emotional wounds', 'Include in surrender and release rituals'],
+        affirmation: 'I surrender to peace and accept the wisdom my heart is ready to receive.',
+        care_tips: 'Relatively soft. Avoid acids and harsh chemicals. Often confused with white howlite. Safe for brief water cleansing. Store wrapped to prevent scratches.'
     }
 ];
+
+// ========================================
+// CRYSTAL OF THE DAY
+// ========================================
+
+function initCrystalOfDay() {
+    const today = new Date().toISOString().split('T')[0];
+    const stored = JSON.parse(localStorage.getItem('mystical-path-crystal-of-day') || '{}');
+
+    let crystal;
+    if (stored.date === today) {
+        crystal = CRYSTALS.find(c => c.name === stored.name);
+    }
+    if (!crystal) {
+        crystal = CRYSTALS[Math.floor(Math.random() * CRYSTALS.length)];
+        localStorage.setItem('mystical-path-crystal-of-day', JSON.stringify({
+            date: today,
+            name: crystal.name
+        }));
+    }
+
+    const card = document.getElementById('crystal-of-day-card');
+    if (!card) return;
+
+    card.innerHTML = `
+        <div class="cotd-label">✨ Crystal of the Day</div>
+        <div class="cotd-emoji">${crystal.emoji}</div>
+        <div class="cotd-info">
+            <h3 class="cotd-name">${crystal.name}</h3>
+            <div class="cotd-tags">
+                ${crystal.intentions.slice(0, 2).map(i => `<span class="cotd-tag">${i}</span>`).join('')}
+                <span class="cotd-tag chakra">${crystal.chakra[0]}</span>
+            </div>
+            <p class="cotd-affirmation">"${crystal.affirmation}"</p>
+            <p class="cotd-refresh">Refreshes tomorrow at midnight</p>
+        </div>
+    `;
+}
 
 // ========================================
 // STATE MANAGEMENT
@@ -1551,6 +2406,28 @@ function loadCollection() {
 }
 
 /**
+ * Save filter state to localStorage
+ */
+function saveFilterState() {
+    localStorage.setItem('mystical-path-crystal-filters', JSON.stringify({
+        intention: intentionFilter.value,
+        chakra: chakraFilter.value
+    }));
+}
+
+/**
+ * Load filter state from localStorage
+ */
+function loadFilterState() {
+    const saved = localStorage.getItem('mystical-path-crystal-filters');
+    if (saved) {
+        const state = JSON.parse(saved);
+        intentionFilter.value = state.intention || 'all';
+        chakraFilter.value = state.chakra || 'all';
+    }
+}
+
+/**
  * Clear all filters
  */
 function clearFiltersLocal() {
@@ -1558,6 +2435,7 @@ function clearFiltersLocal() {
         search: searchInput,
         filters: [intentionFilter, chakraFilter]
     });
+    saveFilterState();
     filterCrystals();
 }
 
@@ -1566,8 +2444,8 @@ function clearFiltersLocal() {
  */
 function setupEventListeners() {
     searchInput.addEventListener('input', filterCrystals);
-    intentionFilter.addEventListener('change', filterCrystals);
-    chakraFilter.addEventListener('change', filterCrystals);
+    intentionFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
+    chakraFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
     clearFiltersBtn.addEventListener('click', clearFiltersLocal);
     
     ownedTab.addEventListener('click', () => {
@@ -1592,9 +2470,11 @@ function setupEventListeners() {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    initCrystalOfDay();
     loadCollection();
+    loadFilterState();
     setupEventListeners();
-    renderCrystals();
+    filterCrystals();
     renderCollection();
     
     // Enable keyboard navigation for crystal cards
