@@ -44,6 +44,25 @@
                 </p>
             </section>
 
+            <!-- Universal Search -->
+            <section class="universal-search-section" role="search" aria-label="Search all tools">
+                <div class="universal-search-bar">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input
+                        type="text"
+                        id="universal-search-input"
+                        placeholder="Search crystals, herbs, runes, candles… (e.g. protection, fire, Venus)"
+                        aria-label="Search across all tool databases"
+                        autocomplete="off"
+                    >
+                    <button id="universal-search-clear" class="search-clear-btn" aria-label="Clear search" hidden>✕</button>
+                </div>
+                <div id="universal-search-results" class="universal-search-results" hidden aria-live="polite" aria-label="Search results">
+                    <div id="universal-search-meta" class="search-meta"></div>
+                    <div id="universal-search-groups"></div>
+                </div>
+            </section>
+
             <!-- Tools Grid -->
             <section class="tools-section">
                 <h2>Choose Your Tool</h2>
@@ -499,6 +518,8 @@
 
     <script src="js/theme-manager.js"></script>
     <script src="js/nav-menu.js"></script>
+    <script src="js/correspondence-data.js"></script>
+    <script src="js/homepage-search.js"></script>
     
     <!-- Service Worker Registration -->
     <script>
