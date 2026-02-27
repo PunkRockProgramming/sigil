@@ -23,13 +23,14 @@
 | 12 | Witchy Weather | `html/witchy-weather.html` | OpenWeatherMap API, 8 weather types, moon combos |
 | 13 | Altar Setup | `html/altar-setup.html` | 16 tools, 8 layouts, compass diagram, seasonal guide |
 | 14 | Candle Magic | `html/candle-magic.html` | 15 colors, 12 spell templates, dual-tab layout |
+| 15 | Angel Numbers | `html/angel-numbers.html` | 20 sequences, master/triple/quad/special categories |
 
 ---
 
 ## Priority Matrix
 
 ### High Value / Low Effort — Do First
-- [in-progress] **Angel Numbers Guide** (~4h) — 111, 222, 333 etc. High search traffic. Reference pattern.
+- [done] **Angel Numbers Guide** (~4h) — 111, 222, 333 etc. High search traffic. Reference pattern.
 - [in-progress] **SVG export for Sigil Generator** (~2h) — Scalable output alongside existing PNG.
 - [in-progress] **Retrograde Tracker** (~5h) — Mercury/Venus/Mars/Jupiter dates + what to do. Static data + date math.
 

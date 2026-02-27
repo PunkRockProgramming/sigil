@@ -28,13 +28,13 @@ Add three high-value, low-effort items: Angel Numbers reference tool (high searc
 
 - [x] Sabbat: show next 3 upcoming sabbats
 - [x] Sigil: charge/activate instructions after creation
-- [ ] Angel Numbers: `html/angel-numbers.html`
-- [ ] Angel Numbers: `css/angel-numbers-styles.css`
-- [ ] Angel Numbers: `js/angel-numbers-script.js`
-- [ ] Angel Numbers: add to `sw.js` PRECACHE_ASSETS + bump CACHE_NAME
-- [ ] Angel Numbers: add to `js/nav-menu.js` TOOLS array
-- [ ] Angel Numbers: add to `index.html`, remove from Coming Soon
-- [ ] Angel Numbers: add to `offline.html`
+- [x] Angel Numbers: `html/angel-numbers.html`
+- [x] Angel Numbers: `css/angel-numbers-styles.css`
+- [x] Angel Numbers: `js/angel-numbers-script.js`
+- [x] Angel Numbers: add to `sw.js` PRECACHE_ASSETS + bump CACHE_NAME
+- [x] Angel Numbers: add to `js/nav-menu.js` TOOLS array
+- [x] Angel Numbers: add to `index.html`, remove from Coming Soon
+- [x] Angel Numbers: add to `offline.html`
 - [ ] Retrograde Tracker: `html/retrograde-tracker.html`
 - [ ] Retrograde Tracker: `css/retrograde-tracker-styles.css`
 - [ ] Retrograde Tracker: `js/retrograde-tracker-script.js`

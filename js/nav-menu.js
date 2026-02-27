@@ -21,6 +21,7 @@ const TOOLS = [
     { name: 'Witchy Weather', emoji: '🌦️', path: './html/witchy-weather.html', toolPath: '../html/witchy-weather.html' },
     { name: 'Altar Setup Guide', emoji: '🕯️', path: './html/altar-setup.html', toolPath: '../html/altar-setup.html' },
     { name: 'Candle Magic Guide', emoji: '🔥', path: './html/candle-magic.html', toolPath: '../html/candle-magic.html' },
+    { name: 'Angel Numbers', emoji: '🔢', path: './html/angel-numbers.html', toolPath: '../html/angel-numbers.html' },
     { name: 'Home', emoji: '🏠', path: './index.html', toolPath: '../index.html' }
 ];
 
