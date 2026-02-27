@@ -1,7 +1,7 @@
 # Mystical Path Tools — Roadmap
 
 **Last Updated:** February 27, 2026
-**Status:** No active sprint.
+**Status:** Active sprint — see `SPRINT.md`.
 
 ---
 
@@ -61,7 +61,8 @@
 ## Cross-Tool Platform Features
 
 - [ ] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
-- [ ] **Correspondence Lookup** — Keyword → all matching items across every database
+- [in-progress] **Correspondence Lookup** — Keyword → all matching items across every database
+- [in-progress] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
 - [ ] **Universal Search** — Homepage search spanning all tool databases
 - [ ] **Share via URL** (~5h) — Encode tool state in query params. Shareable readings.
 - [ ] **Personal Profile** (~12–15h) — Birth date + name stored locally, auto-populates Numerology, informs Chakra Guide
