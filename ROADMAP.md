@@ -1,11 +1,11 @@
 # Mystical Path Tools — Roadmap
 
 **Last Updated:** February 27, 2026
-**Status:** Active sprint — see `SPRINT.md`.
+**Status:** No active sprint.
 
 ---
 
-## Completed Tools (14)
+## Completed Tools (19)
 
 | # | Tool | File | Signature Feature |
 |---|---|---|---|
@@ -27,6 +27,7 @@
 | 16 | Retrograde Tracker | `html/retrograde-tracker.html` | 5 planets, live status, avoid/embrace guidance, 2025-2026 periods |
 | 17 | Correspondence Lookup | `html/correspondence-lookup.html` | 154 items, cross-tool keyword search, element/planet filters |
 | 18 | Daily Practice | `html/daily-dashboard.html` | Moon phase, sabbat countdown, Crystal/Rune of Day, affirmation |
+| 19 | Ogham Oracle | `html/ogham-oracle.html` | 20 Celtic fews, 3 spread types, Few of the Day, reading journal |
 
 ---
 
@@ -42,7 +43,7 @@
 - [ ] **Planetary Hours Calculator** (~8h) — Real-time by geolocation. Reuses Moon Tracker calc pattern.
 - [ ] **Chakra Healing Guide** (~8–10h) — Interactive map + assessment + recommendations. Bridges Crystal + Herbal.
 - [ ] **Deity Database** (~10h) — Greek/Norse/Egyptian/Celtic/Hindu. Filterable by intention, tradition.
-- [in-progress] **Ogham Oracle** (~8h) — Celtic tree alphabet, 20 fews. Divination similar to Rune Caster.
+- [done] **Ogham Oracle** (~8h) — Celtic tree alphabet, 20 fews. Divination similar to Rune Caster.
 - [done] **Correspondence Lookup** (~6–8h) — Enter any keyword → matching crystals, herbs, runes, candles across all databases.
 - [ ] **Sacred Geometry Generator** (~8h) — Canvas. Flower of Life, Metatron's Cube, Sri Yantra.
 
@@ -64,7 +65,7 @@
 
 - [done] **Correspondence Lookup** — Keyword → all matching items across every database
 - [done] **Daily Practice Dashboard** — Unified "home base" daily view (moon, sabbat, rune/crystal of day, affirmation)
-- [in-progress] **Universal Search** — Homepage search spanning all tool databases
+- [done] **Universal Search** — Homepage search spanning all tool databases
 - [ ] **Share via URL** (~5h) — Encode tool state in query params. Shareable readings.
 - [ ] **Personal Profile** (~12–15h) — Birth date + name stored locally, auto-populates Numerology, informs Chakra Guide
 - [ ] **Tradition Selector** (~6–8h) — Filter content by practice tradition (Wicca, Druidry, Ceremonial, etc.)
@@ -94,7 +95,7 @@
 - [ ] Rune study/flashcard mode (~4h)
 
 **Crystal Database**
-- [in-progress] More filter options: element, color, planetary (~2h)
+- [done] More filter options: element, color, planetary (~2h)
 - [ ] Crystal compatibility checker (~4h)
 - [ ] Crystal grid templates (~6h)
 
@@ -125,7 +126,7 @@
 - [done] Countdown to next 3 sabbats (not just nearest) (~2h)
 
 **Candle Magic**
-- [ ] Expand spell templates to 20+ (~2h)
+- [done] Expand spell templates to 20+ (~2h)
 - [ ] Ritual timer integration with Meditation Timer (~2h)
 
 ---

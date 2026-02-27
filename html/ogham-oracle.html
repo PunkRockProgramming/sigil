@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogham Oracle - Celtic Tree Alphabet | Mystical Path Tools</title>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/ogham-styles.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+
+        <header>
+            <h1>ᚁ Ogham Oracle</h1>
+            <p class="subtitle">Celtic Tree Alphabet — Ancient Irish Divination</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft" selected>Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Few of the Day -->
+        <section class="fotd-section" role="region" aria-labelledby="fotd-heading">
+            <h2 id="fotd-heading" class="sr-only">Few of the Day</h2>
+            <div id="few-of-day-card" class="fotd-card">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Spread Selection & Cast -->
+        <section class="cast-section" role="region" aria-labelledby="cast-heading">
+            <h2 id="cast-heading">Cast the Fews</h2>
+            <p class="intro-text">
+                Ogham is an ancient Irish alphabet carved on stone and wood, with each letter named for a tree.
+                The 20 fews (letters) carry deep Celtic wisdom about nature, time, and the cycles of life.
+                Choose a spread and cast your fews to receive their guidance.
+            </p>
+
+            <div class="spread-controls">
+                <div class="control-group">
+                    <label for="spread-selector">Choose Your Spread:</label>
+                    <select id="spread-selector" aria-label="Choose Ogham spread type">
+                        <option value="single">Single Few (1 few)</option>
+                        <option value="three" selected>Past · Present · Future (3 fews)</option>
+                        <option value="five">Five-Few Grove (5 fews)</option>
+                    </select>
+                </div>
+
+                <button id="cast-button" class="cast-btn">Cast the Fews 🌿</button>
+            </div>
+
+            <div class="spread-info" id="spread-info">
+                <h3>Past · Present · Future</h3>
+                <p>Three fews revealing the arc of a situation — where you have been, where you stand now, and where the path leads.</p>
+            </div>
+        </section>
+
+        <!-- Reading Section (hidden until cast) -->
+        <section id="reading-section" class="reading-section hidden" role="region" aria-live="polite" aria-labelledby="reading-heading">
+            <div class="reading-header">
+                <h2 id="reading-heading" id="spread-title">Your Reading</h2>
+                <button class="pdf-download-btn" onclick="downloadToolAsPDF('Ogham Oracle', 'reading')" aria-label="Download Ogham reading as PDF">📄 Download PDF</button>
+            </div>
+            <div id="reading-grid" class="reading-grid" role="list"></div>
+            <div class="reading-actions">
+                <button id="cast-again-btn" class="secondary-btn">Cast Again</button>
+            </div>
+        </section>
+
+        <!-- Reading History -->
+        <section id="history-section" class="history-section hidden" role="region" aria-labelledby="history-heading">
+            <h2 id="history-heading">Reading History</h2>
+            <div class="history-controls">
+                <button id="clear-history-btn" class="clear-history-btn" aria-label="Clear all reading history">Clear History</button>
+            </div>
+            <div id="history-list" class="history-list" role="list"></div>
+        </section>
+
+        <!-- Few Reference Grid -->
+        <section class="reference-section" role="region" aria-labelledby="reference-heading">
+            <h2 id="reference-heading">The 20 Fews</h2>
+            <p class="section-description">
+                The Ogham alphabet is divided into four Aicmes (families) of five fews each, plus the forfeda (additional letters).
+                Each few corresponds to a sacred tree and carries unique magical properties.
+            </p>
+
+            <div class="reference-controls" role="search" aria-label="Filter Ogham fews">
+                <label for="few-filter">Filter by Aicme:</label>
+                <select id="few-filter" aria-label="Filter by Aicme">
+                    <option value="all">All Aicmes</option>
+                    <option value="Beithe">Aicme Beithe (B group)</option>
+                    <option value="Huatha">Aicme Huatha (H/C group)</option>
+                    <option value="Muine">Aicme Muine (M group)</option>
+                    <option value="Ailme">Aicme Ailme (A group)</option>
+                </select>
+            </div>
+
+            <div id="few-grid" class="few-grid" role="list" aria-label="Ogham few reference cards">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <footer>
+            <p class="footer-text">
+                Ogham is an ancient Irish writing system dating to the 4th–6th centuries CE.
+                This oracle tool draws on Celtic tree lore and druidic tradition for divination and reflection.
+            </p>
+            <p class="wisdom">
+                <em>"The forest speaks to those who know how to listen."</em>
+            </p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/pdf-utils.js"></script>
+    <script src="../js/ogham-script.js"></script>
+
+    <script>
+        // Spread info updater
+        const spreadDescriptions = {
+            single: {
+                name: 'Single Few',
+                description: 'One few for daily guidance or a focused question. Hold your question in your heart as you cast.'
+            },
+            three: {
+                name: 'Past · Present · Future',
+                description: 'Three fews revealing the arc of a situation — where you have been, where you stand now, and where the path leads.'
+            },
+            five: {
+                name: 'Five-Few Grove',
+                description: 'A full grove reading across five positions: Situation, Challenge, Foundation, Advice, and Outcome.'
+            }
+        };
+
+        document.getElementById('spread-selector').addEventListener('change', function () {
+            const sel = spreadDescriptions[this.value];
+            document.getElementById('spread-info').innerHTML =
+                `<h3>${sel.name}</h3><p>${sel.description}</p>`;
+        });
+
+        document.getElementById('cast-again-btn').addEventListener('click', function () {
+            document.getElementById('cast-button').click();
+        });
+    </script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
