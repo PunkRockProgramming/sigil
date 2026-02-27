@@ -81,7 +81,27 @@ Reference data for sprint planning and estimation.
 - Theme-specific icons better UX for mystical tools than generic hamburger
 - Dynamic icon switching via theme listener adds polish
 
-### Feb 2026 Sprint (Tech Debt + Features)
-- filter-utils.js shared library: ~3 hrs
-- Herbal Database (using new utilities): ~7 hrs vs estimated 2–3 days
-- **Key insight:** Tech debt first in sprint — shared utilities built early accelerate all feature work
+### User Power Improvements Sprint (Feb 2026)
+- Sigil history gallery (localStorage PNG thumbnails, max 10): ~2h
+- Crystal Database 24→50 (26 new crystals): ~2h
+- Crystal notes field (per-owned-crystal, auto-save): ~1h
+- **Total: ~5h** | Ahead of estimate
+
+### Cleanup + Altar Setup Sprint (Feb 2026)
+- JSDoc audit: 0h (already complete)
+- Altar Setup Guide: ~6h (16 tools, 8 layouts, 8 seasonal guides, compass diagram)
+- **Total: ~6h (estimated 10–12h) ✅ Significantly ahead**
+- **Learning:** Compass diagram via 3×3 CSS grid — creative layout solution
+
+### Spell Builder Sprint (Feb 2026)
+- Spell Builder & Grimoire: ~6–8h (10 intents, grimoire storage, filtering, JSON export)
+- ARIA for Moon/Crystal/Herbal: ~2h
+- **Total: ~8–10h (estimated 19–24h) ✅ ~50% faster**
+- **Learning:** 80% pattern reuse = ~50% development time savings
+
+### Expandable Card + Herbal Sprint (Feb 2026)
+- expandable-card.css (164 lines, unified across 5 tools): ~2h
+- filter-utils.js shared library: ~3h
+- Herbal Database: ~4h (used both new utilities from day one)
+- **Total: ~9h** | On estimate
+- **Key insight:** Tech debt first — shared utilities built early accelerate all feature work
