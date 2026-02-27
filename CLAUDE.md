@@ -1070,6 +1070,24 @@ When building tools with potentially dangerous content (herbs, chemicals, spells
   * Auto-dated filenames improve UX (tool-type-YYYY-MM-DD.pdf pattern)
   * PWA offline functionality with zero config per tool (just manifest link + SW registration)
 
+**Enhancement Sprint (Feb 26, 2026):**
+- Filter persistence (3 tools): ~1 hour total — same 10-line pattern per tool
+- Spell Builder moon auto-detect: ~30 min — inline Julian Day calc, no import needed
+- Crystal of the Day: ~1 hour (banner HTML + JS logic + CSS)
+- Rune of the Day: ~1 hour (same pattern as Crystal of the Day)
+- Rune Caster reading journal: ~2 hours (auto-save on cast, toggle UI, render entries)
+- Moon Tracker ritual journal: ~2.5 hours (Record button injection, modal, journal render)
+- Numerology compatibility calculator: ~2 hours (form HTML + reused calc functions + CSS)
+- Crystal Database 50→93: ~3 hours (43 entries × 17 fields data entry)
+- Total: ~13 hours estimated | 1 session actual ✅
+- **Learnings:**
+  * "X of the Day" pattern: store `{date, name}` in localStorage, compare ISO date string — highly reusable
+  * Record modal (inline dialog) beats native prompt() for journaling — more control, better UX, no browser inconsistencies
+  * Filter persistence is a 10-line addition with high perceived UX value — add to every new filter tool
+  * Compatibility calculators are nearly free when calc functions already exist
+  * For journals tracking live state (moon phase), read from DOM element not recalculate
+  * Crystal data at scale: 43 objects × 17 fields is mechanical but worth it for daily feature quality
+
 ### ARIA Labels & Accessibility
 
 **NEW:** As of Feb 26, 2026, accessibility pattern established via Moon Tracker, Crystal Database, and Herbal Database:

@@ -370,11 +370,45 @@
 
 ## 🎯 CURRENT SPRINT
 
-**Status:** ✅ COMPLETE — User Power Improvements Sprint (Feb 26, 2026)
+**Status:** No active sprint. See PREVIOUS SPRINTS for history.
 
-**Result:** Candle Magic Guide shipped (1,705 lines). Tech debt (card rendering consolidation) skipped after code review — duplication was superficial.
+---
 
-**User Power Sprint result:** 3 features shipped across 2 tools (~1,135 lines). Sigil history gallery (localStorage PNG thumbnails, max 10, load/delete/clear). Crystal database expanded 24→50 (26 new crystals, all 15 fields). Crystal notes field (per-owned-crystal textarea, auto-save, mini-card preview, backward-compatible schema). See `sprints/SPRINT-2026-02-26-user-power.md` for full notes.
+## 📜 PREVIOUS SPRINTS
+
+### ✅ Enhancement Sprint - COMPLETE (Feb 26, 2026)
+
+**Sprint Goal:** Give practitioners reasons to return daily (daily features), track their practice (journals), deeper personalization (compatibility), and more content (93 crystals). No new tools — pure depth.
+
+**Ratio:** 20% tech debt, 80% features
+
+**Completed:**
+- ✅ **Filter persistence** — Crystal (intention+chakra), Herbal (intention+element), Moon Tracker (category+difficulty) all save/restore from localStorage
+- ✅ **Spell Builder moon phase auto-detect** — Pre-fills current moon phase using inline Julian Day calculation on DOMContentLoaded
+- ✅ **Crystal of the Day** — Daily banner card above search filters with emoji, intentions, affirmation. Persists until midnight via localStorage date key
+- ✅ **Rune of the Day** — Daily banner above spread selector with rune symbol, name, keywords, meaning. Same persistence pattern
+- ✅ **Rune Caster reading journal** — Auto-saves every cast (last 20), show/hide toggle, clear with confirm. Shows spread name, date/time, all runes with symbols + positions
+- ✅ **Moon Tracker ritual journal** — "Record" button on each ritual card opens inline modal (not native prompt) with optional notes. Saves ritual title, current moon phase, notes, timestamp. Last 50 entries
+- ✅ **Numerology compatibility calculator** — 2-person input (name + birth date). Calculates all 4 core numbers for both, displays side-by-side with qualitative notes (Deep Resonance, Complementary, Rare Spiritual Connection, etc.)
+- ✅ **Crystal Database expanded 50 → 93** — 43 new crystals with all 17 fields: Lapis Lazuli, Sodalite, Moonstone, Labradorite, Fluorite, Lepidolite, Malachite, Turquoise, Amazonite, Garnet, Aquamarine, Rhodonite, Sunstone, Prehnite, Chrysoprase, Peridot, Blue Kyanite, Howlite, Rhodochrosite, Kunzite, Iolite, Tanzanite, Blue Topaz, Larimar, Charoite, Sugilite, Shungite, Selenite, Chalcopyrite, Aragonite, Orange/Green Calcite, Apatite, Scolecite, Chrysocolla, Azurite, Hemimorphite, Spinel, Smithsonite, Ulexite, Vanadinite, Sphalerite, Magnesite
+
+**Estimated:** ~21h | **Actual:** ~1 session ✅
+
+**Files changed:** 17 files, 2509 insertions, 81 deletions
+
+**Learnings:**
+- Daily feature pattern (X of the Day) is highly reusable — same localStorage date-key pattern works for any content type
+- Record modal pattern (inline dialog, no native prompt) is the right UX for journaling — reuse for any "log this" feature
+- Filter persistence is a 10-line addition per tool with outsized UX impact — do it for every new filter tool
+- Compatibility calculators are cheap to build when calculation functions already exist (reused all 4 numerology functions)
+- Crystal data entry at scale: 43 objects × 17 fields is mechanical but valuable — more data = better daily feature variety
+- Moon journal: tracking current phase at record time is important context, read from live DOM element
+
+---
+
+### ✅ User Power Improvements Sprint - COMPLETE (Feb 26, 2026)
+
+**Result:** 3 features shipped across 2 tools (~1,135 lines). Sigil history gallery (localStorage PNG thumbnails, max 10, load/delete/clear). Crystal database expanded 24→50 (26 new crystals, all 15 fields). Crystal notes field (per-owned-crystal textarea, auto-save, mini-card preview, backward-compatible schema). See `sprints/SPRINT-2026-02-26-user-power.md` for full notes.
 
 ---
 
