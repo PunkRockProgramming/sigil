@@ -2133,6 +2133,8 @@ let myCollection = {
 const searchInput = document.getElementById('search-input');
 const intentionFilter = document.getElementById('intention-filter');
 const chakraFilter = document.getElementById('chakra-filter');
+const elementFilter = document.getElementById('element-filter');
+const colorFilter = document.getElementById('color-filter');
 const clearFiltersBtn = document.getElementById('clear-filters-btn');
 const crystalGrid = document.getElementById('crystal-grid');
 const crystalCount = document.getElementById('crystal-count');
@@ -2152,19 +2154,29 @@ function filterCrystals() {
     const searchTerm = searchInput.value;
     
     // Apply search and filters using shared utilities
-    filteredCrystals = filterAndSearch(
+    const colorVal = colorFilter.value;
+    let candidates = filterAndSearch(
         CRYSTALS,
         searchTerm,
         [(item) => item.name, (item) => item.properties],
         {
             intention: intentionFilter.value,
-            chakra: chakraFilter.value
+            chakra: chakraFilter.value,
+            element: elementFilter.value
         },
         {
             intention: (item) => item.intentions,
-            chakra: (item) => item.chakra
+            chakra: (item) => item.chakra,
+            element: (item) => [item.element]
         }
     );
+    // Color filter: check if any of the crystal's color array contains the selected base color
+    if (colorVal !== 'all') {
+        candidates = candidates.filter(c =>
+            c.color.some(col => col.toLowerCase().includes(colorVal.toLowerCase()))
+        );
+    }
+    filteredCrystals = candidates;
     
     renderCrystals();
 }
@@ -2412,7 +2424,9 @@ function loadCollection() {
 function saveFilterState() {
     localStorage.setItem('mystical-path-crystal-filters', JSON.stringify({
         intention: intentionFilter.value,
-        chakra: chakraFilter.value
+        chakra: chakraFilter.value,
+        element: elementFilter.value,
+        color: colorFilter.value
     }));
 }
 
@@ -2425,6 +2439,8 @@ function loadFilterState() {
         const state = JSON.parse(saved);
         intentionFilter.value = state.intention || 'all';
         chakraFilter.value = state.chakra || 'all';
+        if (elementFilter) elementFilter.value = state.element || 'all';
+        if (colorFilter) colorFilter.value = state.color || 'all';
     }
 }
 
@@ -2434,7 +2450,7 @@ function loadFilterState() {
 function clearFiltersLocal() {
     clearFilters({
         search: searchInput,
-        filters: [intentionFilter, chakraFilter]
+        filters: [intentionFilter, chakraFilter, elementFilter, colorFilter]
     });
     saveFilterState();
     filterCrystals();
@@ -2447,6 +2463,8 @@ function setupEventListeners() {
     searchInput.addEventListener('input', filterCrystals);
     intentionFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
     chakraFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
+    elementFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
+    colorFilter.addEventListener('change', () => { saveFilterState(); filterCrystals(); });
     clearFiltersBtn.addEventListener('click', clearFiltersLocal);
     
     ownedTab.addEventListener('click', () => {

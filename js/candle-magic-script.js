@@ -463,6 +463,166 @@ const SPELL_TEMPLATES = [
         ],
         timing_notes: 'New Moon is the most potent time for planting seeds of intention. The darkness holds maximum potential before the light grows. Work at the exact time of the new moon if possible.',
         affirmation: 'The seeds I plant tonight grow with the increasing light. My intentions manifest in perfect time and form.'
+    },
+    {
+        name: 'Shadow Work Ritual',
+        emoji: '🌑',
+        intent: 'Shadow Work',
+        candle_color: 'Black',
+        moon_phase: 'Dark Moon',
+        day_of_week: 'Saturday',
+        ingredients: ['Black candle', 'Journal', 'Pen', 'Obsidian', 'Mugwort (optional)', 'Dark mirror or bowl of water'],
+        instructions: [
+            'Create a quiet, private space. Dim all lights except the candle.',
+            'Hold the obsidian in your non-dominant hand — it helps surface what is hidden.',
+            'Write in your journal: "What am I avoiding? What part of myself am I refusing to see?"',
+            'Let the pen move without editing — write what arises even if it surprises or discomforts you.',
+            'Read it back. Do not judge. Simply witness. Say aloud: "I see you. You are part of me. I accept you."',
+            'If using mugwort, briefly smell it to deepen introspective vision.',
+            'Sit with the candle\'s light in silence for as long as feels right. Close when you are ready.'
+        ],
+        timing_notes: 'The Dark Moon (day before New Moon) holds maximum shadow energy. Saturday is Saturn\'s day of discipline and facing truth. Do this work only when emotionally resourced.',
+        affirmation: 'I embrace all parts of myself with compassion. My shadow holds wisdom, not shame. I am whole.'
+    },
+    {
+        name: 'Courage & Confidence Spell',
+        emoji: '🦁',
+        intent: 'Courage',
+        candle_color: 'Red',
+        moon_phase: 'Waxing Moon',
+        day_of_week: 'Tuesday',
+        ingredients: ['Red candle', 'Carnelian', 'Black pepper', 'Ginger root or oil', 'Dragon\'s blood resin (optional)'],
+        instructions: [
+            'Hold the carnelian in your dominant hand. Feel its warm, energizing weight.',
+            'Anoint the candle with ginger oil, working from base to tip to send energy outward.',
+            'Sprinkle black pepper around the base — it awakens and fires up stagnant energy.',
+            'Light the candle. Take three deep warrior breaths — inhale strength, exhale fear.',
+            'Name aloud what you fear or where you feel small. Then say: "I no longer accept this limit. I am capable. I am ready."',
+            'Visualize yourself walking through the feared situation with total confidence.',
+            'Carry the carnelian when you face the challenge.'
+        ],
+        timing_notes: 'Tuesday is Mars\' day of action and courage. Waxing moon builds the energy you need. Perform at sunrise when solar energy peaks.',
+        affirmation: 'I am capable and courageous. Fear is a sensation, not a verdict. I move forward anyway.'
+    },
+    {
+        name: 'Friendship & Community Spell',
+        emoji: '🤝',
+        intent: 'Friendship',
+        candle_color: 'Orange',
+        moon_phase: 'Waxing Moon',
+        day_of_week: 'Sunday',
+        ingredients: ['Orange candle', 'Carnelian or citrine', 'Cinnamon', 'Orange peel', 'Paper and pen'],
+        instructions: [
+            'Write what you seek in community: qualities of friends, shared values, how you want to feel.',
+            'Scatter orange peel and cinnamon around the candle — both attract warmth and connection.',
+            'Place citrine or carnelian beside the candle.',
+            'Light the candle. Visualize yourself laughing, being truly seen, surrounded by people who know and celebrate you.',
+            'Feel the joy of belonging as if it is already present.',
+            'Fold the paper toward you three times and place it under the candle.',
+            'Be open to meeting new people in the days following — the spell opens doors; you must walk through them.'
+        ],
+        timing_notes: 'Sunday carries social solar energy. Waxing moon draws people toward you. Perform in the afternoon for warmest results.',
+        affirmation: 'I attract genuine, joyful connections. I am a gift to my community and my community is a gift to me.'
+    },
+    {
+        name: 'Grounding & Stability Ritual',
+        emoji: '🌿',
+        intent: 'Grounding',
+        candle_color: 'Brown',
+        moon_phase: 'Full Moon',
+        day_of_week: 'Saturday',
+        ingredients: ['Brown or dark green candle', 'Hematite or smoky quartz', 'Soil or sand in a small bowl', 'Pine or cedarwood oil', 'Salt'],
+        instructions: [
+            'Place your bare feet on the floor or earth. Take three slow breaths all the way to your belly.',
+            'Anoint the candle with pine or cedar oil, working downward from top to base to ground energy.',
+            'Place the bowl of soil before the candle. Put your hands in it briefly — feel it.',
+            'Light the candle. Close your eyes and visualize roots growing from the soles of your feet, deep into the earth.',
+            'Feel the earth\'s solidity flowing up through those roots: stable, patient, ancient.',
+            'Hold hematite in both hands. Feel its weight.',
+            'When you feel centered, open your eyes. Keep the hematite in your pocket for continued grounding.'
+        ],
+        timing_notes: 'Saturday is Saturn\'s day of structure and roots. This working is powerful any time you feel scattered, anxious, or unmoored. Full Moon illuminates what needs stabilizing.',
+        affirmation: 'I am rooted. I am steady. The earth supports me fully and I trust its foundation.'
+    },
+    {
+        name: 'Dream Enhancement Ritual',
+        emoji: '🌙',
+        intent: 'Dreams',
+        candle_color: 'Dark Blue',
+        moon_phase: 'Full Moon',
+        day_of_week: 'Monday',
+        ingredients: ['Dark blue or indigo candle', 'Amethyst', 'Mugwort pillow sachet', 'Lavender oil', 'Dream journal and pen by bed'],
+        instructions: [
+            'Perform this ritual just before sleep. Dim all lights.',
+            'Anoint your temples and the candle with lavender oil.',
+            'Hold the amethyst at your third eye for one minute, eyes closed, setting the intention to receive clear, meaningful dreams.',
+            'Light the candle. Gaze at it softly and state your dream intention: what question you seek guidance on or what you wish to explore.',
+            'Place the mugwort sachet under your pillow.',
+            'Extinguish (do not blow) the candle when you are ready to sleep. Place amethyst under your pillow.',
+            'Keep your journal open on the nightstand. Record everything you remember immediately upon waking — before rising.'
+        ],
+        timing_notes: 'Monday is the Moon\'s day — queen of dreams. Full Moon intensifies dream imagery and psychic reception. Mugwort is the classic dreaming herb; use sparingly and do not use if pregnant.',
+        affirmation: 'My dreams bring me wisdom, guidance, and healing. I remember and understand what I receive.'
+    },
+    {
+        name: 'Grief & Letting Go Ritual',
+        emoji: '🌊',
+        intent: 'Grief',
+        candle_color: 'Blue',
+        moon_phase: 'Waning Moon',
+        day_of_week: 'Monday',
+        ingredients: ['Blue candle', 'Aquamarine or apache tears', 'Bowl of salted water', 'Paper and pen', 'White flower petals (optional)'],
+        instructions: [
+            'This ritual honors grief — it is not about rushing through it. Come as you are.',
+            'Write what or who you are grieving. Write as much as you need.',
+            'Place your hands in the salted water briefly — water transmutes sorrow.',
+            'Light the candle. Allow yourself to feel whatever arises without fighting it. You are safe here.',
+            'Read what you wrote aloud. Honor the love that makes the grief possible — it speaks of something real.',
+            'When ready, say: "I honor what was. I release the expectation of what cannot be. I carry the love forward."',
+            'Place white petals on the water\'s surface as an offering. Let the candle burn completely.'
+        ],
+        timing_notes: 'This ritual can be performed anytime grief calls — but waning moon supports release. Rushing grief dishonors the love beneath it. Return to this ritual as needed.',
+        affirmation: 'I allow my grief to move through me. My tears are sacred. I will carry the love while releasing the pain.'
+    },
+    {
+        name: 'Creativity & Inspiration Spell',
+        emoji: '🎨',
+        intent: 'Creativity',
+        candle_color: 'Orange',
+        moon_phase: 'Waxing Moon',
+        day_of_week: 'Wednesday',
+        ingredients: ['Orange candle', 'Carnelian', 'Cedar or sandalwood oil', 'Art materials or project materials', 'Bay leaf and pen'],
+        instructions: [
+            'Write your creative goal on a bay leaf — be specific about what you want to create.',
+            'Anoint the candle with cedar oil from base to tip — sending creative energy outward.',
+            'Hold carnelian in your dominant hand for two minutes. Feel its creative fire.',
+            'Light the candle. Let your mind wander freely — do not plan, just daydream about the project.',
+            'Write or sketch any ideas that arise without judging them. No idea is wrong here.',
+            'Safely burn the bay leaf when your creative session feels complete.',
+            'Keep carnelian on your workspace while creating.'
+        ],
+        timing_notes: 'Wednesday is Mercury\'s day for communication and ideas. Waxing moon builds creative momentum. Perform just before starting a creative session.',
+        affirmation: 'I am a vessel for creative energy. Ideas flow through me freely. My unique voice is needed in the world.'
+    },
+    {
+        name: 'Full Moon Release Ritual',
+        emoji: '🌕',
+        intent: 'Release',
+        candle_color: 'White',
+        moon_phase: 'Full Moon',
+        day_of_week: 'Monday',
+        ingredients: ['White candle', 'Selenite or clear quartz', 'Two pieces of paper', 'Pen', 'Fireproof bowl'],
+        instructions: [
+            'On the first paper, write everything you are grateful for this lunar cycle.',
+            'On the second paper, write what you are ready to release — limiting beliefs, habits, situations.',
+            'Light the white candle. Read your gratitude list aloud. Feel genuine thankfulness.',
+            'Set the gratitude paper beneath the candle holder or on your altar.',
+            'Read your release list aloud. For each item, say: "I release this with love and gratitude for what it taught me."',
+            'Safely burn the release paper in the fireproof bowl. Watch it transform to ash and smoke.',
+            'Scatter the ashes outside, returning them to the earth.'
+        ],
+        timing_notes: 'Full Moon is the peak of the lunar cycle — the most powerful time for release and gratitude simultaneously. The combination of honoring and releasing creates space for new growth.',
+        affirmation: 'I release what was. I honor what is. I welcome what comes. I am in perfect flow with the cycles of life.'
     }
 ];
 
