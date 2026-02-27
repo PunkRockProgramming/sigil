@@ -242,6 +242,43 @@ h1 {
 }
 
 /* ========================================
+   UPCOMING SABBATS
+   ======================================== */
+
+.upcoming-sabbats {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.upcoming-sabbat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 0.6rem 1.2rem;
+}
+
+.upcoming-emoji {
+    font-size: 1.4rem;
+}
+
+.upcoming-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.upcoming-date {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* ========================================
    SABBAT WHEEL/GRID
    ======================================== */
 

@@ -477,31 +477,52 @@ const secondsEl = document.getElementById('seconds');
 // ========================================
 
 /**
+ * Get next N upcoming sabbats, handling year wrap
+ */
+function getUpcomingSabbats(count = 3) {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+
+    const candidates = [];
+    [currentYear, currentYear + 1].forEach(year => {
+        activeSabbats.forEach(s => {
+            candidates.push({
+                ...s,
+                date: new Date(year, s.month - 1, s.day, 0, 0, 0)
+            });
+        });
+    });
+
+    return candidates
+        .filter(s => s.date > today)
+        .sort((a, b) => a.date - b.date)
+        .slice(0, count);
+}
+
+/**
  * Find the next upcoming sabbat
  */
 function getNextSabbat() {
-    const today = new Date();
-    const currentYear = today.getFullYear();
-    
-    // Convert sabbats to full Date objects for current year
-    const sabbatsThisYear = activeSabbats.map(s => ({
-        ...s,
-        date: new Date(currentYear, s.month - 1, s.day, 0, 0, 0)
-    }));
-    
-    // Find next sabbat after today
-    let next = sabbatsThisYear.find(s => s.date > today);
-    
-    // If none left this year, use first sabbat of next year
-    if (!next) {
-        const firstSabbat = activeSabbats[0];
-        next = {
-            ...firstSabbat,
-            date: new Date(currentYear + 1, firstSabbat.month - 1, firstSabbat.day, 0, 0, 0)
-        };
-    }
-    
-    return next;
+    return getUpcomingSabbats(1)[0];
+}
+
+/**
+ * Render the 2nd and 3rd upcoming sabbats below the countdown
+ */
+function renderUpcomingSabbats() {
+    const upcomingEl = document.getElementById('upcoming-sabbats');
+    if (!upcomingEl) return;
+
+    const upcoming = getUpcomingSabbats(3).slice(1);
+    upcomingEl.innerHTML = upcoming.map(s => {
+        const dateStr = s.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        return `
+            <div class="upcoming-sabbat-item" role="listitem">
+                <span class="upcoming-emoji">${s.emoji}</span>
+                <span class="upcoming-name">${s.name}</span>
+                <span class="upcoming-date">${dateStr}</span>
+            </div>`;
+    }).join('');
 }
 
 /**
@@ -548,7 +569,8 @@ function updateNextSabbat() {
     
     // Update immediately
     updateCountdown();
-    
+    renderUpcomingSabbats();
+
     // Update every second
     countdownInterval = setInterval(updateCountdown, 1000);
 }

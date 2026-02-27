@@ -26,8 +26,8 @@ Add three high-value, low-effort items: Angel Numbers reference tool (high searc
 
 ## Checklist
 
-- [ ] Sabbat: show next 3 upcoming sabbats
-- [ ] Sigil: charge/activate instructions after creation
+- [x] Sabbat: show next 3 upcoming sabbats
+- [x] Sigil: charge/activate instructions after creation
 - [ ] Angel Numbers: `html/angel-numbers.html`
 - [ ] Angel Numbers: `css/angel-numbers-styles.css`
 - [ ] Angel Numbers: `js/angel-numbers-script.js`
