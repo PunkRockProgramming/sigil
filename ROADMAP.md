@@ -1,7 +1,7 @@
 # Mystical Path Tools — Roadmap
 
 **Last Updated:** February 27, 2026
-**Status:** No active sprint.
+**Status:** Active sprint — see `SPRINT.md`.
 
 ---
 
@@ -29,9 +29,9 @@
 ## Priority Matrix
 
 ### High Value / Low Effort — Do First
-- [ ] **Angel Numbers Guide** (~4h) — 111, 222, 333 etc. High search traffic. Reference pattern.
-- [ ] **SVG export for Sigil Generator** (~2h) — Scalable output alongside existing PNG.
-- [ ] **Retrograde Tracker** (~5h) — Mercury/Venus/Mars/Jupiter dates + what to do. Static data + date math.
+- [in-progress] **Angel Numbers Guide** (~4h) — 111, 222, 333 etc. High search traffic. Reference pattern.
+- [in-progress] **SVG export for Sigil Generator** (~2h) — Scalable output alongside existing PNG.
+- [in-progress] **Retrograde Tracker** (~5h) — Mercury/Venus/Mars/Jupiter dates + what to do. Static data + date math.
 
 ### High Value / Medium Effort — Next 2–3 Sprints
 - [ ] **Dream Journal** (~8h) — Calendar entries, tagging, pattern recognition. localStorage.
@@ -76,9 +76,9 @@
 ### Per-Tool Improvements
 
 **Sigil Generator**
-- [ ] SVG export option (~2h)
+- [in-progress] SVG export option (~2h)
 - [ ] 5 more generation algorithms (~4h)
-- [ ] Charge/activate instructions after creation (~1h)
+- [in-progress] Charge/activate instructions after creation (~1h)
 
 **Moon Tracker**
 - [ ] Void of Course moon tracking (~3h)
@@ -118,7 +118,7 @@
 
 **Sabbat Calendar**
 - [ ] Personal sabbat planner: save traditions/rituals per sabbat (~3h)
-- [ ] Countdown to next 3 sabbats (not just nearest) (~2h)
+- [in-progress] Countdown to next 3 sabbats (not just nearest) (~2h)
 
 **Candle Magic**
 - [ ] Expand spell templates to 20+ (~2h)
