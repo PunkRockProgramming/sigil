@@ -607,3 +607,59 @@ footer {
         padding: 15px;
     }
 }
+
+/* ========================================
+   SABBAT PERSONAL PLANNER
+   ======================================== */
+
+.sabbat-planner-section {
+    border-top: 2px dashed var(--primary);
+    margin-top: 0.5rem;
+    padding-top: 1.25rem !important;
+}
+
+.planner-hint {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.sabbat-notes-textarea {
+    width: 100%;
+    background: rgba(0,0,0,0.15);
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0.75rem;
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.sabbat-notes-textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(var(--primary), 0.15);
+}
+
+.planner-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+
+.sabbat-save-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+}
+
+.planner-saved-indicator {
+    font-size: 0.85rem;
+    color: var(--accent);
+    animation: fadeIn 0.3s ease;
+}

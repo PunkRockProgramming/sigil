@@ -1,7 +1,7 @@
 # Mystical Path Tools — Roadmap
 
 **Last Updated:** February 28, 2026
-**Status:** 21 tools complete. Ready for next sprint.
+**Status:** 21 tools complete. Depth sprint done — 5 tools upgraded.
 
 ---
 
@@ -85,7 +85,7 @@
 - [ ] Lunar eclipse calculations (~4h)
 
 **Rune Caster**
-- [ ] Rune study/flashcard mode (~4h)
+- [done] Rune study/flashcard mode — 4 aett filters, known/learning tracking, progress bar, prev/next/shuffle nav
 
 **Crystal Database**
 - [ ] Crystal compatibility checker (~4h)
@@ -100,17 +100,17 @@
 - [ ] Chakra meditation sequence presets (~3h)
 
 **Affirmation Generator**
-- [ ] Custom user-written affirmations (~3h)
+- [done] Custom user-written affirmations — 3rd tab, form with category/moon phase, merged into draw pool, localStorage
 
 **Numerology**
-- [ ] Personal year/month/day forecasting (~4h)
-- [ ] Name change analysis (~2h)
+- [done] Personal year/month/day forecasting — 3-card cycle grid, uses birthday + today, calls NUMBER_MEANINGS
+- [done] Name change analysis — side-by-side Destiny/Soul Urge/Personality comparison, shift visualization
 
 **Sabbat Calendar**
-- [ ] Personal sabbat planner: save traditions/rituals per sabbat (~3h)
+- [done] Personal sabbat planner — textarea inside each expanded card, per-sabbat localStorage key, save indicator
 
 **Candle Magic**
-- [ ] Ritual timer integration with Meditation Timer (~2h)
+- [done] Ritual timer integration — ritual_minutes on all 20 spell templates, opens meditation-timer.html?duration=N in new tab, timer reads URL param on load
 
 ---
 

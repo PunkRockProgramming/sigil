@@ -61,6 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateDisplay();
     setupEventListeners();
     initializeProgressRing();
+
+    // Check for ?duration=N URL param (set by Candle Magic ritual timer button)
+    const params = new URLSearchParams(window.location.search);
+    const durationParam = params.get('duration');
+    if (durationParam) {
+        const minutes = parseInt(durationParam, 10);
+        if (minutes > 0 && minutes <= 180) {
+            selectDuration(minutes);
+        }
+    }
 });
 
 // ========================================

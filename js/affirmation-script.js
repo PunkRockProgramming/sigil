@@ -114,6 +114,84 @@ const AFFIRMATIONS = [
 ];
 
 // ========================================
+// CUSTOM AFFIRMATIONS
+// ========================================
+
+const CUSTOM_KEY = 'mystical-path-custom-affirmations';
+let customAffirmations = [];
+
+function loadCustomAffirmations() {
+    try {
+        customAffirmations = JSON.parse(localStorage.getItem(CUSTOM_KEY) || '[]');
+    } catch (e) {
+        customAffirmations = [];
+    }
+    updateCustomCount();
+}
+
+function saveCustomAffirmation(text, category, moonPhase) {
+    const entry = {
+        id: Date.now().toString(),
+        text,
+        category,
+        moonPhases: moonPhase ? [moonPhase] : [],
+        isCustom: true,
+        created: new Date().toISOString()
+    };
+    customAffirmations.unshift(entry);
+    localStorage.setItem(CUSTOM_KEY, JSON.stringify(customAffirmations));
+    updateCustomCount();
+    renderCustomList();
+    applyFilters();
+}
+
+function deleteCustomAffirmation(id) {
+    customAffirmations = customAffirmations.filter(a => a.id !== id);
+    localStorage.setItem(CUSTOM_KEY, JSON.stringify(customAffirmations));
+    updateCustomCount();
+    renderCustomList();
+    applyFilters();
+}
+
+function updateCustomCount() {
+    const el = document.getElementById('custom-count');
+    if (el) el.textContent = customAffirmations.length;
+}
+
+function renderCustomList() {
+    const list = document.getElementById('custom-list');
+    const empty = document.getElementById('custom-empty');
+    if (!list) return;
+
+    if (customAffirmations.length === 0) {
+        list.innerHTML = '';
+        if (empty) empty.style.display = 'block';
+        return;
+    }
+
+    if (empty) empty.style.display = 'none';
+    list.innerHTML = '';
+
+    customAffirmations.forEach(aff => {
+        const card = document.createElement('div');
+        card.className = 'custom-card';
+        card.setAttribute('role', 'listitem');
+        card.innerHTML = `
+            <div class="custom-card-content">
+                <p class="custom-card-text">${aff.text}</p>
+                <div class="custom-card-meta">
+                    <span class="custom-badge">${aff.category}</span>
+                    ${aff.moonPhases.length ? `<span class="custom-moon-badge">${aff.moonPhases[0]}</span>` : ''}
+                </div>
+            </div>
+            <button class="remove-btn" aria-label="Delete this custom affirmation">✕</button>
+        `;
+        card.querySelector('.remove-btn').addEventListener('click', () => deleteCustomAffirmation(aff.id));
+        list.appendChild(card);
+    });
+}
+
+// ========================================
 // STATE MANAGEMENT
 // ========================================
 
@@ -296,10 +374,11 @@ function showNextAffirmation() {
     
     setTimeout(() => {
         textEl.textContent = affirmation.text;
-        badgeEl.textContent = affirmation.category;
+        badgeEl.textContent = affirmation.isCustom ? '✍️ Custom' : affirmation.category;
+        badgeEl.className = `category-badge${affirmation.isCustom ? ' custom-affirmation-badge' : ''}`;
         badgeEl.style.display = 'inline-block';
         favoriteBtn.style.display = 'flex';
-        
+
         textEl.style.opacity = '1';
         updateFavoriteButton();
     }, 200);
@@ -330,9 +409,10 @@ function updateFavoriteButton() {
 
 /**
  * Apply both category and moon phase filters
+ * Merges custom affirmations into the pool
  */
 function applyFilters() {
-    let pool = [...AFFIRMATIONS];
+    let pool = [...AFFIRMATIONS, ...customAffirmations];
     if (currentCategoryFilter !== 'all') {
         pool = pool.filter(aff => aff.category === currentCategoryFilter);
     }
@@ -391,30 +471,25 @@ function renderFavorites() {
 // ========================================
 
 /**
- * Switch between Generate and Favorites views
+ * Switch between Generate, Favorites, and Custom views
  */
 function switchView(view) {
-    const generateTab = document.getElementById('generate-tab');
-    const favoritesTab = document.getElementById('favorites-tab');
-    const generateSection = document.getElementById('generate-section');
-    const favoritesSection = document.getElementById('favorites-section');
+    const tabs = ['generate', 'favorites', 'custom'];
+    tabs.forEach(t => {
+        const tab = document.getElementById(`${t}-tab`);
+        const section = document.getElementById(`${t}-section`);
+        const isActive = t === view;
+        if (tab) {
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        }
+        if (section) {
+            section.style.display = isActive ? 'block' : 'none';
+        }
+    });
 
-    if (view === 'generate') {
-        generateTab.classList.add('active');
-        favoritesTab.classList.remove('active');
-        generateTab.setAttribute('aria-selected', 'true');
-        favoritesTab.setAttribute('aria-selected', 'false');
-        generateSection.style.display = 'block';
-        favoritesSection.style.display = 'none';
-    } else {
-        generateTab.classList.remove('active');
-        favoritesTab.classList.add('active');
-        generateTab.setAttribute('aria-selected', 'false');
-        favoritesTab.setAttribute('aria-selected', 'true');
-        generateSection.style.display = 'none';
-        favoritesSection.style.display = 'block';
-        renderFavorites();
-    }
+    if (view === 'favorites') renderFavorites();
+    if (view === 'custom') renderCustomList();
 }
 
 // ========================================
@@ -423,6 +498,7 @@ function switchView(view) {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadFavorites();
+    loadCustomAffirmations();
 
     // Auto-detect current moon phase and set filter + indicator
     const currentPhase = getCurrentMoonPhase();
@@ -465,6 +541,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // View toggle tabs
     document.getElementById('generate-tab').addEventListener('click', () => switchView('generate'));
     document.getElementById('favorites-tab').addEventListener('click', () => switchView('favorites'));
+    const customTabBtn = document.getElementById('custom-tab');
+    if (customTabBtn) customTabBtn.addEventListener('click', () => switchView('custom'));
+
+    // Custom affirmation form
+    const customForm = document.getElementById('custom-form');
+    if (customForm) {
+        customForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = document.getElementById('custom-text').value.trim();
+            if (!text) return;
+            const category = document.getElementById('custom-category').value;
+            const moon = document.getElementById('custom-moon').value;
+            saveCustomAffirmation(text, category, moon);
+            document.getElementById('custom-text').value = '';
+        });
+    }
 
     // Show first affirmation on load
     showNextAffirmation();

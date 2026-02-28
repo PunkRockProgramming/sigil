@@ -61,14 +61,78 @@
                         <option value="world-tree">World Tree / Yggdrasil (9 runes)</option>
                     </select>
                 </div>
-                
-                <button id="cast-button" class="cast-btn">Cast the Runes ᛟ</button>
+
+                <div class="cast-controls-row">
+                    <button id="cast-button" class="cast-btn">Cast the Runes ᛟ</button>
+                    <button id="study-mode-btn" class="study-mode-btn" aria-label="Open rune study flashcard mode">📚 Study Mode</button>
+                </div>
             </div>
             
             <div class="spread-info" id="spread-info">
                 <h3>Five Rune Cross</h3>
                 <p>Deep insight into challenges and outcomes. This spread reveals your current position, 
                 the obstacles you face, the foundation from your past, the path ahead, and the ultimate outcome.</p>
+            </div>
+        </section>
+
+        <!-- Study Mode Section (hidden initially) -->
+        <section id="study-section" class="study-section" style="display:none;" role="region" aria-labelledby="study-heading">
+            <div class="study-header">
+                <h2 id="study-heading">📚 Rune Study Mode</h2>
+                <button id="study-back-btn" class="secondary-btn" aria-label="Back to rune casting">← Back to Reading</button>
+            </div>
+
+            <!-- Aett filter -->
+            <div class="study-aett-filter" role="group" aria-label="Filter runes by aett">
+                <button class="study-filter-btn active" data-aett="all" aria-pressed="true">All (24)</button>
+                <button class="study-filter-btn" data-aett="Freya" aria-pressed="false">Freya's Aett (8)</button>
+                <button class="study-filter-btn" data-aett="Heimdall" aria-pressed="false">Heimdall's Aett (8)</button>
+                <button class="study-filter-btn" data-aett="Tyr" aria-pressed="false">Tyr's Aett (8)</button>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="study-progress-container" aria-label="Study progress">
+                <div class="study-progress-bar">
+                    <div id="study-progress-fill" class="study-progress-fill" style="width: 0%;"></div>
+                </div>
+                <span id="study-progress-label" class="study-progress-label">0 / 24 known</span>
+            </div>
+
+            <!-- Flashcard -->
+            <div id="study-flashcard" class="study-flashcard" aria-live="polite">
+                <div class="flashcard-front">
+                    <div id="study-rune-symbol" class="study-rune-symbol">ᚠ</div>
+                    <div id="study-rune-name" class="study-rune-name">Fehu</div>
+                    <div id="study-rune-aett" class="study-rune-aett">Freya's Aett</div>
+                    <button id="reveal-btn" class="reveal-btn" aria-label="Reveal rune meaning">Reveal Meaning</button>
+                </div>
+                <div id="study-meaning-panel" class="study-meaning-panel" style="display:none;">
+                    <div class="study-meaning-upright">
+                        <h4>Upright</h4>
+                        <div id="study-upright-keywords" class="study-keyword-row"></div>
+                        <p id="study-upright-meaning"></p>
+                    </div>
+                    <div class="study-meaning-divider">✦</div>
+                    <div class="study-meaning-reversed">
+                        <h4>Reversed</h4>
+                        <div id="study-reversed-keywords" class="study-keyword-row reversed-keywords"></div>
+                        <p id="study-reversed-meaning"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mark buttons -->
+            <div id="study-mark-btns" class="study-mark-btns" style="display:none;">
+                <button id="mark-learning-btn" class="mark-btn mark-learning" aria-label="Mark as still learning">Still Learning</button>
+                <button id="mark-known-btn" class="mark-btn mark-known" aria-label="Mark as known">Known ✓</button>
+            </div>
+
+            <!-- Navigation -->
+            <div class="study-nav">
+                <button id="study-prev-btn" class="secondary-btn" aria-label="Previous rune">← Prev</button>
+                <span id="study-card-counter" class="study-card-counter">1 / 24</span>
+                <button id="study-shuffle-btn" class="secondary-btn" aria-label="Shuffle study queue">Shuffle</button>
+                <button id="study-next-btn" class="secondary-btn" aria-label="Next rune">Next →</button>
             </div>
         </section>
 

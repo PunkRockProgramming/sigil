@@ -575,6 +575,22 @@ function updateNextSabbat() {
     countdownInterval = setInterval(updateCountdown, 1000);
 }
 
+// ========================================
+// PERSONAL PLANNER
+// ========================================
+
+function getSabbatKey(name) {
+    return `mystical-path-sabbat-notes-${name.toLowerCase().replace(/\s+/g, '-')}`;
+}
+
+function loadSabbatNotes(name) {
+    return localStorage.getItem(getSabbatKey(name)) || '';
+}
+
+function saveSabbatNotes(name, text) {
+    localStorage.setItem(getSabbatKey(name), text);
+}
+
 /**
  * Create a sabbat card element
  */
@@ -657,14 +673,33 @@ function createSabbatCard(sabbat) {
                     ${sabbat.activities.map(activity => `<li>${activity}</li>`).join('')}
                 </ul>
             </div>
+
+            <div class="details-section sabbat-planner-section">
+                <h4>📝 My Personal Planner</h4>
+                <p class="planner-hint">Notes, intentions, or rituals for your ${sabbat.name} celebration.</p>
+                <textarea
+                    class="sabbat-notes-textarea"
+                    data-sabbat="${sabbat.name}"
+                    placeholder="Write your personal ritual plans, intentions, and reflections here..."
+                    aria-label="Personal ritual notes for ${sabbat.name}"
+                    rows="4"
+                >${loadSabbatNotes(sabbat.name)}</textarea>
+                <div class="planner-actions">
+                    <button class="sabbat-save-btn secondary-btn" data-sabbat="${sabbat.name}" aria-label="Save notes for ${sabbat.name}">Save Notes</button>
+                    <span class="planner-saved-indicator" style="display:none;">📝 Notes saved</span>
+                </div>
+            </div>
         </div>
     `;
     
     // Add click handler for expansion
     card.addEventListener('click', (e) => {
-        // Don't toggle if clicking a link
+        // Don't toggle if clicking a link, textarea, button, or select
         if (e.target.tagName === 'A') return;
-        
+        if (e.target.tagName === 'TEXTAREA') return;
+        if (e.target.tagName === 'BUTTON') return;
+        if (e.target.tagName === 'SELECT') return;
+
         card.classList.toggle('expanded');
         const toggle = card.querySelector('.expand-toggle');
         if (card.classList.contains('expanded')) {
@@ -673,7 +708,22 @@ function createSabbatCard(sabbat) {
             toggle.textContent = 'See Full Details ▼';
         }
     });
-    
+
+    // Wire up planner save button
+    const saveBtn = card.querySelector('.sabbat-save-btn');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const textarea = card.querySelector('.sabbat-notes-textarea');
+            const indicator = card.querySelector('.planner-saved-indicator');
+            saveSabbatNotes(sabbat.name, textarea.value);
+            if (indicator) {
+                indicator.style.display = 'inline';
+                setTimeout(() => { indicator.style.display = 'none'; }, 2500);
+            }
+        });
+    }
+
     return card;
 }
 

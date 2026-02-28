@@ -1063,3 +1063,168 @@ initRuneOfDay();
 loadRuneHistory();
 renderRuneHistory();
 initRuneHistoryUI();
+
+// ========================================
+// STUDY / FLASHCARD MODE
+// ========================================
+
+const STUDY_KEY = 'mystical-path-rune-study';
+
+let studyQueue = [...ELDER_FUTHARK];
+let currentStudyIndex = 0;
+let studyProgress = {};
+let meaningRevealed = false;
+let currentStudyAett = 'all';
+
+function loadStudyProgress() {
+    try {
+        studyProgress = JSON.parse(localStorage.getItem(STUDY_KEY) || '{}');
+    } catch (e) {
+        studyProgress = {};
+    }
+}
+
+function saveStudyProgress() {
+    localStorage.setItem(STUDY_KEY, JSON.stringify(studyProgress));
+}
+
+function getStudyQueue() {
+    if (currentStudyAett === 'all') return [...ELDER_FUTHARK];
+    return ELDER_FUTHARK.filter(r => r.aett === currentStudyAett);
+}
+
+function updateStudyProgress() {
+    const total = studyQueue.length;
+    const known = studyQueue.filter(r => studyProgress[r.name] === 'known').length;
+    const fill = document.getElementById('study-progress-fill');
+    const label = document.getElementById('study-progress-label');
+    if (fill) fill.style.width = `${total > 0 ? (known / total) * 100 : 0}%`;
+    if (label) label.textContent = `${known} / ${total} known`;
+}
+
+function showStudyCard() {
+    if (studyQueue.length === 0) return;
+    const rune = studyQueue[currentStudyIndex];
+    meaningRevealed = false;
+
+    document.getElementById('study-rune-symbol').textContent = rune.symbol;
+    document.getElementById('study-rune-name').textContent = rune.name;
+    document.getElementById('study-rune-aett').textContent = `${rune.aett}'s Aett`;
+
+    document.getElementById('study-meaning-panel').style.display = 'none';
+    document.getElementById('study-mark-btns').style.display = 'none';
+    document.getElementById('reveal-btn').style.display = 'block';
+
+    const counter = document.getElementById('study-card-counter');
+    if (counter) counter.textContent = `${currentStudyIndex + 1} / ${studyQueue.length}`;
+
+    // Highlight known/learning state
+    const card = document.getElementById('study-flashcard');
+    const status = studyProgress[rune.name];
+    card.classList.remove('status-known', 'status-learning');
+    if (status === 'known') card.classList.add('status-known');
+    else if (status === 'learning') card.classList.add('status-learning');
+
+    updateStudyProgress();
+}
+
+function revealMeaning() {
+    if (studyQueue.length === 0) return;
+    const rune = studyQueue[currentStudyIndex];
+    meaningRevealed = true;
+
+    document.getElementById('study-upright-keywords').innerHTML =
+        rune.upright.keywords.map(k => `<span class="study-kw-badge">${k}</span>`).join('');
+    document.getElementById('study-upright-meaning').textContent = rune.upright.meaning;
+    document.getElementById('study-reversed-keywords').innerHTML =
+        rune.reversed.keywords.map(k => `<span class="study-kw-badge reversed">${k}</span>`).join('');
+    document.getElementById('study-reversed-meaning').textContent = rune.reversed.meaning;
+
+    document.getElementById('study-meaning-panel').style.display = 'block';
+    document.getElementById('study-mark-btns').style.display = 'flex';
+    document.getElementById('reveal-btn').style.display = 'none';
+}
+
+function nextStudyCard() {
+    currentStudyIndex = (currentStudyIndex + 1) % studyQueue.length;
+    showStudyCard();
+}
+
+function prevStudyCard() {
+    currentStudyIndex = (currentStudyIndex - 1 + studyQueue.length) % studyQueue.length;
+    showStudyCard();
+}
+
+function markRune(status) {
+    if (studyQueue.length === 0) return;
+    const rune = studyQueue[currentStudyIndex];
+    studyProgress[rune.name] = status;
+    saveStudyProgress();
+    nextStudyCard();
+}
+
+function filterStudyByAett(aett) {
+    currentStudyAett = aett;
+    studyQueue = shuffleArray(getStudyQueue());
+    currentStudyIndex = 0;
+    showStudyCard();
+
+    document.querySelectorAll('.study-filter-btn').forEach(btn => {
+        const isActive = btn.dataset.aett === aett;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+}
+
+function initStudyMode() {
+    loadStudyProgress();
+    studyQueue = shuffleArray([...ELDER_FUTHARK]);
+    currentStudyIndex = 0;
+
+    const studySection = document.getElementById('study-section');
+    const spreadSection = document.querySelector('.spread-selection');
+    const runeDisplay = document.getElementById('rune-display');
+
+    // Show study, hide cast UI
+    if (spreadSection) spreadSection.style.display = 'none';
+    if (runeDisplay) runeDisplay.style.display = 'none';
+    if (studySection) {
+        studySection.style.display = 'block';
+        studySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    showStudyCard();
+
+    // Wire up study buttons (idempotent guard)
+    if (!document.getElementById('study-back-btn')._studyBound) {
+        document.getElementById('study-back-btn')._studyBound = true;
+
+        document.getElementById('study-back-btn').addEventListener('click', () => {
+            if (studySection) studySection.style.display = 'none';
+            if (spreadSection) spreadSection.style.display = 'block';
+        });
+
+        document.getElementById('reveal-btn').addEventListener('click', revealMeaning);
+        document.getElementById('study-next-btn').addEventListener('click', nextStudyCard);
+        document.getElementById('study-prev-btn').addEventListener('click', prevStudyCard);
+
+        document.getElementById('study-shuffle-btn').addEventListener('click', () => {
+            studyQueue = shuffleArray(getStudyQueue());
+            currentStudyIndex = 0;
+            showStudyCard();
+        });
+
+        document.getElementById('mark-known-btn').addEventListener('click', () => markRune('known'));
+        document.getElementById('mark-learning-btn').addEventListener('click', () => markRune('learning'));
+
+        document.querySelectorAll('.study-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => filterStudyByAett(btn.dataset.aett));
+        });
+    }
+}
+
+// Wire up Study Mode button
+const studyModeBtn = document.getElementById('study-mode-btn');
+if (studyModeBtn) {
+    studyModeBtn.addEventListener('click', initStudyMode);
+}

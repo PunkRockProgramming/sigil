@@ -303,6 +303,148 @@ function handleCalculate() {
     
     // Display results
     displayResults(results);
+
+    // Display personal cycles (requires birthdate)
+    displayCycles(birthDate);
+
+    // Show name change section now that we have a name
+    document.getElementById('name-change-section').style.display = 'block';
+}
+
+// ========================================
+// PERSONAL CYCLES
+// ========================================
+
+/**
+ * Calculate Personal Year number
+ */
+function calculatePersonalYear(birthDate, targetYear) {
+    const date = new Date(birthDate + 'T12:00:00');
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const sum = reduceToSingleDigit(month) + reduceToSingleDigit(day) + reduceToSingleDigit(targetYear);
+    return reduceToSingleDigit(sum);
+}
+
+/**
+ * Calculate Personal Month number
+ */
+function calculatePersonalMonth(personalYear, calendarMonth) {
+    return reduceToSingleDigit(personalYear + calendarMonth);
+}
+
+/**
+ * Calculate Personal Day number
+ */
+function calculatePersonalDay(personalMonth, calendarDay) {
+    return reduceToSingleDigit(personalMonth + calendarDay);
+}
+
+/**
+ * Display personal cycles section
+ */
+function displayCycles(birthDate) {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+
+    const personalYear = calculatePersonalYear(birthDate, year);
+    const personalMonth = calculatePersonalMonth(personalYear, month);
+    const personalDay = calculatePersonalDay(personalMonth, day);
+
+    const cycles = [
+        { label: 'Personal Year', number: personalYear, icon: '🗓️', advice: 'This is the overarching theme of your entire year.' },
+        { label: 'Personal Month', number: personalMonth, icon: '🌙', advice: 'The energy signature shaping this calendar month.' },
+        { label: 'Personal Day', number: personalDay, icon: '☀️', advice: 'Today\'s vibrational focus and guidance.' }
+    ];
+
+    const grid = document.getElementById('cycles-grid');
+    grid.innerHTML = cycles.map(cycle => {
+        const meaning = NUMBER_MEANINGS[cycle.number];
+        if (!meaning) return '';
+        return `
+            <div class="cycle-card" role="listitem">
+                <div class="cycle-header">
+                    <span class="cycle-icon">${cycle.icon}</span>
+                    <h3>${cycle.label}</h3>
+                </div>
+                <div class="cycle-number">${cycle.number}${meaning.emoji}</div>
+                <h4 class="cycle-name">${meaning.name}</h4>
+                <div class="cycle-keywords">
+                    ${meaning.keywords.slice(0, 2).map(kw => `<span class="keyword-badge">${kw}</span>`).join('')}
+                </div>
+                <p class="cycle-meaning">${meaning.meaning}</p>
+                <p class="cycle-advice"><em>${cycle.advice}</em></p>
+            </div>
+        `;
+    }).join('');
+
+    document.getElementById('cycles-section').style.display = 'block';
+    document.getElementById('cycles-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ========================================
+// NAME CHANGE ANALYSIS
+// ========================================
+
+/**
+ * Compare numerology between current name and proposed name
+ */
+function handleNameChange(currentName) {
+    const proposedName = document.getElementById('proposed-name').value.trim();
+    if (!proposedName) {
+        alert('Please enter a proposed name to compare.');
+        return;
+    }
+
+    const types = [
+        { key: 'destiny', label: 'Destiny Number', icon: '✨', calcFn: calculateDestiny },
+        { key: 'soulUrge', label: 'Soul Urge Number', icon: '💜', calcFn: calculateSoulUrge },
+        { key: 'personality', label: 'Personality Number', icon: '🎭', calcFn: calculatePersonality }
+    ];
+
+    const currentResults = {};
+    const proposedResults = {};
+    types.forEach(t => {
+        currentResults[t.key] = t.calcFn(currentName);
+        proposedResults[t.key] = t.calcFn(proposedName);
+    });
+
+    const resultsEl = document.getElementById('name-change-results');
+    resultsEl.innerHTML = `
+        <div class="name-change-header">
+            <span class="name-label">${currentName.split(' ')[0]}</span>
+            <span class="name-arrow">→</span>
+            <span class="name-label proposed">${proposedName.split(' ')[0]}</span>
+        </div>
+        <p class="name-change-framing">How would this name shift your energy?</p>
+        <div class="name-comparison-grid">
+            ${types.map(t => {
+                const before = currentResults[t.key];
+                const after = proposedResults[t.key];
+                const beforeMeaning = NUMBER_MEANINGS[before];
+                const afterMeaning = NUMBER_MEANINGS[after];
+                const changed = before !== after;
+                return `
+                    <div class="comparison-row ${changed ? 'changed' : 'unchanged'}">
+                        <div class="comparison-type">${t.icon} ${t.label}</div>
+                        <div class="comparison-before">
+                            <span class="comp-number">${before}</span>
+                            <span class="comp-name">${beforeMeaning?.name || ''}</span>
+                        </div>
+                        <div class="comparison-arrow">${changed ? '→' : '='}</div>
+                        <div class="comparison-after">
+                            <span class="comp-number ${changed ? 'new-number' : ''}">${after}</span>
+                            <span class="comp-name">${afterMeaning?.name || ''}</span>
+                        </div>
+                        ${changed ? `<p class="comp-shift">Shift: ${beforeMeaning?.keywords[0] || ''} → ${afterMeaning?.keywords[0] || ''}</p>` : '<p class="comp-shift unchanged-note">No change — same vibration</p>'}
+                    </div>
+                `;
+            }).join('')}
+        </div>
+    `;
+    resultsEl.style.display = 'block';
 }
 
 // ========================================
@@ -437,6 +579,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const compatBtn = document.getElementById('compat-calculate-btn');
     if (compatBtn) {
         compatBtn.addEventListener('click', handleCompatibility);
+    }
+
+    // Name change analysis
+    const compareBtn = document.getElementById('compare-names-btn');
+    if (compareBtn) {
+        compareBtn.addEventListener('click', () => {
+            const currentName = document.getElementById('full-name').value.trim();
+            if (!currentName) {
+                alert('Please enter your current full name first.');
+                return;
+            }
+            handleNameChange(currentName);
+        });
     }
 
     // ─── Profile Save / Load ──────────────────────────────────────

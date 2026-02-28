@@ -641,6 +641,35 @@ const SPELL_TEMPLATES = [
     }
 ];
 
+// Assign ritual_minutes to each spell template
+(function assignRitualMinutes() {
+    const MINUTES = {
+        'Love Attraction Spell': 20,
+        'Protection Ward': 20,
+        'Abundance Manifestation': 20,
+        'Mental Clarity Spell': 15,
+        'Banishing Negativity': 25,
+        'Self-Love Ritual': 30,
+        'Career Success Spell': 20,
+        'Healing Recovery Spell': 20,
+        'Psychic Development Ritual': 30,
+        'Home Blessing Ritual': 25,
+        'Peace & Release Spell': 20,
+        'New Moon Intention Setting': 20,
+        'Shadow Work Ritual': 30,
+        'Courage & Confidence Spell': 15,
+        'Friendship & Community Spell': 15,
+        'Grounding & Stability Ritual': 20,
+        'Dream Enhancement Ritual': 15,
+        'Grief & Letting Go Ritual': 30,
+        'Creativity & Inspiration Spell': 20,
+        'Full Moon Release Ritual': 25
+    };
+    SPELL_TEMPLATES.forEach(s => {
+        s.ritual_minutes = MINUTES[s.name] || 15;
+    });
+})();
+
 // ========================================
 // STATE
 // ========================================
@@ -807,6 +836,7 @@ function createSpellCard(spell) {
         <div class="spell-timing">
             <span class="timing-badge">🌙 ${spell.moon_phase}</span>
             <span class="timing-badge">📅 ${spell.day_of_week}</span>
+            <a class="btn-ritual-timer" href="../html/meditation-timer.html?duration=${spell.ritual_minutes}" target="_blank" rel="noopener" aria-label="Start ${spell.ritual_minutes}-minute ritual meditation timer">🧘 ${spell.ritual_minutes} min Ritual Timer</a>
         </div>
 
         <p class="spell-affirmation">"${spell.affirmation}"</p>

@@ -734,3 +734,31 @@ footer {
     from { opacity: 0; transform: translateY(-6px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ========================================
+   RITUAL TIMER BUTTON
+   ======================================== */
+
+.btn-ritual-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--primary);
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-ritual-timer:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--shadow);
+}

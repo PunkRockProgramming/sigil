@@ -626,3 +626,143 @@ section {
     white-space: nowrap;
     border-width: 0;
 }
+
+/* ========================================
+   CUSTOM AFFIRMATIONS SECTION
+   ======================================== */
+
+.custom-section {
+    animation: fadeIn 0.3s ease;
+}
+
+.custom-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.custom-header h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.custom-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.custom-form {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.custom-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.custom-field label {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.custom-field textarea,
+.custom-field select {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+.custom-field textarea:focus,
+.custom-field select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.custom-meta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.custom-affirmation-badge {
+    background: rgba(139, 92, 246, 0.15) !important;
+    border: 1px solid var(--primary) !important;
+    font-style: italic;
+}
+
+.custom-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.custom-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    transition: border-color 0.2s ease;
+}
+
+.custom-card:hover {
+    border-color: var(--primary);
+}
+
+.custom-card-content {
+    flex: 1;
+}
+
+.custom-card-text {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.custom-card-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.custom-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    background: var(--badge-bg);
+    border: 1px solid var(--primary);
+    color: var(--text);
+}
+
+.custom-moon-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .custom-meta-row {
+        grid-template-columns: 1fr;
+    }
+}

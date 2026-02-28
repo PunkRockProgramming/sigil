@@ -42,23 +42,32 @@
 
     <!-- View Toggle -->
     <div class="view-toggle" role="tablist" aria-label="Affirmation views">
-        <button 
-            id="generate-tab" 
-            class="tab-btn active" 
-            role="tab" 
-            aria-selected="true" 
+        <button
+            id="generate-tab"
+            class="tab-btn active"
+            role="tab"
+            aria-selected="true"
             aria-controls="generate-section"
         >
             ✨ Generate Affirmation
         </button>
-        <button 
-            id="favorites-tab" 
-            class="tab-btn" 
-            role="tab" 
-            aria-selected="false" 
+        <button
+            id="favorites-tab"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
             aria-controls="favorites-section"
         >
             💜 My Favorites (<span id="favorites-count">0</span>)
+        </button>
+        <button
+            id="custom-tab"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="custom-section"
+        >
+            ✍️ My Affirmations (<span id="custom-count">0</span>)
         </button>
     </div>
 
@@ -148,6 +157,73 @@
             <p class="empty-icon">💜</p>
             <p class="empty-text">You haven't saved any favorites yet.</p>
             <p class="empty-subtext">Click the heart button when an affirmation resonates with you.</p>
+        </div>
+    </section>
+
+    <!-- Custom Affirmations Section -->
+    <section
+        id="custom-section"
+        class="custom-section"
+        role="tabpanel"
+        aria-labelledby="custom-tab"
+        style="display: none;"
+    >
+        <div class="custom-header">
+            <h2>Write Your Own Affirmations</h2>
+            <p class="custom-subtitle">Create personal affirmations in your own words — they'll be added to your draw pool.</p>
+        </div>
+
+        <form id="custom-form" class="custom-form" aria-label="Add custom affirmation">
+            <div class="custom-field">
+                <label for="custom-text">Your Affirmation</label>
+                <textarea
+                    id="custom-text"
+                    rows="3"
+                    placeholder="I am..."
+                    aria-label="Enter your affirmation text"
+                    maxlength="300"
+                ></textarea>
+            </div>
+            <div class="custom-meta-row">
+                <div class="custom-field">
+                    <label for="custom-category">Category</label>
+                    <select id="custom-category" aria-label="Select affirmation category">
+                        <option value="Self-Love">Self-Love</option>
+                        <option value="Abundance">Abundance</option>
+                        <option value="Protection">Protection</option>
+                        <option value="Healing">Healing</option>
+                        <option value="Manifestation">Manifestation</option>
+                        <option value="Intuition">Intuition</option>
+                        <option value="Strength">Strength</option>
+                        <option value="Peace">Peace</option>
+                    </select>
+                </div>
+                <div class="custom-field">
+                    <label for="custom-moon">Moon Phase (optional)</label>
+                    <select id="custom-moon" aria-label="Select moon phase affinity">
+                        <option value="">Any Phase</option>
+                        <option value="new">🌑 New Moon</option>
+                        <option value="waxing-crescent">🌒 Waxing Crescent</option>
+                        <option value="first-quarter">🌓 First Quarter</option>
+                        <option value="waxing-gibbous">🌔 Waxing Gibbous</option>
+                        <option value="full">🌕 Full Moon</option>
+                        <option value="waning-gibbous">🌖 Waning Gibbous</option>
+                        <option value="last-quarter">🌗 Last Quarter</option>
+                        <option value="waning-crescent">🌘 Waning Crescent</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="primary-btn" aria-label="Save custom affirmation">Save Affirmation ✨</button>
+        </form>
+
+        <div id="custom-list" class="custom-list" role="list" aria-label="Your custom affirmations">
+            <!-- Populated by JS -->
+        </div>
+
+        <div id="custom-empty" class="empty-state" style="display:none;">
+            <p class="empty-icon">✍️</p>
+            <p class="empty-text">No custom affirmations yet.</p>
+            <p class="empty-subtext">Write one above to get started.</p>
         </div>
     </section>
 
