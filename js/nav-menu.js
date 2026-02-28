@@ -26,6 +26,8 @@ const TOOLS = [
     { name: 'Correspondence Lookup', emoji: '🔍', path: './html/correspondence-lookup.html', toolPath: '../html/correspondence-lookup.html' },
     { name: 'Daily Practice', emoji: '🌅', path: './html/daily-dashboard.html', toolPath: '../html/daily-dashboard.html' },
     { name: 'Ogham Oracle', emoji: 'ᚁ', path: './html/ogham-oracle.html', toolPath: '../html/ogham-oracle.html' },
+    { name: 'Deity Database', emoji: '⚡', path: './html/deity-database.html', toolPath: '../html/deity-database.html' },
+    { name: 'Dream Journal', emoji: '💭', path: './html/dream-journal.html', toolPath: '../html/dream-journal.html' },
     { name: 'Home', emoji: '🏠', path: './index.html', toolPath: '../index.html' }
 ];
 

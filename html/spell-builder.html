@@ -180,6 +180,31 @@
             <h2>My Grimoire</h2>
             <p class="section-description">Your personal collection of spells and rituals</p>
 
+            <!-- Grimoire Stats Dashboard -->
+            <section id="grimoire-stats" class="grimoire-stats hidden" aria-label="Grimoire statistics">
+                <details>
+                    <summary class="stats-summary">📊 Grimoire Stats</summary>
+                    <div class="stats-panels">
+                        <div class="stats-panel" id="stats-overview">
+                            <h3>Overview</h3>
+                            <div id="stats-overview-content"></div>
+                        </div>
+                        <div class="stats-panel" id="stats-intent">
+                            <h3>By Intent</h3>
+                            <div id="stats-intent-content"></div>
+                        </div>
+                        <div class="stats-panel" id="stats-moon">
+                            <h3>By Moon Phase</h3>
+                            <div id="stats-moon-content"></div>
+                        </div>
+                        <div class="stats-panel" id="stats-ingredients">
+                            <h3>Top Ingredients</h3>
+                            <div id="stats-ingredients-content"></div>
+                        </div>
+                    </div>
+                </details>
+            </section>
+
             <!-- Filters & Search -->
             <div class="filter-controls" role="search" aria-label="Filter and search spells">
                 <input type="text" id="spell-search" placeholder="🔍 Search spells..." aria-label="Search spells by name or ingredients">

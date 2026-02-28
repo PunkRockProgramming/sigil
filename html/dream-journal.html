@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Journal | Mystical Path Tools</title>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/dream-journal-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+
+        <header>
+            <h1>💭 Dream Journal</h1>
+            <p class="subtitle">Record your dreams, discover recurring patterns</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Entry Form -->
+        <section id="entry-form-section" class="entry-form-section" role="region" aria-labelledby="form-heading">
+            <h2 id="form-heading">Record a Dream</h2>
+
+            <form id="dream-form" class="dream-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="dream-date">Date</label>
+                        <input type="date" id="dream-date" required aria-label="Dream date">
+                    </div>
+                    <div class="form-group">
+                        <label for="dream-title">Title <span class="optional">(optional)</span></label>
+                        <input type="text" id="dream-title" placeholder="A short name for this dream" aria-label="Dream title">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dream-description">Dream Description <span class="required">*</span></label>
+                    <textarea id="dream-description" rows="6" placeholder="Describe your dream in detail — what happened, who was there, where you were..." required aria-label="Dream description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Emotions <span class="optional">(select all that apply)</span></label>
+                    <div class="toggle-group" role="group" aria-label="Emotion toggles" id="emotion-toggles">
+                        <button type="button" class="toggle-btn" data-value="Peaceful">Peaceful</button>
+                        <button type="button" class="toggle-btn" data-value="Anxious">Anxious</button>
+                        <button type="button" class="toggle-btn" data-value="Joyful">Joyful</button>
+                        <button type="button" class="toggle-btn" data-value="Frightened">Frightened</button>
+                        <button type="button" class="toggle-btn" data-value="Confused">Confused</button>
+                        <button type="button" class="toggle-btn" data-value="Elated">Elated</button>
+                        <button type="button" class="toggle-btn" data-value="Sad">Sad</button>
+                        <button type="button" class="toggle-btn" data-value="Excited">Excited</button>
+                        <button type="button" class="toggle-btn" data-value="Curious">Curious</button>
+                        <button type="button" class="toggle-btn" data-value="Unsettled">Unsettled</button>
+                        <button type="button" class="toggle-btn" data-value="Serene">Serene</button>
+                        <button type="button" class="toggle-btn" data-value="Ominous">Ominous</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dream-symbols">Symbols <span class="optional">(comma-separated)</span></label>
+                    <input type="text" id="dream-symbols" placeholder="e.g. water, falling, old house, bird" aria-label="Dream symbols, comma separated">
+                </div>
+
+                <div class="form-group">
+                    <label>Tags <span class="optional">(select all that apply)</span></label>
+                    <div class="toggle-group" role="group" aria-label="Tag toggles" id="tag-toggles">
+                        <button type="button" class="toggle-btn" data-value="Lucid">Lucid</button>
+                        <button type="button" class="toggle-btn" data-value="Recurring">Recurring</button>
+                        <button type="button" class="toggle-btn" data-value="Nightmare">Nightmare</button>
+                        <button type="button" class="toggle-btn" data-value="Prophetic">Prophetic</button>
+                        <button type="button" class="toggle-btn" data-value="Vivid">Vivid</button>
+                        <button type="button" class="toggle-btn" data-value="Shadow Work">Shadow Work</button>
+                        <button type="button" class="toggle-btn" data-value="Spiritual">Spiritual</button>
+                        <button type="button" class="toggle-btn" data-value="Healing">Healing</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dream-lucidity">Lucidity Level</label>
+                    <select id="dream-lucidity" aria-label="Dream lucidity level">
+                        <option value="none">None — Normal dream</option>
+                        <option value="partial">Partial — Vaguely aware</option>
+                        <option value="full">Full — Fully lucid</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dream-interpretation">Personal Interpretation <span class="optional">(optional)</span></label>
+                    <textarea id="dream-interpretation" rows="3" placeholder="What do you think this dream means? Any symbols or themes that stand out?" aria-label="Dream interpretation"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary" id="form-submit-btn">💭 Save Dream</button>
+                    <button type="button" id="clear-form-btn" class="btn-secondary">✕ Clear</button>
+                    <button type="button" id="cancel-edit-btn" class="btn-secondary hidden">Cancel Edit</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Pattern Recognition -->
+        <section id="patterns-section" class="patterns-section hidden" role="region" aria-labelledby="patterns-heading">
+            <h2 id="patterns-heading">✨ Recurring Patterns</h2>
+            <p class="section-description">Patterns detected across your dream entries</p>
+            <div class="patterns-grid">
+                <div class="pattern-panel" id="pattern-symbols">
+                    <h3>🔮 Top Symbols</h3>
+                    <div class="pattern-list" id="pattern-symbols-list"></div>
+                </div>
+                <div class="pattern-panel" id="pattern-emotions">
+                    <h3>💫 Top Emotions</h3>
+                    <div class="pattern-list" id="pattern-emotions-list"></div>
+                </div>
+                <div class="pattern-panel" id="pattern-tags">
+                    <h3>🏷️ Dream Types</h3>
+                    <div class="pattern-list" id="pattern-tags-list"></div>
+                </div>
+                <div class="pattern-panel" id="pattern-lucidity">
+                    <h3>🌙 Lucidity</h3>
+                    <div class="pattern-list" id="pattern-lucidity-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <section class="filter-section" role="search" aria-label="Search and filter dreams">
+            <div class="filter-controls">
+                <input type="text" id="search-input" placeholder="🔍 Search dreams..." aria-label="Search dreams">
+                <select id="tag-filter" class="filter-dropdown" aria-label="Filter by tag">
+                    <option value="all">All Tags</option>
+                    <option value="Lucid">Lucid</option>
+                    <option value="Recurring">Recurring</option>
+                    <option value="Nightmare">Nightmare</option>
+                    <option value="Prophetic">Prophetic</option>
+                    <option value="Vivid">Vivid</option>
+                    <option value="Shadow Work">Shadow Work</option>
+                    <option value="Spiritual">Spiritual</option>
+                    <option value="Healing">Healing</option>
+                </select>
+                <select id="lucidity-filter" class="filter-dropdown" aria-label="Filter by lucidity">
+                    <option value="all">All Lucidity</option>
+                    <option value="none">None</option>
+                    <option value="partial">Partial</option>
+                    <option value="full">Full</option>
+                </select>
+                <button id="clear-filters-btn" class="btn-clear" aria-label="Clear all filters">Clear Filters</button>
+            </div>
+            <div class="result-info">
+                <span id="entry-count" role="status" aria-live="polite">0 entries</span>
+                <div class="journal-actions">
+                    <button id="export-journal-btn" class="btn-secondary">💾 Export Journal</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journal Entries -->
+        <section class="journal-section" role="region" aria-label="Dream journal entries">
+            <div id="journal-list" class="journal-list" role="list" aria-live="polite" aria-label="Dream journal entries">
+                <!-- Populated by JavaScript -->
+            </div>
+            <div id="empty-state" class="empty-state">
+                <p>💭 Your dream journal is empty</p>
+                <p>Record your first dream using the form above!</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>✨ Dreams are the language of the soul. Record them while they linger. ✨</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/share-utils.js"></script>
+    <script src="../js/dream-journal-script.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>

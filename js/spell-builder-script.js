@@ -158,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeEventListeners();
     renderGrimoire();
     updateSpellCount();
+    refreshGrimoireStats();
 
     // Auto-detect current moon phase if user hasn't selected one
     if (spellMoonPhaseSelect && !spellMoonPhaseSelect.value) {
@@ -239,6 +240,7 @@ function showSharedSpell(spell) {
         saveGrimoire();
         renderGrimoire();
         updateSpellCount();
+        refreshGrimoireStats();
         overlay.remove();
         showMessage(`"${spell.name}" added to your grimoire! 📖`);
     });
@@ -376,6 +378,7 @@ function handleFormSubmit(e) {
     switchView('grimoire');
     renderGrimoire();
     updateSpellCount();
+    refreshGrimoireStats();
 }
 
 function clearForm() {
@@ -672,6 +675,7 @@ function createSpellCard(spell) {
             saveGrimoire();
             renderGrimoire();
             updateSpellCount();
+            refreshGrimoireStats();
             showMessage('Spell deleted.');
         }
     });
@@ -692,6 +696,25 @@ function createSpellCard(spell) {
     actions.appendChild(editBtn);
     actions.appendChild(shareBtn);
     actions.appendChild(deleteBtn);
+
+    // Results button — only for spells that have been cast at least once
+    if (spell.castCount > 0) {
+        const resultsBtn = document.createElement('button');
+        resultsBtn.className = 'btn-results';
+        resultsBtn.textContent = spell.results ? '📝 Edit Results' : '📝 Record Results';
+        resultsBtn.setAttribute('aria-label', `Record results for spell: ${spell.name}`);
+        resultsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Expand card first if not already
+            if (!card.classList.contains('expanded')) {
+                card.classList.add('expanded');
+                toggle.textContent = 'Hide Details';
+            }
+            toggleResultsEditor(details, spell);
+        });
+        actions.appendChild(resultsBtn);
+    }
+
     details.appendChild(actions);
     
     // Assemble card
@@ -701,6 +724,48 @@ function createSpellCard(spell) {
     card.appendChild(details);
     
     return card;
+}
+
+function toggleResultsEditor(details, spell) {
+    // If editor already exists on this card, toggle it
+    let editor = details.querySelector('.spell-results-editor');
+    if (editor) {
+        editor.style.display = editor.style.display === 'none' ? 'block' : 'none';
+        if (editor.style.display !== 'none') editor.querySelector('textarea').focus();
+        return;
+    }
+
+    // Create inline results editor
+    editor = document.createElement('div');
+    editor.className = 'spell-results-editor';
+    editor.innerHTML = `
+        <h4>📝 Record Results</h4>
+        <textarea class="results-textarea" rows="4" placeholder="What happened when you cast this spell? Any signs, outcomes, or observations...">${spell.results || ''}</textarea>
+        <div class="results-actions">
+            <button class="btn-save-results">💾 Save Results</button>
+            <button class="btn-cancel-results">Cancel</button>
+        </div>
+    `;
+
+    // Insert before the actions div
+    const actionsEl = details.querySelector('.spell-actions');
+    details.insertBefore(editor, actionsEl);
+    editor.querySelector('textarea').focus();
+
+    editor.querySelector('.btn-save-results').addEventListener('click', () => {
+        const newResults = editor.querySelector('textarea').value.trim();
+        const spellObj = getSpellById(spell.id);
+        if (spellObj) {
+            spellObj.results = newResults;
+            saveGrimoire();
+            renderGrimoire();
+            showMessage('Results saved! ✨');
+        }
+    });
+
+    editor.querySelector('.btn-cancel-results').addEventListener('click', () => {
+        editor.style.display = 'none';
+    });
 }
 
 function updateSpellCount(count) {
@@ -749,6 +814,7 @@ function importGrimoire(e) {
                 saveGrimoire();
                 renderGrimoire();
                 updateSpellCount();
+                refreshGrimoireStats();
                 showMessage(`Imported ${imported.length} spells! 📖`);
             }
         } catch (err) {
@@ -763,6 +829,133 @@ function importGrimoire(e) {
 // ==========================================
 // UTILITIES
 // ==========================================
+
+// ==========================================
+// GRIMOIRE STATS
+// ==========================================
+
+function computeGrimoireStats(spells) {
+    const total = spells.length;
+    const castCount = spells.filter(s => s.castCount > 0).length;
+
+    const byIntent = {};
+    const byMoonPhase = {};
+    const herbCounts = {};
+    const crystalCounts = {};
+
+    spells.forEach(spell => {
+        if (spell.intent) byIntent[spell.intent] = (byIntent[spell.intent] || 0) + 1;
+        if (spell.moonPhase) byMoonPhase[spell.moonPhase] = (byMoonPhase[spell.moonPhase] || 0) + 1;
+        (spell.herbs || []).forEach(h => { herbCounts[h] = (herbCounts[h] || 0) + 1; });
+        (spell.crystals || []).forEach(c => { crystalCounts[c] = (crystalCounts[c] || 0) + 1; });
+    });
+
+    const topHerbs = Object.entries(herbCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+    const topCrystals = Object.entries(crystalCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+    return { total, castCount, byIntent, byMoonPhase, topHerbs, topCrystals };
+}
+
+function renderGrimoireStats(stats) {
+    const statsSection = document.getElementById('grimoire-stats');
+    if (!statsSection) return;
+
+    if (stats.total === 0) {
+        statsSection.classList.add('hidden');
+        return;
+    }
+    statsSection.classList.remove('hidden');
+
+    // Overview
+    const overviewEl = document.getElementById('stats-overview-content');
+    if (overviewEl) {
+        overviewEl.innerHTML = `
+            <div class="stat-number">${stats.total}</div>
+            <div class="stat-label">total spell${stats.total !== 1 ? 's' : ''}</div>
+            <div class="stat-row">
+                <span class="stat-bar-label">Cast</span>
+                <span class="stat-bar-count">${stats.castCount}</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-bar-label">Uncast</span>
+                <span class="stat-bar-count">${stats.total - stats.castCount}</span>
+            </div>
+        `;
+    }
+
+    // By intent
+    const intentEl = document.getElementById('stats-intent-content');
+    if (intentEl) {
+        const intentEntries = Object.entries(stats.byIntent).sort((a, b) => b[1] - a[1]);
+        const maxIntent = intentEntries[0]?.[1] || 1;
+        intentEl.innerHTML = intentEntries.map(([name, count]) => {
+            const pct = Math.round((count / maxIntent) * 100);
+            return `<div class="stat-row">
+                <span class="stat-bar-label">${name}</span>
+                <span class="stat-bar"><span class="stat-bar-fill" style="width:${pct}%"></span></span>
+                <span class="stat-bar-count">${count}</span>
+            </div>`;
+        }).join('') || '<p style="color:var(--text-secondary);font-size:0.85rem">No data</p>';
+    }
+
+    // By moon phase
+    const moonEl = document.getElementById('stats-moon-content');
+    const moonEmojis = {
+        new: '🌑', 'waxing-crescent': '🌒', 'first-quarter': '🌓',
+        'waxing-gibbous': '🌔', full: '🌕', 'waning-gibbous': '🌖',
+        'last-quarter': '🌗', 'waning-crescent': '🌘'
+    };
+    if (moonEl) {
+        const moonEntries = Object.entries(stats.byMoonPhase).sort((a, b) => b[1] - a[1]);
+        const maxMoon = moonEntries[0]?.[1] || 1;
+        moonEl.innerHTML = moonEntries.map(([phase, count]) => {
+            const pct = Math.round((count / maxMoon) * 100);
+            const label = `${moonEmojis[phase] || ''} ${phase.replace(/-/g, ' ')}`;
+            return `<div class="stat-row">
+                <span class="stat-bar-label">${label}</span>
+                <span class="stat-bar"><span class="stat-bar-fill" style="width:${pct}%"></span></span>
+                <span class="stat-bar-count">${count}</span>
+            </div>`;
+        }).join('') || '<p style="color:var(--text-secondary);font-size:0.85rem">No data</p>';
+    }
+
+    // Top ingredients
+    const ingredientsEl = document.getElementById('stats-ingredients-content');
+    if (ingredientsEl) {
+        const maxIngredient = Math.max(
+            stats.topHerbs[0]?.[1] || 0,
+            stats.topCrystals[0]?.[1] || 0,
+            1
+        );
+        const herbRows = stats.topHerbs.map(([name, count]) => {
+            const pct = Math.round((count / maxIngredient) * 100);
+            return `<div class="stat-row">
+                <span class="stat-bar-label">🌿 ${name}</span>
+                <span class="stat-bar"><span class="stat-bar-fill" style="width:${pct}%"></span></span>
+                <span class="stat-bar-count">${count}</span>
+            </div>`;
+        });
+        const crystalRows = stats.topCrystals.map(([name, count]) => {
+            const pct = Math.round((count / maxIngredient) * 100);
+            return `<div class="stat-row">
+                <span class="stat-bar-label">💎 ${name}</span>
+                <span class="stat-bar"><span class="stat-bar-fill" style="width:${pct}%"></span></span>
+                <span class="stat-bar-count">${count}</span>
+            </div>`;
+        });
+        const herbSection = herbRows.length
+            ? `<p class="stat-sub-heading">Herbs</p>${herbRows.join('')}` : '';
+        const crystalSection = crystalRows.length
+            ? `<p class="stat-sub-heading">Crystals</p>${crystalRows.join('')}` : '';
+        ingredientsEl.innerHTML = herbSection + crystalSection ||
+            '<p style="color:var(--text-secondary);font-size:0.85rem">No ingredients recorded</p>';
+    }
+}
+
+function refreshGrimoireStats() {
+    const stats = computeGrimoireStats(grimoire);
+    renderGrimoireStats(stats);
+}
 
 function formatDate(isoString) {
     const date = new Date(isoString);

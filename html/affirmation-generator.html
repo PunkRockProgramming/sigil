@@ -69,21 +69,39 @@
         role="tabpanel" 
         aria-labelledby="generate-tab"
     >
-        <!-- Category Filter -->
+        <!-- Filters -->
         <div class="filter-section" role="region" aria-labelledby="filter-heading">
             <h2 id="filter-heading" class="sr-only">Filter affirmations</h2>
-            <label for="category-filter">Category:</label>
-            <select id="category-filter" aria-label="Filter affirmations by category">
-                <option value="all">All Categories</option>
-                <option value="Self-Love">Self-Love</option>
-                <option value="Abundance">Abundance</option>
-                <option value="Protection">Protection</option>
-                <option value="Healing">Healing</option>
-                <option value="Manifestation">Manifestation</option>
-                <option value="Intuition">Intuition</option>
-                <option value="Strength">Strength</option>
-                <option value="Peace">Peace</option>
-            </select>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter" aria-label="Filter affirmations by category">
+                        <option value="all">All Categories</option>
+                        <option value="Self-Love">Self-Love</option>
+                        <option value="Abundance">Abundance</option>
+                        <option value="Protection">Protection</option>
+                        <option value="Healing">Healing</option>
+                        <option value="Manifestation">Manifestation</option>
+                        <option value="Intuition">Intuition</option>
+                        <option value="Strength">Strength</option>
+                        <option value="Peace">Peace</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="moon-filter">Moon Phase: <span id="current-moon-indicator" class="moon-indicator"></span></label>
+                    <select id="moon-filter" aria-label="Filter affirmations by moon phase">
+                        <option value="all">All Moon Phases</option>
+                        <option value="new">🌑 New Moon</option>
+                        <option value="waxing-crescent">🌒 Waxing Crescent</option>
+                        <option value="first-quarter">🌓 First Quarter</option>
+                        <option value="waxing-gibbous">🌔 Waxing Gibbous</option>
+                        <option value="full">🌕 Full Moon</option>
+                        <option value="waning-gibbous">🌖 Waning Gibbous</option>
+                        <option value="last-quarter">🌗 Last Quarter</option>
+                        <option value="waning-crescent">🌘 Waning Crescent</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
         <!-- Affirmation Display -->
