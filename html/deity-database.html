@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deity Database | Mystical Path Tools</title>
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <link rel="stylesheet" href="../css/shared-theme.css">
+    <link rel="stylesheet" href="../css/deity-styles.css">
+    <link rel="stylesheet" href="../css/expandable-card.css">
+    <link rel="stylesheet" href="../css/nav-menu.css">
+    <link rel="stylesheet" href="../css/print.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-link">← Back to Tools</a>
+
+        <header>
+            <h1>⚡ Deity Database</h1>
+            <p class="subtitle">Connect with Gods & Goddesses Across Traditions</p>
+            <div class="theme-selector">
+                <label for="mystical-path">Theme:</label>
+                <select id="mystical-path">
+                    <option value="chaos-magick">Chaos Magick</option>
+                    <option value="shadow-work">Shadow Work</option>
+                    <option value="golden-dawn">Golden Dawn</option>
+                    <option value="green-witchcraft">Green Witchcraft</option>
+                    <option value="blood-moon">Blood Moon</option>
+                    <option value="lunar-tides">Lunar Tides</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Introduction -->
+        <section class="intro-section" role="region" aria-label="Introduction">
+            <p class="intro-text">
+                Deities have been honored across cultures for millennia — archetypal forces that embody the
+                fundamental energies of existence. Whether you see them as literal beings, symbolic archetypes,
+                or aspects of a greater whole, working with deities can deepen your practice, align you with
+                specific energies, and provide powerful spiritual companionship. Explore 34 deities across
+                Celtic, Greek/Roman, Norse, and Egyptian pantheons.
+            </p>
+        </section>
+
+        <!-- Deity of the Day -->
+        <section id="deity-of-day-section" class="deity-of-day-section" role="region" aria-labelledby="deity-of-day-heading">
+            <h2 id="deity-of-day-heading" class="sr-only">Deity of the Day</h2>
+            <div id="deity-of-day-card" class="deity-of-day-card">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="filter-section" role="search" aria-label="Search and filter deities">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="🔍 Search deities by name, domain, mythology..." aria-label="Search deities" />
+            </div>
+
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="pantheon-filter">Pantheon:</label>
+                    <select id="pantheon-filter" aria-label="Filter by pantheon">
+                        <option value="all">All Pantheons</option>
+                        <option value="Celtic">Celtic</option>
+                        <option value="Greek">Greek / Roman</option>
+                        <option value="Norse">Norse</option>
+                        <option value="Egyptian">Egyptian</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="domain-filter">Domain:</label>
+                    <select id="domain-filter" aria-label="Filter by domain">
+                        <option value="all">All Domains</option>
+                        <option value="Love">Love</option>
+                        <option value="Death">Death</option>
+                        <option value="Wisdom">Wisdom</option>
+                        <option value="War">War</option>
+                        <option value="Healing">Healing</option>
+                        <option value="Nature">Nature</option>
+                        <option value="Magic">Magic</option>
+                        <option value="Fertility">Fertility</option>
+                        <option value="Protection">Protection</option>
+                        <option value="Arts & Craft">Arts & Craft</option>
+                        <option value="Sun & Light">Sun & Light</option>
+                        <option value="Sea & Water">Sea & Water</option>
+                        <option value="Fire">Fire</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="tradition-filter">Tradition:</label>
+                    <select id="tradition-filter" aria-label="Filter by tradition">
+                        <option value="all">All Traditions</option>
+                        <option value="Wiccan">Wiccan</option>
+                        <option value="Druidry">Druidry</option>
+                        <option value="Heathen">Heathen</option>
+                        <option value="Celtic Paganism">Celtic Paganism</option>
+                        <option value="Hellenic">Hellenic</option>
+                        <option value="Hermetic">Hermetic</option>
+                        <option value="Ceremonial">Ceremonial</option>
+                        <option value="Chaos Magick">Chaos Magick</option>
+                        <option value="Eclectic">Eclectic</option>
+                    </select>
+                </div>
+
+                <button id="clear-filters-btn" class="clear-btn" aria-label="Clear all filters">Clear Filters</button>
+            </div>
+
+            <div class="results-count" role="status" aria-live="polite">
+                Showing <span id="deity-count">0</span> deities
+            </div>
+        </section>
+
+        <!-- Deity Grid -->
+        <section class="deity-grid-section" role="region" aria-labelledby="deity-grid-heading">
+            <h2 id="deity-grid-heading" class="sr-only">Deity Database</h2>
+            <div id="deity-grid" class="deity-grid" role="region" aria-live="polite" aria-label="Filtered deity results">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- My Collection Section -->
+        <section class="collection-section" role="region" aria-labelledby="collection-heading">
+            <h2 id="collection-heading">🌟 My Patron Deities</h2>
+            <p class="collection-intro">
+                Honor the deities who call to you. Mark your Patron/Matron deities and those you're
+                curious about — your sacred relationship is stored privately in your browser.
+            </p>
+            <div class="collection-tabs" role="tablist" aria-label="Collection tabs">
+                <button id="patron-tab" class="tab-btn active" role="tab" aria-selected="true" aria-controls="patron-collection">♥ Patron / Matron</button>
+                <button id="curious-tab" class="tab-btn" role="tab" aria-selected="false" aria-controls="curious-collection">⭐ Curious About</button>
+            </div>
+            <div id="patron-collection" class="collection-grid" role="tabpanel" aria-labelledby="patron-tab">
+                <p class="empty-message">No patron deities yet. Click the ♥ on any deity card to mark them as your Patron or Matron!</p>
+            </div>
+            <div id="curious-collection" class="collection-grid" role="tabpanel" aria-labelledby="curious-tab" style="display: none;">
+                <p class="empty-message">No deities in your Curious About list yet. Click the ⭐ on any deity card to add them!</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>✨ Every deity is a mirror of the divine within. ✨</p>
+        </footer>
+    </div>
+
+    <script src="../js/theme-manager.js"></script>
+    <script src="../js/nav-menu.js"></script>
+    <script src="../js/filter-utils.js"></script>
+    <script src="../js/keyboard-nav.js"></script>
+    <script src="../js/profile-manager.js"></script>
+    <script src="../js/deity-script.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('✨ SW registered:', reg.scope))
+                    .catch((err) => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+</body>
+</html>
