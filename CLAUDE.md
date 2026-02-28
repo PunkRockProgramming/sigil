@@ -19,7 +19,7 @@ Three files manage development: **CLAUDE.md** (rules), **ROADMAP.md** (source of
 1. Read `CLAUDE.md` and `ROADMAP.md` in full
 2. Select tasks — 80% features, 20% tech debt; tech debt first
 3. Create `SPRINT.md` with goal, rationale, ordered checklist
-4. Mark selected items `[in-progress]` in `ROADMAP.md`
+4. Mark selected items `[in-sprint]` in `ROADMAP.md`
 
 ### During Sprint
 1. Tech debt first — builds foundation for feature work
@@ -71,6 +71,8 @@ js/
   canvas-utils.js       # initCanvas, clearCanvas, exportCanvasPNG, addDrawingEvents
   keyboard-nav.js       # enableKeyboardNav for card grids
   pdf-utils.js          # downloadToolAsPDF
+  profile-manager.js    # getProfile(), saveProfile() — localStorage profile (name/birthdate/tradition)
+  share-utils.js        # buildShareURL(), checkShareParam(), showShareModal() — Base64 URL sharing
   [tool]-script.js      # Per-tool logic
 sprints/                # Archived SPRINT files
 ```
@@ -98,6 +100,8 @@ sprints/                # Archived SPRINT files
 | Canvas | `js/canvas-utils.js` | Canvas drawing or image export |
 | PDF export | `js/pdf-utils.js` | Tools with exportable readings/collections |
 | Print styles | `css/print.css` | All tools (always include, load last) |
+| Personal profile | `js/profile-manager.js` | Read name/birthdate/tradition set in Numerology |
+| Share via URL | `js/share-utils.js` | Share readings/entries as encoded URL params |
 
 See `docs/patterns.md` for usage examples and API details.
 
@@ -111,7 +115,7 @@ See `docs/patterns.md` for usage examples and API details.
 
 1. **`html/new-tool.html`** — Copy `crystal-database.html` as structural template
    - CSS load order: `shared-theme.css` → `tool-styles.css` → `nav-menu.css` → `print.css`
-   - Script load order: `theme-manager.js` → `nav-menu.js` → `pdf-utils.js`? → `filter-utils.js`? → `tool-script.js`
+   - Script load order: `theme-manager.js` → `nav-menu.js` → `pdf-utils.js`? → `filter-utils.js`? → `share-utils.js`? → `tool-script.js`
    - Required in `<head>`: `<link rel="manifest" href="/manifest.json">` + theme-color meta
    - Required before `</body>`: service worker registration snippet
 

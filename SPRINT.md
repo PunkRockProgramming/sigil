@@ -1,42 +1,25 @@
-# Tech Debt Sprint — 2026-02-27
+# Sprint — [Date]
 
-**Date:** 2026-02-27
-**Ratio:** 100% tech debt
+**Date:**
+**Ratio:**
 
 ---
 
 ## Goal
 
-Four targeted improvements to existing tools: outcome tracking in Spell Builder, share via URL in Dream Journal, moon phase affirmation filter, and herbal DB expansion from 22 → 50 herbs.
+
 
 ---
 
 ## Tasks
 
-- [x] **Spell Builder: outcome tracking** — results textarea on cast spells, inline editor on card
-- [x] **Dream Journal: share via URL** — encode single entry via share-utils.js, read-only overlay on ?dream=
-- [x] **Affirmation: moon phase filter** — moonPhases[] on all 80 affirmations, filter dropdown, auto-set to current phase
-- [x] **Herbal DB: 22 → 53 herbs** — added 31 herbs (safe/caution/toxic tiers)
+- [ ]
 
 ---
 
 ## Checklist
 
-### Spell Builder Outcome Tracking
-- [x] `js/spell-builder-script.js` — add `data-spell-id` to card element, `toggleResultsEditor(card, spell)`, "Record Results" btn when castCount > 0
-
-### Dream Journal Share
-- [x] `html/dream-journal.html` — add `share-utils.js` script tag
-- [x] `js/dream-journal-script.js` — Share button in `createEntryCard()`, `showSharedDream()` overlay, `checkShareParam('dream')` on load
-
-### Affirmation Moon Phase Filter
-- [x] `js/affirmation-script.js` — add `moonPhases[]` to all 80 affirmations, `getCurrentMoonPhase()`, `applyFilters()` replacing `filterByCategory()`, moon filter state
-- [x] `html/affirmation-generator.html` — moon filter dropdown + current moon indicator
-
-### Herbal DB Expansion
-- [x] `js/herbal-script.js` — 31 new herb objects appended to HERBS array (22 → 53 total)
-
 ### Close
-- [x] `ROADMAP.md` — mark all items done
-- [x] Archive SPRINT.md → sprints/SPRINT-2026-02-27f.md
+- [ ] `ROADMAP.md` — mark all items done
+- [ ] Archive SPRINT.md
 - [ ] Commit
